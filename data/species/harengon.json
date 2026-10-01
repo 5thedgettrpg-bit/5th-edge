@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "harengon",
+  "name": "Harengon",
+  "category": "Wildborn",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "WBtW",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small",
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Hare-Trigger",
+          "description": "You can add your proficiency bonus to your initiative rolls."
+        },
+        {
+          "name": "Leporine Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Lucky Footwork",
+          "description": "When you fail a Dexterity saving throw, you can use your reaction to roll a d4 and add it to the save, potentially turning the failure into a success. You can't use this reaction if you're prone or your speed is 0."
+        },
+        {
+          "name": "Rabbit Hop",
+          "description": "As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        }
+      ]
+    }
+  ]
+}
