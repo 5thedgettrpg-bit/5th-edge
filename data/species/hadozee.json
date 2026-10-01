@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "hadozee",
+  "name": "Hadozee",
+  "category": "Wildborn",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "AAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small",
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Dexterous Feet",
+          "description": "As a bonus action, you can use your feet to manipulate an object, open or close a door or container, or pick up or set down a Tiny object."
+        },
+        {
+          "name": "Hadozee Dodge",
+          "description": "When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled and reduce the damage by that total. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Bite",
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Athlete",
+          "description": "You gain the Athlete feat."
+        }
+      ]
+    }
+  ]
+}
