@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "orc",
+  "name": "Orc",
+  "category": "Common Folk",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and Orc.",
+      "features": [
+        {
+          "name": "Charge",
+          "description": "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or shove a creature. If you moved at least 10 feet in a straight line immediately before taking this bonus action, the attack deals an extra 5 damage on a hit. If you shove the creature instead, it takes 5 bludgeoning damage and, on a successful shove, is pushed up to 10 feet away from you."
+        },
+        {
+          "name": "Powerful Build",
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        },
+        {
+          "name": "Relentless Endurance",
+          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+        },
+        {
+          "name": "Athlete",
+          "description": "You gain the Athlete feat."
+        }
+      ]
+    }
+  ]
+}
