@@ -1,0 +1,59 @@
+{
+  "licensee": "5th Edge TTRPG",
+  "provider": "Pngtree where applicable",
+  "files": [
+    {
+      "file": "magical-landscape.webp",
+      "source_name": "Magical Landscape.png"
+    },
+    {
+      "file": "trail-landscape.webp",
+      "source_name": "Trail landscape.png"
+    },
+    {
+      "file": "blacksmith.webp",
+      "source_name": "Blacksmith.png"
+    },
+    {
+      "file": "green-portal.webp",
+      "source_name": "Green Portal.png"
+    },
+    {
+      "file": "black-dragon.webp",
+      "source_name": "Black Dragon.png"
+    },
+    {
+      "file": "beholder.webp",
+      "source_name": "Beholder.png"
+    },
+    {
+      "file": "treasure.webp",
+      "source_name": "Treasure(1).png"
+    },
+    {
+      "file": "dragonborn-cleric.webp",
+      "source_name": "Dragonborn Cleric(1).png"
+    },
+    {
+      "file": "tiefling-belly-dancer.webp",
+      "source_name": "Tiefling Belly Dancer(1).png"
+    },
+    {
+      "file": "horror-warehouse.webp",
+      "source_name": "Horror Wearhouse(1).png"
+    },
+    {
+      "file": "basement-battlemap.webp",
+      "source_name": "Basement Battlemap Example.png"
+    },
+    {
+      "file": "red-frame.webp",
+      "source_name": "Red Frame(1).png"
+    },
+    {
+      "file": "human-banner.webp",
+      "source_name": "image(20261001-215437).png",
+      "note": "user-designated temporary universal species banner"
+    }
+  ]
+}
