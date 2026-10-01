@@ -100,6 +100,7 @@
     selector.innerHTML='';
     if(hasRealVariants){
       selectorWrap.hidden=false;
+      selectorWrap.style.display='';
       for(const v of variants){
         const opt=document.createElement('option');
         opt.value=v.id;
