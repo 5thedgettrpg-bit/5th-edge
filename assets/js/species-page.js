@@ -111,10 +111,21 @@
   function renderSpecies(data,variant){
     const variants=data.variants || [];
     const hasRealVariants = variants.length > 1 || (variants.length === 1 && variants[0]?.id !== 'base' && variants[0]?.name);
-    $('#speciesKicker').textContent = data.category || 'Species';
+    const singularCategory={
+      'Common Folk':'Common Folk',
+      'Goblinoids':'Goblinoid',
+      'Dragonkin':'Dragonkin',
+      'Otherworldly':'Otherworldly',
+      'Wildborn':'Wildborn',
+      'Deepfolk':'Deepfolk',
+      'Constructed':'Constructed',
+      'Undead':'Undead',
+      'Fey Folk':'Fey Folk',
+      'Nomads':'Nomad',
+      'Custom':'Custom'
+    };
+    $('#speciesKicker').textContent = singularCategory[data.category] || data.category || 'Species';
     $('#speciesTitle').textContent = data.name;
-    const heroIcon=$('#speciesCategoryIcon');
-    heroIcon.className='species-category-hero-icon '+categoryClass(data.category);
     $('#speciesIntro').textContent = variants.length > 1
       ? 'Choose a variant to view its traits, movement, senses, languages, and revised features.'
       : 'Review this species\' traits, movement, senses, languages, and revised features.';
