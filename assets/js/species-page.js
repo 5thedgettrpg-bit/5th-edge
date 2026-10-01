@@ -4,6 +4,23 @@
   const $ = (sel,root=document)=>root.querySelector(sel);
   const esc = (s='') => String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
+  function categoryClass(name){
+    const map={
+      'Common Folk':'icon-common-folk',
+      'Goblinoids':'icon-goblinoids',
+      'Dragonkin':'icon-dragonkin',
+      'Otherworldly':'icon-otherworldly',
+      'Wildborn':'icon-wildborn',
+      'Deepfolk':'icon-deepfolk',
+      'Constructed':'icon-constructed',
+      'Undead':'icon-undead',
+      'Fey Folk':'icon-fey-folk',
+      'Nomads':'icon-nomads',
+      'Custom':'icon-custom'
+    };
+    return map[name] || 'icon-common-folk';
+  }
+
   async function loadManifest(){
     const res = await fetch('/data/species/index.json',{cache:'no-store'});
     if(!res.ok) throw new Error('Could not load species index');
@@ -41,7 +58,12 @@
       details.className='species-group';
       details.dataset.category=c.name;
       details.open = c.name === activeCategory;
-      details.innerHTML = '<summary>'+esc(c.name)+'<span>'+items.length+'</span></summary><div class="species-group-list"></div>';
+      details.innerHTML =
+        '<summary>'+
+          '<span class="species-category-icon '+categoryClass(c.name)+'" aria-hidden="true"></span>'+
+          '<span class="species-group-name">'+esc(c.name)+'</span>'+
+          '<span class="species-group-count">'+items.length+'</span>'+
+        '</summary><div class="species-group-list"></div>';
       details.addEventListener('toggle',()=>{
         if(!details.open) return;
         host.querySelectorAll('.species-group').forEach(other=>{
@@ -79,7 +101,7 @@
   }
 
   function stat(label,value){
-    return '<div class="species-stat"><span>'+esc(label)+'</span><strong>'+esc(value || '—')+'</strong></div>';
+    return '<div class="species-stat"><span>'+esc(label)+'</span><strong>'+esc(value || '-')+'</strong></div>';
   }
 
   function featureCard(f,i){
@@ -91,6 +113,8 @@
     const hasRealVariants = variants.length > 1 || (variants.length === 1 && variants[0]?.id !== 'base' && variants[0]?.name);
     $('#speciesKicker').textContent = data.category || 'Species';
     $('#speciesTitle').textContent = data.name;
+    const heroIcon=$('#speciesCategoryIcon');
+    heroIcon.className='species-category-hero-icon '+categoryClass(data.category);
     $('#speciesIntro').textContent = variants.length > 1
       ? 'Choose a variant to view its traits, movement, senses, languages, and revised features.'
       : 'Review this species\' traits, movement, senses, languages, and revised features.';
@@ -130,7 +154,7 @@
       stat('Ability Scores',ability) +
       stat('Creature Type',variant.creatureType) +
       stat('Size',size) +
-      stat('Speed',variant.speed?.raw || (variant.speed?.walk ? variant.speed.walk+' ft' : '—')) +
+      stat('Speed',variant.speed?.raw || (variant.speed?.walk ? variant.speed.walk+' ft' : '-')) +
       stat('Darkvision',darkvision) +
       stat('Languages',variant.languages);
 
