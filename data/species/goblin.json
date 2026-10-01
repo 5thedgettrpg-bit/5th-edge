@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "goblin",
+  "name": "Goblin",
+  "category": "Goblinoids",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Goblin.",
+      "features": [
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Fury of the Small",
+          "description": "When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest, and you can use it no more than once per turn."
+        },
+        {
+          "name": "Nimble Escape",
+          "description": "You can take the Disengage or Hide action as a bonus action on each of your turns."
+        }
+      ]
+    }
+  ]
+}
