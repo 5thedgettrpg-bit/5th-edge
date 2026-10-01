@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "lizardfolk",
+  "name": "Lizardfolk",
+  "category": "Dragonkin",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Bite",
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Amphibious",
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+        },
+        {
+          "name": "Hungry Jaws",
+          "description": "As a bonus action, you can make a special attack with your Bite. On a hit, it deals its normal damage and you gain temporary hit points equal to your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Natural Armor",
+          "description": "When you aren't wearing armor, your base AC is 11 + your Dexterity modifier + your proficiency bonus. You can use this AC if armor you wear would give you a lower AC, and you can still benefit from a shield."
+        }
+      ]
+    }
+  ]
+}
