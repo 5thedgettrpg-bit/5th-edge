@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 1,
+  "id": "tiefling",
+  "name": "Tiefling",
+  "category": "Otherworldly",
+  "variants": [
+    {
+      "id": "asmodeus",
+      "name": "Asmodeus",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Nessus Resistance",
+          "description": "You have resistance to necrotic damage and fire damage."
+        },
+        {
+          "name": "Infernal Legacy",
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Command, Cause Fear 2nd Scorching Ray, Suggestion 3rd Fear, Bestow Curse 4th Shadow of Moil, Wall of Fire 5th Flame Strike"
+        }
+      ]
+    },
+    {
+      "id": "baalzebul",
+      "name": "Baalzebul",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Maladomini Resistance",
+          "description": "You have resistance to necrotic damage and poison damage."
+        },
+        {
+          "name": "Legacy of Baalzebul",
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Ray of Sickness with this trait. Starting at 5th level, you can also cast Crown of Madness with this trait. Once you cast Ray of Sickness or Crown of Madness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Inflict Wounds, Tasha's Hideous Laughter 2nd Blindness/Deafness, Ray of Enfeeblement 3rd Bestow Curse, Stinking Cloud 4th Blight, Confusion 5th Cloudkill"
+        }
+      ]
+    },
+    {
+      "id": "devils-tongue",
+      "name": "Devil's Tongue",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity or Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Infernal Resistance",
+          "description": "You have resistance to psychic damage and fire damage."
+        },
+        {
+          "name": "Devil’s Tongue",
+          "description": "You know the Vicious Mockery cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Enthrall with this trait. Once you cast Charm Person or Enthrall with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Command, Dissonant Whispers 2nd Detect Thoughts, Suggestion 3rd Enemies Abound, Hypnotic Pattern 4th Charm Monster, Compulsion 5th Dominate Person"
+        }
+      ]
+    },
+    {
+      "id": "dispater",
+      "name": "Dispater",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Dis Resistance",
+          "description": "You have resistance to psychic damage and fire damage."
+        },
+        {
+          "name": "Legacy of Dispater",
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Detect Thoughts with this trait. Once you cast Disguise Self or Detect Thoughts with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Dissonant Whispers, Silent Image 2nd Enthrall, Pass without Trace 3rd Clairvoyance, Nondetection 4th Arcane Eye, Greater Invisibility 5th Modify Memory"
+        }
+      ]
+    },
+    {
+      "id": "feral",
+      "name": "Feral",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Hellish Resistance",
+          "description": "You have resistance to necrotic damage and fire damage."
+        },
+        {
+          "name": "Infernal Legacy",
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Zephyr Strike 2nd Blur, Spider Climb 3rd Haste, Vampiric Touch 4th Freedom of Movement, Greater Invisibility 5th Steel Wind Strike"
+        }
+      ]
+    },
+    {
+      "id": "fierna",
+      "name": "Fierna",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Phlegethos Resistance",
+          "description": "You have resistance to psychic damage and fire damage."
+        },
+        {
+          "name": "Legacy of Fierna",
+          "description": "You know the Friends cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Suggestion with this trait. Once you cast Charm Person or Suggestion with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Command, Dissonant Whispers 2nd Calm Emotions, Enthrall 3rd Enemies Abound, Hypnotic Pattern 4th Charm Monster, Compulsion 5th Dominate Person"
+        }
+      ]
+    },
+    {
+      "id": "glasya",
+      "name": "Glasya",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Malbolge Resistance",
+          "description": "You have resistance to psychic damage and poison damage."
+        },
+        {
+          "name": "Legacy of Glasya",
+          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Invisibility with this trait. Once you cast Disguise Self or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Silent Image, Unseen Servant 2nd Mirror Image, Pass Without A Trace 3rd Major Image, Nondetection 4th Greater Invisibility, Hallucinatory Terrain 5th Mislead"
+        }
+      ]
+    },
+    {
+      "id": "hellfire",
+      "name": "Hellfire",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity or Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Hellish Resistance",
+          "description": "You have resistance to necrotic damage and fire damage."
+        },
+        {
+          "name": "Hellfire",
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Burning Hands with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Burning Hands or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Searing Smite, Hellish Rebuke 2nd Flaming Sphere, Scorching Ray 3rd Fireball, Melf’s Minute Meteors 4th Fire Shield, Wall of Fire 5th Immolation"
+        }
+      ]
+    },
+    {
+      "id": "infernal-legacy",
+      "name": "Infernal Legacy",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity or Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Hellish Resistance",
+          "description": "You have resistance to necrotic damage and fire damage."
+        },
+        {
+          "name": "Infernal Legacy",
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Hex 2nd Scorching Ray, Nathair's Mischief 3rd Bestow Curse, Fear 4th Fire Shield, Shadow of Moil 5th Contact Other Plane"
+        }
+      ]
+    },
+    {
+      "id": "levistus",
+      "name": "Levistus",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Stygia Resistance",
+          "description": "You have resistance to necrotic damage and cold damage."
+        },
+        {
+          "name": "Legacy of Levistus",
+          "description": "You know the Ray of Frost cantrip. Starting at 3rd level, you can cast Armor of Agathys with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Armor of Agathys or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Ice Knife, Protection from Evil and Good 2nd Mirror Image, Rime’s Binding Ice 3rd Bestow Curse, Hunger of Hadar 4th Ice Storm, Shadow of Moil 5th Cone of Cold"
+        }
+      ]
+    },
+    {
+      "id": "mammon",
+      "name": "Mammon",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Minauros Resistance",
+          "description": "You have resistance to acid damage and poison damage."
+        },
+        {
+          "name": "Legacy of Mammon",
+          "description": "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Distort Value with this trait. Starting at 5th level, you can also cast Arcane Lock with this trait. Once you cast Distort Value or Arcane Lock with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Identify, Unseen Servant 2nd Knock, Locate Object 3rd Clairvoyance, Incite Greed 4th Fabricate, Leomund’s Secret Chest 5th Creation"
+        }
+      ]
+    },
+    {
+      "id": "mephistopheles",
+      "name": "Mephistopheles",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Cania Resistance",
+          "description": "You have resistance to necrotic damage and cold damage."
+        },
+        {
+          "name": "Legacy of Mephistopheles",
+          "description": "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Fog Cloud with this trait. Starting at 5th level, you can also cast Rime’s Binding Ice with this trait. Once you cast Fog Cloud or Rime’s Binding Ice with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Armor of Agathys, Ice Knife 2nd Darkness, Snilloc’s Snowball Swarm 3rd Sleet Storm, Slow 4th Elemental Bane, Ice Storm 5th Cone of Cold"
+        }
+      ]
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Hellish Resistance",
+          "description": "You have resistance to necrotic damage and fire damage."
+        },
+        {
+          "name": "Infernal Legacy",
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Hex 2nd Flame Blade, Nathair's Mischief 3rd Antagonize, Fear 4th Death Ward, Shadow of Moil 5th Contact Other Plane"
+        }
+      ]
+    },
+    {
+      "id": "winged",
+      "name": "Winged",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity or Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Hellish Resistance",
+          "description": "You have resistance to necrotic damage and fire damage."
+        },
+        {
+          "name": "Infernal Fortitude",
+          "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "zariel",
+      "name": "Zariel",
+      "basedOn": [
+        "MTF"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Strength"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Infernal.",
+      "features": [
+        {
+          "name": "Devil's Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Avernus Resistance",
+          "description": "You have resistance to necrotic damage and fire damage."
+        },
+        {
+          "name": "Legacy of Zariel",
+          "description": "You know the Sword Burst cantrip. Starting at 3rd level, you can cast Wrathful Smite with this trait. Starting at 5th level, you can also cast Aid with this trait. Once you cast Wrathful Smite or Aid with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st False Life, Hunter's Mark 2nd Magic Weapon, See Invisibility 3rd Bestow Curse, Haste 4th Staggering Smite, Locate Creature 5th Banishing Smite"
+        }
+      ]
+    }
+  ]
+}
