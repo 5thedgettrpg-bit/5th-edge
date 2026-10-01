@@ -47,3 +47,48 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
 .legal-section{padding:28px 40px;border-top:1px solid #e3d8cd}.legal-section:first-of-type{border-top:0}.legal-section h2{font:700 26px Georgia,serif;color:#a72a24;margin:0 0 12px}.legal-section p,.legal-section li{color:#5c4e47;font-size:12.5px;line-height:1.65}.legal-section a{color:#a72a24;font-weight:800}.legal-callout{padding:14px 16px;background:#f4eadf;border-left:3px solid #bd935d;border-radius:4px;color:#66574f;font-size:11.5px;line-height:1.55}
 @media(max-width:760px){.site-footer-inner{grid-template-columns:1fr;gap:28px;padding-top:30px}.footer-columns{grid-template-columns:1fr 1fr}.footer-legal-inner{flex-direction:column}.footer-copy{white-space:normal}.legal-hero,.legal-section{padding-left:22px;padding-right:22px}}
 @media(max-width:480px){.footer-columns{grid-template-columns:1fr}}
+
+
+/* Species browser */
+.species-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:14px;align-items:start}
+.species-sidebar{position:sticky;top:98px;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.species-sidebar-head{padding:14px 14px 12px;background:#eadfd4;border-bottom:1px solid var(--line)}
+.species-sidebar-head h2{margin:0;color:var(--red);font:700 18px Georgia,serif}
+.species-sidebar-head p{margin:4px 0 10px;color:var(--muted);font-size:10px;line-height:1.4}
+.species-search{width:100%;min-height:38px;border:1px solid #ccbcb0;border-radius:6px;background:#fff;padding:0 10px;color:#3d302c}
+.species-group{border-top:1px solid #e4d9ce}
+.species-group:first-of-type{border-top:0}
+.species-group summary{list-style:none;cursor:pointer;padding:11px 13px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;font-weight:900;color:#594941;background:#f7f0e8}
+.species-group summary::-webkit-details-marker{display:none}
+.species-group summary:before{content:"▸";color:var(--red);font-size:10px}
+.species-group[open] summary:before{content:"▾"}
+.species-group summary span{margin-left:auto;color:#9b8779;font-size:9px;font-weight:800}
+.species-group-list{padding:4px 0 7px;background:#fff}
+.species-group-list a{display:block;padding:8px 14px 8px 30px;text-decoration:none;color:#564740;font-size:11px;font-weight:750;border-left:3px solid transparent}
+.species-group-list a:hover{background:var(--paper-2);color:var(--red)}
+.species-group-list a.active{background:var(--red-soft);color:var(--red);border-left-color:var(--red)}
+.species-panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.species-hero{padding:34px;border-bottom:3px solid var(--tan);background:linear-gradient(135deg,#f8f2e8,#eadfd4)}
+.species-hero h1{font:700 clamp(44px,5vw,68px)/1 Georgia,serif;color:var(--red);margin:8px 0}
+.species-hero p{max-width:780px;color:#66574f;line-height:1.55;margin:0}
+.variant-control{margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.variant-control label{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#7b685e}
+.variant-control select{min-height:40px;border:1px solid #cbbcaf;border-radius:6px;background:#fff;color:#43352f;padding:0 34px 0 12px;font-weight:800}
+.species-body{padding:28px 32px}
+.species-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.species-stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 15px;min-height:76px}
+.species-stat span{display:block;color:#9a887d;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.species-stat strong{display:block;margin-top:6px;color:#4f3f37;font:700 17px Georgia,serif;line-height:1.25}
+.species-section-title{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:28px 0 12px}
+.species-section-title h2{margin:0;color:var(--red);font:700 28px Georgia,serif}
+.species-source{font-size:9px;color:#9a877a;text-transform:uppercase;letter-spacing:.06em;text-align:right}
+.species-feature{border:1px solid var(--line);border-radius:8px;background:#fff;margin:8px 0;overflow:hidden}
+.species-feature summary{cursor:pointer;list-style:none;padding:14px 16px;display:flex;justify-content:space-between;gap:18px;align-items:center;color:#4c3b34;font:700 16px Georgia,serif}
+.species-feature summary::-webkit-details-marker{display:none}
+.species-feature summary span{color:var(--red);font-family:Arial,sans-serif;font-weight:900}
+.species-feature[open] summary span{transform:rotate(45deg)}
+.species-feature>div{padding:0 16px 16px;color:#665850;font-size:12px;line-height:1.65;border-top:1px solid #eee4da}
+.species-feature[open]>div{padding-top:14px}
+.species-empty{padding:40px;color:var(--muted);text-align:center}
+@media(max-width:900px){.species-layout{grid-template-columns:1fr}.species-sidebar{position:static}.species-accordion{display:grid;grid-template-columns:1fr 1fr}.species-group{border:1px solid #e4d9ce}.species-overview{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.species-accordion{display:block}.species-body{padding:22px 18px}.species-overview{grid-template-columns:1fr}.species-hero{padding:28px 20px}.species-section-title{align-items:flex-start;flex-direction:column}.species-source{text-align:left}}
