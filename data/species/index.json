@@ -75,12 +75,12 @@
     {
       "id": "centaur",
       "name": "Centaur",
-      "category": "Wildborn"
+      "category": "Fey Folk"
     },
     {
       "id": "changeling",
       "name": "Changeling",
-      "category": "Otherworldly"
+      "category": "Fey Folk"
     },
     {
       "id": "custom-lineage",
@@ -105,7 +105,7 @@
     {
       "id": "elf",
       "name": "Elf",
-      "category": "Common Folk"
+      "category": "Fey Folk"
     },
     {
       "id": "fairy",
@@ -125,7 +125,7 @@
     {
       "id": "giff",
       "name": "Giff",
-      "category": "Wildborn"
+      "category": "Otherworldly"
     },
     {
       "id": "gith",
@@ -140,7 +140,7 @@
     {
       "id": "gnome",
       "name": "Gnome",
-      "category": "Common Folk"
+      "category": "Fey Folk"
     },
     {
       "id": "goblin",
@@ -165,7 +165,7 @@
     {
       "id": "half-orc",
       "name": "Half-Orc",
-      "category": "Common Folk"
+      "category": "Goblinoids"
     },
     {
       "id": "halfling",
@@ -220,7 +220,7 @@
     {
       "id": "lizardfolk",
       "name": "Lizardfolk",
-      "category": "Dragonkin"
+      "category": "Wildborn"
     },
     {
       "id": "locathah",
@@ -245,7 +245,7 @@
     {
       "id": "orc",
       "name": "Orc",
-      "category": "Common Folk"
+      "category": "Goblinoids"
     },
     {
       "id": "plasmoid",
@@ -285,7 +285,7 @@
     {
       "id": "thri-kreen",
       "name": "Thri-kreen",
-      "category": "Wildborn"
+      "category": "Otherworldly"
     },
     {
       "id": "tiefling",
@@ -295,7 +295,7 @@
     {
       "id": "tortle",
       "name": "Tortle",
-      "category": "Dragonkin"
+      "category": "Deepfolk"
     },
     {
       "id": "triton",
@@ -310,7 +310,7 @@
     {
       "id": "verdan",
       "name": "Verdan",
-      "category": "Goblinoids"
+      "category": "Otherworldly"
     },
     {
       "id": "warforged",
@@ -320,7 +320,7 @@
     {
       "id": "yuan-ti",
       "name": "Yuan-Ti",
-      "category": "Dragonkin"
+      "category": "Wildborn"
     },
     {
       "id": "zombie",
