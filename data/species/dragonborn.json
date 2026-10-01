@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "dragonborn",
+  "name": "Dragonborn",
+  "category": "Dragonkin",
+  "variants": [
+    {
+      "id": "chromatic",
+      "name": "Chromatic",
+      "basedOn": [
+        "FTD"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Draconic.",
+      "features": [
+        {
+          "name": "Chromatic Ancestry",
+          "description": "You trace your ancestry to a chromatic dragon, granting you a special magical affinity. Choose one type of dragon from the Chromatic Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Black Acid Blue Lightning Green Poison Red Fire White Cold"
+        },
+        {
+          "name": "Breath Weapon",
+          "description": "When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in a 15-foot cone. When you use your breath weapon, all creatures in the area must make a saving throw, the type of which is determined by your ancestry. The DC of this saving throw is 8 + your Constitution modifier + your proficiency bonus. A creature takes a number of d10s equal to your proficiency bonus damage on a failed save, and half as much damage on a successful one. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Draconic Resistance",
+          "description": "Resistance to the damage type chosen for your Chromatic Ancestry."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "draconblood",
+      "name": "Draconblood",
+      "basedOn": [
+        "EGW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Draconic.",
+      "features": [
+        {
+          "name": "Eloquent",
+          "description": "When you make a Charisma (Persuasion) or Charisma (Deception) check, you can treat a d20 roll of 9 or lower as a 10."
+        },
+        {
+          "name": "Forceful Presence",
+          "description": "When you make a Charisma (Intimidation) or Charisma (Persuasion) check, you can give yourself advantage on the roll. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Psionic Mind",
+          "description": "You can telepathically speak to any creature you can see within 30 feet of you. You don’t need to share a language with the creature, but the creature must be able to understand at least one language."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "gem",
+      "name": "Gem",
+      "basedOn": [
+        "FTD"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Draconic.",
+      "features": [
+        {
+          "name": "Gem Ancestry",
+          "description": "You trace your ancestry to a Gem dragon, granting you a special magical affinity. Choose one type of dragon from the Gem Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Amethyst Force Crystal Radiant Emerald Psychic Sapphire Thunder Topaz Necrotic"
+        },
+        {
+          "name": "Breath Weapon",
+          "description": "When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in a 15-foot cone. When you use your breath weapon, all creatures in the area must make a saving throw, the type of which is determined by your ancestry. The DC of this saving throw is 8 + your Constitution modifier + your proficiency bonus. A creature takes a number of d10s equal to your proficiency bonus damage on a failed save, and half as much damage on a successful one. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Draconic Resistance",
+          "description": "Resistance to the damage type chosen for your Gem Ancestry."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "metallic",
+      "name": "Metallic",
+      "basedOn": [
+        "FTD"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Draconic.",
+      "features": [
+        {
+          "name": "Metallic Ancestry",
+          "description": "You trace your ancestry to a metallic dragon, granting you a special magical affinity. Choose one type of dragon from the Metallic Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Brass Fire Bronze Lightning Copper Acid Gold Fire Silver Cold"
+        },
+        {
+          "name": "Breath Weapon",
+          "description": "When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in a 15-foot cone. When you use your breath weapon, all creatures in the area must make a saving throw, the type of which is determined by your ancestry. The DC of this saving throw is 8 + your Constitution modifier + your proficiency bonus. A creature takes a number of d10s equal to your proficiency bonus damage on a failed save, and half as much damage on a successful one. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Draconic Resistance",
+          "description": "Resistance to the damage type chosen for your Metallic Ancestry."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "ravenite",
+      "name": "Ravenite",
+      "basedOn": [
+        "EGW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Draconic.",
+      "features": [
+        {
+          "name": "Claws",
+          "description": "You have Claws that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Vengeful Assault",
+          "description": "When you take damage from a creature in range of a weapon you are wielding, you can use your reaction to make an attack against that creature. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Daunting Roar",
+          "description": "As a bonus action, you can let out an especially menacing roar. Creatures of your choice within 30 feet of you that can hear you must succeed on a Wisdom saving throw or become frightened of you until the end of your next turn. The DC of the save equals 8 + your proficiency bonus + your Constitution modifier. You can use this trait a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Draconic.",
+      "features": [
+        {
+          "name": "Draconic Ancestry",
+          "description": "You are distantly related to a particular kind of dragon. Choose a type of dragon from the below list; this determines the damage and area of your breath weapon, and the type of resistance you gain. Dragon Color Damage Type Breath Weapon Black Acid 5 by 30 ft. line (DEX save) Blue Lightning 5 by 30 ft. line (DEX save) Brass Fire 5 by 30 ft. line (DEX save) Bronze Lightning 5 by 30 ft. line (DEX save) Copper Acid 5 by 30 ft. line (DEX save) Gold Fire 15 ft. cone (DEX save) Green Poison 15 ft. cone (CON save) Red Fire 15 ft. cone (DEX save) Silver Cold 15 ft. cone (CON save) White Cold 15 ft. cone (CON save)"
+        },
+        {
+          "name": "Breath Weapon",
+          "description": "When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in a 15-foot cone or 30-foot line determined by your ancestry. When you use your breath weapon, all creatures in the area must make a saving throw, the type of which is determined by your ancestry. The DC of this saving throw is 8 + your Constitution modifier + your proficiency bonus. A creature takes a number of d10s equal to your proficiency bonus damage on a failed save, and half as much damage on a successful one. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Draconic Resistance",
+          "description": "Resistance to the damage type chosen for your draconic ancestry."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    }
+  ]
+}
