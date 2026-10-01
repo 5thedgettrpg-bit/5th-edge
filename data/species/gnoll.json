@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "gnoll",
+  "name": "Gnoll",
+  "category": "Wildborn",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "DMG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and Gnoll.",
+      "features": [
+        {
+          "name": "Bite",
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Rampage",
+          "description": "When you reduce a creature to 0 hit points with a melee attack on your turn, use a bonus action to move up to half speed and make a bite attack."
+        },
+        {
+          "name": "Blood Scent",
+          "description": "You have advantage on Wisdom (Perception) and Wisdom (Survival) checks made to find or track a creature that is missing any of its hit points."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        }
+      ]
+    }
+  ]
+}
