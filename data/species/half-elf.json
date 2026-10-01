@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "half-elf",
+  "name": "Half-Elf",
+  "category": "Common Folk",
+  "variants": [
+    {
+      "id": "aquatic-elf-descent",
+      "name": "Aquatic Elf Descent",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Any (two)"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Elvish, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Sea Elf Origin",
+          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return."
+        }
+      ]
+    },
+    {
+      "id": "drow-descent",
+      "name": "Drow Descent",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Any (two)"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Elvish, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Drow Origin",
+          "description": "You know one cantrip of your choice from the Cleric spell list. Starting at 3rd level, you can cast Color Spray with this trait. Starting at 5th level, you can also cast Vortex Warp with this trait. Once you cast Color Spray or Vortex Warp with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    },
+    {
+      "id": "high-elf-descent",
+      "name": "High Elf Descent",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Any (two)"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Elvish, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "High Elf Origin",
+          "description": "You know one cantrip of your choice from the Wizard spell list. Starting at 3rd level, you can cast Mage Armor with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Mage Armor or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    },
+    {
+      "id": "mark-of-detection",
+      "name": "Mark of Detection",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Wisdom",
+        "secondary": "Any"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Elvish, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Deductive Intuition",
+          "description": "Whenever you make an Intelligence (Investigation) check or Wisdom (Insight) check, you can roll a d4 and add the number rolled to the total ability check."
+        },
+        {
+          "name": "Magical Detection",
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Detect Magic with this trait. Starting at 5th level, you can also cast See Invisibility with this trait. Once you cast Detect Magic or See Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    },
+    {
+      "id": "mark-of-storm",
+      "name": "Mark of Storm",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Elvish, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Windwrights Intuition",
+          "description": "Whenever you make a Dexterity (Acrobatics) check or any ability check involving Navigator's Tools, you can roll a d4 and add the number rolled to the total ability check."
+        },
+        {
+          "name": "Headwinds",
+          "description": "You know the Gust cantrip. Starting at 3rd level, you can cast Thunderwave with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait. Once you cast Thunderwave or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Storms Boon",
+          "description": "You have resistance to lightning damage."
+        }
+      ]
+    },
+    {
+      "id": "wood-elf-descent",
+      "name": "Wood Elf Descent",
+      "basedOn": [
+        "SCAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Any (two)"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Elvish, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Wood Elf Origin",
+          "description": "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Hunter's Mark or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    },
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Any (two)"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Elvish, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Skill Versatility",
+          "description": "You gain proficiency in two skills of your choice."
+        }
+      ]
+    }
+  ]
+}
