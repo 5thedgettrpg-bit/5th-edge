@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "id": "human",
+  "name": "Human",
+  "category": "Common Folk",
+  "variants": [
+    {
+      "id": "mark-of-finding",
+      "name": "Mark of Finding",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Wisdom",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Hunter's Intuition",
+          "description": "Whenever you make a Wisdom (Perception) or a Wisdom (Survival) check, you can roll a d4 and add the number rolled to the total ability check."
+        },
+        {
+          "name": "Enhanced Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Finder's Magic",
+          "description": "You know the True Strike cantrip. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Locate Object with this trait. Once you cast Hunter's Mark or Locate Object with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Faerie Fire, Longstrider 2nd Locate Animals or Plants, Locate Object 3rd Clairvoyance, Speak With Plants 4th Divination, Locate Creature 5th Commune With Nature"
+        }
+      ]
+    },
+    {
+      "id": "mark-of-handling",
+      "name": "Mark of Handling",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Wisdom",
+        "secondary": "Any"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Wild Intuition",
+          "description": "Whenever you make a Wisdom (Animal Handling) or an Intelligence (Nature) check, you can roll a d4 and add the number rolled to the total ability check."
+        },
+        {
+          "name": "The Bigger They Are",
+          "description": "You can target a Beast or a Monstrosity when you cast Animal Friendship or Speak With Animals, provided that the creature's intelligence is 3 or lower."
+        },
+        {
+          "name": "Primal Connection",
+          "description": "You know the Create Bonfire cantrip. Starting at 3rd level, you can cast Beast Bond with this trait. Starting at 5th level, you can also cast Summon Beast with this trait. Once you cast Beast Bond or Summon Beast with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Animal Friendship, Speak With Animals 2nd Beast Sense, Calm Emotions 3rd Beacon of Hope, Conjure Animals 4th Aura of Life, Dominate Beast 5th Awaken"
+        }
+      ]
+    },
+    {
+      "id": "mark-of-making",
+      "name": "Mark of Making",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Intelligence",
+        "secondary": "Any"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Artisan's Intuition",
+          "description": "Whenever you make an Intelligence (Arcana) or an ability check involving Artisan's Tools, you can roll a d4 and add the number rolled to the total ability check."
+        },
+        {
+          "name": "Artisan's Gift",
+          "description": "You gain proficiency in one type of Artisan's Tools of your choice."
+        },
+        {
+          "name": "Spellsmith",
+          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Magic Weapon spell with this trait. When you do so, the spell lasts for 1 hour and doesn't require concentration. Starting at 5th level, you can also cast Heat Metal with this trait. Once you cast Magic Weapon or Heat Metal with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Identify, Tenser's Floating Disk 2nd Continual Flame, Magic Weapon 3rd Conjure Barrage, Elemental Weapon 4th Fabricate, Stone Shape 5th Creation"
+        }
+      ]
+    },
+    {
+      "id": "mark-of-sentinel",
+      "name": "Mark of Sentinel",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Sentinel's Intuition",
+          "description": "Whenever you make a Wisdom (Insight) or a Wisdom (Perception) check, you can roll a d4 and add the number rolled to the total ability check."
+        },
+        {
+          "name": "Vigilant Guardian",
+          "description": "You gain a base walking speed of 35 ft."
+        },
+        {
+          "name": "Guardian's Shield",
+          "description": "You know the Resistance cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Warding Bond with this trait. Once you cast Shield or Warding Bond with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Compelled Duel, Shield of Faith 2nd Warding Bond, Zone of Truth 3rd Counterspell, Protection From Energy 4th Death Ward, Guardian of Faith 5th Bigby's Hand"
+        }
+      ]
+    },
+    {
+      "id": "variant",
+      "name": "Variant",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Any",
+        "secondary": null
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Balanced Physique",
+          "description": "You gain a swimming and climbing speed equal to your walking speed."
+        },
+        {
+          "name": "Skill Versatility",
+          "description": "You gain proficiency in two skills of your choice."
+        },
+        {
+          "name": "Feat",
+          "description": "You gain one Feat of your choice."
+        }
+      ]
+    },
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "All"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Balanced Physique",
+          "description": "You gain a swimming and climbing speed equal to your walking speed."
+        },
+        {
+          "name": "Enduring Spirit",
+          "description": "You have advantage on death saving throws."
+        }
+      ]
+    },
+    {
+      "id": "mark-of-passage",
+      "name": "Mark of Passage",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Any"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 35,
+        "raw": "35 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Intuitive Motion",
+          "description": "Whenever you make a Dexterity (Acrobatics) or an ability check involving operating or maintaining a Land Vehicle, you can roll a d4 and add the number rolled to the total ability check."
+        },
+        {
+          "name": "Courier's Speed",
+          "description": "You have proficiency in Dexterity saving throws."
+        },
+        {
+          "name": "Magical Passage",
+          "description": "You know the Guidance cantrip. Starting at 3rd level, you can cast Longstrider with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Longstrider or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Expeditious Retreat, Jump 2nd Misty Step, Pass Without Trace 3rd Blink, Phantom Steed 4th Dimension Door, Freedom of Movement 5th Teleportation Circle"
+        }
+      ]
+    }
+  ]
+}
