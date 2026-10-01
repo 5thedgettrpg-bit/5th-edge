@@ -75,20 +75,24 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
 .variant-control label{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#7b685e}
 .variant-control select{min-height:40px;border:1px solid #cbbcaf;border-radius:6px;background:#fff;color:#43352f;padding:0 34px 0 12px;font-weight:800}
 .species-body{padding:28px 32px}
-.species-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.species-stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 15px;min-height:76px}
-.species-stat span{display:block;color:#9a887d;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
-.species-stat strong{display:block;margin-top:6px;color:#4f3f37;font:700 17px Georgia,serif;line-height:1.25}
+.species-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:2px 0 0}
+.species-stat{display:grid;grid-template-columns:138px minmax(0,1fr);align-items:start;gap:16px;padding:12px 0;background:transparent;border:0;border-radius:0;min-height:0;border-bottom:1px solid #e6ddd3}
+.species-stat:nth-last-child(-n+2){border-bottom:0}
+.species-stat:nth-child(odd){padding-right:24px;border-right:1px solid #e6ddd3}
+.species-stat:nth-child(even){padding-left:24px}
+.species-stat span{display:block;color:#9a887d;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;padding-top:3px}
+.species-stat strong{display:block;margin:0;color:#4f3f37;font:700 16px Georgia,serif;line-height:1.35}
 .species-section-title{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:28px 0 12px}
 .species-section-title h2{margin:0;color:var(--red);font:700 28px Georgia,serif}
 .species-source{font-size:9px;color:#9a877a;text-transform:uppercase;letter-spacing:.06em;text-align:right}
-.species-feature{border:1px solid var(--line);border-radius:8px;background:#fff;margin:8px 0;overflow:hidden}
-.species-feature summary{cursor:pointer;list-style:none;padding:14px 16px;display:flex;justify-content:space-between;gap:18px;align-items:center;color:#4c3b34;font:700 16px Georgia,serif}
+.species-feature{border:0;border-top:1px solid #d9cec3;border-radius:0;background:transparent;margin:0;overflow:visible}
+.species-feature:last-child{border-bottom:1px solid #d9cec3}
+.species-feature summary{cursor:pointer;list-style:none;padding:13px 2px;display:flex;justify-content:space-between;gap:18px;align-items:center;color:#4c3b34;font:700 17px Georgia,serif}
 .species-feature summary::-webkit-details-marker{display:none}
 .species-feature summary span{color:var(--red);font-family:Arial,sans-serif;font-weight:900}
 .species-feature[open] summary span{transform:rotate(45deg)}
-.species-feature>div{padding:0 16px 16px;color:#665850;font-size:12px;line-height:1.65;border-top:1px solid #eee4da}
-.species-feature[open]>div{padding-top:14px}
+.species-feature>div{padding:0 2px 15px;color:#665850;font-size:12px;line-height:1.7;border-top:0}
+.species-feature[open]>div{padding-top:0}
 .species-empty{padding:40px;color:var(--muted);text-align:center}
-@media(max-width:900px){.species-layout{grid-template-columns:1fr}.species-sidebar{position:static}.species-accordion{display:grid;grid-template-columns:1fr 1fr}.species-group{border:1px solid #e4d9ce}.species-overview{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.species-layout{grid-template-columns:1fr}.species-sidebar{position:static}.species-accordion{display:grid;grid-template-columns:1fr 1fr}.species-group{border:1px solid #e4d9ce}.species-overview{grid-template-columns:1fr}.species-stat:nth-child(odd),.species-stat:nth-child(even){padding:11px 0;border-right:0;border-bottom:1px solid #e6ddd3}.species-stat:last-child{border-bottom:0}}
 @media(max-width:560px){.species-accordion{display:block}.species-body{padding:22px 18px}.species-overview{grid-template-columns:1fr}.species-hero{padding:28px 20px}.species-section-title{align-items:flex-start;flex-direction:column}.species-source{text-align:left}}
