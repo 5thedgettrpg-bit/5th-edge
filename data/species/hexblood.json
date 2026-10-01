@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "hexblood",
+  "name": "Hexblood",
+  "category": "Fey Folk",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VRGR"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Wisdom",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Fey",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small",
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Hex Magic",
+          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Hex with this trait. Starting at 5th level, you can also cast Arcanist's Magic Aura with this trait. Once you cast Hex or Arcanist's Magic Aura with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Bag of Souls",
+          "description": "You carry a morbid, magically attuned pouch crafted from planar materials to capture the essence of the recently deceased. When a creature dies within 30 feet of you, provided it was hostile to you and not a summoned minion or harmless ambient wildlife, you can use your reaction to capture its soul in your bag. Your bag can hold only a number of souls equal to your proficiency bonus at a time, and a captured soul remains inside until it is expended or until you finish a long rest. As a bonus action, you can expend the trapped soul to fuel your dark magic, choosing to either gain temporary hit points equal to your level plus your Charisma modifier, force a creature within 30 feet to have disadvantage on its next saving throw against a spell you cast this turn, or recover one first level spell slot instantly. You can recover a spell slot with this trait once per short or long rest."
+        }
+      ]
+    }
+  ]
+}
