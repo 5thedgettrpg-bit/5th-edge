@@ -32,13 +32,22 @@
       byCat.get(s.category).push(s);
     }
 
+    const activeSpecies=state.manifest.species.find(x=>x.id===state.current);
+    const activeCategory=activeSpecies?.category || 'Common Folk';
+
     for(const c of state.manifest.categories){
       const items=(byCat.get(c.name)||[]).sort((a,b)=>a.name.localeCompare(b.name));
       const details=document.createElement('details');
       details.className='species-group';
       details.dataset.category=c.name;
-      details.open = c.name === 'Common Folk' || items.some(x=>x.id===state.current);
+      details.open = c.name === activeCategory;
       details.innerHTML = '<summary>'+esc(c.name)+'<span>'+items.length+'</span></summary><div class="species-group-list"></div>';
+      details.addEventListener('toggle',()=>{
+        if(!details.open) return;
+        host.querySelectorAll('.species-group').forEach(other=>{
+          if(other!==details) other.open=false;
+        });
+      });
       const list=$('.species-group-list',details);
       for(const item of items){
         const a=document.createElement('a');
@@ -128,6 +137,7 @@
     const input=$('#speciesSearch');
     input.addEventListener('input',()=>{
       const q=input.value.trim().toLowerCase();
+      let firstMatch=null;
       document.querySelectorAll('.species-group').forEach(group=>{
         let visible=0;
         group.querySelectorAll('.species-group-list a').forEach(a=>{
@@ -136,8 +146,11 @@
           if(match) visible++;
         });
         group.hidden = visible===0;
-        if(q && visible) group.open=true;
+        if(q && visible && !firstMatch) firstMatch=group;
       });
+      if(q && firstMatch){
+        document.querySelectorAll('.species-group').forEach(group=>group.open = group===firstMatch);
+      }
     });
   }
 
