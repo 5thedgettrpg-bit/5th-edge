@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "satyr",
+  "name": "Satyr",
+  "category": "Fey Folk",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "MOT",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Fey",
+      "speed": {
+        "walk": 35,
+        "raw": "35 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and Sylvan.",
+      "features": [
+        {
+          "name": "Horns",
+          "description": "Your horns are natural weapons. Your unarmed strikes with them deal 1d6 + your Strength modifier piercing damage instead of the normal bludgeoning damage."
+        },
+        {
+          "name": "Magic Resistance",
+          "description": "You have advantage on saving throws against spells."
+        },
+        {
+          "name": "Mirthful Leaps",
+          "description": "Whenever you make a long jump or high jump, roll a d8 and add the number rolled to the number of feet you can cover. This extra distance costs movement as normal."
+        },
+        {
+          "name": "Reveler",
+          "description": "You have proficiency in the Performance and Persuasion skills, and proficiency with one musical instrument of your choice."
+        }
+      ]
+    }
+  ]
+}
