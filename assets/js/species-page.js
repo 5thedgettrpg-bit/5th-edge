@@ -88,6 +88,7 @@
 
   function renderSpecies(data,variant){
     const variants=data.variants || [];
+    const hasRealVariants = variants.length > 1 || (variants.length === 1 && variants[0]?.id !== 'base' && variants[0]?.name);
     $('#speciesKicker').textContent = data.category || 'Species';
     $('#speciesTitle').textContent = data.name;
     $('#speciesIntro').textContent = variants.length > 1
@@ -97,7 +98,7 @@
     const selectorWrap=$('#variantWrap');
     const selector=$('#variantSelect');
     selector.innerHTML='';
-    if(variants.length > 1){
+    if(hasRealVariants){
       selectorWrap.hidden=false;
       for(const v of variants){
         const opt=document.createElement('option');
@@ -108,6 +109,7 @@
       }
     } else {
       selectorWrap.hidden=true;
+      selectorWrap.style.display='none';
     }
 
     if(!variant){
