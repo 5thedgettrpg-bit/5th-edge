@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "id": "elf",
+  "name": "Elf",
+  "category": "Common Folk",
+  "variants": [
+    {
+      "id": "astral",
+      "name": "Astral",
+      "basedOn": [
+        "AAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Misty Step",
+          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Blessing of the Stars",
+          "description": "You know one cantrip of your choice from the Cleric spell list. Starting at 3rd level, you can cast Color Spray with this trait. Starting at 5th level, you can also cast Vortex Warp with this trait. Once you cast Color Spray or Vortex Warp with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Drow Weapon Training",
+          "description": "You have proficiency with rapiers, shortswords, and hand crossbows."
+        },
+        {
+          "name": "Blessing of Lolth",
+          "description": "You know the Dancing Lights cantrip. Starting at 3rd level, you can cast Faerie Fire with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Faerie Fire or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    },
+    {
+      "id": "eladrin",
+      "name": "Eladrin",
+      "basedOn": [
+        "MTF",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Misty Step",
+          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Blessing of the Fey",
+          "description": "You know one cantrip of your choice from the Bard spell list. Starting at 3rd level, you can cast Ceremony with this trait. Starting at 5th level, you can also cast Spiritual Weapon with this trait. Once you cast Ceremony or Spiritual Weapon with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    },
+    {
+      "id": "high",
+      "name": "High",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Elf Weapon Training",
+          "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+        },
+        {
+          "name": "Blessing of the Arcane",
+          "description": "You know one cantrip of your choice from the Wizard spell list. Starting at 3rd level, you can cast Mage Armor with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Mage Armor or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    },
+    {
+      "id": "mark-of-shadow",
+      "name": "Mark of Shadow",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Cunning Intuition",
+          "description": "Whenever you roll a Dexterity (Stealth) check or a Charisma (Performance) check, roll a d4 and add the number rolled to the total ability check."
+        },
+        {
+          "name": "Blessing of the Shadows",
+          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Feather Fall with this trait. Starting at 5th level, you can also cast Shadow Blade with this trait. Once you cast Feather Fall or Shadow Blade with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Disguise Self, Silent Image 2nd Darkness, Invisibility 3rd Clairvoyance, Major Image 4th Greater Invisibility, Hallucinatory Terrain 5th Mislead"
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    },
+    {
+      "id": "pallid",
+      "name": "Pallid",
+      "basedOn": [
+        "EGW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Incisive Sense",
+          "description": "You have advantage on Investigation and Insight checks."
+        },
+        {
+          "name": "Blessing of the Moonweaver",
+          "description": "You know the Light cantrip. Starting at 3rd level, you can cast Sleep with this trait. Starting at 5th level, you can also cast Invisibility (self) with this trait. Once you cast Sleep or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    },
+    {
+      "id": "sea",
+      "name": "Sea",
+      "basedOn": [
+        "MTF",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Sea Elf Training",
+          "description": "You have proficiency with the spear, trident, light crossbow, and net."
+        },
+        {
+          "name": "Blessing of the Sea",
+          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    },
+    {
+      "id": "shadar-kai",
+      "name": "Shadar-Kai",
+      "basedOn": [
+        "MTF",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Necrotic Resistance",
+          "description": "You have resistance to necrotic damage."
+        },
+        {
+          "name": "Blessing of the Raven Queen",
+          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    },
+    {
+      "id": "wood",
+      "name": "Wood",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 35,
+        "raw": "35 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Sylvan, and Elvish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Elf Weapon Training",
+          "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+        },
+        {
+          "name": "Blessing of the Forest",
+          "description": "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Hunter's Mark or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Elvish Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+        }
+      ]
+    }
+  ]
+}
