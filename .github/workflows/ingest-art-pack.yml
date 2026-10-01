@@ -1,0 +1,36 @@
+name: Ingest 5th Edge art pack
+
+on:
+  push:
+    paths:
+      - "incoming/5th-edge-art-pack.zip"
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract art pack
+        run: |
+          rm -rf assets/images/art
+          mkdir -p assets/images/art assets/images/species
+          unzip -o incoming/5th-edge-art-pack.zip -d assets/images/art
+          cp assets/images/art/human-banner.webp assets/images/species/human-banner.webp
+
+      - name: Commit extracted assets
+        run: |
+          git config user.name "5th Edge Asset Bot"
+          git config user.email "5thedgettrpg@gmail.com"
+          git add assets/images/art assets/images/species/human-banner.webp
+          if git diff --cached --quiet; then
+            echo "No asset changes."
+            exit 0
+          fi
+          git commit -m "Ingest licensed 5th Edge art pack"
+          git push
