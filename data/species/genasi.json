@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "genasi",
+  "name": "Genasi",
+  "category": "Otherworldly",
+  "variants": [
+    {
+      "id": "earth",
+      "name": "Earth",
+      "basedOn": [
+        "EEPC",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Strength"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Primordial.",
+      "features": [
+        {
+          "name": "Earth Walk",
+          "description": "You can move across difficult terrain without expending extra movement if you are using your walking speed on the ground or a floor."
+        },
+        {
+          "name": "Merge with Stone",
+          "description": "You know the Mold Earth cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Dust Devil with this trait. Once you cast Shield or Dust Devil with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Earth Tremor 2nd Earthbind, Pass Without A Trace 3rd Erupting Earth, Wall of Sand 4th Stoneskin, Summon Construct 5th Passwall"
+        },
+        {
+          "name": "Mountain Skin",
+          "description": "As an action, you can harden your skin. For one minute, you have resistance to bludgeoning, slashing, and piercing damage. You can use this trait once, and you regain all expended uses when you finish a long rest."
+        }
+      ]
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "basedOn": [
+        "EEPC",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Primordial.",
+      "features": [
+        {
+          "name": "Flame Blade",
+          "description": "As an action, you evoke a fiery blade in your free hand. This magical sword lasts for 1 minute and requires concentration. It counts as a simple melee weapon with which you are proficient. It deals 2d8 fire damage on a hit and has the finesse, light, and thrown properties (range 20/60). In addition, when you use the sword to attack a target that is in bright light, you make the attack roll with advantage. If you drop the weapon or throw it, it dissipates at the end of the turn. You can use a bonus action to cause the sword to reappear in your hand. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Reach to the Blaze",
+          "description": "You know the Produce Flame cantrip. Starting at 3rd level, you can cast Burning Hands with this trait. Starting at 5th level, you can also cast Scorching Ray with this trait. Once you cast Burning Hands or Scorching Ray with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Searing Smite 2nd Flaming Sphere, Heat Metal 3rd Elemental Weapon, Flame Arrows 4th Fire Shield, Wall of Fire 5th Immolation"
+        },
+        {
+          "name": "Fire Resistance",
+          "description": "You have resistance to fire damage."
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "basedOn": [
+        "EEPC",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Primordial.",
+      "features": [
+        {
+          "name": "Amphibious",
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+        },
+        {
+          "name": "Call to the Wave",
+          "description": "You know the Acid Splash cantrip. Starting at 3rd level, you can cast Create or Destroy Water with this trait. Starting at 5th level, you can also cast Water Walk with this trait. Once you cast Create or Destroy Water or Water Walk with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Frost Fingers 2nd Snilloc's Snowball Swarm, Rime's Binding Ice 3rd Tidal Wave, Wall of Water 4th Control Water, Watery Sphere 5th Destructive Wave"
+        },
+        {
+          "name": "Acid Resistance",
+          "description": "You have resistance to acid damage."
+        }
+      ]
+    },
+    {
+      "id": "air",
+      "name": "Air",
+      "basedOn": [
+        "EEPC",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Primordial.",
+      "features": [
+        {
+          "name": "Unending Breath",
+          "description": "You can hold your breath indefinitely while you’re not incapacitated."
+        },
+        {
+          "name": "Mingle with the Wind",
+          "description": "You know the Shocking Grasp cantrip. Starting at 3rd level, you can cast Feather Fall with this trait. Starting at 5th level, you can also cast Blur with this trait. Once you cast Feather Fall or Blur with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Zephyr Strike 2nd Gust of Wind, Warding Wind 3rd Call Lightning, Fly 4th Freedom of Movement, Ice Storm 5th Control Winds"
+        },
+        {
+          "name": "Lightning Resistance",
+          "description": "You have resistance to lightning damage."
+        }
+      ]
+    }
+  ]
+}
