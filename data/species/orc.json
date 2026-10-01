@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "orc",
   "name": "Orc",
-  "category": "Common Folk",
+  "category": "Goblinoids",
   "variants": [
     {
       "id": "base",
