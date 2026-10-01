@@ -38,13 +38,21 @@
 
     <article class="species-panel">
       <section class="species-hero">
-        <div id="speciesKicker" class="kicker">Species</div>
-        <h1 id="speciesTitle">Loading...</h1>
-        <p id="speciesIntro">Loading species data.</p>
-        <div id="variantWrap" class="variant-control" hidden>
-          <label for="variantSelect">Variant</label>
-          <select id="variantSelect"></select>
+        <div class="species-hero-copy">
+          <div class="species-identity">
+            <span id="speciesCategoryIcon" class="species-category-hero-icon icon-common-folk" aria-hidden="true"></span>
+            <div>
+              <div id="speciesKicker" class="kicker">Species</div>
+              <h1 id="speciesTitle">Loading...</h1>
+            </div>
+          </div>
+          <p id="speciesIntro">Loading species data.</p>
+          <div id="variantWrap" class="variant-control" hidden>
+            <label for="variantSelect">Variant</label>
+            <select id="variantSelect"></select>
+          </div>
         </div>
+        <div class="species-art-stage" aria-hidden="true"></div>
       </section>
 
       <div id="speciesBody" class="species-body">
