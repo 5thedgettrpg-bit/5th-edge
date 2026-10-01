@@ -1,0 +1,19 @@
+{
+  "provider": "Pngtree",
+  "licensee": "5th Edge TTRPG",
+  "licenseType": "Personal Commercial License",
+  "downloadDate": "2026-10-01",
+  "premiumType": "PERMANENT",
+  "assets": [
+    {"id":"magical-landscape","file":"/assets/images/licensed/pngtree/magical-landscape.webp","type":"environment","tags":["mountains","castle","forest","watercolor"]},
+    {"id":"trail-landscape","file":"/assets/images/licensed/pngtree/trail-landscape.webp","type":"environment","tags":["mountains","forest","trail","watercolor"]},
+    {"id":"green-magic-ring","file":"/assets/images/licensed/pngtree/green-magic-ring.webp","type":"item","tags":["ring","magic","green","smoke"]},
+    {"id":"blacksmith","file":"/assets/images/licensed/pngtree/blacksmith.webp","type":"character","tags":["blacksmith","crafting","anvil"]},
+    {"id":"phoenix","file":"/assets/images/licensed/pngtree/phoenix.webp","type":"creature","tags":["phoenix","fire","forest","flying"]},
+    {"id":"medieval-village-map","file":"/assets/images/licensed/pngtree/medieval-village-map.webp","type":"map","tags":["village","map","medieval","top-down"]},
+    {"id":"jade-katana","file":"/assets/images/licensed/pngtree/jade-katana.webp","type":"item","tags":["katana","jade","leaves","magic"]},
+    {"id":"dinosaur","file":"/assets/images/licensed/pngtree/dinosaur.webp","type":"creature","tags":["dinosaur","clawfoot","raptor"]},
+    {"id":"green-portal","file":"/assets/images/licensed/pngtree/green-portal.webp","type":"environment","tags":["portal","library","green","magic"]},
+    {"id":"rock-golem","file":"/assets/images/licensed/pngtree/rock-golem.webp","type":"creature","tags":["golem","rock","construct","giant"]}
+  ]
+}
