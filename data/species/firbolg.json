@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "firbolg",
+  "name": "Firbolg",
+  "category": "Fey Folk",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Wisdom",
+        "secondary": "Strength"
+      },
+      "creatureType": "Giant",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, Giant, and Sylvan",
+      "features": [
+        {
+          "name": "Speech of Beast and Leaf",
+          "description": "You have the ability to communicate in a limited manner with Beasts, Plants, and vegetation. They can understand the meaning of your words, though you have no special ability to understand them in return. You have advantage on all Charisma checks you make to influence them."
+        },
+        {
+          "name": "Unsettling Presence",
+          "description": "When a creature you can see makes an attack roll against you, you can use your reaction to impose disadvantage on the roll. You must use this trait before you know whether the attack hits or misses. Once you use this trait, you can’t use it again until you finish a short or long rest."
+        },
+        {
+          "name": "Druidic Magic",
+          "description": "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Detect Magic with this trait. Starting at 5th level, you can also cast Detect Thoughts with this trait. Once you cast Detect Magic or Detect Thoughts with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    }
+  ]
+}
