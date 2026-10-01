@@ -118,7 +118,10 @@
       return;
     }
 
-    const ability=[variant.abilityScores?.primary, variant.abilityScores?.secondary].filter(Boolean).join(' + ');
+    const abilityParts=[];
+    if(variant.abilityScores?.primary) abilityParts.push(variant.abilityScores.primary+' +2');
+    if(variant.abilityScores?.secondary) abilityParts.push(variant.abilityScores.secondary+' +1');
+    const ability=abilityParts.join(', ');
     const size=(variant.size||[]).join(' or ');
     const darkvision=variant.darkvision ? variant.darkvision+' ft' : 'None';
     const sourceBits=[...(variant.basedOn||[]), variant.source].filter(Boolean).join(' • ');
