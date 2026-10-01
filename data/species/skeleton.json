@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "skeleton",
+  "name": "Skeleton",
+  "category": "Undead",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "DMG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Undead",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Eyeless Adventuring",
+          "description": "Due to your lack of eyes, you cannot see. You have blindsight out to 30 feet. Within that range, you can perceive creatures, objects, and your surroundings without relying on sight. You cannot read writing, discern color, or perceive fine visual details using this blindsight. If a feature or spell, such as Devil’s Sight or Darkvision, grants you the ability to see, you can use that sight normally within its stated range."
+        },
+        {
+          "name": "Poison Immunity",
+          "description": "You are immune to poison damage and the poisoned condition."
+        },
+        {
+          "name": "Mendable",
+          "description": "When the mending spell is cast on you, it has the following alterations: It has a casting time of 1 action and requires a spell slot. If you have 0 hit points you become stable. As part of the casting of mending the caster may expend any level of spell slot to cause you to regain a number of hit points equal to 1d8, plus their spellcasting ability modifier. For each level of the spell slot expended you regain an additional 1d8 hit points."
+        },
+        {
+          "name": "Undead Nature",
+          "description": "Your creature type is undead. As such, spells like cure wounds don't affect you, and you are immune to spells like crown of madness or dominate person because they specifically target humanoids. You do not need to eat or breathe, and any food you do attempt to eat falls through the space in your rib cage. Rather than sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal."
+        }
+      ]
+    }
+  ]
+}
