@@ -1,0 +1,587 @@
+{
+  "$schema": "./class.schema.json",
+  "id": "paladin",
+  "name": "Paladin",
+  "system": "5th-edge",
+  "editionBase": "5e-2014",
+  "status": "approved",
+  "hitDie": 10,
+  "primaryAbility": "Charisma",
+  "savingThrows": [
+    "Wisdom",
+    "Charisma"
+  ],
+  "armorProficiencies": [
+    "All armor",
+    "Shields"
+  ],
+  "weaponProficiencies": [
+    "Simple weapons",
+    "Martial weapons"
+  ],
+  "skillChoices": {
+    "count": 2,
+    "from": [
+      "Athletics",
+      "Insight",
+      "Intimidation",
+      "Medicine",
+      "Persuasion",
+      "Religion"
+    ]
+  },
+  "subclass": {
+    "name": "Sacred Oath",
+    "chooseAtLevel": 1,
+    "featureLevels": [
+      1,
+      3,
+      6,
+      11,
+      17,
+      20
+    ]
+  },
+  "abilityScoreImprovementLevels": [
+    4,
+    8,
+    12,
+    16,
+    19
+  ],
+  "spellcasting": {
+    "startsAtLevel": 1,
+    "ability": "Charisma",
+    "progression": "prepared",
+    "spellListId": "paladin",
+    "prepareFormula": "Charisma modifier + half Paladin level, rounded down, minimum 1",
+    "focus": "Holy symbol",
+    "slotsByLevel": {
+      "1": {
+        "1": 2
+      },
+      "2": {
+        "1": 2
+      },
+      "3": {
+        "1": 3
+      },
+      "4": {
+        "1": 3
+      },
+      "5": {
+        "1": 4,
+        "2": 2
+      },
+      "6": {
+        "1": 4,
+        "2": 2
+      },
+      "7": {
+        "1": 4,
+        "2": 3
+      },
+      "8": {
+        "1": 4,
+        "2": 3
+      },
+      "9": {
+        "1": 4,
+        "2": 3,
+        "3": 2
+      },
+      "10": {
+        "1": 4,
+        "2": 3,
+        "3": 2
+      },
+      "11": {
+        "1": 4,
+        "2": 3,
+        "3": 3
+      },
+      "12": {
+        "1": 4,
+        "2": 3,
+        "3": 3
+      },
+      "13": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 1
+      },
+      "14": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 1
+      },
+      "15": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "16": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      },
+      "17": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 1
+      },
+      "18": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 1
+      },
+      "19": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 2
+      },
+      "20": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 2
+      }
+    },
+    "grantedSpellPolicy": {
+      "oathSpellsAlwaysPrepared": true,
+      "oathSpellsCountAgainstPrepared": false,
+      "treatNonPaladinOathSpellsAsPaladinSpells": true
+    }
+  },
+  "levels": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "features": [
+        "Lay on Hands",
+        "Sacred Oath",
+        "Spellcasting"
+      ],
+      "spellSlots": {
+        "1": 2
+      }
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "features": [
+        "Fighting Style",
+        "Divine Smite"
+      ],
+      "spellSlots": {
+        "1": 2
+      }
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "features": [
+        "Warrior of Divinity",
+        "Sacred Oath feature"
+      ],
+      "spellSlots": {
+        "1": 3
+      }
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "features": [
+        "Ability Score Improvement"
+      ],
+      "spellSlots": {
+        "1": 3
+      }
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "features": [
+        "Extra Attack"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 2
+      }
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "features": [
+        "Aura of Protection",
+        "Sacred Oath feature"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 2
+      }
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "features": [
+        "Harness Divine Power"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3
+      }
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "features": [
+        "Ability Score Improvement"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3
+      }
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "features": [
+        "Divine Health"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 2
+      }
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "features": [
+        "Aura of Courage"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 2
+      }
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "features": [
+        "Improved Divine Smite",
+        "Sacred Oath feature"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3
+      }
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "features": [
+        "Ability Score Improvement"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3
+      }
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "features": [
+        "Blessed Restoration"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 1
+      }
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "features": [
+        "Cleansing Touch"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 1
+      }
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "features": [
+        "Divine Mastery"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      }
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "features": [
+        "Ability Score Improvement"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 2
+      }
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "features": [
+        "Sacred Oath feature"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 1
+      }
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "features": [
+        "Aura Improvements"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 1
+      }
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "features": [
+        "Ability Score Improvement"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 2
+      }
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "features": [
+        "Sacred Oath feature"
+      ],
+      "spellSlots": {
+        "1": 4,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 2
+      }
+    }
+  ],
+  "features": [
+    {
+      "id": "hit-points",
+      "name": "Hit Points",
+      "level": 1,
+      "description": "Hit Dice: 1d10 per paladin level. Hit Points at 1st Level: 10 + your Constitution modifier. Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per paladin level after 1st."
+    },
+    {
+      "id": "proficiencies",
+      "name": "Proficiencies",
+      "level": 1,
+      "armor": [
+        "All armor",
+        "Shields"
+      ],
+      "weapons": [
+        "Simple weapons",
+        "Martial weapons"
+      ],
+      "tools": [],
+      "savingThrows": [
+        "Wisdom",
+        "Charisma"
+      ],
+      "choices": {
+        "skills": {
+          "count": 2,
+          "from": [
+            "Athletics",
+            "Insight",
+            "Intimidation",
+            "Medicine",
+            "Persuasion",
+            "Religion"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lay-on-hands",
+      "name": "Lay on Hands",
+      "level": 1,
+      "description": "Your blessed touch can heal wounds. You have a pool of healing power equal to five times your Paladin level, which replenishes when you finish a long rest. As a bonus action, you can touch a creature and spend points from the pool to restore that many hit points. Alternatively, you can spend 5 points to cure one disease or neutralize one poison affecting the target. This feature has no effect on Constructs or Undead.",
+      "activation": "bonus action",
+      "resource": {
+        "max": "5 * Paladin level",
+        "recharge": "longRest"
+      }
+    },
+    {
+      "id": "sacred-oath",
+      "name": "Sacred Oath",
+      "level": 1,
+      "description": "At 1st level, you swear the oath that binds you as a paladin forever. Your choice grants you features at 1st, 3rd, 6th, 11th, 17th, and 20th level. Oath spells are always prepared and do not count against the number of spells you can prepare. If an oath spell is not normally a Paladin spell, it counts as a Paladin spell for you. Your oath also grants Channel Divinity options. You can use Channel Divinity once and regain the use when you finish a short or long rest.",
+      "subclassFeatureLevels": [
+        1,
+        3,
+        6,
+        11,
+        17,
+        20
+      ],
+      "channelDivinity": {
+        "uses": 1,
+        "recharge": [
+          "shortRest",
+          "longRest"
+        ]
+      }
+    },
+    {
+      "id": "spellcasting",
+      "name": "Spellcasting",
+      "level": 1,
+      "description": "Charisma is your spellcasting ability for your Paladin spells. You prepare a number of Paladin spells equal to your Charisma modifier + half your Paladin level, rounded down, minimum one. Oath Spells and other granted spells do not count against this number.",
+      "ability": "Charisma",
+      "saveDC": "8 + proficiencyBonus + Charisma modifier",
+      "attackModifier": "proficiencyBonus + Charisma modifier",
+      "focus": "Holy symbol"
+    },
+    {
+      "id": "fighting-style",
+      "name": "Fighting Style",
+      "level": 2,
+      "description": "At 2nd level, you adopt a particular style of fighting as your specialty. You can't take the same Fighting Style more than once."
+    },
+    {
+      "id": "divine-smite",
+      "name": "Divine Smite",
+      "level": 2,
+      "description": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is a Fiend or Undead."
+    },
+    {
+      "id": "warrior-of-divinity",
+      "name": "Warrior of Divinity",
+      "level": 3,
+      "description": "At 3rd level, you always have the Shield spell prepared, and it does not count against the number of Paladin spells you can prepare. You can cast Shield without expending a spell slot a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest. You can also cast Shield normally using your spell slots.",
+      "grantedSpell": "Shield",
+      "freeUses": "proficiencyBonus",
+      "recharge": "longRest"
+    },
+    {
+      "id": "harness-divine-power",
+      "name": "Harness Divine Power",
+      "level": 7,
+      "description": "At 7th level, you can expend your use of Channel Divinity to fuel your spellcasting. As a bonus action, touch your holy symbol, utter a prayer, and regain one expended spell slot. The slot can be no higher than half your proficiency bonus, rounded up.",
+      "activation": "bonus action",
+      "cost": "1 Channel Divinity use",
+      "maxSlotLevel": "ceil(proficiencyBonus / 2)"
+    },
+    {
+      "id": "extra-attack",
+      "name": "Extra Attack",
+      "level": 5,
+      "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+    },
+    {
+      "id": "aura-of-protection",
+      "name": "Aura of Protection",
+      "level": 6,
+      "description": "Starting at 6th level, whenever you or a friendly creature within 10 feet of you makes a saving throw, the creature gains a bonus equal to your Charisma modifier, minimum +1. You must be conscious to grant this bonus. At 18th level, the range increases to 30 feet."
+    },
+    {
+      "id": "divine-health",
+      "name": "Divine Health",
+      "level": 9,
+      "description": "By 9th level, the divine magic flowing through you makes you immune to disease."
+    },
+    {
+      "id": "aura-of-courage",
+      "name": "Aura of Courage",
+      "level": 10,
+      "description": "Starting at 10th level, you and friendly creatures within 10 feet of you can't be frightened while you are conscious. At 18th level, the range increases to 30 feet."
+    },
+    {
+      "id": "improved-divine-smite",
+      "name": "Improved Divine Smite",
+      "level": 11,
+      "description": "By 11th level, whenever you hit a creature with a melee weapon attack, the creature takes an extra 1d8 radiant damage. This damage is in addition to any Divine Smite damage."
+    },
+    {
+      "id": "blessed-restoration",
+      "name": "Blessed Restoration",
+      "level": 13,
+      "description": "Beginning at 13th level, when you restore hit points to a creature using Lay on Hands or a Paladin spell, that creature gains the effects of Bless until the start of your next turn. This effect requires no concentration and does not stack with the Bless spell or another use of this feature."
+    },
+    {
+      "id": "cleansing-touch",
+      "name": "Cleansing Touch",
+      "level": 14,
+      "description": "Beginning at 14th level, you can use your action to end one spell affecting yourself or one willing creature you touch. You can use this feature a number of times equal to your Charisma modifier, minimum once, and regain all expended uses when you finish a long rest."
+    },
+    {
+      "id": "divine-mastery",
+      "name": "Divine Mastery",
+      "level": 15,
+      "description": "Starting at 15th level, you can use your Channel Divinity twice between rests instead of once. You regain both uses whenever you normally regain Channel Divinity.",
+      "channelDivinityUses": 2
+    },
+    {
+      "id": "aura-improvements",
+      "name": "Aura Improvements",
+      "level": 18,
+      "description": "At 18th level, the range of your Paladin auras increases from 10 feet to 30 feet. This includes Aura of Protection, Aura of Courage, and any Sacred Oath feature that specifically improves when your Paladin aura range increases."
+    }
+  ],
+  "notes": [
+    "Sacred Oath is chosen at 1st level.",
+    "Sacred Oath feature levels are 1, 3, 6, 11, 17, and 20.",
+    "The 20th-level feature is the oath-specific capstone.",
+    "Paladin has no Instinct Die."
+  ]
+}
