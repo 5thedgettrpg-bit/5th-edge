@@ -951,3 +951,26 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
   .edge8-equipment-art{min-height:300px}
   .edge8-equipment-art img{height:300px}
 }
+
+/* Readability pass: Species browser */
+.species-sidebar-head p{font-size:12px;line-height:1.5}
+.species-search{font-size:13px}
+.species-group-name{font-size:15px}
+.species-group-count{font-size:11px}
+.species-group-list a{font-size:13px;line-height:1.4}
+.species-hero .kicker{font-size:11px}
+.species-hero p{font-size:16px;line-height:1.68}
+.variant-control label{font-size:10px}
+.variant-control select{font-size:13px}
+.species-stat span{font-size:9px}
+.species-stat strong{font-size:17px}
+.species-source{font-size:10px}
+.species-feature summary{font-size:18px}
+.species-feature>div{font-size:14.5px;line-height:1.75}
+.species-empty{font-size:14px}
+@media(max-width:620px){
+  .species-group-list a{font-size:14px}
+  .species-hero p{font-size:15px}
+  .species-feature summary{font-size:17px}
+  .species-feature>div{font-size:14px}
+}
