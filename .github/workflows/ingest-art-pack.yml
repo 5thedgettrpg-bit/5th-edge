@@ -5,6 +5,9 @@ on:
     paths:
       - "incoming/5th-edge-art-pack.zip"
       - "incoming/5th-edge-extra-art-pack.zip"
+      - "5th-edge-art-pack.zip"
+      - "5th-edge-extra-art-pack.zip"
+      - ".github/workflows/ingest-art-pack.yml"
 
 permissions:
   contents: write
@@ -18,19 +21,28 @@ jobs:
           fetch-depth: 0
 
       - name: Extract primary art pack
-        if: ${{ hashFiles('incoming/5th-edge-art-pack.zip') != '' }}
+        shell: bash
         run: |
           mkdir -p assets/images/art assets/images/species
-          unzip -o incoming/5th-edge-art-pack.zip -d assets/images/art
+          if [ -f incoming/5th-edge-art-pack.zip ]; then
+            unzip -o incoming/5th-edge-art-pack.zip -d assets/images/art
+          elif [ -f 5th-edge-art-pack.zip ]; then
+            unzip -o 5th-edge-art-pack.zip -d assets/images/art
+          fi
           if [ -f assets/images/art/human-banner.webp ]; then
             cp assets/images/art/human-banner.webp assets/images/species/human-banner.webp
           fi
 
       - name: Extract extra art pack
-        if: ${{ hashFiles('incoming/5th-edge-extra-art-pack.zip') != '' }}
+        shell: bash
         run: |
           mkdir -p assets/images/art
-          unzip -o incoming/5th-edge-extra-art-pack.zip -d assets/images/art
+          if [ -f incoming/5th-edge-extra-art-pack.zip ]; then
+            unzip -o incoming/5th-edge-extra-art-pack.zip -d assets/images/art
+          fi
+          if [ -f 5th-edge-extra-art-pack.zip ]; then
+            unzip -o 5th-edge-extra-art-pack.zip -d assets/images/art
+          fi
 
       - name: Commit extracted assets
         run: |
