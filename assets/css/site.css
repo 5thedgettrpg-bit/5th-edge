@@ -900,3 +900,54 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
   .edge8-principle-phoenix{width:88vw;right:-34vw;top:12%;opacity:.09}
   .edge8-system-treasure{width:78vw;right:-28vw;bottom:2%;opacity:.09}
 }
+
+/* ===== Homepage distinct-art cleanup ===== */
+.edge8-race-art{overflow:visible}
+.edge8-race-art .race-main{right:6%;width:58%;height:96%}
+.edge8-race-art .race-accent{left:2%;width:46%;height:80%}
+.edge8-equipment{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
+  gap:clamp(34px,5vw,76px);
+  align-items:center;
+  padding:clamp(76px,8vw,112px) 7vw;
+}
+.edge8-equipment-copy{max-width:760px}
+.edge8-equipment-copy h2{
+  font:700 clamp(42px,4.8vw,66px)/1.02 Georgia,serif;
+  letter-spacing:-.03em;
+  color:#7f231e;
+  margin:0 0 18px;
+}
+.edge8-equipment-copy p{
+  font-size:clamp(16px,1.05vw,19px);
+  line-height:1.72;
+  color:#65554b;
+}
+.edge8-equipment-art{
+  min-height:460px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.edge8-equipment-art img{
+  width:100%;
+  height:460px;
+  object-fit:contain;
+  filter:drop-shadow(0 22px 32px rgba(67,45,31,.22));
+}
+@media(max-width:900px){
+  .edge8-equipment{
+    grid-template-columns:1fr;
+    padding:56px 22px;
+  }
+  .edge8-equipment-art{min-height:360px}
+  .edge8-equipment-art img{height:360px}
+}
+@media(max-width:560px){
+  .edge8-equipment{padding:46px 18px}
+  .edge8-equipment-copy h2{font-size:34px}
+  .edge8-equipment-copy p{font-size:16px}
+  .edge8-equipment-art{min-height:300px}
+  .edge8-equipment-art img{height:300px}
+}
