@@ -1,0 +1,468 @@
+{
+  "id": "rogue",
+  "name": "Rogue",
+  "system": "dnd5e",
+  "edition": "2014",
+  "source": "5th Edge",
+  "version": 1,
+  "hitPoints": {
+    "hitDie": 8,
+    "firstLevel": "8 + CON",
+    "higherLevels": "1d8 (or 5) + CON"
+  },
+  "proficiencies": {
+    "armor": [
+      "light armor"
+    ],
+    "weapons": [
+      "simple weapons",
+      "hand crossbows",
+      "longswords",
+      "rapiers",
+      "shortswords",
+      "scimitars",
+      "whips"
+    ],
+    "tools": [
+      "thieves' tools"
+    ],
+    "savingThrows": [
+      "dexterity",
+      "intelligence"
+    ],
+    "skills": {
+      "choose": 4,
+      "from": [
+        "acrobatics",
+        "athletics",
+        "deception",
+        "insight",
+        "intimidation",
+        "investigation",
+        "perception",
+        "performance",
+        "persuasion",
+        "sleight of hand",
+        "stealth"
+      ]
+    }
+  },
+  "subclass": {
+    "name": "Roguish Archetype",
+    "choiceLevel": 1,
+    "featureLevels": [
+      1,
+      3,
+      9,
+      13,
+      17
+    ]
+  },
+  "asiLevels": [
+    4,
+    8,
+    10,
+    12,
+    16,
+    19
+  ],
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "sneakAttack": null,
+      "features": [
+        "rogue-weapon-training",
+        "roguish-archetype",
+        "thieves-cant"
+      ]
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "sneakAttack": "2d8",
+      "features": [
+        "cunning-action",
+        "sneak-attack"
+      ]
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "sneakAttack": "2d8",
+      "features": [
+        "steady-aim",
+        "roguish-archetype-feature"
+      ]
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "sneakAttack": "2d8",
+      "features": [
+        "ability-score-improvement"
+      ]
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "sneakAttack": "3d8",
+      "features": [
+        "uncanny-dodge",
+        "follow-up"
+      ]
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "sneakAttack": "3d8",
+      "features": [
+        "expertise"
+      ]
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "sneakAttack": "3d8",
+      "features": [
+        "evasion"
+      ]
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "sneakAttack": "3d8",
+      "features": [
+        "ability-score-improvement"
+      ]
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "sneakAttack": "4d8",
+      "features": [
+        "roguish-archetype-feature"
+      ]
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "sneakAttack": "4d8",
+      "features": [
+        "ability-score-improvement"
+      ]
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "sneakAttack": "4d8",
+      "features": [
+        "reliable-talent",
+        "deadly-precision"
+      ]
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "sneakAttack": "4d8",
+      "features": [
+        "ability-score-improvement"
+      ]
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "sneakAttack": "5d8",
+      "features": [
+        "roguish-archetype-feature"
+      ]
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "sneakAttack": "5d8",
+      "features": [
+        "blindsense"
+      ]
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "sneakAttack": "5d8",
+      "features": [
+        "elusive"
+      ]
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "sneakAttack": "5d8",
+      "features": [
+        "ability-score-improvement"
+      ]
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "sneakAttack": "6d8",
+      "features": [
+        "roguish-archetype-feature"
+      ]
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "sneakAttack": "6d8",
+      "features": [
+        "stroke-of-luck"
+      ]
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "sneakAttack": "6d8",
+      "features": [
+        "ability-score-improvement"
+      ]
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "sneakAttack": "6d8",
+      "features": [
+        "reliable-strikes"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "rogue-weapon-training",
+      "name": "Rogue Weapon Training",
+      "level": 1,
+      "description": "When you deal damage with a light or finesse weapon, you can use a d8 in place of the weapon's normal damage die. If the weapon already uses a d8 or larger damage die, this feature does not increase it. This applies to qualifying melee and thrown attacks.",
+      "automation": {
+        "minimumDamageDie": "d8",
+        "weaponPropertyAny": [
+          "light",
+          "finesse"
+        ]
+      }
+    },
+    {
+      "id": "roguish-archetype",
+      "name": "Roguish Archetype",
+      "level": 1,
+      "description": "Choose an archetype at 1st level. It grants features at 1st, 3rd, 9th, 13th, and 17th level.",
+      "automation": {
+        "chooseSubclass": true,
+        "featureLevels": [
+          1,
+          3,
+          9,
+          13,
+          17
+        ]
+      }
+    },
+    {
+      "id": "thieves-cant",
+      "name": "Thieves' Cant",
+      "level": 1,
+      "description": "You know Thieves' Cant, including its secret signs and symbols."
+    },
+    {
+      "id": "cunning-action",
+      "name": "Cunning Action",
+      "level": 2,
+      "activation": "bonus action",
+      "description": "You can use a bonus action to Dash, Disengage, or Hide.",
+      "automation": {
+        "options": [
+          "dash",
+          "disengage",
+          "hide"
+        ]
+      }
+    },
+    {
+      "id": "sneak-attack",
+      "name": "Sneak Attack",
+      "level": 2,
+      "description": "Once per turn, deal extra damage with a finesse or ranged weapon if you have advantage, or if another enemy of the target is within 5 feet, is not incapacitated, and you do not have disadvantage.",
+      "automation": {
+        "uses": "oncePerTurn",
+        "weaponAny": [
+          "finesse",
+          "ranged"
+        ],
+        "damageByLevel": {
+          "2": "2d8",
+          "5": "3d8",
+          "9": "4d8",
+          "13": "5d8",
+          "17": "6d8"
+        }
+      }
+    },
+    {
+      "id": "steady-aim",
+      "name": "Steady Aim",
+      "level": 3,
+      "activation": "bonus action",
+      "description": "If you have not moved this turn, gain advantage on your next attack this turn and your speed becomes 0 until the end of the turn.",
+      "automation": {
+        "requiresNotMoved": true,
+        "nextAttackAdvantage": true,
+        "speedUntilEndOfTurn": 0
+      }
+    },
+    {
+      "id": "ability-score-improvement",
+      "name": "Ability Score Improvement",
+      "levels": [
+        4,
+        8,
+        10,
+        12,
+        16,
+        19
+      ],
+      "description": "Increase one ability by 2, two abilities by 1, or take an eligible feat if allowed.",
+      "automation": {
+        "builderChoice": "asiOrFeat",
+        "max": 20
+      }
+    },
+    {
+      "id": "uncanny-dodge",
+      "name": "Uncanny Dodge",
+      "level": 5,
+      "activation": "reaction",
+      "description": "When an attacker you can see hits you with an attack, halve the attack's damage against you.",
+      "automation": {
+        "halveIncomingAttackDamage": true,
+        "requiresVisibleAttacker": true
+      }
+    },
+    {
+      "id": "follow-up",
+      "name": "Follow Up",
+      "level": 5,
+      "activation": "bonus action",
+      "description": "When you reduce a hostile creature to 0 hit points with an attack, either move up to your speed without provoking opportunity attacks or make one thrown-weapon attack against another creature within normal range. Once per turn.",
+      "automation": {
+        "trigger": "reduceHostileToZeroWithAttack",
+        "uses": "oncePerTurn",
+        "options": [
+          "pursue",
+          "quick-throw"
+        ]
+      }
+    },
+    {
+      "id": "expertise",
+      "name": "Expertise",
+      "levels": [
+        1,
+        6
+      ],
+      "description": "Choose two proficient skills at 1st level and two more at 6th level. Double your proficiency bonus for checks using them.",
+      "automation": {
+        "choices": {
+          "1": 2,
+          "6": 2
+        },
+        "doubleProficiency": true
+      }
+    },
+    {
+      "id": "evasion",
+      "name": "Evasion",
+      "level": 7,
+      "description": "On a Dexterity save for half damage, take no damage on a success and half on a failure. Disabled while incapacitated.",
+      "automation": {
+        "dexSaveForHalf": {
+          "success": "none",
+          "failure": "half"
+        },
+        "disabledBy": [
+          "incapacitated"
+        ]
+      }
+    },
+    {
+      "id": "reliable-talent",
+      "name": "Reliable Talent",
+      "level": 11,
+      "description": "For an ability check that adds your proficiency bonus, treat a d20 roll of 9 or lower as 10.",
+      "automation": {
+        "minimumD20": 10,
+        "appliesTo": "proficientAbilityChecks"
+      }
+    },
+    {
+      "id": "deadly-precision",
+      "name": "Deadly Precision",
+      "level": 11,
+      "description": "Whenever you deal Sneak Attack damage, add your proficiency bonus to the damage.",
+      "automation": {
+        "modify": "sneak-attack",
+        "damageBonus": "PB"
+      }
+    },
+    {
+      "id": "blindsense",
+      "name": "Blindsense",
+      "level": 14,
+      "description": "If you can hear, you know the location of hidden or invisible creatures within 10 feet.",
+      "automation": {
+        "range": 10,
+        "unit": "ft",
+        "requiresHearing": true
+      }
+    },
+    {
+      "id": "elusive",
+      "name": "Elusive",
+      "level": 15,
+      "description": "No attack roll has advantage against you while you are not incapacitated.",
+      "automation": {
+        "preventAttackAdvantage": true,
+        "disabledBy": [
+          "incapacitated"
+        ]
+      }
+    },
+    {
+      "id": "stroke-of-luck",
+      "name": "Stroke of Luck",
+      "level": 18,
+      "description": "Turn a missed attack into a hit, or treat a failed ability-check d20 as 20. Recharge on a short or long rest.",
+      "automation": {
+        "uses": 1,
+        "recovery": [
+          "shortRest",
+          "longRest"
+        ],
+        "options": [
+          "missToHit",
+          "failedCheckTo20"
+        ]
+      }
+    },
+    {
+      "id": "reliable-strikes",
+      "name": "Reliable Strikes",
+      "level": 20,
+      "description": "With a finesse or ranged weapon, treat an attack d20 roll of 9 or lower as 10. A natural 1 still misses.",
+      "automation": {
+        "minimumAttackD20": 10,
+        "weaponAny": [
+          "finesse",
+          "ranged"
+        ],
+        "naturalOneStillMisses": true
+      }
+    }
+  ]
+}
