@@ -1,9 +1,10 @@
-name: Ingest 5th Edge art pack
+name: Ingest 5th Edge art packs
 
 on:
   push:
     paths:
       - "incoming/5th-edge-art-pack.zip"
+      - "incoming/5th-edge-extra-art-pack.zip"
 
 permissions:
   contents: write
@@ -16,21 +17,29 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Extract art pack
+      - name: Extract primary art pack
+        if: ${{ hashFiles('incoming/5th-edge-art-pack.zip') != '' }}
         run: |
-          rm -rf assets/images/art
           mkdir -p assets/images/art assets/images/species
           unzip -o incoming/5th-edge-art-pack.zip -d assets/images/art
-          cp assets/images/art/human-banner.webp assets/images/species/human-banner.webp
+          if [ -f assets/images/art/human-banner.webp ]; then
+            cp assets/images/art/human-banner.webp assets/images/species/human-banner.webp
+          fi
+
+      - name: Extract extra art pack
+        if: ${{ hashFiles('incoming/5th-edge-extra-art-pack.zip') != '' }}
+        run: |
+          mkdir -p assets/images/art
+          unzip -o incoming/5th-edge-extra-art-pack.zip -d assets/images/art
 
       - name: Commit extracted assets
         run: |
           git config user.name "5th Edge Asset Bot"
           git config user.email "5thedgettrpg@gmail.com"
-          git add assets/images/art assets/images/species/human-banner.webp
+          git add assets/images/art assets/images/species/human-banner.webp || true
           if git diff --cached --quiet; then
             echo "No asset changes."
             exit 0
           fi
-          git commit -m "Ingest licensed 5th Edge art pack"
+          git commit -m "Ingest licensed 5th Edge art assets"
           git push
