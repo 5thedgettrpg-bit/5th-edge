@@ -882,3 +882,21 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
     grid-template-columns:1fr;
   }
 }
+
+/* ===== Homepage unique art pass ===== */
+.edge8-principle{position:relative;overflow:hidden}
+.edge8-principle-phoenix{position:absolute;right:3vw;top:50%;transform:translateY(-50%);width:min(38vw,560px);height:86%;object-fit:contain;opacity:.16;filter:drop-shadow(0 24px 40px rgba(0,0,0,.35));pointer-events:none}
+.edge8-principle-title,.edge8-principle-grid{position:relative;z-index:2}
+.edge8-race-art .race-world{display:none!important}
+.edge8-race-art{background:radial-gradient(circle at 60% 52%,rgba(190,145,80,.13),transparent 46%)}
+.edge8-system{position:relative;overflow:hidden}
+.edge8-system-treasure{position:absolute;right:-3vw;bottom:-8%;width:min(34vw,480px);height:78%;object-fit:contain;opacity:.16;filter:drop-shadow(0 18px 28px rgba(77,50,31,.18));pointer-events:none}
+.edge8-system-copy,.edge8-system-grid{position:relative;z-index:2}
+@media(max-width:900px){
+  .edge8-principle-phoenix{width:62vw;height:58%;right:-14vw;top:20%;transform:none;opacity:.12}
+  .edge8-system-treasure{width:58vw;height:44%;right:-18vw;bottom:-2%;opacity:.12}
+}
+@media(max-width:560px){
+  .edge8-principle-phoenix{width:88vw;right:-34vw;top:12%;opacity:.09}
+  .edge8-system-treasure{width:78vw;right:-28vw;bottom:2%;opacity:.09}
+}
