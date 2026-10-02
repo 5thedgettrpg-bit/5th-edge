@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="5th Edge">
+  <rect width="512" height="512" rx="92" fill="#efe5d6"/>
+  <rect x="18" y="18" width="476" height="476" rx="78" fill="none" stroke="#8f241f" stroke-width="18"/>
+  <text x="256" y="285" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="172" font-weight="700" fill="#8f241f">5E</text>
+  <text x="256" y="352" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" letter-spacing="4" fill="#332a25">5TH EDGE</text>
+</svg>
