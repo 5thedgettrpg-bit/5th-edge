@@ -1310,15 +1310,51 @@ body,.page-main,.section,.hero,.premise,.library,.vtt,.site-footer{background:#f
   #equipment .treasure{width:min(60%,270px)!important;right:0!important;}
 }
 </style>
+
+<style>
+/* Restored full site footer + routed navigation */
+.mobile-menu{text-decoration:none}
+.site-footer{background:#fff!important;border-top:1px solid #ece8e3!important}
+.site-footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:grid;grid-template-columns:minmax(230px,.8fr) minmax(0,1.2fr);gap:72px;padding:52px 0 42px}
+.footer-brand img{width:190px;margin-bottom:18px}
+.footer-brand p{max-width:430px;font-size:13px;line-height:1.6;margin:0 0 16px}
+.compat-badge{display:inline-block;border:1px solid var(--red);color:var(--red);font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:7px 10px}
+.footer-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.footer-col h3{font:700 17px Georgia,serif;color:var(--red);margin:0 0 14px}
+.footer-col a{display:block;text-decoration:none;font-size:12px;font-weight:700;color:#675a51;margin:0 0 10px}
+.footer-col a:hover{color:var(--red)}
+.footer-legal{border-top:1px solid #ece8e3;background:#faf9f7}
+.footer-legal-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:18px 0}
+.footer-legal p{font-size:11px;line-height:1.55;margin:0;max-width:950px;color:#7b6f67}
+.footer-legal a{color:var(--red)}
+.footer-legal .footer-copy{font-size:11px;white-space:nowrap;color:#8a7d74}
+@media(max-width:900px){
+  .site-footer-inner{grid-template-columns:1fr;gap:34px}
+  .footer-columns{grid-template-columns:repeat(3,1fr)}
+  .footer-legal-inner{align-items:flex-start;flex-direction:column;gap:10px}
+}
+@media(max-width:560px){
+  .site-footer-inner,.footer-legal-inner{width:calc(100% - 28px)}
+  .footer-columns{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-col:last-child{grid-column:1/-1}
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="#top"><img src="https://raw.githubusercontent.com/5thedgettrpg-bit/5th-edge/main/assets/brand/5th-edge-logo.png" alt="5th Edge"></a>
+    <a class="brand" href="/"><img src="https://raw.githubusercontent.com/5thedgettrpg-bit/5th-edge/main/assets/brand/5th-edge-logo.png" alt="5th Edge"></a>
     <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="#races">Races</a><a href="#classes">Classes</a><a href="#library">Spells</a><a href="#equipment">Equipment</a><a href="#library">Rules</a><a class="builder" href="/character-builder/">Character Builder</a>
+      <a href="/classes/">Classes</a>
+      <a href="/species/">Races</a>
+      <a href="/backgrounds/">Backgrounds</a>
+      <a href="/feats/">Feats</a>
+      <a href="/spells/">Spells</a>
+      <a href="/rules/">Rules</a>
+      <a class="builder" href="/character-builder/">Character Builder</a>
     </nav>
-    <span class="mobile-menu">Explore 5th Edge</span>
+    <a class="mobile-menu" href="/rules/">Browse Rules</a>
   </div>
 </header>
 
@@ -1345,7 +1381,7 @@ body,.page-main,.section,.hero,.premise,.library,.vtt,.site-footer{background:#f
           <p class="eyebrow">DnD 5e 2014, revised as one complete system</p>
           <h1 id="home-title">5th Edge - A DnD 5e Alternative</h1>
           <p class="hero-lede">Keep the game you already know, then bring its classes, races, feats, spells, backgrounds and equipment back to one healthier baseline.</p>
-          <div class="hero-actions"><a class="text-link" href="#premise">Why 5th Edge exists</a><a class="text-link" href="#library">Browse the rulebook</a></div>
+          <div class="hero-actions"><a class="text-link" href="#premise">Why 5th Edge exists</a><a class="text-link" href="/rules/">Browse the rulebook</a></div>
         </div>
         <div class="hero-art" aria-hidden="true">
           <img class="hero-landscape" src="https://raw.githubusercontent.com/5thedgettrpg-bit/5th-edge/main/assets/images/art/magical-landscape.webp" alt="">
@@ -1428,7 +1464,45 @@ body,.page-main,.section,.hero,.premise,.library,.vtt,.site-footer{background:#f
   </main>
 </div>
 
-<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><img src="https://raw.githubusercontent.com/5thedgettrpg-bit/5th-edge/main/assets/brand/5th-edge-logo.png" alt="5th Edge"></div><div class="footer-main"><div class="footer-copy">An independent DnD 5e 2014 revision focused on making more of the existing game worth choosing again.</div><div class="footer-links"><a href="/classes/">Classes</a><a href="/species/">Races</a><a href="/spells/">Spells</a><a href="/rules/">Rules</a><a href="/legal/">Legal</a></div></div></div></footer>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-brand">
+      <img src="https://raw.githubusercontent.com/5thedgettrpg-bit/5th-edge/main/assets/brand/5th-edge-logo.png" alt="5th Edge">
+      <p>An independent fifth-edition compatible tabletop rules project with revised classes, character options, reference pages, and digital tools.</p>
+      <span class="compat-badge">5E Compatible</span>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <a href="/classes/">Classes</a>
+        <a href="/species/">Races</a>
+        <a href="/backgrounds/">Backgrounds</a>
+        <a href="/feats/">Feats</a>
+        <a href="/spells/">Spells</a>
+        <a href="/rules/">Rules</a>
+      </div>
+      <div class="footer-col">
+        <h3>Build</h3>
+        <a href="/character-builder/">Character Builder</a>
+        <a href="/classes/rogue/">Rogue</a>
+        <a href="/classes/ranger/">Ranger</a>
+        <a href="/classes/paladin/">Paladin</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="/legal/">Legal &amp; Licensing</a>
+        <a href="https://www.dndbeyond.com/srd">System Reference Documents</a>
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-inner">
+      <p>Contains material from SRD 5.1 and, where used, SRD 5.2.1. Both are available under the Creative Commons Attribution 4.0 International license. See <a href="/legal/">Legal &amp; Licensing</a> for source and attribution details.</p>
+      <span class="footer-copy">&copy; 2026 5th Edge</span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
 <style>
