@@ -124,3 +124,22 @@ a{color:inherit}
 @media(max-width:480px){
   .footer-columns{grid-template-columns:1fr}
 }
+
+/* Readability pass: Class browser/pages */
+.side p{font-size:12px;line-height:1.5}
+.class-link{font-size:13.5px;line-height:1.35}
+.hero p{font-size:16px;line-height:1.68}
+.hero-fact{font-size:13px}
+.subclass p{font-size:13px;line-height:1.55}
+.subclass select{font-size:13px}
+.class-table{font-size:12px}
+.class-table th{font-size:10px}
+.feature summary{font-size:18px}
+.feature small{font-size:9px}
+.feature-body{font-size:14.5px;line-height:1.75}
+@media(max-width:620px){
+  .class-link{font-size:14px}
+  .hero p{font-size:15px}
+  .feature summary{font-size:17px}
+  .feature-body{font-size:14px}
+}
