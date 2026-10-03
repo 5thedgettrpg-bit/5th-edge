@@ -164,8 +164,8 @@ def walk(drive, s3, folder_id, path_parts, desired, manifest):
 
         original_ext = os.path.splitext(item["name"])[1].lower()
         is_native = item["mimeType"] in GOOGLE_NATIVE_EXPORTS
-        if not is_native and original_ext not in ALLOWED_EXTENSIONS:
-            print(f"skip unsupported: {item['name']}")
+        if is_native or original_ext not in ALLOWED_EXTENSIONS:
+            print(f"skip non-public asset: {item['name']}")
             continue
 
         output_name = normalized_file_name(item["name"])
