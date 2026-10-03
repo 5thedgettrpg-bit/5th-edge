@@ -1788,3 +1788,15 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
     font-size:14px!important;
   }
 }
+
+
+/* Structured race feature prose and tables */
+.species-feature>div p{margin:0 0 12px}
+.species-feature>div p:last-child{margin-bottom:0}
+.species-table-wrap{margin:16px 0 6px;overflow-x:auto;border:1px solid #cdbba9;background:rgba(255,255,255,.22)}
+.species-data-table{width:100%;border-collapse:collapse;min-width:520px;font-size:12.5px}
+.species-data-table th{padding:9px 11px;background:linear-gradient(180deg,#9f2923,#8d201b);color:#fff4df;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+.species-data-table td{padding:9px 11px;border-top:1px solid #ddd0c2;border-right:1px solid #e5d9cc;color:#4c403a;vertical-align:top}
+.species-data-table td:last-child{border-right:0}
+.species-data-table tbody tr:nth-child(even) td{background:rgba(255,255,255,.24)}
+@media(max-width:620px){.species-data-table{min-width:460px;font-size:12px}}
