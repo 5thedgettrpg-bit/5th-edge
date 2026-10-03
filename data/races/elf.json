@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "elf",
   "name": "Elf",
   "category": "Fey Folk",
@@ -36,7 +36,46 @@
         },
         {
           "name": "Blessing of the Stars",
-          "description": "You know one cantrip of your choice from the Cleric spell list. Starting at 3rd level, you can cast Color Spray with this trait. Starting at 5th level, you can also cast Vortex Warp with this trait. Once you cast Color Spray or Vortex Warp with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know one cantrip of your choice from the Cleric spell list. Starting at 3rd level, you can cast Color Spray with this trait. Starting at 5th level, you can also cast Vortex Warp with this trait. Once you cast Color Spray or Vortex Warp with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know one cantrip of your choice from the Cleric spell list. Starting at 3rd level, you can cast Color Spray with this trait. Starting at 5th level, you can also cast Vortex Warp with this trait.",
+            "Once you cast Color Spray or Vortex Warp with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Cleric",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Color Spray",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Vortex Warp",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Keen Senses",
@@ -80,7 +119,45 @@
         },
         {
           "name": "Blessing of Lolth",
-          "description": "You know the Dancing Lights cantrip. Starting at 3rd level, you can cast Faerie Fire with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Faerie Fire or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Dancing Lights cantrip. Starting at 3rd level, you can cast Faerie Fire with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Faerie Fire or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Dancing Lights cantrip. Starting at 3rd level, you can cast Faerie Fire with this trait. Starting at 5th level, you can also cast Darkness with this trait.",
+            "Once you cast Faerie Fire or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Dancing Lights",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Faerie Fire",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Keen Senses",
@@ -125,7 +202,46 @@
         },
         {
           "name": "Blessing of the Fey",
-          "description": "You know one cantrip of your choice from the Bard spell list. Starting at 3rd level, you can cast Ceremony with this trait. Starting at 5th level, you can also cast Spiritual Weapon with this trait. Once you cast Ceremony or Spiritual Weapon with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know one cantrip of your choice from the Bard spell list. Starting at 3rd level, you can cast Ceremony with this trait. Starting at 5th level, you can also cast Spiritual Weapon with this trait. Once you cast Ceremony or Spiritual Weapon with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know one cantrip of your choice from the Bard spell list. Starting at 3rd level, you can cast Ceremony with this trait. Starting at 5th level, you can also cast Spiritual Weapon with this trait.",
+            "Once you cast Ceremony or Spiritual Weapon with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Bard",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Ceremony",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Spiritual Weapon",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Keen Senses",
@@ -169,7 +285,46 @@
         },
         {
           "name": "Blessing of the Arcane",
-          "description": "You know one cantrip of your choice from the Wizard spell list. Starting at 3rd level, you can cast Mage Armor with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Mage Armor or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know one cantrip of your choice from the Wizard spell list. Starting at 3rd level, you can cast Mage Armor with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Mage Armor or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know one cantrip of your choice from the Wizard spell list. Starting at 3rd level, you can cast Mage Armor with this trait. Starting at 5th level, you can also cast Misty Step with this trait.",
+            "Once you cast Mage Armor or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Wizard",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Mage Armor",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Misty Step",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Keen Senses",
@@ -213,7 +368,109 @@
         },
         {
           "name": "Blessing of the Shadows",
-          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Feather Fall with this trait. Starting at 5th level, you can also cast Shadow Blade with this trait. Once you cast Feather Fall or Shadow Blade with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Disguise Self, Silent Image 2nd Darkness, Invisibility 3rd Clairvoyance, Major Image 4th Greater Invisibility, Hallucinatory Terrain 5th Mislead"
+          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Feather Fall with this trait. Starting at 5th level, you can also cast Shadow Blade with this trait. Once you cast Feather Fall or Shadow Blade with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Disguise Self, Silent Image 2nd Darkness, Invisibility 3rd Clairvoyance, Major Image 4th Greater Invisibility, Hallucinatory Terrain 5th Mislead",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Disguise Self, Silent Image"
+              ],
+              [
+                "2nd",
+                "Darkness, Invisibility"
+              ],
+              [
+                "3rd",
+                "Clairvoyance, Major Image"
+              ],
+              [
+                "4th",
+                "Greater Invisibility, Hallucinatory Terrain"
+              ],
+              [
+                "5th",
+                "Mislead"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Feather Fall with this trait. Starting at 5th level, you can also cast Shadow Blade with this trait.",
+            "Once you cast Feather Fall or Shadow Blade with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Minor Illusion",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Feather Fall",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Shadow Blade",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Disguise Self",
+                  "Silent Image"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Darkness",
+                  "Invisibility"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Clairvoyance",
+                  "Major Image"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Greater Invisibility",
+                  "Hallucinatory Terrain"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Mislead"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Keen Senses",
@@ -257,7 +514,46 @@
         },
         {
           "name": "Blessing of the Moonweaver",
-          "description": "You know the Light cantrip. Starting at 3rd level, you can cast Sleep with this trait. Starting at 5th level, you can also cast Invisibility (self) with this trait. Once you cast Sleep or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Light cantrip. Starting at 3rd level, you can cast Sleep with this trait. Starting at 5th level, you can also cast Invisibility (self) with this trait. Once you cast Sleep or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Light cantrip. Starting at 3rd level, you can cast Sleep with this trait. Starting at 5th level, you can also cast Invisibility (self) with this trait.",
+            "Once you cast Sleep or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Light",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Sleep",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Invisibility",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "targetRestriction": "self"
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Keen Senses",
@@ -391,7 +687,46 @@
         },
         {
           "name": "Blessing of the Forest",
-          "description": "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Hunter's Mark or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Hunter's Mark or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait.",
+            "Once you cast Hunter's Mark or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Druid",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Hunter's Mark",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Pass without Trace",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Keen Senses",
