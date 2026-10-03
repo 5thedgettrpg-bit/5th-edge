@@ -100,8 +100,15 @@
     renderSpecies(data,chosen);
   }
 
-  function stat(label,value){
-    return '<div class="species-stat"><span>'+esc(label)+'</span><strong>'+esc(value || '-')+'</strong></div>';
+  function racialFeature(title,body,open=false){
+    return '<details class="species-core-feature" '+(open?'open':'')+'>'+
+      '<summary><span class="species-core-heading"><b>'+esc(title)+'</b></span><span class="plus">+</span></summary>'+
+      '<div class="species-core-body">'+body+'</div>'+
+    '</details>';
+  }
+
+  function racialLine(label,value){
+    return '<p><b>'+esc(label)+':</b> '+esc(value || '-')+'</p>';
   }
 
   function featureCard(f,i){
@@ -169,16 +176,20 @@
     if(variant.abilityScores?.secondary) abilityParts.push(variant.abilityScores.secondary+' +1');
     const ability=abilityParts.join(', ');
     const size=(variant.size||[]).join(' or ');
-    const darkvision=variant.darkvision ? variant.darkvision+' ft' : 'None';
+    const darkvision=variant.darkvision ? variant.darkvision+' ft' : null;
+    const speed=variant.speed?.raw || (variant.speed?.walk ? variant.speed.walk+' ft' : '-');
     const sourceBits=[...(variant.basedOn||[]), variant.source].filter(Boolean).join(' • ');
 
+    const racialBasics =
+      racialLine('Creature Type',variant.creatureType) +
+      racialLine('Size',size) +
+      racialLine('Speed',speed) +
+      racialLine('Languages',variant.languages);
+
     $('#speciesMeta').innerHTML =
-      stat('Ability Scores',ability) +
-      stat('Creature Type',variant.creatureType) +
-      stat('Size',size) +
-      stat('Speed',variant.speed?.raw || (variant.speed?.walk ? variant.speed.walk+' ft' : '-')) +
-      stat('Darkvision',darkvision) +
-      stat('Languages',variant.languages);
+      racialFeature('Racial Features',racialBasics,true) +
+      racialFeature('Ability Scores','<p><b>'+esc(ability || '-')+'</b></p>') +
+      (darkvision ? racialFeature('Darkvision','<p><b>'+esc(darkvision)+'</b></p>') : '');
 
     $('#speciesSource').textContent = sourceBits || '';
     $('#speciesVariantName').textContent = variant.name ? variant.name+' '+data.name : data.name;
