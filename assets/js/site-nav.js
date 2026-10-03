@@ -11,12 +11,31 @@
   const directLinks = [
     ['Home','/'],
     ['Races','/races/'],
-    ['Classes','/classes/'],
     ['Backgrounds','/backgrounds/'],
     ['Feats','/feats/']
   ];
 
   const groups = [
+    {
+      label: 'Classes',
+      panelClass: 'edge-nav-panel-classes',
+      sections: [
+        {title:'Classes', links:[
+          ['Barbarian','/classes/barbarian/'],
+          ['Bard','/classes/bard/'],
+          ['Cleric','/classes/cleric/'],
+          ['Druid','/classes/druid/'],
+          ['Fighter','/classes/fighter/'],
+          ['Monk','/classes/monk/'],
+          ['Paladin','/classes/paladin/'],
+          ['Ranger','/classes/ranger/'],
+          ['Rogue','/classes/rogue/'],
+          ['Sorcerer','/classes/sorcerer/'],
+          ['Warlock','/classes/warlock/'],
+          ['Wizard','/classes/wizard/']
+        ]}
+      ]
+    },
     {
       label: 'Character Options',
       sections: [
@@ -56,7 +75,7 @@
     btn.setAttribute('aria-controls','edge-nav-panel-'+gi);
 
     const panel = document.createElement('div');
-    panel.className = 'edge-nav-panel';
+    panel.className = 'edge-nav-panel'+(g.panelClass ? ' '+g.panelClass : '');
     panel.id = 'edge-nav-panel-'+gi;
 
     g.sections.forEach(s => {
@@ -90,6 +109,12 @@
     nav.appendChild(wrap);
   });
 
+  const builder = document.createElement('a');
+  builder.className = 'edge-nav-builder';
+  builder.href = 'https://play.familiararcanattrpg.com';
+  builder.textContent = 'Character Builder';
+  nav.appendChild(builder);
+
   const toggle = document.createElement('button');
   toggle.className = 'edge-nav-toggle';
   toggle.type = 'button';
@@ -101,8 +126,9 @@
   drawer.setAttribute('aria-label','Mobile navigation');
 
   const mobileSections = [
-    {title:'Browse',links:[['Home','/'],['Races','/races/'],['Classes','/classes/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
-    {title:'Character Options',links:[['Character Builder','/character-builder/']]},
+    {title:'Browse',links:[['Home','/'],['Races','/races/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
+    {title:'Classes',links:[['Barbarian','/classes/barbarian/'],['Bard','/classes/bard/'],['Cleric','/classes/cleric/'],['Druid','/classes/druid/'],['Fighter','/classes/fighter/'],['Monk','/classes/monk/'],['Paladin','/classes/paladin/'],['Ranger','/classes/ranger/'],['Rogue','/classes/rogue/'],['Sorcerer','/classes/sorcerer/'],['Warlock','/classes/warlock/'],['Wizard','/classes/wizard/']]},
+    {title:'Character Options',links:[['Character Builder','https://play.familiararcanattrpg.com']]},
     {title:'Rules and Content',links:[['Rules','/rules/'],['Spells','/spells/'],['Legal & Licensing','/legal/']]}
   ];
 
