@@ -1389,9 +1389,3 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
   .species-panel .race-banner-character{height:340px}
 }
 
-.species-panel .species-hero-approved:not(.is-eladrin) .race-banner-bg{
-  background:linear-gradient(110deg,#241b18 0%,#201714 58%,#551713 100%);
-}
-.species-panel .species-hero-approved:not(.is-eladrin) .race-banner-mobile-art{
-  background:linear-gradient(135deg,#2a0d0f,#5b1715);
-}
