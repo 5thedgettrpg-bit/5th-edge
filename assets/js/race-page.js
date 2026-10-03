@@ -30,8 +30,9 @@
   function currentFromUrl(){
     const p = new URLSearchParams(location.search);
     const m = location.pathname.match(/^\/(?:race|races)\/([^/]+)(?:\/([^/]+))?\/?$/);
+    const species = m ? decodeURIComponent(m[1]) : (p.get('race') || p.get('species') || null);
     return {
-      species:m ? decodeURIComponent(m[1]) : (p.get('race') || p.get('species') || 'human'),
+      species,
       variant:m?.[2] ? decodeURIComponent(m[2]) : (p.get('variant') || null)
     };
   }
@@ -55,14 +56,14 @@
     }
 
     const activeSpecies=state.manifest.species.find(x=>x.id===state.current);
-    const activeCategory=activeSpecies?.category || 'Common Folk';
+    const activeCategory=activeSpecies?.category || null;
 
     for(const c of state.manifest.categories){
       const items=(byCat.get(c.name)||[]).sort((a,b)=>a.name.localeCompare(b.name));
       const details=document.createElement('details');
       details.className='species-group';
       details.dataset.category=c.name;
-      details.open = c.name === activeCategory;
+      details.open = activeCategory ? c.name === activeCategory : false;
       details.innerHTML =
         '<summary>'+
           '<span class="species-category-icon '+categoryClass(c.name)+'" aria-hidden="true"></span>'+
@@ -90,6 +91,20 @@
       }
       host.appendChild(details);
     }
+  }
+
+  function renderRaceLanding(){
+    state.current=null;
+    state.variantId=null;
+    renderSidebar();
+    $('#speciesKicker').textContent='5th Edge';
+    $('#speciesTitle').textContent='Races';
+    $('#speciesIntro').textContent='Choose a race from the list to view its subraces, racial features, ability scores, movement, languages, and traits.';
+    $('#variantWrap').hidden=true;
+    $('#variantWrap').style.display='none';
+    $('#speciesHeroCharacter')?.classList.add('is-hidden');
+    $('.species-hero-approved')?.classList.remove('is-eladrin');
+    $('#speciesBody').innerHTML='<div class="species-empty">Choose a race from the left to begin.</div>';
   }
 
   async function selectSpecies(id,variantId=null,updateUrl=false){
@@ -256,10 +271,10 @@
         selectSpecies(state.current,state.variantId,false);
       });
       const q=currentFromUrl();
-      await selectSpecies(q.species,q.variant,false);
-      const desired=raceUrl(q.species,state.variantId || q.variant);
-      if(location.pathname.startsWith('/races/') || location.search.includes('variant=')){
-        history.replaceState({},'',desired);
+      if(q.species){
+        await selectSpecies(q.species,q.variant,false);
+      }else{
+        renderRaceLanding();
       }
     }catch(err){
       console.error(err);
