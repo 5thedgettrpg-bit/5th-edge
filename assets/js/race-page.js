@@ -61,7 +61,8 @@
     const activeSpecies=state.manifest.species.find(x=>x.id===state.current);
     const activeCategory=activeSpecies?.category || null;
 
-    for(const c of state.manifest.categories){
+    const sortedCategories=[...state.manifest.categories].sort((a,b)=>a.name.localeCompare(b.name));
+    for(const c of sortedCategories){
       const items=(byCat.get(c.name)||[]).sort((a,b)=>a.name.localeCompare(b.name));
       const details=document.createElement('details');
       details.className='species-group';
