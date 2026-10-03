@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "genasi",
   "name": "Genasi",
   "category": "Otherworldly",
@@ -33,7 +33,109 @@
         },
         {
           "name": "Merge with Stone",
-          "description": "You know the Mold Earth cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Dust Devil with this trait. Once you cast Shield or Dust Devil with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Earth Tremor 2nd Earthbind, Pass Without A Trace 3rd Erupting Earth, Wall of Sand 4th Stoneskin, Summon Construct 5th Passwall"
+          "description": "You know the Mold Earth cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Dust Devil with this trait. Once you cast Shield or Dust Devil with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Earth Tremor 2nd Earthbind, Pass Without A Trace 3rd Erupting Earth, Wall of Sand 4th Stoneskin, Summon Construct 5th Passwall",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Absorb Elements, Earth Tremor"
+              ],
+              [
+                "2nd",
+                "Earthbind, Pass Without A Trace"
+              ],
+              [
+                "3rd",
+                "Erupting Earth, Wall of Sand"
+              ],
+              [
+                "4th",
+                "Stoneskin, Summon Construct"
+              ],
+              [
+                "5th",
+                "Passwall"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Mold Earth cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Dust Devil with this trait.",
+            "Once you cast Shield or Dust Devil with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Mold Earth",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Shield",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Dust Devil",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Absorb Elements",
+                  "Earth Tremor"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Earthbind",
+                  "Pass Without A Trace"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Erupting Earth",
+                  "Wall of Sand"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Stoneskin",
+                  "Summon Construct"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Passwall"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Mountain Skin",
@@ -70,7 +172,109 @@
         },
         {
           "name": "Reach to the Blaze",
-          "description": "You know the Produce Flame cantrip. Starting at 3rd level, you can cast Burning Hands with this trait. Starting at 5th level, you can also cast Scorching Ray with this trait. Once you cast Burning Hands or Scorching Ray with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Searing Smite 2nd Flaming Sphere, Heat Metal 3rd Elemental Weapon, Flame Arrows 4th Fire Shield, Wall of Fire 5th Immolation"
+          "description": "You know the Produce Flame cantrip. Starting at 3rd level, you can cast Burning Hands with this trait. Starting at 5th level, you can also cast Scorching Ray with this trait. Once you cast Burning Hands or Scorching Ray with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Searing Smite 2nd Flaming Sphere, Heat Metal 3rd Elemental Weapon, Flame Arrows 4th Fire Shield, Wall of Fire 5th Immolation",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Absorb Elements, Searing Smite"
+              ],
+              [
+                "2nd",
+                "Flaming Sphere, Heat Metal"
+              ],
+              [
+                "3rd",
+                "Elemental Weapon, Flame Arrows"
+              ],
+              [
+                "4th",
+                "Fire Shield, Wall of Fire"
+              ],
+              [
+                "5th",
+                "Immolation"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Produce Flame cantrip. Starting at 3rd level, you can cast Burning Hands with this trait. Starting at 5th level, you can also cast Scorching Ray with this trait.",
+            "Once you cast Burning Hands or Scorching Ray with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Produce Flame",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Burning Hands",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Scorching Ray",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Absorb Elements",
+                  "Searing Smite"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Flaming Sphere",
+                  "Heat Metal"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Elemental Weapon",
+                  "Flame Arrows"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Fire Shield",
+                  "Wall of Fire"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Immolation"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Fire Resistance",
@@ -107,7 +311,109 @@
         },
         {
           "name": "Call to the Wave",
-          "description": "You know the Acid Splash cantrip. Starting at 3rd level, you can cast Create or Destroy Water with this trait. Starting at 5th level, you can also cast Water Walk with this trait. Once you cast Create or Destroy Water or Water Walk with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Frost Fingers 2nd Snilloc's Snowball Swarm, Rime's Binding Ice 3rd Tidal Wave, Wall of Water 4th Control Water, Watery Sphere 5th Destructive Wave"
+          "description": "You know the Acid Splash cantrip. Starting at 3rd level, you can cast Create or Destroy Water with this trait. Starting at 5th level, you can also cast Water Walk with this trait. Once you cast Create or Destroy Water or Water Walk with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Frost Fingers 2nd Snilloc's Snowball Swarm, Rime's Binding Ice 3rd Tidal Wave, Wall of Water 4th Control Water, Watery Sphere 5th Destructive Wave",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Absorb Elements, Frost Fingers"
+              ],
+              [
+                "2nd",
+                "Snilloc's Snowball Swarm, Rime's Binding Ice"
+              ],
+              [
+                "3rd",
+                "Tidal Wave, Wall of Water"
+              ],
+              [
+                "4th",
+                "Control Water, Watery Sphere"
+              ],
+              [
+                "5th",
+                "Destructive Wave"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Acid Splash cantrip. Starting at 3rd level, you can cast Create or Destroy Water with this trait. Starting at 5th level, you can also cast Water Walk with this trait.",
+            "Once you cast Create or Destroy Water or Water Walk with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Acid Splash",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Create or Destroy Water",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Water Walk",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Absorb Elements",
+                  "Frost Fingers"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Snilloc's Snowball Swarm",
+                  "Rime's Binding Ice"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Tidal Wave",
+                  "Wall of Water"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Control Water",
+                  "Watery Sphere"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Destructive Wave"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Acid Resistance",
@@ -144,7 +450,109 @@
         },
         {
           "name": "Mingle with the Wind",
-          "description": "You know the Shocking Grasp cantrip. Starting at 3rd level, you can cast Feather Fall with this trait. Starting at 5th level, you can also cast Blur with this trait. Once you cast Feather Fall or Blur with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Zephyr Strike 2nd Gust of Wind, Warding Wind 3rd Call Lightning, Fly 4th Freedom of Movement, Ice Storm 5th Control Winds"
+          "description": "You know the Shocking Grasp cantrip. Starting at 3rd level, you can cast Feather Fall with this trait. Starting at 5th level, you can also cast Blur with this trait. Once you cast Feather Fall or Blur with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Absorb Elements, Zephyr Strike 2nd Gust of Wind, Warding Wind 3rd Call Lightning, Fly 4th Freedom of Movement, Ice Storm 5th Control Winds",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Absorb Elements, Zephyr Strike"
+              ],
+              [
+                "2nd",
+                "Gust of Wind, Warding Wind"
+              ],
+              [
+                "3rd",
+                "Call Lightning, Fly"
+              ],
+              [
+                "4th",
+                "Freedom of Movement, Ice Storm"
+              ],
+              [
+                "5th",
+                "Control Winds"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Shocking Grasp cantrip. Starting at 3rd level, you can cast Feather Fall with this trait. Starting at 5th level, you can also cast Blur with this trait.",
+            "Once you cast Feather Fall or Blur with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Shocking Grasp",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Feather Fall",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Blur",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Absorb Elements",
+                  "Zephyr Strike"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Gust of Wind",
+                  "Warding Wind"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Call Lightning",
+                  "Fly"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Freedom of Movement",
+                  "Ice Storm"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Control Winds"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Lightning Resistance",
