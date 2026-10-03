@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "half-elf",
   "name": "Half-Elf",
   "category": "Common Folk",
@@ -72,7 +72,46 @@
         },
         {
           "name": "Drow Origin",
-          "description": "You know one cantrip of your choice from the Cleric spell list. Starting at 3rd level, you can cast Color Spray with this trait. Starting at 5th level, you can also cast Vortex Warp with this trait. Once you cast Color Spray or Vortex Warp with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know one cantrip of your choice from the Cleric spell list. Starting at 3rd level, you can cast Color Spray with this trait. Starting at 5th level, you can also cast Vortex Warp with this trait. Once you cast Color Spray or Vortex Warp with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know one cantrip of your choice from the Cleric spell list. Starting at 3rd level, you can cast Color Spray with this trait. Starting at 5th level, you can also cast Vortex Warp with this trait.",
+            "Once you cast Color Spray or Vortex Warp with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Cleric",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Color Spray",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Vortex Warp",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -108,7 +147,46 @@
         },
         {
           "name": "High Elf Origin",
-          "description": "You know one cantrip of your choice from the Wizard spell list. Starting at 3rd level, you can cast Mage Armor with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Mage Armor or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know one cantrip of your choice from the Wizard spell list. Starting at 3rd level, you can cast Mage Armor with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Mage Armor or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know one cantrip of your choice from the Wizard spell list. Starting at 3rd level, you can cast Mage Armor with this trait. Starting at 5th level, you can also cast Misty Step with this trait.",
+            "Once you cast Mage Armor or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Wizard",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Mage Armor",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Misty Step",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -148,7 +226,45 @@
         },
         {
           "name": "Magical Detection",
-          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Detect Magic with this trait. Starting at 5th level, you can also cast See Invisibility with this trait. Once you cast Detect Magic or See Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Detect Magic with this trait. Starting at 5th level, you can also cast See Invisibility with this trait. Once you cast Detect Magic or See Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Detect Magic with this trait. Starting at 5th level, you can also cast See Invisibility with this trait.",
+            "Once you cast Detect Magic or See Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Detect Magic",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "See Invisibility",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -188,7 +304,45 @@
         },
         {
           "name": "Headwinds",
-          "description": "You know the Gust cantrip. Starting at 3rd level, you can cast Thunderwave with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait. Once you cast Thunderwave or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Gust cantrip. Starting at 3rd level, you can cast Thunderwave with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait. Once you cast Thunderwave or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Gust cantrip. Starting at 3rd level, you can cast Thunderwave with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait.",
+            "Once you cast Thunderwave or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Gust",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Thunderwave",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Gust of Wind",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Storms Boon",
@@ -228,7 +382,46 @@
         },
         {
           "name": "Wood Elf Origin",
-          "description": "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Hunter's Mark or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Hunter's Mark or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait.",
+            "Once you cast Hunter's Mark or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Druid",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Hunter's Mark",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Pass without Trace",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
