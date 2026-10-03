@@ -28,7 +28,7 @@
       "features": [
         {
           "name": "Powerful Build",
-          "description": "Count as one size larger for carrying capacity and push/drag/lift limits."
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
         },
         {
           "name": "Loxodon Serenity",
