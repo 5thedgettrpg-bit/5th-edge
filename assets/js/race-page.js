@@ -261,10 +261,6 @@
       if(location.pathname.startsWith('/races/') || location.search.includes('variant=')){
         history.replaceState({},'',desired);
       }
-      const desired=raceUrl(q.species,state.variantId || q.variant);
-      if(location.pathname.startsWith('/races/') || location.search.includes('variant=')){
-        history.replaceState({},'',desired);
-      }
     }catch(err){
       console.error(err);
       $('#speciesBody').innerHTML='<div class="species-empty">Species data could not be loaded.</div>';
