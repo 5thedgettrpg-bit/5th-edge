@@ -92,7 +92,7 @@
       ['Eldritch Invocations','/eldritch-invocations/'],
       ['Spells','/spells/']
     ]}
-  ]);
+  ],'edge-nav-panel-character-options');
   addMega('Rules and Content',[
     {title:'Rules Library',links:[['Rules','/rules/']]},
     {title:'Project',links:[['Legal & Licensing','/legal/']]}

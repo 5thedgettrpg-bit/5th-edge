@@ -1,0 +1,41 @@
+/* Character option archives use the same visual language as the Race browser */
+.reference-layout{width:min(1280px,calc(100% - 40px));margin:22px auto 44px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:18px}
+.reference-sidebar{background:#352923;border:1px solid #4e3c32;border-radius:6px;overflow:hidden;box-shadow:0 16px 38px rgba(42,26,20,.16);align-self:start;position:sticky;top:92px}
+.reference-sidebar-head{padding:18px 16px 15px;border-bottom:1px solid #5a4439}
+.reference-sidebar-head h2{margin:0;color:#f0ce84;font:700 20px Georgia,serif}
+.reference-sidebar-head p{margin:7px 0 0;color:#d8c6b5;font-size:12px;line-height:1.5}
+.reference-sidebar a{display:block;padding:12px 16px;color:#f0e3d5;text-decoration:none;font-size:13px;font-weight:800;border-bottom:1px solid rgba(255,255,255,.06)}
+.reference-sidebar a:hover,.reference-sidebar a.active{background:#a72a24;color:#fff}
+.reference-panel{overflow:hidden;border:1px solid #cdbba9;border-radius:6px;background:linear-gradient(180deg,#f8f1e7,#f4eadf);box-shadow:0 20px 46px rgba(52,31,22,.12)}
+.reference-hero{position:relative;min-height:360px;overflow:hidden;border-bottom:4px solid #d2a449;background:
+linear-gradient(90deg,rgba(29,18,17,.98) 0%,rgba(34,19,18,.91) 37%,rgba(54,17,16,.52) 65%,rgba(38,9,9,.10) 100%),
+url('/assets/images/species/eladrin-banner-background.jpg') center/cover no-repeat}
+.reference-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 44%,rgba(173,42,35,.19) 44%,rgba(173,42,35,.19) 47%,transparent 47%)}
+.reference-hero-copy{position:relative;z-index:2;max-width:650px;padding:62px 64px}
+.reference-kicker{color:#f0ce84;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.reference-hero h1{margin:11px 0 20px;color:#f7ead3;font:700 clamp(52px,6vw,82px)/.92 Georgia,serif;letter-spacing:-.04em}
+.reference-hero p{margin:0;color:#e3d3c5;font-size:16px;line-height:1.65;max-width:600px}
+.reference-body{padding:28px 40px 40px}
+.reference-search{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+.reference-search input,.reference-search select{min-height:42px;border:1px solid #cbb8a4;background:#fffaf3;color:#46372f;padding:9px 12px;font:700 13px Inter,system-ui,sans-serif}
+.reference-search input{flex:1;min-width:220px}
+.reference-ribbon{display:inline-block;margin:4px 0 18px;padding:9px 30px 9px 20px;background:linear-gradient(90deg,#781b17,#a72a24);color:#fff4df;font:700 22px/1 Georgia,serif;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%,8px 50%)}
+.reference-feature{border-top:1px solid #d4c4b5}
+.reference-feature:last-child{border-bottom:1px solid #d4c4b5}
+.reference-feature summary{position:relative;display:grid;grid-template-columns:1fr 18px;align-items:center;padding:14px 8px 14px 28px;cursor:pointer;list-style:none;color:#41332d;font:700 18px Georgia,serif}
+.reference-feature summary::-webkit-details-marker{display:none}
+.reference-feature summary:before{content:"◆";position:absolute;left:7px;color:#bd935d;font:700 9px Arial}
+.reference-feature summary span{color:#a72a24;font:900 14px Arial;text-align:center}
+.reference-feature[open] summary{color:#9b241f}
+.reference-feature[open] summary span{transform:rotate(45deg)}
+.reference-feature div{margin:0 0 16px 28px;padding:2px 28px 2px 14px;border-left:2px solid #bd935d;color:#5c4e47;font-size:14.5px;line-height:1.75}
+.reference-feature a{color:#9b241f;font-weight:800}
+.error-shell{width:min(1000px,calc(100% - 32px));margin:70px auto 90px;text-align:center}
+.error-code{font:900 clamp(96px,18vw,220px)/.8 Georgia,serif;color:#a72a24;opacity:.14}
+.error-card{margin-top:-35px;padding:44px 30px;background:#f8f1e7;border:1px solid #cdbba9;border-radius:8px;box-shadow:0 22px 50px rgba(52,31,22,.12)}
+.error-card h1{margin:0;color:#6f1f1a;font:700 clamp(38px,5vw,64px) Georgia,serif}
+.error-card p{max-width:640px;margin:16px auto 24px}
+.error-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.error-actions a{padding:11px 16px;text-decoration:none;font-weight:900;border:1px solid #bca48f;color:#5b4b41;background:#fffaf3;border-radius:5px}
+.error-actions a.primary{background:#a72a24;color:#fff;border-color:#a72a24}
+@media(max-width:900px){.reference-layout{grid-template-columns:1fr}.reference-sidebar{position:static}.reference-hero-copy{padding:46px 28px}.reference-body{padding:24px 22px 34px}}
