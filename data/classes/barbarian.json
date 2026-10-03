@@ -100,7 +100,6 @@
       3,
       7,
       11,
-      13,
       17
     ],
     "required": true
@@ -243,7 +242,7 @@
       "level": 13,
       "proficiencyBonus": 5,
       "features": [
-        "primal-path-feature"
+        "dauntless"
       ],
       "rages": 5,
       "rageDamage": 5,
@@ -482,7 +481,7 @@
       "name": "Primal Path",
       "level": 1,
       "type": "subclassChoice",
-      "description": "At 1st level, you choose a Primal Path that shapes the nature of your rage and the source of your primal power. Your Primal Path grants you a feature at 1st level and additional features at 3rd, 7th, 11th, 13th, and 17th level.",
+      "description": "At 1st level, you choose a Primal Path that shapes the nature of your rage and the source of your primal power. Your Primal Path grants you a feature at 1st level and additional features at 3rd, 7th, 11th, and 17th level.",
       "automation": {
         "chooseSubclass": true,
         "subclassFeatureLevels": [
@@ -490,7 +489,6 @@
           3,
           7,
           11,
-          13,
           17
         ]
       }
@@ -682,6 +680,35 @@
         "minimumCheckTotal": {
           "ability": "strength",
           "minimumFrom": "abilityScore.strength"
+        }
+      }
+    },
+    {
+      "id": "dauntless",
+      "name": "Dauntless",
+      "level": 13,
+      "type": "passive",
+      "description": "At 13th level, you have advantage on saving throws and ability checks you make to avoid or end the frightened or charmed condition. In addition, at the start of your turn, you can end the frightened or charmed condition on yourself. You can end one of these conditions this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+      "resource": {
+        "max": "proficiencyBonus",
+        "recharge": "longRest"
+      },
+      "automation": {
+        "advantage": {
+          "appliesTo": [
+            "avoidFrightened",
+            "endFrightened",
+            "avoidCharmed",
+            "endCharmed"
+          ]
+        },
+        "startOfTurn": {
+          "optional": true,
+          "endOneCondition": [
+            "frightened",
+            "charmed"
+          ],
+          "spendResource": "dauntless"
         }
       }
     },
