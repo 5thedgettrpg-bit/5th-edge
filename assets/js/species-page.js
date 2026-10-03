@@ -112,6 +112,41 @@
     return '<p><b>'+esc(label)+':</b> '+esc(value || '-')+'</p>';
   }
 
+  function abilityScoreDescription(data,variant){
+    const primary=variant.abilityScores?.primary || null;
+    const secondary=variant.abilityScores?.secondary || null;
+
+    if(data?.id==='human' && primary==='Constitution' && secondary==='All'){
+      return 'Your Constitution score increases by 2, and your Strength, Dexterity, Wisdom, Intelligence, and Charisma scores each increase by 1.';
+    }
+
+    if(primary && secondary && secondary !== 'Any' && secondary !== 'All'){
+      return 'Your '+primary+' score increases by 2, and your '+secondary+' score increases by 1.';
+    }
+
+    if(primary && secondary==='Any'){
+      return 'Your '+primary+' score increases by 2, and one other ability score of your choice increases by 1.';
+    }
+
+    if(primary==='Any' && !secondary){
+      return 'One ability score of your choice increases by 2.';
+    }
+
+    if(primary && secondary==='All'){
+      return 'Your '+primary+' score increases by 2, and each of your other ability scores increases by 1.';
+    }
+
+    if(primary){
+      return 'Your '+primary+' score increases by 2.';
+    }
+
+    return 'Your ability scores increase as described by this race.';
+  }
+
+  function darkvisionDescription(distance){
+    return 'You can see in dim light within '+distance+' feet of you as if it were bright light, and in darkness as if it were dim light. You can\'t discern color in darkness, only shades of gray.';
+  }
+
   function featureCard(f,i){
     return '<details class="species-feature" '+(i===0?'open':'')+'><summary>'+esc(f.name || 'Feature')+'<span>+</span></summary><div>'+esc(f.description || '')+'</div></details>';
   }
@@ -158,12 +193,9 @@
       return;
     }
 
-    const abilityParts=[];
-    if(variant.abilityScores?.primary) abilityParts.push(variant.abilityScores.primary+' +2');
-    if(variant.abilityScores?.secondary) abilityParts.push(variant.abilityScores.secondary+' +1');
-    const ability=abilityParts.join(', ');
+    const ability=abilityScoreDescription(data,variant);
     const size=(variant.size||[]).join(' or ');
-    const darkvision=variant.darkvision ? variant.darkvision+' ft' : null;
+    const darkvision=variant.darkvision ? darkvisionDescription(variant.darkvision) : null;
     const speed=variant.speed?.raw || (variant.speed?.walk ? variant.speed.walk+' ft' : '-');
     const sourceBits=[...(variant.basedOn||[]), variant.source].filter(Boolean).join(' • ');
     $('#speciesKicker').textContent = sourceBits || '5th Edge Race';
@@ -176,8 +208,8 @@
 
     $('#speciesMeta').innerHTML =
       racialFeature('Racial Features',racialBasics,true) +
-      racialFeature('Ability Scores','<p><b>'+esc(ability || '-')+'</b></p>') +
-      (darkvision ? racialFeature('Darkvision','<p><b>'+esc(darkvision)+'</b></p>') : '');
+      racialFeature('Ability Scores','<p>'+esc(ability)+'</p>') +
+      (darkvision ? racialFeature('Darkvision','<p>'+esc(darkvision)+'</p>') : '');
 
     $('#speciesSource').textContent = '';
     $('#speciesVariantName').textContent = variant.name ? variant.name+' '+data.name : data.name;
