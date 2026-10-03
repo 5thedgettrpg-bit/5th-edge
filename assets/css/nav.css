@@ -1,6 +1,8 @@
 /* Shared 5th Edge navigation */
 .edge-nav{margin-left:auto;display:flex;align-items:center;gap:8px}
 .edge-nav-group{position:relative}
+.edge-nav-direct{display:inline-flex;align-items:center;color:#61544b;text-decoration:none;font:800 12px/1 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:12px 10px;white-space:nowrap}
+.edge-nav-direct:hover{color:#a72a24}
 .edge-nav-trigger{appearance:none;border:0;background:transparent;color:#61544b;font:800 12px/1 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:12px 10px;cursor:pointer}
 .edge-nav-trigger:hover,.edge-nav-trigger[aria-expanded="true"]{color:#a72a24}
 .edge-nav-panel{position:absolute;top:calc(100% + 12px);right:0;width:min(720px,calc(100vw - 32px));display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:20px;background:#faf6ee;border:1px solid #d8cdc1;border-top:3px solid #a72a24;border-radius:8px;box-shadow:0 18px 44px rgba(45,29,22,.18);z-index:120}
