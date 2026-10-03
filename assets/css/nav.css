@@ -25,3 +25,20 @@
   .site-header-inner,.header-inner{flex-wrap:wrap}
   .edge-mobile-drawer{order:3}
 }
+
+.edge-nav-panel-classes{
+  width:min(640px,calc(100vw - 32px));
+  grid-template-columns:1fr!important;
+}
+.edge-nav-panel-classes .edge-nav-section{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px 18px;
+}
+.edge-nav-panel-classes .edge-nav-section h3{
+  grid-column:1/-1;
+  margin-bottom:4px;
+}
+.edge-nav-panel-classes .edge-nav-section a{
+  padding:8px 0;
+}
