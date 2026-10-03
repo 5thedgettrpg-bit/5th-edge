@@ -12,7 +12,7 @@
     {
       label: 'Character Options',
       sections: [
-        {title:'Build a Character', links:[['Classes','/classes/'],['Species','/species/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
+        {title:'Build a Character', links:[['Classes','/classes/'],['Race','/races/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
         {title:'Popular Classes', links:[['Barbarian','/classes/barbarian/'],['Paladin','/classes/paladin/'],['Ranger','/classes/ranger/'],['Rogue','/classes/rogue/']]},
         {title:'Tools', links:[['Character Builder','/character-builder/']]}
       ]
@@ -21,7 +21,7 @@
       label: 'Rules & Content',
       sections: [
         {title:'Rules Library', links:[['Rules','/rules/'],['Spells','/spells/']]},
-        {title:'Browse', links:[['Classes','/classes/'],['Species','/species/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
+        {title:'Browse', links:[['Classes','/classes/'],['Race','/races/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
         {title:'Project', links:[['Legal & Licensing','/legal/'],['Home','/']]}
       ]
     }
@@ -93,7 +93,7 @@
   drawer.setAttribute('aria-label','Mobile navigation');
 
   const mobileSections = [
-    {title:'Character Options',links:[['Classes','/classes/'],['Species','/species/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
+    {title:'Character Options',links:[['Classes','/classes/'],['Race','/races/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
     {title:'Rules & Content',links:[['Spells','/spells/'],['Rules','/rules/']]},
     {title:'Tools',links:[['Character Builder','/character-builder/'],['Legal & Licensing','/legal/']]}
   ];

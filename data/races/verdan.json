@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "verdan",
+  "name": "Verdan",
+  "category": "Otherworldly",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "AI"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small",
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, Goblin, and one.",
+      "features": [
+        {
+          "name": "Dispassion",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+          "name": "Black Blood Healing",
+          "description": "When you roll either 1 or 2 on any Hit Die you spend at the end of a short rest, you can re-roll the die and must use the new roll."
+        },
+        {
+          "name": "Limited Telepathy",
+          "description": "You can telepathically speak to any creature you can see within 30 feet. You don't need to share a language with the creature for it to understand your telepathy, but it must be able to understand at least one language. This process of communication is slow and limited, allowing you to transmit and receive only simple ideas and straightforward concepts."
+        },
+        {
+          "name": "Persuasive",
+          "description": "You have proficiency in the Persuasion skill."
+        }
+      ]
+    }
+  ]
+}

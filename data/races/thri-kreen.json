@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "thri-kreen",
+  "name": "Thri-kreen",
+  "category": "Otherworldly",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "AAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Monstrosity",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small",
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Compound Awareness",
+          "description": "Your multifaceted senses make you extraordinarily difficult to catch unaware. While conscious, you can’t be surprised, and creatures don’t gain advantage on attack rolls against you solely because they are unseen by you."
+        },
+        {
+          "name": "Sleepless",
+          "description": "You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest."
+        },
+        {
+          "name": "Chameleon Carapace",
+          "description": "When you aren't wearing armor, your base AC is 11 + your Constitution modifier + your proficiency bonus. You can use this AC if armor you wear would give you a lower AC, and you can still benefit from a shield. As an action, you can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    }
+  ]
+}

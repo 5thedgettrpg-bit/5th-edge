@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "locathah",
+  "name": "Locathah",
+  "category": "Deepfolk",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "LR"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Aquan.",
+      "features": [
+        {
+          "name": "Natural Armor",
+          "description": "When you aren't wearing armor, your base AC is 11 + your Constitution modifier + your proficiency bonus. You can use this AC if armor you wear would give you a lower AC, and you can still benefit from a shield."
+        },
+        {
+          "name": "Leviathan Will",
+          "description": "You have advantage on saving throws you make to avoid or end a condition."
+        },
+        {
+          "name": "Amphibious",
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+        }
+      ]
+    }
+  ]
+}

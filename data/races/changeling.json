@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "changeling",
+  "name": "Changeling",
+  "category": "Fey Folk",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "ERLW",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": null
+      },
+      "creatureType": "Fey",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and Sylvan.",
+      "features": [
+        {
+          "name": "Divergent Persona",
+          "description": "You gain proficiency in two of the following skills of your choice: Deception, Insight, Intimidation, Performance, or Persuasion. Alternatively, you can replace one of those skill proficiencies with proficiency in one tool of your choice. Define a unique identity associated with one of those proficiencies, including its name, species, gender, age, and other details. While assuming that persona, your proficiency bonus is doubled for any ability check you make using the associated proficiency."
+        },
+        {
+          "name": "Actor",
+          "description": "You gain the Actor feat."
+        },
+        {
+          "name": "Shifting Magic",
+          "description": "You know the Friends cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Alter Self with this trait. Once you cast Disguise Self or Alter Self with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    }
+  ]
+}

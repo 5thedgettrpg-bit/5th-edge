@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "custom-lineage",
+  "name": "Custom Lineage",
+  "category": "Custom",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "TCE"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Any",
+        "secondary": null
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small",
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Skill Versatility",
+          "description": "You gain proficiency in two skills of your choice."
+        },
+        {
+          "name": "Feat",
+          "description": "You gain one Feat of your choice."
+        }
+      ]
+    }
+  ]
+}

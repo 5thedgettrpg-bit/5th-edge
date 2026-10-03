@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "tabaxi",
+  "name": "Tabaxi",
+  "category": "Wildborn",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Cat's Claws",
+          "description": "You can use your claws to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Feline Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Keen Smell",
+          "description": "You have advantage on Wisdom (Perception) checks that rely on smell."
+        },
+        {
+          "name": "Catlike Reflexes",
+          "description": "Starting at 5th level, When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
+        }
+      ]
+    }
+  ]
+}

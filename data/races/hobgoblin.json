@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "hobgoblin",
+  "name": "Hobgoblin",
+  "category": "Goblinoids",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Goblin.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Fortune from the Many",
+          "description": "If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +3). You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+        },
+        {
+          "name": "Martial Training",
+          "description": "You are proficient with two martial weapons of your choice and with light and medium armor."
+        }
+      ]
+    }
+  ]
+}

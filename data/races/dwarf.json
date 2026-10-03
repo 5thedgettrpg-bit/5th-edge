@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "id": "dwarf",
+  "name": "Dwarf",
+  "category": "Common Folk",
+  "variants": [
+    {
+      "id": "mark-of-warding",
+      "name": "Mark of Warding",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 25,
+        "raw": "25 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Dwarvish.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Poison Immunity",
+          "description": "You are immune to poison damage and the poisoned condition."
+        },
+        {
+          "name": "Tough",
+          "description": "You gain the Tough feat."
+        },
+        {
+          "name": "Wards and Seals",
+          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Mage Armor spell with this trait. Starting at 5th level, you can also cast Arcane Lock with this trait. Once you cast Mage Armor or Arcane Lock with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Alarm, Armor of Agathys 2nd Arcane Lock, Knock 3rd Glyph of Warding, Magic Circle 4th Leomund's Secret Chest, Mordenkainen's Faithful Hound 5th Antilife Shell"
+        },
+        {
+          "name": "Warder's Intuition",
+          "description": "Whenever you make an Intelligence (Investigation) check or an ability check involving Thieves' Tools, you can roll a d4 and add the number rolled to the total ability check."
+        }
+      ]
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 25,
+        "raw": "25 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Dwarvish.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Poison Immunity",
+          "description": "You are immune to poison damage and the poisoned condition."
+        },
+        {
+          "name": "Dwarven Toughness",
+          "description": "Your hit point maximum increases by 2, and it increases by 2 every time you gain a level."
+        },
+        {
+          "name": "Dwarven Combat Training",
+          "description": "Proficiency with light and medium armor plus battleaxe, handaxe, light hammer, and warhammer."
+        },
+        {
+          "name": "Tool Proficiency",
+          "description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+        }
+      ]
+    },
+    {
+      "id": "duergar",
+      "name": "Duergar",
+      "basedOn": [
+        "SCAG",
+        "MTF",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Strength"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 120,
+      "languages": "Common, Dwarvish, and Undercommon.",
+      "features": [
+        {
+          "name": "Superior Darkvision",
+          "description": "Darkvision extends to 120 feet."
+        },
+        {
+          "name": "Duergar Resilience",
+          "description": "You have advantage on saving throws against illusions and against being poisoned, charmed or paralyzed."
+        },
+        {
+          "name": "Duergar Toughness",
+          "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+        },
+        {
+          "name": "Duergar Magic",
+          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Enlarge/Reduce spell with this trait. When you cast Enlarge/Reduce without expending a spell slot using this trait, it lasts for 1 hour and doesn't require concentration. Starting at 5th level, you can also cast Invisibility with this trait. Once you cast Enlarge/Reduce or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    }
+  ]
+}

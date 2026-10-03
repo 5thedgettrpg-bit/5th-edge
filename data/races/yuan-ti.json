@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "yuan-ti",
+  "name": "Yuan-Ti",
+  "category": "Wildborn",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Abyssal, and Draconic.",
+      "features": [
+        {
+          "name": "Magic Resistance",
+          "description": "You have advantage on saving throws against spells."
+        },
+        {
+          "name": "Serpentine Spellcasting",
+          "description": "You know the Poison Spray cantrip. Starting at 3rd level, you can cast Animal Friendship with this trait. Starting at 5th level, you can also cast Enthrall with this trait. Once you cast Animal Friendship or Enthrall with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Poison Immunity",
+          "description": "You are immune to poison damage and the poisoned condition."
+        }
+      ]
+    }
+  ]
+}

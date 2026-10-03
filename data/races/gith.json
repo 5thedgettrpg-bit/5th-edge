@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "gith",
+  "name": "Gith",
+  "category": "Otherworldly",
+  "variants": [
+    {
+      "id": "githyanki",
+      "name": "Githyanki",
+      "basedOn": [
+        "MTF",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Gith.",
+      "features": [
+        {
+          "name": "Mental Discipline",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+          "name": "Martial Prodigy",
+          "description": "Proficiency with light and medium armor plus shortsword, longsword, and greatsword."
+        },
+        {
+          "name": "Psionics",
+          "description": "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Shield or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Psychic Resistance",
+          "description": "You have resistance to psychic damage."
+        }
+      ]
+    },
+    {
+      "id": "githzerai",
+      "name": "Githzerai",
+      "basedOn": [
+        "MTF",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Wisdom",
+        "secondary": "Intelligence"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Gith.",
+      "features": [
+        {
+          "name": "Mental Discipline",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+          "name": "Telekinesis",
+          "description": "You can make your mage hand invisible. Its range increases by 30 feet when you cast it. As a bonus action, you can try to telekinetically shove one creature you can see within 30 feet of you. When you do so, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + the ability modifier of the score chosen for Psionics) or be moved 5 feet toward or away from you. A creature can willingly fail this save."
+        },
+        {
+          "name": "Psionics",
+          "description": "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Catapult with this trait. Starting at 5th level, you can also cast Detect Thoughts with this trait. Once you cast Catapult or Detect Thoughts with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Psychic Resistance",
+          "description": "You have resistance to psychic damage."
+        }
+      ]
+    }
+  ]
+}

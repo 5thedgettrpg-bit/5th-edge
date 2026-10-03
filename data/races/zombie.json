@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie",
+  "name": "Zombie",
+  "category": "Undead",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "DMG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Strength"
+      },
+      "creatureType": "Undead",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Zombie Bite",
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Constitution modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Poison Immunity",
+          "description": "You are immune to poison damage and the poisoned condition."
+        },
+        {
+          "name": "Relentless Endurance",
+          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+        },
+        {
+          "name": "Infectious Bite",
+          "description": "When you hit a creature that isn’t a Construct or Undead with your Zombie Bite, you can force it to make a Constitution saving throw against a DC equal to 8 + your proficiency bonus + your Constitution modifier. On a failed save, the creature is poisoned for 1 minute. At the end of each of its turns, it can repeat the saving throw, ending the condition on a success. You can use this feature a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest."
+        }
+      ]
+    }
+  ]
+}

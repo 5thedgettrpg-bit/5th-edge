@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "common-folk",
+      "name": "Common Folk"
+    },
+    {
+      "id": "goblinoids",
+      "name": "Goblinoids"
+    },
+    {
+      "id": "dragonkin",
+      "name": "Dragonkin"
+    },
+    {
+      "id": "otherworldly",
+      "name": "Otherworldly"
+    },
+    {
+      "id": "wildborn",
+      "name": "Wildborn"
+    },
+    {
+      "id": "deepfolk",
+      "name": "Deepfolk"
+    },
+    {
+      "id": "constructed",
+      "name": "Constructed"
+    },
+    {
+      "id": "undead",
+      "name": "Undead"
+    },
+    {
+      "id": "fey-folk",
+      "name": "Fey Folk"
+    },
+    {
+      "id": "nomads",
+      "name": "Nomads"
+    },
+    {
+      "id": "custom",
+      "name": "Custom"
+    }
+  ],
+  "species": [
+    {
+      "id": "aasimar",
+      "name": "Aasimar",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "autognome",
+      "name": "Autognome",
+      "category": "Constructed"
+    },
+    {
+      "id": "avian",
+      "name": "Avian",
+      "category": "Wildborn"
+    },
+    {
+      "id": "bugbear",
+      "name": "Bugbear",
+      "category": "Goblinoids"
+    },
+    {
+      "id": "bullywug",
+      "name": "Bullywug",
+      "category": "Deepfolk"
+    },
+    {
+      "id": "centaur",
+      "name": "Centaur",
+      "category": "Fey Folk"
+    },
+    {
+      "id": "changeling",
+      "name": "Changeling",
+      "category": "Fey Folk"
+    },
+    {
+      "id": "custom-lineage",
+      "name": "Custom Lineage",
+      "category": "Custom"
+    },
+    {
+      "id": "dhampir",
+      "name": "Dhampir",
+      "category": "Undead"
+    },
+    {
+      "id": "dragonborn",
+      "name": "Dragonborn",
+      "category": "Dragonkin"
+    },
+    {
+      "id": "dwarf",
+      "name": "Dwarf",
+      "category": "Common Folk"
+    },
+    {
+      "id": "elf",
+      "name": "Elf",
+      "category": "Fey Folk"
+    },
+    {
+      "id": "fairy",
+      "name": "Fairy",
+      "category": "Fey Folk"
+    },
+    {
+      "id": "firbolg",
+      "name": "Firbolg",
+      "category": "Fey Folk"
+    },
+    {
+      "id": "genasi",
+      "name": "Genasi",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "giff",
+      "name": "Giff",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "gith",
+      "name": "Gith",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "gnoll",
+      "name": "Gnoll",
+      "category": "Wildborn"
+    },
+    {
+      "id": "gnome",
+      "name": "Gnome",
+      "category": "Fey Folk"
+    },
+    {
+      "id": "goblin",
+      "name": "Goblin",
+      "category": "Goblinoids"
+    },
+    {
+      "id": "goliath",
+      "name": "Goliath",
+      "category": "Common Folk"
+    },
+    {
+      "id": "hadozee",
+      "name": "Hadozee",
+      "category": "Wildborn"
+    },
+    {
+      "id": "half-elf",
+      "name": "Half-Elf",
+      "category": "Common Folk"
+    },
+    {
+      "id": "half-orc",
+      "name": "Half-Orc",
+      "category": "Goblinoids"
+    },
+    {
+      "id": "halfling",
+      "name": "Halfling",
+      "category": "Common Folk"
+    },
+    {
+      "id": "harengon",
+      "name": "Harengon",
+      "category": "Wildborn"
+    },
+    {
+      "id": "hexblood",
+      "name": "Hexblood",
+      "category": "Fey Folk"
+    },
+    {
+      "id": "hobgoblin",
+      "name": "Hobgoblin",
+      "category": "Goblinoids"
+    },
+    {
+      "id": "human",
+      "name": "Human",
+      "category": "Common Folk"
+    },
+    {
+      "id": "kalashtar",
+      "name": "Kalashtar",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "kender",
+      "name": "Kender",
+      "category": "Nomads"
+    },
+    {
+      "id": "kobold",
+      "name": "Kobold",
+      "category": "Dragonkin"
+    },
+    {
+      "id": "kor",
+      "name": "Kor",
+      "category": "Nomads"
+    },
+    {
+      "id": "leonin",
+      "name": "Leonin",
+      "category": "Wildborn"
+    },
+    {
+      "id": "lizardfolk",
+      "name": "Lizardfolk",
+      "category": "Wildborn"
+    },
+    {
+      "id": "locathah",
+      "name": "Locathah",
+      "category": "Deepfolk"
+    },
+    {
+      "id": "loxodon",
+      "name": "Loxodon",
+      "category": "Wildborn"
+    },
+    {
+      "id": "merfolk",
+      "name": "Merfolk",
+      "category": "Deepfolk"
+    },
+    {
+      "id": "minotaur",
+      "name": "Minotaur",
+      "category": "Wildborn"
+    },
+    {
+      "id": "orc",
+      "name": "Orc",
+      "category": "Goblinoids"
+    },
+    {
+      "id": "plasmoid",
+      "name": "Plasmoid",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "reborn",
+      "name": "Reborn",
+      "category": "Undead"
+    },
+    {
+      "id": "satyr",
+      "name": "Satyr",
+      "category": "Fey Folk"
+    },
+    {
+      "id": "shifter",
+      "name": "Shifter",
+      "category": "Wildborn"
+    },
+    {
+      "id": "simic-hybrid",
+      "name": "Simic Hybrid",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "category": "Undead"
+    },
+    {
+      "id": "tabaxi",
+      "name": "Tabaxi",
+      "category": "Wildborn"
+    },
+    {
+      "id": "thri-kreen",
+      "name": "Thri-kreen",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "tiefling",
+      "name": "Tiefling",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "tortle",
+      "name": "Tortle",
+      "category": "Deepfolk"
+    },
+    {
+      "id": "triton",
+      "name": "Triton",
+      "category": "Deepfolk"
+    },
+    {
+      "id": "vedalken",
+      "name": "Vedalken",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "verdan",
+      "name": "Verdan",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "warforged",
+      "name": "Warforged",
+      "category": "Constructed"
+    },
+    {
+      "id": "yuan-ti",
+      "name": "Yuan-Ti",
+      "category": "Wildborn"
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "category": "Undead"
+    }
+  ]
+}

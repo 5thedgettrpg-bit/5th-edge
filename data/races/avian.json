@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "id": "avian",
+  "name": "Avian",
+  "category": "Wildborn",
+  "variants": [
+    {
+      "id": "aarakocra",
+      "name": "Aarakocra",
+      "basedOn": [
+        "EEPC",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Talons",
+          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Wind Caller",
+          "description": "You know the Gust cantrip. Starting at 3rd level, you can cast Heroism with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait. Once you cast Heroism or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        },
+        {
+          "name": "Mighty Pinions",
+          "description": "You have proficiency in the Athletics skill."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "kenku",
+      "name": "Kenku",
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Talons",
+          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Mimicry",
+          "description": "You can accurately mimic voices and sounds you have heard. A creature that hears the mimicry can determine that it is false with a successful Wisdom (Insight) check contested by your Charisma (Deception) check."
+        },
+        {
+          "name": "Silent Feathers",
+          "description": "You have proficiency in the Stealth skill."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "owlin",
+      "name": "Owlin",
+      "basedOn": [
+        "SCC"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Dexterity",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Talons",
+          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 120 feet of yourself as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Silent Feathers",
+          "description": "You have proficiency in the Stealth skill."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "swanmay",
+      "name": "Swanmay",
+      "basedOn": [
+        "CBoH"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Wisdom",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Swan Shape",
+          "description": "As a bonus action, you can transform into a swan or return to your normal form. While in swan form, you have a flying speed and swimming speed equal to your walking speed. You can’t wield weapons or shields in this form. Your other game statistics remain the same, and anything you are wearing or carrying transforms with you."
+        },
+        {
+          "name": "Graceful Escape",
+          "description": "When a creature you can see makes an attack roll against you, you can use your reaction to move up to half your speed without provoking opportunity attacks. If this movement causes you to leave the attack’s reach or range, the attack misses. Once you use this trait, you can’t use it again until you finish a short or long rest."
+        },
+        {
+          "name": "Guardian of the Wilds",
+          "description": "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Animal Friendship with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Animal Friendship or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "merfolk",
+  "name": "Merfolk",
+  "category": "Deepfolk",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "DMG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Charisma",
+        "secondary": "Wisdom"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 25,
+        "raw": "25 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Aquan.",
+      "features": [
+        {
+          "name": "Amphibious",
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+        },
+        {
+          "name": "Siren Song",
+          "description": "As a bonus action, you can sing a song. Creatures of your choice within 30 feet of you that can hear you must succeed on a Wisdom saving throw or become charmed by you until the end of your next turn. The DC of the save equals 8 + your proficiency bonus + your Charisma modifier. You can use this trait a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Blessing of the Sea",
+          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return."
+        },
+        {
+          "name": "Sea Legs",
+          "description": "While you aren't submerged in water, you can use a bonus action to transform your lower body into human legs. This transformation lasts until you use a bonus action while submerged in water to revert to your true form."
+        }
+      ]
+    }
+  ]
+}

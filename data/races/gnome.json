@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "gnome",
+  "name": "Gnome",
+  "category": "Fey Folk",
+  "variants": [
+    {
+      "id": "deep",
+      "name": "Deep",
+      "basedOn": [
+        "SCAG",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Intelligence",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small"
+      ],
+      "darkvision": 60,
+      "languages": "Common, Undercommon, Elvish, and Gnomish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Gnome Cunning",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+          "name": "Gift of the Svirfneblin",
+          "description": "You know the Mold Earth cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Nondetection with this trait. Once you cast Disguise Self or Nondetection with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    },
+    {
+      "id": "forest",
+      "name": "Forest",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Intelligence",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and Gnomish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Gnome Cunning",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+          "name": "Gift of the Forest",
+          "description": "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Animal Friendship with this trait. Starting at 5th level, you can also cast Summon Beast with this trait. Once you cast Animal Friendship or Summon Beast with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    },
+    {
+      "id": "mark-of-scribing",
+      "name": "Mark of Scribing",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Intelligence",
+        "secondary": "Charisma"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Gnomish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Gnome Cunning",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+          "name": "Scribe's Insight",
+          "description": "You know the Message cantrip. Starting at 3rd level, you can cast Comprehend Languages with this trait. Starting at 5th level, you can also cast Magic Mouth with this trait. Once you cast Comprehend Languages or Magic Mouth with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Comprehend Languages, Illusory Script 2nd Animal Messenger, Silence 3rd Sending, Tongues 4th Arcane Eye, Divination 5th Dream"
+        },
+        {
+          "name": "Gifted Scribe",
+          "description": "Whenever you make an Intelligence (History) or an ability check involving Calligrapher's Supplies, you can roll a d4 and add the number rolled to the total ability check."
+        }
+      ]
+    },
+    {
+      "id": "rock",
+      "name": "Rock",
+      "basedOn": [
+        "PHB"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Intelligence",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small"
+      ],
+      "darkvision": 60,
+      "languages": "Common and Gnomish.",
+      "features": [
+        {
+          "name": "Fey Sight",
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+        },
+        {
+          "name": "Gnome Cunning",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+        },
+        {
+          "name": "Gift of the Tinkerer",
+          "description": "You know the Magic Stone cantrip. Starting at 3rd level, you can cast Catapult with this trait. Starting at 5th level, you can also cast Borrowed Knowledge with this trait. Once you cast Catapult or Borrowed Knowledge with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+        }
+      ]
+    }
+  ]
+}

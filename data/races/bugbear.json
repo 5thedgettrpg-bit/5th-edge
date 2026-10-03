@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "bugbear",
+  "name": "Bugbear",
+  "category": "Goblinoids",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "VGM",
+        "MPMM"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Goblinoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and Goblin.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Oversized Frame",
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift. In addition, when you make a melee attack on your turn, your reach for it is 5 feet greater than normal."
+        },
+        {
+          "name": "Ambusher",
+          "description": "You are proficient in the Stealth skill. In addition, you can move through and stop in a space large enough for a Small creature without squeezing. If you hit a creature with an attack roll before it has taken a turn in the current combat, the creature takes an extra 2d6 damage."
+        }
+      ]
+    }
+  ]
+}
