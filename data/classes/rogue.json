@@ -31,9 +31,20 @@
       "intelligence"
     ],
     "skills": {
-      "choose": 0,
-      "from": [],
-      "note": "Rogue does not choose class skill proficiencies. Life of Crime grants half proficiency on ability checks that do not already include proficiency."
+      "choose": 3,
+      "from": [
+        "acrobatics",
+        "athletics",
+        "deception",
+        "insight",
+        "intimidation",
+        "investigation",
+        "perception",
+        "performance",
+        "persuasion",
+        "sleight of hand",
+        "stealth"
+      ]
     }
   },
   "subclass": {
