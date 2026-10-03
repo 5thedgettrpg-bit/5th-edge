@@ -61,7 +61,7 @@
     const activeSpecies=state.manifest.species.find(x=>x.id===state.current);
     const activeCategory=activeSpecies?.category || null;
 
-    const sortedCategories=[...state.manifest.categories].sort((a,b)=>a.name.localeCompare(b.name));
+    const sortedCategories=[...state.manifest.categories].sort((a,b)=>{ if(a.name==='Custom') return 1; if(b.name==='Custom') return -1; return a.name.localeCompare(b.name); });
     for(const c of sortedCategories){
       const items=(byCat.get(c.name)||[]).sort((a,b)=>a.name.localeCompare(b.name));
       const details=document.createElement('details');
