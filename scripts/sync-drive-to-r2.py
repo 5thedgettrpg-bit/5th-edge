@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 
 import boto3
 from botocore.exceptions import ClientError
-from google.oauth2 import service_account
+import google.auth
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 
@@ -67,11 +67,8 @@ def normalized_file_name(name):
 
 
 def drive_service():
-    raw = required_env("GDRIVE_SERVICE_ACCOUNT_JSON")
-    info = json.loads(raw)
-    creds = service_account.Credentials.from_service_account_info(
-        info,
-        scopes=["https://www.googleapis.com/auth/drive.readonly"],
+    creds, _ = google.auth.default(
+        scopes=["https://www.googleapis.com/auth/drive.readonly"]
     )
     return build("drive", "v3", credentials=creds, cache_discovery=False)
 
