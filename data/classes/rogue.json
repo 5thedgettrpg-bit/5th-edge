@@ -31,20 +31,9 @@
       "intelligence"
     ],
     "skills": {
-      "choose": 4,
-      "from": [
-        "acrobatics",
-        "athletics",
-        "deception",
-        "insight",
-        "intimidation",
-        "investigation",
-        "perception",
-        "performance",
-        "persuasion",
-        "sleight of hand",
-        "stealth"
-      ]
+      "choose": 0,
+      "from": [],
+      "note": "Rogue does not choose class skill proficiencies. Life of Crime grants half proficiency on ability checks that do not already include proficiency."
     }
   },
   "subclass": {
@@ -53,8 +42,8 @@
     "featureLevels": [
       1,
       3,
-      9,
-      13,
+      7,
+      11,
       17
     ]
   },
@@ -72,9 +61,9 @@
       "proficiencyBonus": 2,
       "sneakAttack": null,
       "features": [
+        "life-of-crime",
         "rogue-weapon-training",
-        "roguish-archetype",
-        "thieves-cant"
+        "roguish-archetype"
       ]
     },
     {
@@ -91,6 +80,7 @@
       "proficiencyBonus": 2,
       "sneakAttack": "2d8",
       "features": [
+        "uncanny-dodge",
         "steady-aim",
         "roguish-archetype-feature"
       ]
@@ -108,7 +98,6 @@
       "proficiencyBonus": 3,
       "sneakAttack": "3d8",
       "features": [
-        "uncanny-dodge",
         "follow-up"
       ]
     },
@@ -117,7 +106,8 @@
       "proficiencyBonus": 3,
       "sneakAttack": "3d8",
       "features": [
-        "expertise"
+        "evasion",
+        "elusive"
       ]
     },
     {
@@ -125,7 +115,7 @@
       "proficiencyBonus": 3,
       "sneakAttack": "3d8",
       "features": [
-        "evasion"
+        "roguish-archetype-feature"
       ]
     },
     {
@@ -141,7 +131,7 @@
       "proficiencyBonus": 4,
       "sneakAttack": "4d8",
       "features": [
-        "roguish-archetype-feature"
+        "reliable-talent"
       ]
     },
     {
@@ -157,8 +147,7 @@
       "proficiencyBonus": 4,
       "sneakAttack": "4d8",
       "features": [
-        "reliable-talent",
-        "deadly-precision"
+        "roguish-archetype-feature"
       ]
     },
     {
@@ -174,7 +163,7 @@
       "proficiencyBonus": 5,
       "sneakAttack": "5d8",
       "features": [
-        "roguish-archetype-feature"
+        "blindsense"
       ]
     },
     {
@@ -182,7 +171,7 @@
       "proficiencyBonus": 5,
       "sneakAttack": "5d8",
       "features": [
-        "blindsense"
+        "deadly-precision"
       ]
     },
     {
@@ -190,7 +179,7 @@
       "proficiencyBonus": 5,
       "sneakAttack": "5d8",
       "features": [
-        "elusive"
+        "slippery-mind"
       ]
     },
     {
@@ -236,6 +225,23 @@
   ],
   "features": [
     {
+      "id": "life-of-crime",
+      "name": "Life of Crime",
+      "level": 1,
+      "type": "passive",
+      "description": "Your life outside respectable society has taught you how to improvise, read a room, and get by without formal training. You add half your proficiency bonus, rounded down, to any ability check you make that does not already include your proficiency bonus. You also know Thieves' Cant, including its secret jargon, coded phrases, signs, and symbols.",
+      "automation": {
+        "halfProficiency": {
+          "appliesTo": "abilityChecksWithoutProficiency",
+          "rounding": "down",
+          "stacksWithProficiency": false
+        },
+        "languages": [
+          "Thieves' Cant"
+        ]
+      }
+    },
+    {
       "id": "rogue-weapon-training",
       "name": "Rogue Weapon Training",
       "level": 1,
@@ -252,23 +258,17 @@
       "id": "roguish-archetype",
       "name": "Roguish Archetype",
       "level": 1,
-      "description": "Choose an archetype at 1st level. It grants features at 1st, 3rd, 9th, 13th, and 17th level.",
+      "description": "Choose an archetype at 1st level. It grants features at 1st, 3rd, 7th, 11th, and 17th level.",
       "automation": {
         "chooseSubclass": true,
         "featureLevels": [
           1,
           3,
-          9,
-          13,
+          7,
+          11,
           17
         ]
       }
-    },
-    {
-      "id": "thieves-cant",
-      "name": "Thieves' Cant",
-      "level": 1,
-      "description": "You know Thieves' Cant, including its secret signs and symbols."
     },
     {
       "id": "cunning-action",
@@ -336,7 +336,7 @@
     {
       "id": "uncanny-dodge",
       "name": "Uncanny Dodge",
-      "level": 5,
+      "level": 3,
       "activation": "reaction",
       "description": "When an attacker you can see hits you with an attack, halve the attack's damage against you.",
       "automation": {
@@ -360,25 +360,9 @@
       }
     },
     {
-      "id": "expertise",
-      "name": "Expertise",
-      "levels": [
-        1,
-        6
-      ],
-      "description": "Choose two proficient skills at 1st level and two more at 6th level. Double your proficiency bonus for checks using them.",
-      "automation": {
-        "choices": {
-          "1": 2,
-          "6": 2
-        },
-        "doubleProficiency": true
-      }
-    },
-    {
       "id": "evasion",
       "name": "Evasion",
-      "level": 7,
+      "level": 6,
       "description": "On a Dexterity save for half damage, take no damage on a success and half on a failure. Disabled while incapacitated.",
       "automation": {
         "dexSaveForHalf": {
@@ -393,7 +377,7 @@
     {
       "id": "reliable-talent",
       "name": "Reliable Talent",
-      "level": 11,
+      "level": 9,
       "description": "For an ability check that adds your proficiency bonus, treat a d20 roll of 9 or lower as 10.",
       "automation": {
         "minimumD20": 10,
@@ -403,7 +387,7 @@
     {
       "id": "deadly-precision",
       "name": "Deadly Precision",
-      "level": 11,
+      "level": 14,
       "description": "Whenever you deal Sneak Attack damage, add your proficiency bonus to the damage.",
       "automation": {
         "modify": "sneak-attack",
@@ -413,7 +397,7 @@
     {
       "id": "blindsense",
       "name": "Blindsense",
-      "level": 14,
+      "level": 13,
       "description": "If you can hear, you know the location of hidden or invisible creatures within 10 feet.",
       "automation": {
         "range": 10,
@@ -424,13 +408,23 @@
     {
       "id": "elusive",
       "name": "Elusive",
-      "level": 15,
+      "level": 6,
       "description": "No attack roll has advantage against you while you are not incapacitated.",
       "automation": {
         "preventAttackAdvantage": true,
         "disabledBy": [
           "incapacitated"
         ]
+      }
+    },
+    {
+      "id": "slippery-mind",
+      "name": "Slippery Mind",
+      "level": 15,
+      "type": "passive",
+      "description": "At 15th level, your mental discipline has become difficult to overcome. You gain proficiency in Wisdom saving throws.",
+      "automation": {
+        "grantSavingThrowProficiency": "wisdom"
       }
     },
     {
