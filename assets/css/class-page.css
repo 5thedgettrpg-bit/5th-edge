@@ -32,14 +32,38 @@ a{color:inherit}
 
 .main{background:var(--paper);border:1px solid #cdbba9;border-radius:6px;overflow:hidden;box-shadow:0 20px 46px rgba(52,31,22,.12)}
 
-/* Illustrated hero mirrors Species page */
-.hero{position:relative;min-height:330px;overflow:hidden;background-color:#211714;background-image:linear-gradient(90deg,rgba(33,23,20,.08) 0%,rgba(33,23,20,.22) 42%,rgba(33,23,20,.84) 74%,rgba(85,23,19,.96) 100%),var(--hero);background-size:cover;background-position:center;border-bottom:4px solid var(--tan);color:#fff}
-.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 77% 48%,rgba(240,206,132,.14),transparent 31%),linear-gradient(135deg,transparent 0 64%,rgba(167,42,36,.14) 64% 66%,transparent 66%);pointer-events:none}
-.hero-copy{position:absolute;right:0;top:0;bottom:0;width:min(49%,560px);padding:44px 44px 38px;display:flex;flex-direction:column;justify-content:center;z-index:2;text-shadow:0 3px 18px rgba(0,0,0,.42)}
-.kicker{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.18em;color:var(--gold)}
-.hero h1{font:700 clamp(48px,5.4vw,74px)/.92 Georgia,serif;color:#f7ead3;margin:7px 0 0;letter-spacing:-.03em}
-.hero p{max-width:560px;color:#d4c2b3;font-size:14px;line-height:1.6;margin:18px 0 0}
-.hero-fact{margin-top:18px;color:#f3e5cf;font-size:11px;font-weight:900;letter-spacing:.02em}
+/* Shared Race/Class banner shell */
+.main{container-type:inline-size}
+.hero{
+  position:relative;
+  display:block;
+  height:36.71875cqw;
+  min-height:310px;
+  overflow:hidden;
+  border-bottom:.3125cqw solid #d2a449;
+  background:
+    linear-gradient(90deg,rgba(27,6,8,.98) 0%,rgba(33,7,9,.90) 31%,rgba(38,8,10,.40) 58%,rgba(20,8,8,.02) 100%),
+    url('/assets/images/species/eladrin-banner-background.jpg') center/cover no-repeat;
+  color:#fff;
+}
+.hero:before{content:none}
+.hero-copy{
+  position:absolute;
+  z-index:3;
+  left:4%;
+  top:0;
+  bottom:0;
+  width:43%;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-shadow:none;
+}
+.kicker{font-size:max(10px,.78125cqw);line-height:1.1;font-weight:900;text-transform:uppercase;letter-spacing:.18em;color:var(--gold)}
+.hero h1{font:700 max(48px,5.78125cqw)/.88 Georgia,serif;color:#f7ead3;margin:.78125cqw 0 1.71875cqw;letter-spacing:-.04em}
+.hero p{max-width:43.75cqw;color:#d4c2b3;font-size:max(14px,1.25cqw);line-height:1.55;margin:0}
+.hero-fact{margin-top:1.40625cqw;color:#f3e5cf;font-size:max(11px,1.015625cqw);font-weight:900;letter-spacing:.02em}
 .hero-fact span{color:var(--gold);margin:0 6px}
 
 /* Parchment content */
@@ -107,8 +131,41 @@ a{color:inherit}
   .class-nav{display:flex;overflow-x:auto;padding:6px;background:#f4ede4}
   .class-link{white-space:nowrap;border-left:0;border-bottom:3px solid transparent}
   .class-link.active{border-bottom-color:var(--red)}
-  .hero{min-height:390px;background-position:28% center}
-  .hero-copy{left:18px;right:18px;bottom:18px;top:auto;width:auto;padding:20px 22px;background:linear-gradient(180deg,rgba(30,8,7,.06),rgba(30,8,7,.78));border-radius:6px;justify-content:flex-end}
+  .main{container-type:normal}
+  .hero{
+    height:auto;
+    min-height:0;
+    border-bottom:0;
+    background:none;
+    display:grid;
+    grid-template-rows:auto 390px;
+  }
+  .hero:after{
+    content:"";
+    display:block;
+    grid-row:2;
+    min-height:390px;
+    border-bottom:4px solid #d2a449;
+    background:
+      linear-gradient(180deg,rgba(35,8,10,.02),rgba(35,8,10,.24)),
+      url('/assets/images/species/eladrin-banner-background.jpg') 72% center/cover no-repeat;
+  }
+  .hero-copy{
+    position:relative;
+    left:auto;
+    right:auto;
+    top:auto;
+    bottom:auto;
+    width:100%;
+    padding:30px 22px 28px;
+    background:linear-gradient(135deg,#2a0d0f,#5b1715);
+    justify-content:center;
+    grid-row:1;
+  }
+  .hero .kicker{font-size:10px}
+  .hero h1{margin:10px 0 18px;font-size:56px}
+  .hero p{max-width:none;font-size:16px}
+  .hero-fact{margin-top:18px;font-size:13px}
   .subclass{grid-template-columns:1fr;gap:14px}
   .subclass select{width:100%;min-width:0}
 }
@@ -116,7 +173,8 @@ a{color:inherit}
   .layout{width:min(100% - 16px,1280px)}
   .site-header-inner{width:min(100% - 16px,1240px)}
   .site-brand img{width:142px}
-  .hero{min-height:350px}
+  .hero{grid-template-rows:auto 360px}
+  .hero:after{min-height:360px}
   .hero h1{font-size:46px}
   .section{padding:22px 18px 28px}
   .section:not(.subclass)>h2{font-size:20px}
