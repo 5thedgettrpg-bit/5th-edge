@@ -69,9 +69,9 @@
     "featureLevels": [
       1,
       3,
-      6,
-      11,
-      17
+      7,
+      10,
+      18
     ]
   },
   "abilityScoreImprovementLevels": [
@@ -297,7 +297,8 @@
       "level": 6,
       "proficiencyBonus": 3,
       "features": [
-        "Ranger Conclave feature"
+        "Favored Enemy",
+        "Heightened Instinct"
       ],
       "instinctDie": "d6",
       "spellsKnown": 4,
@@ -310,8 +311,7 @@
       "level": 7,
       "proficiencyBonus": 3,
       "features": [
-        "Favored Enemy",
-        "Heightened Instinct"
+        "Ranger Conclave feature"
       ],
       "instinctDie": "d6",
       "spellsKnown": 5,
@@ -351,7 +351,7 @@
       "level": 10,
       "proficiencyBonus": 4,
       "features": [
-        "Nature's Veil"
+        "Ranger Conclave feature"
       ],
       "instinctDie": "d6",
       "spellsKnown": 6,
@@ -365,7 +365,7 @@
       "level": 11,
       "proficiencyBonus": 4,
       "features": [
-        "Ranger Conclave feature"
+        "Nature's Veil"
       ],
       "instinctDie": "d8",
       "spellsKnown": 7,
@@ -453,7 +453,7 @@
       "level": 17,
       "proficiencyBonus": 6,
       "features": [
-        "Ranger Conclave feature"
+        "Feral Senses"
       ],
       "instinctDie": "d10",
       "spellsKnown": 10,
@@ -469,7 +469,7 @@
       "level": 18,
       "proficiencyBonus": 6,
       "features": [
-        "Feral Senses"
+        "Ranger Conclave feature"
       ],
       "instinctDie": "d10",
       "spellsKnown": 10,
@@ -584,13 +584,13 @@
       "id": "ranger-conclave",
       "name": "Ranger Conclave",
       "level": 1,
-      "description": "At 1st level, you choose to emulate the ideals and training of a ranger conclave. Your choice grants you features at 1st level, then again at 3rd, 6th, 11th, and 17th level.",
+      "description": "At 1st level, you choose to emulate the ideals and training of a ranger conclave. Your choice grants you features at 1st level, then again at 3rd, 7th, 10th, and 18th level.",
       "subclassFeatureLevels": [
         1,
         3,
-        6,
-        11,
-        17
+        7,
+        10,
+        18
       ]
     },
     {
@@ -755,8 +755,8 @@
     {
       "id": "favored-enemy",
       "name": "Favored Enemy",
-      "level": 7,
-      "description": "Beginning at 7th level, choose a type of favored enemy. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all. When you deal damage to a favored enemy, you can add your proficiency bonus to the damage dealt. You choose one additional favored enemy, as well as an associated language, at 10th, 14th, and 18th level.",
+      "level": 6,
+      "description": "Beginning at 6th level, choose a type of favored enemy. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all. When you deal damage to a favored enemy, you can add your proficiency bonus to the damage dealt. You choose one additional favored enemy, as well as an associated language, at 10th, 14th, and 18th level.",
       "choiceLevels": [
         7,
         10,
@@ -786,8 +786,8 @@
     {
       "id": "heightened-instinct",
       "name": "Heightened Instinct",
-      "level": 7,
-      "description": "At 7th level, your instincts have become second nature, allowing you to rely on them more frequently. You now regain all expended Instinct Dice when you finish a short or long rest.",
+      "level": 6,
+      "description": "At 6th level, your instincts have become second nature, allowing you to rely on them more frequently. You now regain all expended Instinct Dice when you finish a short or long rest.",
       "mechanics": {
         "hunterInstinctRecharge": [
           "shortRest",
@@ -804,8 +804,8 @@
     {
       "id": "natures-veil",
       "name": "Nature's Veil",
-      "level": 10,
-      "description": "This 10th-level feature replaces Hide in Plain Sight. As a bonus action, you can magically become invisible, along with any equipment you are wearing or carrying, until the start of your next turn. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+      "level": 11,
+      "description": "This 11th-level feature replaces Hide in Plain Sight. As a bonus action, you can magically become invisible, along with any equipment you are wearing or carrying, until the start of your next turn. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
       "resource": {
         "max": "proficiencyBonus",
         "recharge": "longRest"
@@ -844,8 +844,8 @@
     {
       "id": "feral-senses",
       "name": "Feral Senses",
-      "level": 18,
-      "description": "At 18th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it. You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened."
+      "level": 17,
+      "description": "At 17th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it. You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened."
     },
     {
       "id": "foe-slayer",
