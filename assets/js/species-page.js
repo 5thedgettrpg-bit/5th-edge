@@ -108,7 +108,16 @@
     return '<details class="species-feature" '+(i===0?'open':'')+'><summary>'+esc(f.name || 'Feature')+'<span>+</span></summary><div>'+esc(f.description || '')+'</div></details>';
   }
 
+  function renderHeroArt(data){
+    const character=$('#speciesHeroCharacter');
+    if(!character) return;
+    const isHuman=data?.id==='human';
+    character.classList.toggle('is-hidden',!isHuman);
+    character.alt=isHuman ? (data.name || 'Human') : '';
+  }
+
   function renderSpecies(data,variant){
+    renderHeroArt(data);
     const variants=data.variants || [];
     const hasRealVariants = variants.length > 1 || (variants.length === 1 && variants[0]?.id !== 'base' && variants[0]?.name);
     const singularCategory={
