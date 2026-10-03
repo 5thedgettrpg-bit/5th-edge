@@ -26,27 +26,7 @@
   </div>
 </header>
 
-<main class="species-page">
-  <article class="species-banner-shell">
-    <section class="species-hero">
-      <div class="species-hero-bg" aria-hidden="true"></div>
-      <div class="species-hero-inner">
-        <div class="species-hero-copy">
-          <div id="speciesKicker" class="kicker">Species</div>
-          <h1 id="speciesTitle">Loading...</h1>
-          <p id="speciesIntro">Loading species data.</p>
-          <div id="variantWrap" class="variant-control" hidden>
-            <label for="variantSelect">Variant</label>
-            <select id="variantSelect"></select>
-          </div>
-        </div>
-        <div class="species-mobile-art" aria-hidden="true"></div>
-        <img id="speciesHeroCharacter" class="species-hero-character" src="/assets/images/species/human-character.png" alt="">
-      </div>
-    </section>
-    <div id="speciesMeta" class="species-overview"></div>
-  </article>
-
+<main class="page">
   <div class="species-layout">
     <aside class="species-sidebar">
       <div class="species-sidebar-head">
@@ -57,8 +37,30 @@
       <div id="speciesAccordion" class="species-accordion" aria-label="Species categories"></div>
     </aside>
 
-    <article class="species-panel species-content-panel">
+    <article class="species-panel">
+      <section class="species-hero species-hero-approved">
+        <div class="race-banner-bg" aria-hidden="true"></div>
+        <div class="race-banner-inner">
+          <div class="species-hero-copy">
+            <div class="species-identity">
+              <div>
+                <div id="speciesKicker" class="kicker">Species</div>
+                <h1 id="speciesTitle">Loading...</h1>
+              </div>
+            </div>
+            <p id="speciesIntro">Loading species data.</p>
+            <div id="variantWrap" class="variant-control" hidden>
+              <label for="variantSelect">Variant</label>
+              <select id="variantSelect"></select>
+            </div>
+          </div>
+          <div class="race-banner-mobile-art" aria-hidden="true"></div>
+          <img id="speciesHeroCharacter" class="race-banner-character" src="/assets/images/species/human-character.png" alt="">
+        </div>
+      </section>
+
       <div id="speciesBody" class="species-body">
+        <div id="speciesMeta" class="species-overview"></div>
         <div class="species-section-title">
           <h2 id="speciesVariantName">Traits</h2>
           <div id="speciesSource" class="species-source"></div>
