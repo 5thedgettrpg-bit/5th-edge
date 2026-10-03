@@ -141,6 +141,24 @@
     return '<p><b>'+esc(label)+':</b> '+esc(value || '-')+'</p>';
   }
 
+  function languageLongText(value){
+    const raw=String(value || '').trim();
+    if(!raw) return '-';
+
+    const normalized=raw.replace(/\.$/,'').replace(/,\s+and one$/i,' and one');
+
+    if(/^Common and one$/i.test(normalized)){
+      return 'Your character can speak, read, and write Common and one other language that you and your DM agree is appropriate for the character.';
+    }
+
+    if(/\band one$/i.test(normalized)){
+      const fixed=normalized.replace(/\band one$/i,'one other language that you and your DM agree is appropriate for the character');
+      return 'Your character can speak, read, and write '+fixed+'.';
+    }
+
+    return 'Your character can speak, read, and write '+normalized+'.';
+  }
+
   function abilityScoreDescription(data,variant){
     const primary=variant.abilityScores?.primary || null;
     const secondary=variant.abilityScores?.secondary || null;
@@ -233,7 +251,7 @@
       racialLine('Creature Type',variant.creatureType) +
       racialLine('Size',size) +
       racialLine('Speed',speed) +
-      racialLine('Languages',variant.languages);
+      racialLine('Languages',languageLongText(variant.languages));
 
     $('#speciesMeta').innerHTML =
       racialFeature('Racial Features',racialBasics,true) +
