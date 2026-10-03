@@ -38,8 +38,7 @@ GOOGLE_NATIVE_EXPORTS = {
 }
 
 ALLOWED_EXTENSIONS = {
-    ".png", ".jpg", ".jpeg", ".webp", ".avif", ".gif", ".svg",
-    ".pdf", ".json", ".txt", ".md", ".docx", ".xlsx"
+    ".png", ".jpg", ".jpeg", ".webp", ".avif", ".gif", ".svg"
 }
 
 
