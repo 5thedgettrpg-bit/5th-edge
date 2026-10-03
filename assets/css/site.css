@@ -974,3 +974,245 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
   .species-feature summary{font-size:17px}
   .species-feature>div{font-size:14px}
 }
+
+
+/* ===== Official responsive species banner, 720p canonical ===== */
+.species-page{
+  width:100%;
+  margin:0 auto 42px;
+}
+.species-banner-shell{
+  container-type:inline-size;
+  width:100%;
+  margin:0;
+  background:#f8f1e7;
+  border-bottom:1px solid #cdbba9;
+  overflow:hidden;
+  box-shadow:0 16px 34px rgba(52,31,22,.10);
+}
+.species-banner-shell .species-hero{
+  position:relative;
+  display:block;
+  height:36.71875cqw;
+  min-height:0;
+  overflow:hidden;
+  border:0;
+  border-bottom:.3125cqw solid #d2a449;
+  background:#260b0c;
+}
+.species-hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    linear-gradient(90deg,rgba(27,6,8,.98) 0%,rgba(33,7,9,.90) 31%,rgba(38,8,10,.40) 58%,rgba(20,8,8,.02) 100%),
+    url('/assets/images/species/human-race-background.jpg') center/cover no-repeat;
+}
+.species-hero-inner{
+  position:relative;
+  z-index:1;
+  width:92%;
+  height:100%;
+  margin:auto;
+}
+.species-banner-shell .species-hero-copy{
+  position:absolute;
+  z-index:3;
+  left:0;
+  top:0;
+  bottom:0;
+  width:45%;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.species-banner-shell .species-hero .kicker{
+  color:#f0ce84;
+  font-size:.78125cqw;
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.species-banner-shell .species-hero h1{
+  margin:.78125cqw 0 1.71875cqw;
+  color:#fff1dc;
+  font:700 5.78125cqw/.88 Georgia,serif;
+  letter-spacing:-.04em;
+  text-shadow:none;
+}
+.species-banner-shell .species-hero p{
+  max-width:43.75cqw;
+  margin:0;
+  color:#ead8c6;
+  font-size:1.25cqw;
+  line-height:1.55;
+}
+.species-banner-shell .variant-control{
+  margin-top:2.1875cqw;
+  display:inline-flex;
+  align-items:center;
+  gap:1.09375cqw;
+  width:max-content;
+  max-width:100%;
+  padding:.78125cqw .9375cqw;
+  border:.078125cqw solid rgba(220,146,112,.68);
+  border-radius:0;
+  background:rgba(69,24,23,.62);
+}
+.species-banner-shell .variant-control label{
+  color:#f0ce84;
+  font-size:.78125cqw;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.species-banner-shell .variant-control select{
+  min-width:17.1875cqw;
+  min-height:0;
+  border:0;
+  border-radius:0;
+  background:#f3e7d6;
+  color:#34261f;
+  padding:.859375cqw 3.125cqw .859375cqw 1.09375cqw;
+  font-size:1.09375cqw;
+  font-weight:900;
+}
+.species-hero-character{
+  position:absolute;
+  z-index:2;
+  right:3%;
+  bottom:-3%;
+  height:100%;
+  width:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 1.875cqw 2.34375cqw rgba(0,0,0,.45));
+}
+.species-hero-character.is-hidden{display:none}
+.species-mobile-art{display:none}
+
+.species-banner-shell .species-overview{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  width:100%;
+  padding:2.1875cqw 4%;
+  background:#f7f0e5;
+  border:0;
+}
+.species-banner-shell .species-stat{
+  min-width:0;
+  padding:1.25cqw;
+  border-right:.078125cqw solid #d9ccbd;
+}
+.species-banner-shell .species-stat:last-child{border-right:0}
+.species-banner-shell .species-stat span{
+  display:block;
+  margin-bottom:.46875cqw;
+  color:#a2745e;
+  font-size:.703125cqw;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.species-banner-shell .species-stat strong{
+  display:block;
+  color:#332821;
+  font:700 1.40625cqw/1.2 Georgia,serif;
+}
+
+.species-layout{
+  width:min(1280px,calc(100% - 24px));
+  margin:24px auto 42px;
+}
+.species-content-panel .species-body{min-height:420px}
+
+@media(max-width:900px){
+  .species-page{margin-bottom:32px}
+  .species-banner-shell{container-type:normal}
+  .species-banner-shell .species-hero{
+    height:auto;
+    border-bottom:0;
+    background:none;
+  }
+  .species-hero-bg{display:none}
+  .species-hero-inner{
+    width:100%;
+    height:auto;
+    display:grid;
+    grid-template-rows:auto 390px;
+  }
+  .species-banner-shell .species-hero-copy{
+    position:relative;
+    left:auto;
+    top:auto;
+    bottom:auto;
+    width:100%;
+    padding:30px 22px 28px;
+    background:linear-gradient(135deg,#2a0d0f,#5b1715);
+  }
+  .species-banner-shell .species-hero .kicker{font-size:10px}
+  .species-banner-shell .species-hero h1{
+    margin:10px 0 18px;
+    font-size:56px;
+  }
+  .species-banner-shell .species-hero p{
+    max-width:none;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .species-banner-shell .variant-control{
+    width:100%;
+    margin-top:22px;
+    padding:10px 12px;
+    gap:12px;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+    border-width:1px;
+  }
+  .species-banner-shell .variant-control label{font-size:9px}
+  .species-banner-shell .variant-control select{
+    width:100%;
+    min-width:0;
+    padding:10px 36px 10px 12px;
+    font-size:14px;
+  }
+  .species-mobile-art{
+    display:block;
+    grid-row:2;
+    min-height:390px;
+    border-bottom:4px solid #d2a449;
+    background:
+      linear-gradient(180deg,rgba(35,8,10,.02),rgba(35,8,10,.24)),
+      url('/assets/images/species/human-race-background.jpg') 72% center/cover no-repeat;
+  }
+  .species-hero-character{
+    left:50%;
+    right:auto;
+    bottom:0;
+    height:365px;
+    transform:translateX(-50%);
+    filter:drop-shadow(0 20px 26px rgba(0,0,0,.45));
+  }
+  .species-banner-shell .species-overview{
+    grid-template-columns:1fr 1fr;
+    padding:18px;
+  }
+  .species-banner-shell .species-stat{
+    padding:16px;
+    border-right:1px solid #d9ccbd;
+    border-bottom:1px solid #d9ccbd;
+  }
+  .species-banner-shell .species-stat:nth-child(even){border-right:0}
+  .species-banner-shell .species-stat:nth-last-child(-n+2){border-bottom:0}
+  .species-banner-shell .species-stat span{
+    margin-bottom:6px;
+    font-size:8px;
+  }
+  .species-banner-shell .species-stat strong{font-size:18px}
+}
+@media(max-width:560px){
+  .species-hero-inner{grid-template-rows:auto 360px}
+  .species-mobile-art{min-height:360px}
+  .species-hero-character{height:340px}
+}
