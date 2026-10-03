@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "shifter",
   "name": "Shifter",
   "category": "Wildborn",
@@ -70,7 +70,40 @@
         },
         {
           "name": "Kitsune Magic",
-          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Mirror Image with this trait. Once you cast Charm Person or Mirror Image with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Mirror Image with this trait. Once you cast Charm Person or Mirror Image with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Minor Illusion",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Charm Person",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Mirror Image",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Mirror Image with this trait.",
+            "Once you cast Charm Person or Mirror Image with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ]
         },
         {
           "name": "Keen Senses",
