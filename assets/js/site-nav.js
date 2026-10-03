@@ -84,14 +84,17 @@
   addDirect('Home','/');
   addMega('Classes',[{title:'Classes',links:classLinks}],'edge-nav-panel-classes');
   addDirect('Races','/races/');
-  addDirect('Backgrounds','/backgrounds/');
-  addDirect('Feats','/feats/');
   addMega('Character Options',[
-    {title:'Build',links:[['Character Builder','https://play.familiararcanattrpg.com']]},
-    {title:'Popular Classes',links:[['Barbarian','/classes/barbarian/'],['Paladin','/classes/paladin/'],['Ranger','/classes/ranger/'],['Rogue','/classes/rogue/']]}
+    {title:'Character Options',links:[
+      ['Backgrounds','/backgrounds/'],
+      ['Feats','/feats/'],
+      ['Fighting Styles','/fighting-styles/'],
+      ['Eldritch Invocations','/eldritch-invocations/'],
+      ['Spells','/spells/']
+    ]}
   ]);
   addMega('Rules and Content',[
-    {title:'Rules Library',links:[['Rules','/rules/'],['Spells','/spells/']]},
+    {title:'Rules Library',links:[['Rules','/rules/']]},
     {title:'Project',links:[['Legal & Licensing','/legal/']]}
   ]);
 
@@ -112,10 +115,17 @@
   drawer.setAttribute('aria-label','Mobile navigation');
 
   const mobileSections=[
-    {title:'Browse',links:[['Home','/'],['Races','/races/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
+    {title:'Browse',links:[['Home','/'],['Races','/races/']]},
     {title:'Classes',links:classLinks},
-    {title:'Character Options',links:[['Character Builder','https://play.familiararcanattrpg.com']]},
-    {title:'Rules and Content',links:[['Rules','/rules/'],['Spells','/spells/'],['Legal & Licensing','/legal/']]}
+    {title:'Character Options',links:[
+      ['Backgrounds','/backgrounds/'],
+      ['Feats','/feats/'],
+      ['Fighting Styles','/fighting-styles/'],
+      ['Eldritch Invocations','/eldritch-invocations/'],
+      ['Spells','/spells/'],
+      ['Character Builder','https://play.familiararcanattrpg.com']
+    ]},
+    {title:'Rules and Content',links:[['Rules','/rules/'],['Legal & Licensing','/legal/']]}
   ];
 
   mobileSections.forEach(section=>{
