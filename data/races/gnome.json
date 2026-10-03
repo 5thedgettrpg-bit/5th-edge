@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "gnome",
   "name": "Gnome",
   "category": "Fey Folk",
@@ -37,7 +37,45 @@
         },
         {
           "name": "Gift of the Svirfneblin",
-          "description": "You know the Mold Earth cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Nondetection with this trait. Once you cast Disguise Self or Nondetection with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Mold Earth cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Nondetection with this trait. Once you cast Disguise Self or Nondetection with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Mold Earth cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Nondetection with this trait.",
+            "Once you cast Disguise Self or Nondetection with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Mold Earth",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Disguise Self",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Nondetection",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -73,7 +111,45 @@
         },
         {
           "name": "Gift of the Forest",
-          "description": "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Animal Friendship with this trait. Starting at 5th level, you can also cast Summon Beast with this trait. Once you cast Animal Friendship or Summon Beast with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Animal Friendship with this trait. Starting at 5th level, you can also cast Summon Beast with this trait. Once you cast Animal Friendship or Summon Beast with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Animal Friendship with this trait. Starting at 5th level, you can also cast Summon Beast with this trait.",
+            "Once you cast Animal Friendship or Summon Beast with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Druidcraft",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Animal Friendship",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Summon Beast",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -109,7 +185,109 @@
         },
         {
           "name": "Scribe's Insight",
-          "description": "You know the Message cantrip. Starting at 3rd level, you can cast Comprehend Languages with this trait. Starting at 5th level, you can also cast Magic Mouth with this trait. Once you cast Comprehend Languages or Magic Mouth with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Comprehend Languages, Illusory Script 2nd Animal Messenger, Silence 3rd Sending, Tongues 4th Arcane Eye, Divination 5th Dream"
+          "description": "You know the Message cantrip. Starting at 3rd level, you can cast Comprehend Languages with this trait. Starting at 5th level, you can also cast Magic Mouth with this trait. Once you cast Comprehend Languages or Magic Mouth with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Comprehend Languages, Illusory Script 2nd Animal Messenger, Silence 3rd Sending, Tongues 4th Arcane Eye, Divination 5th Dream",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Comprehend Languages, Illusory Script"
+              ],
+              [
+                "2nd",
+                "Animal Messenger, Silence"
+              ],
+              [
+                "3rd",
+                "Sending, Tongues"
+              ],
+              [
+                "4th",
+                "Arcane Eye, Divination"
+              ],
+              [
+                "5th",
+                "Dream"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Message cantrip. Starting at 3rd level, you can cast Comprehend Languages with this trait. Starting at 5th level, you can also cast Magic Mouth with this trait.",
+            "Once you cast Comprehend Languages or Magic Mouth with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Message",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Comprehend Languages",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Magic Mouth",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Comprehend Languages",
+                  "Illusory Script"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Animal Messenger",
+                  "Silence"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Sending",
+                  "Tongues"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Arcane Eye",
+                  "Divination"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Dream"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Gifted Scribe",
@@ -149,7 +327,45 @@
         },
         {
           "name": "Gift of the Tinkerer",
-          "description": "You know the Magic Stone cantrip. Starting at 3rd level, you can cast Catapult with this trait. Starting at 5th level, you can also cast Borrowed Knowledge with this trait. Once you cast Catapult or Borrowed Knowledge with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Magic Stone cantrip. Starting at 3rd level, you can cast Catapult with this trait. Starting at 5th level, you can also cast Borrowed Knowledge with this trait. Once you cast Catapult or Borrowed Knowledge with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Magic Stone cantrip. Starting at 3rd level, you can cast Catapult with this trait. Starting at 5th level, you can also cast Borrowed Knowledge with this trait.",
+            "Once you cast Catapult or Borrowed Knowledge with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Magic Stone",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Catapult",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Borrowed Knowledge",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     }
