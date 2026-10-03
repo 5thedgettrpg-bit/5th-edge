@@ -194,8 +194,23 @@
     return 'You can see in dim light within '+distance+' feet of you as if it were bright light, and in darkness as if it were dim light. You can\'t discern color in darkness, only shades of gray.';
   }
 
+  function featureTable(table){
+    if(!table?.columns?.length || !table?.rows?.length) return '';
+    const head='<thead><tr>'+table.columns.map(c=>'<th>'+esc(c)+'</th>').join('')+'</tr></thead>';
+    const body='<tbody>'+table.rows.map(row=>'<tr>'+row.map(cell=>'<td>'+esc(cell)+'</td>').join('')+'</tr>').join('')+'</tbody>';
+    return '<div class="species-table-wrap"><table class="species-data-table">'+head+body+'</table></div>';
+  }
+
+  function featureBody(f){
+    const blocks=Array.isArray(f.descriptionBlocks) && f.descriptionBlocks.length
+      ? f.descriptionBlocks
+      : [f.description || ''];
+    const prose=blocks.filter(Boolean).map(p=>'<p>'+esc(p)+'</p>').join('');
+    return prose + featureTable(f.table);
+  }
+
   function featureCard(f,i){
-    return '<details class="species-feature" '+(i===0?'open':'')+'><summary>'+esc(f.name || 'Feature')+'<span>+</span></summary><div>'+esc(f.description || '')+'</div></details>';
+    return '<details class="species-feature" '+(i===0?'open':'')+'><summary>'+esc(f.name || 'Feature')+'<span>+</span></summary><div>'+featureBody(f)+'</div></details>';
   }
 
   function renderHeroArt(data,variant){
