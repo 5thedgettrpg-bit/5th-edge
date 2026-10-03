@@ -38,7 +38,10 @@
   }
 
   function raceUrl(species,variant){
-    return '/race/'+encodeURIComponent(species)+(variant ? '/'+encodeURIComponent(variant) : '');
+    const p = new URLSearchParams();
+    if(variant) p.set('variant',variant);
+    const qs=p.toString();
+    return '/races/'+encodeURIComponent(species)+'/' + (qs ? '?'+qs : '');
   }
 
   function pushUrl(species,variant){
@@ -104,7 +107,14 @@
     $('#variantWrap').style.display='none';
     $('#speciesHeroCharacter')?.classList.add('is-hidden');
     $('.species-hero-approved')?.classList.remove('is-eladrin');
-    $('#speciesBody').innerHTML='<div class="species-empty">Choose a race from the left to begin.</div>';
+    const meta=$('#speciesMeta');
+    const title=$('#speciesVariantName');
+    const source=$('#speciesSource');
+    const features=$('#speciesFeatures');
+    if(meta) meta.innerHTML='';
+    if(title) title.textContent='Choose a Race';
+    if(source) source.textContent='';
+    if(features) features.innerHTML='<div class="species-empty">Choose a race from the left to begin.</div>';
   }
 
   async function selectSpecies(id,variantId=null,updateUrl=false){
