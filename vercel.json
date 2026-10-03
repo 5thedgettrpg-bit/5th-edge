@@ -1,11 +1,30 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/species/:path*",
-      "destination": "/races/:path*",
+      "destination": "/race/:path*",
       "permanent": true
+    },
+    {
+      "source": "/races/:path*",
+      "destination": "/race/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/race",
+      "destination": "/races"
+    },
+    {
+      "source": "/race/:race",
+      "destination": "/races/:race"
+    },
+    {
+      "source": "/race/:race/:variant",
+      "destination": "/races/:race"
     }
   ]
 }
