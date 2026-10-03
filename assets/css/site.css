@@ -1216,3 +1216,175 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
   .species-mobile-art{min-height:360px}
   .species-hero-character{height:340px}
 }
+
+
+/* ===== Species layout restored, approved art used only as banner ===== */
+.species-panel{container-type:inline-size}
+.species-panel .species-hero-approved{
+  position:relative;
+  display:block;
+  height:36.71875cqw;
+  min-height:310px;
+  overflow:hidden;
+  border-bottom:.3125cqw solid #d2a449;
+  background:#260b0c;
+}
+.species-panel .race-banner-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    linear-gradient(90deg,rgba(27,6,8,.98) 0%,rgba(33,7,9,.90) 31%,rgba(38,8,10,.40) 58%,rgba(20,8,8,.02) 100%),
+    url('/assets/images/species/human-race-background.jpg') center/cover no-repeat;
+}
+.species-panel .race-banner-inner{
+  position:relative;
+  z-index:1;
+  width:92%;
+  height:100%;
+  margin:auto;
+}
+.species-panel .species-hero-approved .species-hero-copy{
+  position:absolute;
+  z-index:3;
+  left:0;
+  top:0;
+  bottom:0;
+  width:45%;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.species-panel .species-hero-approved .kicker{
+  color:#f0ce84;
+  font-size:max(10px,.78125cqw);
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.species-panel .species-hero-approved h1{
+  margin:.78125cqw 0 1.71875cqw;
+  color:#fff1dc;
+  font:700 max(48px,5.78125cqw)/.88 Georgia,serif;
+  letter-spacing:-.04em;
+  text-shadow:none;
+}
+.species-panel .species-hero-approved p{
+  max-width:43.75cqw;
+  margin:0;
+  color:#ead8c6;
+  font-size:max(14px,1.25cqw);
+  line-height:1.55;
+}
+.species-panel .species-hero-approved .variant-control{
+  margin-top:2.1875cqw;
+  display:inline-flex;
+  align-items:center;
+  gap:max(10px,1.09375cqw);
+  width:max-content;
+  max-width:100%;
+  padding:max(8px,.78125cqw) max(10px,.9375cqw);
+  border:1px solid rgba(220,146,112,.68);
+  border-radius:0;
+  background:rgba(69,24,23,.62);
+}
+.species-panel .species-hero-approved .variant-control label{
+  color:#f0ce84;
+  font-size:max(9px,.78125cqw);
+}
+.species-panel .species-hero-approved .variant-control select{
+  min-width:max(190px,17.1875cqw);
+  min-height:0;
+  border:0;
+  border-radius:0;
+  background:#f3e7d6;
+  color:#34261f;
+  padding:max(9px,.859375cqw) max(34px,3.125cqw) max(9px,.859375cqw) max(12px,1.09375cqw);
+  font-size:max(13px,1.09375cqw);
+  font-weight:900;
+}
+.species-panel .race-banner-character{
+  position:absolute;
+  z-index:2;
+  right:3%;
+  bottom:-3%;
+  height:100%;
+  width:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 1.875cqw 2.34375cqw rgba(0,0,0,.45));
+}
+.species-panel .race-banner-character.is-hidden{display:none}
+.species-panel .race-banner-mobile-art{display:none}
+
+@media(max-width:900px){
+  .species-panel{container-type:normal}
+  .species-panel .species-hero-approved{
+    height:auto;
+    min-height:0;
+    border-bottom:0;
+    background:none;
+  }
+  .species-panel .race-banner-bg{display:none}
+  .species-panel .race-banner-inner{
+    width:100%;
+    height:auto;
+    display:grid;
+    grid-template-rows:auto 390px;
+  }
+  .species-panel .species-hero-approved .species-hero-copy{
+    position:relative;
+    left:auto;
+    top:auto;
+    bottom:auto;
+    width:100%;
+    padding:30px 22px 28px;
+    background:linear-gradient(135deg,#2a0d0f,#5b1715);
+  }
+  .species-panel .species-hero-approved .kicker{font-size:10px}
+  .species-panel .species-hero-approved h1{
+    margin:10px 0 18px;
+    font-size:56px;
+  }
+  .species-panel .species-hero-approved p{
+    max-width:none;
+    font-size:16px;
+  }
+  .species-panel .species-hero-approved .variant-control{
+    width:100%;
+    margin-top:22px;
+    padding:10px 12px;
+    gap:12px;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+  }
+  .species-panel .species-hero-approved .variant-control select{
+    width:100%;
+    min-width:0;
+    padding:10px 36px 10px 12px;
+    font-size:14px;
+  }
+  .species-panel .race-banner-mobile-art{
+    display:block;
+    grid-row:2;
+    min-height:390px;
+    border-bottom:4px solid #d2a449;
+    background:
+      linear-gradient(180deg,rgba(35,8,10,.02),rgba(35,8,10,.24)),
+      url('/assets/images/species/human-race-background.jpg') 72% center/cover no-repeat;
+  }
+  .species-panel .race-banner-character{
+    left:50%;
+    right:auto;
+    bottom:0;
+    height:365px;
+    transform:translateX(-50%);
+    filter:drop-shadow(0 20px 26px rgba(0,0,0,.45));
+  }
+}
+@media(max-width:560px){
+  .species-panel .race-banner-inner{grid-template-rows:auto 360px}
+  .species-panel .race-banner-mobile-art{min-height:360px}
+  .species-panel .race-banner-character{height:340px}
+}
