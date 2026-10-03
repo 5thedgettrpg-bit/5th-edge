@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "human",
   "name": "Human",
   "category": "Common Folk",
@@ -36,7 +36,109 @@
         },
         {
           "name": "Finder's Magic",
-          "description": "You know the True Strike cantrip. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Locate Object with this trait. Once you cast Hunter's Mark or Locate Object with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Faerie Fire, Longstrider 2nd Locate Animals or Plants, Locate Object 3rd Clairvoyance, Speak With Plants 4th Divination, Locate Creature 5th Commune With Nature"
+          "description": "You know the True Strike cantrip. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Locate Object with this trait. Once you cast Hunter's Mark or Locate Object with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Faerie Fire, Longstrider 2nd Locate Animals or Plants, Locate Object 3rd Clairvoyance, Speak With Plants 4th Divination, Locate Creature 5th Commune With Nature",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Faerie Fire, Longstrider"
+              ],
+              [
+                "2nd",
+                "Locate Animals or Plants, Locate Object"
+              ],
+              [
+                "3rd",
+                "Clairvoyance, Speak With Plants"
+              ],
+              [
+                "4th",
+                "Divination, Locate Creature"
+              ],
+              [
+                "5th",
+                "Commune With Nature"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the True Strike cantrip. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Locate Object with this trait.",
+            "Once you cast Hunter's Mark or Locate Object with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "True Strike",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Hunter's Mark",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Locate Object",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Faerie Fire",
+                  "Longstrider"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Locate Animals or Plants",
+                  "Locate Object"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Clairvoyance",
+                  "Speak With Plants"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Divination",
+                  "Locate Creature"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Commune With Nature"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -72,7 +174,109 @@
         },
         {
           "name": "Primal Connection",
-          "description": "You know the Create Bonfire cantrip. Starting at 3rd level, you can cast Beast Bond with this trait. Starting at 5th level, you can also cast Summon Beast with this trait. Once you cast Beast Bond or Summon Beast with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Animal Friendship, Speak With Animals 2nd Beast Sense, Calm Emotions 3rd Beacon of Hope, Conjure Animals 4th Aura of Life, Dominate Beast 5th Awaken"
+          "description": "You know the Create Bonfire cantrip. Starting at 3rd level, you can cast Beast Bond with this trait. Starting at 5th level, you can also cast Summon Beast with this trait. Once you cast Beast Bond or Summon Beast with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Animal Friendship, Speak With Animals 2nd Beast Sense, Calm Emotions 3rd Beacon of Hope, Conjure Animals 4th Aura of Life, Dominate Beast 5th Awaken",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Animal Friendship, Speak With Animals"
+              ],
+              [
+                "2nd",
+                "Beast Sense, Calm Emotions"
+              ],
+              [
+                "3rd",
+                "Beacon of Hope, Conjure Animals"
+              ],
+              [
+                "4th",
+                "Aura of Life, Dominate Beast"
+              ],
+              [
+                "5th",
+                "Awaken"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Create Bonfire cantrip. Starting at 3rd level, you can cast Beast Bond with this trait. Starting at 5th level, you can also cast Summon Beast with this trait.",
+            "Once you cast Beast Bond or Summon Beast with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Create Bonfire",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Beast Bond",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Summon Beast",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Animal Friendship",
+                  "Speak With Animals"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Beast Sense",
+                  "Calm Emotions"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Beacon of Hope",
+                  "Conjure Animals"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Aura of Life",
+                  "Dominate Beast"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Awaken"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -108,7 +312,113 @@
         },
         {
           "name": "Spellsmith",
-          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Magic Weapon spell with this trait. When you do so, the spell lasts for 1 hour and doesn't require concentration. Starting at 5th level, you can also cast Heat Metal with this trait. Once you cast Magic Weapon or Heat Metal with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Identify, Tenser's Floating Disk 2nd Continual Flame, Magic Weapon 3rd Conjure Barrage, Elemental Weapon 4th Fabricate, Stone Shape 5th Creation"
+          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Magic Weapon spell with this trait. When you do so, the spell lasts for 1 hour and doesn't require concentration. Starting at 5th level, you can also cast Heat Metal with this trait. Once you cast Magic Weapon or Heat Metal with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Identify, Tenser's Floating Disk 2nd Continual Flame, Magic Weapon 3rd Conjure Barrage, Elemental Weapon 4th Fabricate, Stone Shape 5th Creation",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Identify, Tenser's Floating Disk"
+              ],
+              [
+                "2nd",
+                "Continual Flame, Magic Weapon"
+              ],
+              [
+                "3rd",
+                "Conjure Barrage, Elemental Weapon"
+              ],
+              [
+                "4th",
+                "Fabricate, Stone Shape"
+              ],
+              [
+                "5th",
+                "Creation"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Mending cantrip. Starting at 3rd level, you can also cast the Magic Weapon spell with this trait. When you do so, the spell lasts for 1 hour and doesn't require concentration. Starting at 5th level, you can also cast Heat Metal with this trait.",
+            "Once you cast Magic Weapon or Heat Metal with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Mending",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Magic Weapon",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "castingOverrides": {
+                  "duration": "1 hour",
+                  "concentration": false
+                }
+              },
+              {
+                "name": "Heat Metal",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Identify",
+                  "Tenser's Floating Disk"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Continual Flame",
+                  "Magic Weapon"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Conjure Barrage",
+                  "Elemental Weapon"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Fabricate",
+                  "Stone Shape"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Creation"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -144,7 +454,109 @@
         },
         {
           "name": "Guardian's Shield",
-          "description": "You know the Resistance cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Warding Bond with this trait. Once you cast Shield or Warding Bond with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Compelled Duel, Shield of Faith 2nd Warding Bond, Zone of Truth 3rd Counterspell, Protection From Energy 4th Death Ward, Guardian of Faith 5th Bigby's Hand"
+          "description": "You know the Resistance cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Warding Bond with this trait. Once you cast Shield or Warding Bond with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Compelled Duel, Shield of Faith 2nd Warding Bond, Zone of Truth 3rd Counterspell, Protection From Energy 4th Death Ward, Guardian of Faith 5th Bigby's Hand",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Compelled Duel, Shield of Faith"
+              ],
+              [
+                "2nd",
+                "Warding Bond, Zone of Truth"
+              ],
+              [
+                "3rd",
+                "Counterspell, Protection From Energy"
+              ],
+              [
+                "4th",
+                "Death Ward, Guardian of Faith"
+              ],
+              [
+                "5th",
+                "Bigby's Hand"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Resistance cantrip. Starting at 3rd level, you can cast Shield with this trait. Starting at 5th level, you can also cast Warding Bond with this trait.",
+            "Once you cast Shield or Warding Bond with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Resistance",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Shield",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Warding Bond",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Compelled Duel",
+                  "Shield of Faith"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Warding Bond",
+                  "Zone of Truth"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Counterspell",
+                  "Protection From Energy"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Death Ward",
+                  "Guardian of Faith"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Bigby's Hand"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -248,7 +660,109 @@
         },
         {
           "name": "Magical Passage",
-          "description": "You know the Guidance cantrip. Starting at 3rd level, you can cast Longstrider with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Longstrider or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Expeditious Retreat, Jump 2nd Misty Step, Pass Without Trace 3rd Blink, Phantom Steed 4th Dimension Door, Freedom of Movement 5th Teleportation Circle"
+          "description": "You know the Guidance cantrip. Starting at 3rd level, you can cast Longstrider with this trait. Starting at 5th level, you can also cast Misty Step with this trait. Once you cast Longstrider or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Expeditious Retreat, Jump 2nd Misty Step, Pass Without Trace 3rd Blink, Phantom Steed 4th Dimension Door, Freedom of Movement 5th Teleportation Circle",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Expeditious Retreat, Jump"
+              ],
+              [
+                "2nd",
+                "Misty Step, Pass Without Trace"
+              ],
+              [
+                "3rd",
+                "Blink, Phantom Steed"
+              ],
+              [
+                "4th",
+                "Dimension Door, Freedom of Movement"
+              ],
+              [
+                "5th",
+                "Teleportation Circle"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Guidance cantrip. Starting at 3rd level, you can cast Longstrider with this trait. Starting at 5th level, you can also cast Misty Step with this trait.",
+            "Once you cast Longstrider or Misty Step with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Guidance",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Longstrider",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Misty Step",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Expeditious Retreat",
+                  "Jump"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Misty Step",
+                  "Pass Without Trace"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Blink",
+                  "Phantom Steed"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Dimension Door",
+                  "Freedom of Movement"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Teleportation Circle"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     }
