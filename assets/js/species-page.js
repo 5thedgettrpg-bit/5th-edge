@@ -108,16 +108,18 @@
     return '<details class="species-feature" '+(i===0?'open':'')+'><summary>'+esc(f.name || 'Feature')+'<span>+</span></summary><div>'+esc(f.description || '')+'</div></details>';
   }
 
-  function renderHeroArt(data){
+  function renderHeroArt(data,variant){
     const character=$('#speciesHeroCharacter');
-    if(!character) return;
-    const isHuman=data?.id==='human';
-    character.classList.toggle('is-hidden',!isHuman);
-    character.alt=isHuman ? (data.name || 'Human') : '';
+    const hero=$('.species-hero-approved');
+    if(!character || !hero) return;
+    const isEladrin=data?.id==='elf' && variant?.id==='eladrin';
+    character.classList.toggle('is-hidden',!isEladrin);
+    character.alt=isEladrin ? 'Eladrin Elf' : '';
+    hero.classList.toggle('is-eladrin',isEladrin);
   }
 
   function renderSpecies(data,variant){
-    renderHeroArt(data);
+    renderHeroArt(data,variant);
     const variants=data.variants || [];
     const hasRealVariants = variants.length > 1 || (variants.length === 1 && variants[0]?.id !== 'base' && variants[0]?.name);
     const singularCategory={
