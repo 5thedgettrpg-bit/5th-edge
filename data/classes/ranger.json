@@ -70,7 +70,7 @@
       1,
       3,
       7,
-      10,
+      11,
       18
     ]
   },
@@ -351,7 +351,7 @@
       "level": 10,
       "proficiencyBonus": 4,
       "features": [
-        "Ranger Conclave feature"
+        "Nature's Veil"
       ],
       "instinctDie": "d6",
       "spellsKnown": 6,
@@ -365,7 +365,7 @@
       "level": 11,
       "proficiencyBonus": 4,
       "features": [
-        "Nature's Veil"
+        "Ranger Conclave feature"
       ],
       "instinctDie": "d8",
       "spellsKnown": 7,
@@ -584,12 +584,12 @@
       "id": "ranger-conclave",
       "name": "Ranger Conclave",
       "level": 1,
-      "description": "At 1st level, you choose to emulate the ideals and training of a ranger conclave. Your choice grants you features at 1st level, then again at 3rd, 7th, 10th, and 18th level.",
+      "description": "At 1st level, you choose to emulate the ideals and training of a ranger conclave. Your choice grants you features at 1st level, then again at 3rd, 7th, 11th, and 18th level.",
       "subclassFeatureLevels": [
         1,
         3,
         7,
-        10,
+        11,
         18
       ]
     },
@@ -804,8 +804,8 @@
     {
       "id": "natures-veil",
       "name": "Nature's Veil",
-      "level": 11,
-      "description": "This 11th-level feature replaces Hide in Plain Sight. As a bonus action, you can magically become invisible, along with any equipment you are wearing or carrying, until the start of your next turn. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+      "level": 10,
+      "description": "This 10th-level feature replaces Hide in Plain Sight. As a bonus action, you can magically become invisible, along with any equipment you are wearing or carrying, until the start of your next turn. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
       "resource": {
         "max": "proficiencyBonus",
         "recharge": "longRest"
