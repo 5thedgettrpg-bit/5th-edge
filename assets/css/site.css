@@ -1389,3 +1389,168 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
   .species-panel .race-banner-character{height:340px}
 }
 
+
+
+/* ===== Species visual parity with class pages ===== */
+.species-layout{
+  grid-template-columns:245px minmax(0,1fr)!important;
+  gap:18px!important;
+}
+.species-sidebar{
+  border-radius:6px!important;
+  border:1px solid #4e3c32!important;
+  box-shadow:0 16px 38px rgba(42,26,20,.16)!important;
+}
+.species-sidebar-head{
+  padding:17px 16px 15px!important;
+}
+.species-sidebar-head h2{
+  font-size:20px!important;
+}
+.species-sidebar-head p{
+  font-size:12px!important;
+  line-height:1.5!important;
+}
+.species-search{
+  height:39px!important;
+  font-size:13px!important;
+}
+.species-group summary{
+  min-height:58px!important;
+  padding:8px 12px!important;
+}
+.species-group-name{
+  font-size:15px!important;
+}
+.species-group-count{
+  font-size:11px!important;
+}
+.species-group-list{
+  padding:5px 0 8px!important;
+}
+.species-group-list a{
+  padding:9px 14px 9px 22px!important;
+  font-size:13.5px!important;
+  line-height:1.35!important;
+}
+.species-panel{
+  border-radius:6px!important;
+  border:1px solid #cdbba9!important;
+  box-shadow:0 20px 46px rgba(52,31,22,.12)!important;
+}
+.species-panel .species-hero-approved .kicker{
+  font-size:max(10px,.78125cqw)!important;
+}
+.species-panel .species-hero-approved h1{
+  color:#f7ead3!important;
+}
+.species-panel .species-hero-approved p{
+  font-size:max(16px,1.25cqw)!important;
+  line-height:1.68!important;
+  color:#d4c2b3!important;
+}
+.species-panel .species-hero-approved .variant-control label{
+  font-size:max(10px,.78125cqw)!important;
+}
+.species-panel .species-hero-approved .variant-control select{
+  font-size:max(13px,1.09375cqw)!important;
+}
+.species-body{
+  padding:0 40px 38px!important;
+  background:linear-gradient(180deg,#f8f1e7,#f4eadf)!important;
+}
+.species-overview{
+  margin:28px 0 34px!important;
+  border-top:1px solid #c6af98!important;
+  border-bottom:1px solid #c6af98!important;
+  background:rgba(255,255,255,.18)!important;
+}
+.species-stat{
+  min-height:82px!important;
+  padding:14px 13px 15px!important;
+}
+.species-stat span{
+  font-size:9px!important;
+}
+.species-stat strong{
+  font-size:17px!important;
+  line-height:1.35!important;
+}
+.species-section-title{
+  margin:31px 0 8px!important;
+  padding-bottom:10px!important;
+  border-bottom:2px solid #9e2a24!important;
+}
+.species-section-title h2{
+  font-size:31px!important;
+  color:#a72a24!important;
+}
+.species-source{
+  font-size:10px!important;
+  color:#987e6d!important;
+}
+.species-feature{
+  border-bottom:1px solid #d4c4b5!important;
+}
+.species-feature:first-child{
+  border-top:1px solid #d4c4b5!important;
+}
+.species-feature summary{
+  padding:13px 6px!important;
+  font-size:18px!important;
+  line-height:1.25!important;
+}
+.species-feature summary:before{
+  color:#bd935d!important;
+}
+.species-feature>div{
+  margin:0 0 15px 27px!important;
+  padding:1px 26px 1px 14px!important;
+  border-left:2px solid #bd935d!important;
+  color:#5c4e47!important;
+  font-size:14.5px!important;
+  line-height:1.75!important;
+  max-width:980px!important;
+}
+@media(max-width:900px){
+  .species-layout{
+    grid-template-columns:1fr!important;
+    margin-top:10px!important;
+  }
+  .species-sidebar{
+    position:static!important;
+  }
+  .species-group-list a{
+    font-size:14px!important;
+  }
+  .species-panel .species-hero-approved p{
+    font-size:15px!important;
+  }
+  .species-overview{
+    grid-template-columns:repeat(3,1fr)!important;
+  }
+}
+@media(max-width:620px){
+  .species-layout{
+    width:min(100% - 16px,1280px)!important;
+  }
+  .species-body{
+    padding:0 18px 28px!important;
+  }
+  .species-overview{
+    grid-template-columns:1fr 1fr!important;
+    margin:20px 0 28px!important;
+  }
+  .species-section-title{
+    align-items:flex-start!important;
+    flex-direction:column!important;
+  }
+  .species-feature summary{
+    font-size:17px!important;
+  }
+  .species-feature>div{
+    margin-left:18px!important;
+    padding-right:10px!important;
+    font-size:14px!important;
+  }
+}
