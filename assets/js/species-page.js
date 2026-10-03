@@ -181,7 +181,7 @@
       stat('Languages',variant.languages);
 
     $('#speciesSource').textContent = sourceBits || '';
-    $('#speciesVariantName').textContent = variant.name ? data.name+' • '+variant.name : data.name;
+    $('#speciesVariantName').textContent = variant.name ? variant.name+' '+data.name : data.name;
     $('#speciesFeatures').innerHTML = (variant.features||[]).map(featureCard).join('');
   }
 
