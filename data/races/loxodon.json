@@ -36,7 +36,7 @@
         },
         {
           "name": "Natural Armor",
-          "description": "When you aren't wearing armor, your base AC is 11 + your Constitution modifier + your proficiency bonus. You can use this AC if armor you wear would give you a lower AC, and you can still benefit from a shield."
+          "description": "When you aren't wearing armor, your base AC equals 11 + your proficiency bonus + your Constitution modifier. The Constitution modifier added to this AC can't exceed +5. You can use this AC if armor you wear would give you a lower AC, and you can still gain the benefit of a shield."
         },
         {
           "name": "Trunk",
