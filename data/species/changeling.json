@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "changeling",
   "name": "Changeling",
   "category": "Fey Folk",
@@ -37,7 +37,45 @@
         },
         {
           "name": "Shifting Magic",
-          "description": "You know the Friends cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Alter Self with this trait. Once you cast Disguise Self or Alter Self with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Friends cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Alter Self with this trait. Once you cast Disguise Self or Alter Self with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Friends cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Alter Self with this trait.",
+            "Once you cast Disguise Self or Alter Self with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Friends",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Disguise Self",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Alter Self",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     }
