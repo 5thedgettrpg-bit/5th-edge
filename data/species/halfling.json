@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "halfling",
   "name": "Halfling",
   "category": "Common Folk",
@@ -116,7 +116,46 @@
         },
         {
           "name": "Children of the Woods",
-          "description": "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Entangle with this trait. Starting at 5th level, you can also cast Spike Growth with this trait. Once you cast Entangle or Spike Growth with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Entangle with this trait. Starting at 5th level, you can also cast Spike Growth with this trait. Once you cast Entangle or Spike Growth with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know one cantrip of your choice from the Druid spell list. Starting at 3rd level, you can cast Entangle with this trait. Starting at 5th level, you can also cast Spike Growth with this trait.",
+            "Once you cast Entangle or Spike Growth with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Druid",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Entangle",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Spike Growth",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Nimble",
@@ -156,7 +195,45 @@
         },
         {
           "name": "Healing Magic",
-          "description": "You know the Spare the Dying cantrip. Starting at 3rd level, you can cast Cure Wounds with this trait. Starting at 5th level, you can also cast Lesser Restoration with this trait. Once you cast Cure Wounds or Lesser Restoration with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Spare the Dying cantrip. Starting at 3rd level, you can cast Cure Wounds with this trait. Starting at 5th level, you can also cast Lesser Restoration with this trait. Once you cast Cure Wounds or Lesser Restoration with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Spare the Dying cantrip. Starting at 3rd level, you can cast Cure Wounds with this trait. Starting at 5th level, you can also cast Lesser Restoration with this trait.",
+            "Once you cast Cure Wounds or Lesser Restoration with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Spare the Dying",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Cure Wounds",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Lesser Restoration",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Medical Intuition",
@@ -200,7 +277,45 @@
         },
         {
           "name": "Innkeeper's Magic",
-          "description": "You know the Prestidigitation cantrip. Starting at 3rd level, you can cast Goodberry with this trait. Starting at 5th level, you can also cast Gift of Gab with this trait. Once you cast Goodberry or Gift of Gab with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Prestidigitation cantrip. Starting at 3rd level, you can cast Goodberry with this trait. Starting at 5th level, you can also cast Gift of Gab with this trait. Once you cast Goodberry or Gift of Gab with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Prestidigitation cantrip. Starting at 3rd level, you can cast Goodberry with this trait. Starting at 5th level, you can also cast Gift of Gab with this trait.",
+            "Once you cast Goodberry or Gift of Gab with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Prestidigitation",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Goodberry",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Gift of Gab",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         },
         {
           "name": "Ever Hospitable",
