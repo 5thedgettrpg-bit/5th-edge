@@ -1700,3 +1700,91 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
     font-size:14px!important;
   }
 }
+
+
+/* ===== Species core stats as feature accordions ===== */
+.species-overview{
+  display:block!important;
+  margin:0 0 30px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+}
+.species-core-feature{
+  margin:0!important;
+  border:0!important;
+  border-bottom:1px solid #d4c4b5!important;
+  background:transparent!important;
+}
+.species-core-feature:first-child{
+  border-top:1px solid #d4c4b5!important;
+}
+.species-core-feature summary{
+  position:relative!important;
+  cursor:pointer!important;
+  list-style:none!important;
+  display:grid!important;
+  grid-template-columns:1fr 18px!important;
+  gap:10px!important;
+  align-items:center!important;
+  padding:13px 6px 13px 27px!important;
+  color:#41332d!important;
+  font:700 18px Georgia,serif!important;
+  transition:.14s ease!important;
+}
+.species-core-feature summary::-webkit-details-marker{display:none!important}
+.species-core-feature summary::before{
+  content:"◆"!important;
+  position:absolute!important;
+  left:6px!important;
+  color:#bd935d!important;
+  font:700 9px/1 Arial,sans-serif!important;
+}
+.species-core-heading{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:3px!important;
+}
+.species-core-feature summary b{
+  font:inherit!important;
+}
+.species-core-feature .plus{
+  color:#a72a24!important;
+  font:900 14px/1 Arial,sans-serif!important;
+  text-align:center!important;
+}
+.species-core-feature summary:hover{
+  color:#9b241f!important;
+  background:rgba(167,42,36,.035)!important;
+}
+.species-core-feature[open] summary{
+  color:#9b241f!important;
+}
+.species-core-feature[open] .plus{
+  transform:rotate(45deg)!important;
+}
+.species-core-body{
+  margin:0 0 15px 27px!important;
+  padding:1px 26px 1px 14px!important;
+  border-left:2px solid #bd935d!important;
+  color:#5c4e47!important;
+  font-size:14.5px!important;
+  line-height:1.75!important;
+  max-width:980px!important;
+}
+.species-core-body p{
+  margin:7px 0!important;
+}
+.species-core-body b{
+  color:#342923!important;
+}
+@media(max-width:620px){
+  .species-core-feature summary{
+    font-size:17px!important;
+  }
+  .species-core-body{
+    margin-left:18px!important;
+    padding-right:10px!important;
+    font-size:14px!important;
+  }
+}
