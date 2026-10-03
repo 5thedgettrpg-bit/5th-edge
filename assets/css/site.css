@@ -1554,3 +1554,149 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
     font-size:14px!important;
   }
 }
+
+
+/* ===== Species class-page cleanup v2 ===== */
+/* Sidebar icon cleanup */
+.species-category-icon{
+  position:relative!important;
+  overflow:hidden!important;
+  background-image:none!important;
+  border-radius:6px!important;
+  box-shadow:0 4px 10px rgba(0,0,0,.24)!important;
+}
+.species-category-icon::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background-image:url('/assets/images/species/category-sprite.webp')!important;
+  background-repeat:no-repeat!important;
+  background-size:168px 126px!important;
+  background-position:calc(var(--ix) * -42px) calc(var(--iy) * -42px)!important;
+  transform:scale(1.14)!important;
+  transform-origin:center!important;
+}
+
+/* Treat the selected species/variant title like a class section header */
+.species-section-title{
+  display:grid!important;
+  grid-template-columns:max-content 1fr!important;
+  align-items:center!important;
+  gap:16px!important;
+  margin:28px 0 18px!important;
+  padding:0!important;
+  border:0!important;
+}
+.species-section-title:after{
+  content:""!important;
+  display:block!important;
+  height:1px!important;
+  background:linear-gradient(90deg,#bd935d,transparent)!important;
+}
+.species-section-title h2{
+  display:inline-block!important;
+  margin:0!important;
+  padding:9px 28px 9px 19px!important;
+  background:linear-gradient(90deg,#781b17,#a72a24)!important;
+  color:#fff4df!important;
+  font:700 22px/1 Georgia,serif!important;
+  clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%,8px 50%)!important;
+  box-shadow:inset 0 1px rgba(240,206,132,.4)!important;
+  white-space:nowrap!important;
+}
+.species-source{
+  grid-column:1/-1!important;
+  margin:-8px 0 0 19px!important;
+  font-size:9px!important;
+  color:#9a7662!important;
+}
+
+/* Traits now mirror class feature accordions */
+.species-feature{
+  margin:0!important;
+  border:0!important;
+  border-bottom:1px solid #d4c4b5!important;
+  background:transparent!important;
+}
+.species-feature:first-child{
+  border-top:1px solid #d4c4b5!important;
+}
+.species-feature summary{
+  position:relative!important;
+  cursor:pointer!important;
+  list-style:none!important;
+  display:grid!important;
+  grid-template-columns:1fr 18px!important;
+  gap:10px!important;
+  align-items:center!important;
+  padding:13px 6px 13px 27px!important;
+  color:#41332d!important;
+  font:700 18px Georgia,serif!important;
+  transition:.14s ease!important;
+}
+.species-feature summary::before{
+  content:"◆"!important;
+  position:absolute!important;
+  left:6px!important;
+  color:#bd935d!important;
+  font:700 9px/1 Arial,sans-serif!important;
+}
+.species-feature summary span{
+  color:#a72a24!important;
+  font:900 14px/1 Arial,sans-serif!important;
+  text-align:center!important;
+}
+.species-feature summary:hover{
+  color:#9b241f!important;
+  background:rgba(167,42,36,.035)!important;
+}
+.species-feature[open] summary{
+  color:#9b241f!important;
+}
+.species-feature[open] summary span{
+  transform:rotate(45deg)!important;
+}
+.species-feature>div{
+  margin:0 0 15px 27px!important;
+  padding:1px 26px 1px 14px!important;
+  border-left:2px solid #bd935d!important;
+  color:#5c4e47!important;
+  font-size:14.5px!important;
+  line-height:1.75!important;
+  max-width:980px!important;
+}
+
+/* Pull the parchment rhythm closer to class pages */
+.species-body{
+  padding:28px 40px 38px!important;
+}
+.species-overview{
+  margin:0 0 28px!important;
+}
+
+@media(max-width:620px){
+  .species-section-title{
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+  }
+  .species-section-title:after{display:none!important}
+  .species-section-title h2{
+    width:max-content!important;
+    max-width:100%!important;
+    white-space:normal!important;
+    font-size:20px!important;
+  }
+  .species-source{
+    grid-column:auto!important;
+    margin:0 0 0 8px!important;
+  }
+  .species-body{
+    padding:22px 18px 28px!important;
+  }
+  .species-feature summary{
+    font-size:17px!important;
+  }
+  .species-feature>div{
+    font-size:14px!important;
+  }
+}
