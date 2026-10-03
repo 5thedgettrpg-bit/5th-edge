@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "tiefling",
   "name": "Tiefling",
   "category": "Otherworldly",
@@ -36,7 +36,109 @@
         },
         {
           "name": "Infernal Legacy",
-          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Command, Cause Fear 2nd Scorching Ray, Suggestion 3rd Fear, Bestow Curse 4th Shadow of Moil, Wall of Fire 5th Flame Strike"
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Command, Cause Fear 2nd Scorching Ray, Suggestion 3rd Fear, Bestow Curse 4th Shadow of Moil, Wall of Fire 5th Flame Strike",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Command, Cause Fear"
+              ],
+              [
+                "2nd",
+                "Scorching Ray, Suggestion"
+              ],
+              [
+                "3rd",
+                "Fear, Bestow Curse"
+              ],
+              [
+                "4th",
+                "Shadow of Moil, Wall of Fire"
+              ],
+              [
+                "5th",
+                "Flame Strike"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait.",
+            "Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Hellish Rebuke",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Command",
+                  "Cause Fear"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Scorching Ray",
+                  "Suggestion"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Fear",
+                  "Bestow Curse"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Shadow of Moil",
+                  "Wall of Fire"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Flame Strike"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -72,7 +174,109 @@
         },
         {
           "name": "Legacy of Baalzebul",
-          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Ray of Sickness with this trait. Starting at 5th level, you can also cast Crown of Madness with this trait. Once you cast Ray of Sickness or Crown of Madness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Inflict Wounds, Tasha's Hideous Laughter 2nd Blindness/Deafness, Ray of Enfeeblement 3rd Bestow Curse, Stinking Cloud 4th Blight, Confusion 5th Cloudkill"
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Ray of Sickness with this trait. Starting at 5th level, you can also cast Crown of Madness with this trait. Once you cast Ray of Sickness or Crown of Madness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Inflict Wounds, Tasha's Hideous Laughter 2nd Blindness/Deafness, Ray of Enfeeblement 3rd Bestow Curse, Stinking Cloud 4th Blight, Confusion 5th Cloudkill",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Inflict Wounds, Tasha's Hideous Laughter"
+              ],
+              [
+                "2nd",
+                "Blindness/Deafness, Ray of Enfeeblement"
+              ],
+              [
+                "3rd",
+                "Bestow Curse, Stinking Cloud"
+              ],
+              [
+                "4th",
+                "Blight, Confusion"
+              ],
+              [
+                "5th",
+                "Cloudkill"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Ray of Sickness with this trait. Starting at 5th level, you can also cast Crown of Madness with this trait.",
+            "Once you cast Ray of Sickness or Crown of Madness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Ray of Sickness",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Crown of Madness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Inflict Wounds",
+                  "Tasha's Hideous Laughter"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Blindness/Deafness",
+                  "Ray of Enfeeblement"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Bestow Curse",
+                  "Stinking Cloud"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Blight",
+                  "Confusion"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Cloudkill"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -108,7 +312,109 @@
         },
         {
           "name": "Devil’s Tongue",
-          "description": "You know the Vicious Mockery cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Enthrall with this trait. Once you cast Charm Person or Enthrall with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Command, Dissonant Whispers 2nd Detect Thoughts, Suggestion 3rd Enemies Abound, Hypnotic Pattern 4th Charm Monster, Compulsion 5th Dominate Person"
+          "description": "You know the Vicious Mockery cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Enthrall with this trait. Once you cast Charm Person or Enthrall with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spells 1st Command, Dissonant Whispers 2nd Detect Thoughts, Suggestion 3rd Enemies Abound, Hypnotic Pattern 4th Charm Monster, Compulsion 5th Dominate Person",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Command, Dissonant Whispers"
+              ],
+              [
+                "2nd",
+                "Detect Thoughts, Suggestion"
+              ],
+              [
+                "3rd",
+                "Enemies Abound, Hypnotic Pattern"
+              ],
+              [
+                "4th",
+                "Charm Monster, Compulsion"
+              ],
+              [
+                "5th",
+                "Dominate Person"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Vicious Mockery cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Enthrall with this trait.",
+            "Once you cast Charm Person or Enthrall with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Vicious Mockery",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Charm Person",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Enthrall",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Command",
+                  "Dissonant Whispers"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Detect Thoughts",
+                  "Suggestion"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Enemies Abound",
+                  "Hypnotic Pattern"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Charm Monster",
+                  "Compulsion"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Dominate Person"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -144,7 +450,109 @@
         },
         {
           "name": "Legacy of Dispater",
-          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Detect Thoughts with this trait. Once you cast Disguise Self or Detect Thoughts with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Dissonant Whispers, Silent Image 2nd Enthrall, Pass without Trace 3rd Clairvoyance, Nondetection 4th Arcane Eye, Greater Invisibility 5th Modify Memory"
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Detect Thoughts with this trait. Once you cast Disguise Self or Detect Thoughts with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Dissonant Whispers, Silent Image 2nd Enthrall, Pass without Trace 3rd Clairvoyance, Nondetection 4th Arcane Eye, Greater Invisibility 5th Modify Memory",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Dissonant Whispers, Silent Image"
+              ],
+              [
+                "2nd",
+                "Enthrall, Pass without Trace"
+              ],
+              [
+                "3rd",
+                "Clairvoyance, Nondetection"
+              ],
+              [
+                "4th",
+                "Arcane Eye, Greater Invisibility"
+              ],
+              [
+                "5th",
+                "Modify Memory"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Detect Thoughts with this trait.",
+            "Once you cast Disguise Self or Detect Thoughts with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Disguise Self",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Detect Thoughts",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Dissonant Whispers",
+                  "Silent Image"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Enthrall",
+                  "Pass without Trace"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Clairvoyance",
+                  "Nondetection"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Arcane Eye",
+                  "Greater Invisibility"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Modify Memory"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -180,7 +588,109 @@
         },
         {
           "name": "Infernal Legacy",
-          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Zephyr Strike 2nd Blur, Spider Climb 3rd Haste, Vampiric Touch 4th Freedom of Movement, Greater Invisibility 5th Steel Wind Strike"
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Zephyr Strike 2nd Blur, Spider Climb 3rd Haste, Vampiric Touch 4th Freedom of Movement, Greater Invisibility 5th Steel Wind Strike",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Cause Fear, Zephyr Strike"
+              ],
+              [
+                "2nd",
+                "Blur, Spider Climb"
+              ],
+              [
+                "3rd",
+                "Haste, Vampiric Touch"
+              ],
+              [
+                "4th",
+                "Freedom of Movement, Greater Invisibility"
+              ],
+              [
+                "5th",
+                "Steel Wind Strike"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait.",
+            "Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Hellish Rebuke",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Cause Fear",
+                  "Zephyr Strike"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Blur",
+                  "Spider Climb"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Haste",
+                  "Vampiric Touch"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Freedom of Movement",
+                  "Greater Invisibility"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Steel Wind Strike"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -216,7 +726,109 @@
         },
         {
           "name": "Legacy of Fierna",
-          "description": "You know the Friends cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Suggestion with this trait. Once you cast Charm Person or Suggestion with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Command, Dissonant Whispers 2nd Calm Emotions, Enthrall 3rd Enemies Abound, Hypnotic Pattern 4th Charm Monster, Compulsion 5th Dominate Person"
+          "description": "You know the Friends cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Suggestion with this trait. Once you cast Charm Person or Suggestion with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Command, Dissonant Whispers 2nd Calm Emotions, Enthrall 3rd Enemies Abound, Hypnotic Pattern 4th Charm Monster, Compulsion 5th Dominate Person",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Command, Dissonant Whispers"
+              ],
+              [
+                "2nd",
+                "Calm Emotions, Enthrall"
+              ],
+              [
+                "3rd",
+                "Enemies Abound, Hypnotic Pattern"
+              ],
+              [
+                "4th",
+                "Charm Monster, Compulsion"
+              ],
+              [
+                "5th",
+                "Dominate Person"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Friends cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Suggestion with this trait.",
+            "Once you cast Charm Person or Suggestion with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Friends",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Charm Person",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Suggestion",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Command",
+                  "Dissonant Whispers"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Calm Emotions",
+                  "Enthrall"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Enemies Abound",
+                  "Hypnotic Pattern"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Charm Monster",
+                  "Compulsion"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Dominate Person"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -252,7 +864,109 @@
         },
         {
           "name": "Legacy of Glasya",
-          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Invisibility with this trait. Once you cast Disguise Self or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Silent Image, Unseen Servant 2nd Mirror Image, Pass Without A Trace 3rd Major Image, Nondetection 4th Greater Invisibility, Hallucinatory Terrain 5th Mislead"
+          "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Invisibility with this trait. Once you cast Disguise Self or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Silent Image, Unseen Servant 2nd Mirror Image, Pass Without A Trace 3rd Major Image, Nondetection 4th Greater Invisibility, Hallucinatory Terrain 5th Mislead",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Silent Image, Unseen Servant"
+              ],
+              [
+                "2nd",
+                "Mirror Image, Pass Without A Trace"
+              ],
+              [
+                "3rd",
+                "Major Image, Nondetection"
+              ],
+              [
+                "4th",
+                "Greater Invisibility, Hallucinatory Terrain"
+              ],
+              [
+                "5th",
+                "Mislead"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Invisibility with this trait.",
+            "Once you cast Disguise Self or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Minor Illusion",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Disguise Self",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Invisibility",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Silent Image",
+                  "Unseen Servant"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Mirror Image",
+                  "Pass Without A Trace"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Major Image",
+                  "Nondetection"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Greater Invisibility",
+                  "Hallucinatory Terrain"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Mislead"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -288,7 +1002,109 @@
         },
         {
           "name": "Hellfire",
-          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Burning Hands with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Burning Hands or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Searing Smite, Hellish Rebuke 2nd Flaming Sphere, Scorching Ray 3rd Fireball, Melf’s Minute Meteors 4th Fire Shield, Wall of Fire 5th Immolation"
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Burning Hands with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Burning Hands or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Searing Smite, Hellish Rebuke 2nd Flaming Sphere, Scorching Ray 3rd Fireball, Melf’s Minute Meteors 4th Fire Shield, Wall of Fire 5th Immolation",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Searing Smite, Hellish Rebuke"
+              ],
+              [
+                "2nd",
+                "Flaming Sphere, Scorching Ray"
+              ],
+              [
+                "3rd",
+                "Fireball, Melf’s Minute Meteors"
+              ],
+              [
+                "4th",
+                "Fire Shield, Wall of Fire"
+              ],
+              [
+                "5th",
+                "Immolation"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Burning Hands with this trait. Starting at 5th level, you can also cast Darkness with this trait.",
+            "Once you cast Burning Hands or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Burning Hands",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Searing Smite",
+                  "Hellish Rebuke"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Flaming Sphere",
+                  "Scorching Ray"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Fireball",
+                  "Melf’s Minute Meteors"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Fire Shield",
+                  "Wall of Fire"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Immolation"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -324,7 +1140,109 @@
         },
         {
           "name": "Infernal Legacy",
-          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Hex 2nd Scorching Ray, Nathair's Mischief 3rd Bestow Curse, Fear 4th Fire Shield, Shadow of Moil 5th Contact Other Plane"
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Hex 2nd Scorching Ray, Nathair's Mischief 3rd Bestow Curse, Fear 4th Fire Shield, Shadow of Moil 5th Contact Other Plane",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Cause Fear, Hex"
+              ],
+              [
+                "2nd",
+                "Scorching Ray, Nathair's Mischief"
+              ],
+              [
+                "3rd",
+                "Bestow Curse, Fear"
+              ],
+              [
+                "4th",
+                "Fire Shield, Shadow of Moil"
+              ],
+              [
+                "5th",
+                "Contact Other Plane"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait.",
+            "Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Hellish Rebuke",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Cause Fear",
+                  "Hex"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Scorching Ray",
+                  "Nathair's Mischief"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Bestow Curse",
+                  "Fear"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Fire Shield",
+                  "Shadow of Moil"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Contact Other Plane"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -360,7 +1278,109 @@
         },
         {
           "name": "Legacy of Levistus",
-          "description": "You know the Ray of Frost cantrip. Starting at 3rd level, you can cast Armor of Agathys with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Armor of Agathys or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Ice Knife, Protection from Evil and Good 2nd Mirror Image, Rime’s Binding Ice 3rd Bestow Curse, Hunger of Hadar 4th Ice Storm, Shadow of Moil 5th Cone of Cold"
+          "description": "You know the Ray of Frost cantrip. Starting at 3rd level, you can cast Armor of Agathys with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Armor of Agathys or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Ice Knife, Protection from Evil and Good 2nd Mirror Image, Rime’s Binding Ice 3rd Bestow Curse, Hunger of Hadar 4th Ice Storm, Shadow of Moil 5th Cone of Cold",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Ice Knife, Protection from Evil and Good"
+              ],
+              [
+                "2nd",
+                "Mirror Image, Rime’s Binding Ice"
+              ],
+              [
+                "3rd",
+                "Bestow Curse, Hunger of Hadar"
+              ],
+              [
+                "4th",
+                "Ice Storm, Shadow of Moil"
+              ],
+              [
+                "5th",
+                "Cone of Cold"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Ray of Frost cantrip. Starting at 3rd level, you can cast Armor of Agathys with this trait. Starting at 5th level, you can also cast Darkness with this trait.",
+            "Once you cast Armor of Agathys or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Ray of Frost",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Armor of Agathys",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Ice Knife",
+                  "Protection from Evil and Good"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Mirror Image",
+                  "Rime’s Binding Ice"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Bestow Curse",
+                  "Hunger of Hadar"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Ice Storm",
+                  "Shadow of Moil"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Cone of Cold"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -396,7 +1416,109 @@
         },
         {
           "name": "Legacy of Mammon",
-          "description": "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Distort Value with this trait. Starting at 5th level, you can also cast Arcane Lock with this trait. Once you cast Distort Value or Arcane Lock with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Identify, Unseen Servant 2nd Knock, Locate Object 3rd Clairvoyance, Incite Greed 4th Fabricate, Leomund’s Secret Chest 5th Creation"
+          "description": "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Distort Value with this trait. Starting at 5th level, you can also cast Arcane Lock with this trait. Once you cast Distort Value or Arcane Lock with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Identify, Unseen Servant 2nd Knock, Locate Object 3rd Clairvoyance, Incite Greed 4th Fabricate, Leomund’s Secret Chest 5th Creation",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Identify, Unseen Servant"
+              ],
+              [
+                "2nd",
+                "Knock, Locate Object"
+              ],
+              [
+                "3rd",
+                "Clairvoyance, Incite Greed"
+              ],
+              [
+                "4th",
+                "Fabricate, Leomund’s Secret Chest"
+              ],
+              [
+                "5th",
+                "Creation"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Distort Value with this trait. Starting at 5th level, you can also cast Arcane Lock with this trait.",
+            "Once you cast Distort Value or Arcane Lock with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Mage Hand",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Distort Value",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Arcane Lock",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Identify",
+                  "Unseen Servant"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Knock",
+                  "Locate Object"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Clairvoyance",
+                  "Incite Greed"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Fabricate",
+                  "Leomund’s Secret Chest"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Creation"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -432,7 +1554,109 @@
         },
         {
           "name": "Legacy of Mephistopheles",
-          "description": "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Fog Cloud with this trait. Starting at 5th level, you can also cast Rime’s Binding Ice with this trait. Once you cast Fog Cloud or Rime’s Binding Ice with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Armor of Agathys, Ice Knife 2nd Darkness, Snilloc’s Snowball Swarm 3rd Sleet Storm, Slow 4th Elemental Bane, Ice Storm 5th Cone of Cold"
+          "description": "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Fog Cloud with this trait. Starting at 5th level, you can also cast Rime’s Binding Ice with this trait. Once you cast Fog Cloud or Rime’s Binding Ice with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Armor of Agathys, Ice Knife 2nd Darkness, Snilloc’s Snowball Swarm 3rd Sleet Storm, Slow 4th Elemental Bane, Ice Storm 5th Cone of Cold",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Armor of Agathys, Ice Knife"
+              ],
+              [
+                "2nd",
+                "Darkness, Snilloc’s Snowball Swarm"
+              ],
+              [
+                "3rd",
+                "Sleet Storm, Slow"
+              ],
+              [
+                "4th",
+                "Elemental Bane, Ice Storm"
+              ],
+              [
+                "5th",
+                "Cone of Cold"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Mage Hand cantrip. Starting at 3rd level, you can cast Fog Cloud with this trait. Starting at 5th level, you can also cast Rime’s Binding Ice with this trait.",
+            "Once you cast Fog Cloud or Rime’s Binding Ice with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Mage Hand",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Fog Cloud",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Rime’s Binding Ice",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Armor of Agathys",
+                  "Ice Knife"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Darkness",
+                  "Snilloc’s Snowball Swarm"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Sleet Storm",
+                  "Slow"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Elemental Bane",
+                  "Ice Storm"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Cone of Cold"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -468,7 +1692,109 @@
         },
         {
           "name": "Infernal Legacy",
-          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Hex 2nd Flame Blade, Nathair's Mischief 3rd Antagonize, Fear 4th Death Ward, Shadow of Moil 5th Contact Other Plane"
+          "description": "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Cause Fear, Hex 2nd Flame Blade, Nathair's Mischief 3rd Antagonize, Fear 4th Death Ward, Shadow of Moil 5th Contact Other Plane",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "Cause Fear, Hex"
+              ],
+              [
+                "2nd",
+                "Flame Blade, Nathair's Mischief"
+              ],
+              [
+                "3rd",
+                "Antagonize, Fear"
+              ],
+              [
+                "4th",
+                "Death Ward, Shadow of Moil"
+              ],
+              [
+                "5th",
+                "Contact Other Plane"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Thaumaturgy cantrip. Starting at 3rd level, you can cast Hellish Rebuke with this trait. Starting at 5th level, you can also cast Darkness with this trait.",
+            "Once you cast Hellish Rebuke or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Hellish Rebuke",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "Cause Fear",
+                  "Hex"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Flame Blade",
+                  "Nathair's Mischief"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Antagonize",
+                  "Fear"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Death Ward",
+                  "Shadow of Moil"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Contact Other Plane"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     },
@@ -544,7 +1870,109 @@
         },
         {
           "name": "Legacy of Zariel",
-          "description": "You know the Sword Burst cantrip. Starting at 3rd level, you can cast Wrathful Smite with this trait. Starting at 5th level, you can also cast Aid with this trait. Once you cast Wrathful Smite or Aid with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st False Life, Hunter's Mark 2nd Magic Weapon, See Invisibility 3rd Bestow Curse, Haste 4th Staggering Smite, Locate Creature 5th Banishing Smite"
+          "description": "You know the Sword Burst cantrip. Starting at 3rd level, you can cast Wrathful Smite with this trait. Starting at 5th level, you can also cast Aid with this trait. Once you cast Wrathful Smite or Aid with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st False Life, Hunter's Mark 2nd Magic Weapon, See Invisibility 3rd Bestow Curse, Haste 4th Staggering Smite, Locate Creature 5th Banishing Smite",
+          "table": {
+            "columns": [
+              "Spell Level",
+              "Spells"
+            ],
+            "rows": [
+              [
+                "1st",
+                "False Life, Hunter's Mark"
+              ],
+              [
+                "2nd",
+                "Magic Weapon, See Invisibility"
+              ],
+              [
+                "3rd",
+                "Bestow Curse, Haste"
+              ],
+              [
+                "4th",
+                "Staggering Smite, Locate Creature"
+              ],
+              [
+                "5th",
+                "Banishing Smite"
+              ]
+            ]
+          },
+          "descriptionBlocks": [
+            "You know the Sword Burst cantrip. Starting at 3rd level, you can cast Wrathful Smite with this trait. Starting at 5th level, you can also cast Aid with this trait.",
+            "Once you cast Wrathful Smite or Aid with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+            "Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Sword Burst",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Wrathful Smite",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Aid",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "spellLevel": 1,
+                "spells": [
+                  "False Life",
+                  "Hunter's Mark"
+                ]
+              },
+              {
+                "spellLevel": 2,
+                "spells": [
+                  "Magic Weapon",
+                  "See Invisibility"
+                ]
+              },
+              {
+                "spellLevel": 3,
+                "spells": [
+                  "Bestow Curse",
+                  "Haste"
+                ]
+              },
+              {
+                "spellLevel": 4,
+                "spells": [
+                  "Staggering Smite",
+                  "Locate Creature"
+                ]
+              },
+              {
+                "spellLevel": 5,
+                "spells": [
+                  "Banishing Smite"
+                ]
+              }
+            ],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     }
