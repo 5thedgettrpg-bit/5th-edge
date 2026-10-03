@@ -8,21 +8,27 @@
   if (oldNav) oldNav.remove();
   if (oldMobile) oldMobile.remove();
 
+  const directLinks = [
+    ['Home','/'],
+    ['Races','/races/'],
+    ['Classes','/classes/'],
+    ['Backgrounds','/backgrounds/'],
+    ['Feats','/feats/']
+  ];
+
   const groups = [
     {
       label: 'Character Options',
       sections: [
-        {title:'Build a Character', links:[['Classes','/classes/'],['Race','/races/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
-        {title:'Popular Classes', links:[['Barbarian','/classes/barbarian/'],['Paladin','/classes/paladin/'],['Ranger','/classes/ranger/'],['Rogue','/classes/rogue/']]},
-        {title:'Tools', links:[['Character Builder','/character-builder/']]}
+        {title:'Build', links:[['Character Builder','/character-builder/']]},
+        {title:'Popular Classes', links:[['Barbarian','/classes/barbarian/'],['Paladin','/classes/paladin/'],['Ranger','/classes/ranger/'],['Rogue','/classes/rogue/']]}
       ]
     },
     {
-      label: 'Rules & Content',
+      label: 'Rules and Content',
       sections: [
         {title:'Rules Library', links:[['Rules','/rules/'],['Spells','/spells/']]},
-        {title:'Browse', links:[['Classes','/classes/'],['Race','/races/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
-        {title:'Project', links:[['Legal & Licensing','/legal/'],['Home','/']]}
+        {title:'Project', links:[['Legal & Licensing','/legal/']]}
       ]
     }
   ];
@@ -30,6 +36,14 @@
   const nav = document.createElement('nav');
   nav.className = 'edge-nav';
   nav.setAttribute('aria-label','Primary navigation');
+
+  directLinks.forEach(([label,href]) => {
+    const a = document.createElement('a');
+    a.className = 'edge-nav-direct';
+    a.href = href;
+    a.textContent = label;
+    nav.appendChild(a);
+  });
 
   groups.forEach((g,gi) => {
     const wrap = document.createElement('div');
@@ -76,12 +90,6 @@
     nav.appendChild(wrap);
   });
 
-  const builder = document.createElement('a');
-  builder.className = 'edge-nav-builder';
-  builder.href = '/character-builder/';
-  builder.textContent = 'Character Builder';
-  nav.appendChild(builder);
-
   const toggle = document.createElement('button');
   toggle.className = 'edge-nav-toggle';
   toggle.type = 'button';
@@ -93,9 +101,9 @@
   drawer.setAttribute('aria-label','Mobile navigation');
 
   const mobileSections = [
-    {title:'Character Options',links:[['Classes','/classes/'],['Race','/races/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
-    {title:'Rules & Content',links:[['Spells','/spells/'],['Rules','/rules/']]},
-    {title:'Tools',links:[['Character Builder','/character-builder/'],['Legal & Licensing','/legal/']]}
+    {title:'Browse',links:[['Home','/'],['Races','/races/'],['Classes','/classes/'],['Backgrounds','/backgrounds/'],['Feats','/feats/']]},
+    {title:'Character Options',links:[['Character Builder','/character-builder/']]},
+    {title:'Rules and Content',links:[['Rules','/rules/'],['Spells','/spells/'],['Legal & Licensing','/legal/']]}
   ];
 
   mobileSections.forEach(s => {
