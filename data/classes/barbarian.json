@@ -4,7 +4,7 @@
   "system": "dnd5e",
   "edition": "2014",
   "source": "5th Edge",
-  "version": 1,
+  "version": 2,
   "summary": "A primal warrior who channels ferocity, endurance, and physical power through Rage and a chosen Primal Path.",
   "hitPoints": {
     "hitDie": 12,
@@ -130,7 +130,7 @@
       "proficiencyBonus": 2,
       "features": [
         "reckless-attack",
-        "danger-sense"
+        "physically-imposing"
       ],
       "rages": 2,
       "rageDamage": 2,
@@ -140,6 +140,8 @@
       "level": 3,
       "proficiencyBonus": 2,
       "features": [
+        "danger-sense",
+        "brutal-critical",
         "primal-path-feature"
       ],
       "rages": 3,
@@ -170,7 +172,6 @@
       "level": 6,
       "proficiencyBonus": 3,
       "features": [
-        "fast-movement",
         "primal-path-feature"
       ],
       "rages": 4,
@@ -181,6 +182,7 @@
       "level": 7,
       "proficiencyBonus": 3,
       "features": [
+        "fast-movement",
         "primal-champion"
       ],
       "rages": 4,
@@ -408,16 +410,11 @@
         "unit": "minute"
       },
       "resource": "rage",
-      "description": "On your turn, you can enter a rage as a bonus action. While raging and not wearing heavy armor, you have advantage on Strength checks and Strength saving throws, gain your Rage Damage bonus on melee weapon attacks using Strength, and gain resistance to bludgeoning, piercing, and slashing damage. You cannot cast spells or concentrate on them while raging. Rage ends if you are incapacitated or if you end it as a bonus action.",
+      "description": "On your turn, you can enter a rage as a bonus action. While raging, you have advantage on Strength checks and Strength saving throws, gain your Rage Damage bonus on melee weapon attacks using Strength, and gain resistance to bludgeoning, piercing, and slashing damage. You cannot cast spells or concentrate on them while raging. Rage lasts for 1 minute. It ends early if you are incapacitated or if you choose to end it as a bonus action.",
       "automation": {
         "toggle": {
           "id": "raging",
           "label": "Rage",
-          "conditions": [
-            {
-              "notWearingArmorCategory": "heavy"
-            }
-          ],
           "effects": [
             {
               "type": "advantage",
@@ -525,11 +522,31 @@
       }
     },
     {
-      "id": "danger-sense",
-      "name": "Danger Sense",
+      "id": "physically-imposing",
+      "name": "Physically Imposing",
       "level": 2,
       "type": "passive",
-      "description": "You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. You cannot gain this benefit while blinded, deafened, or incapacitated.",
+      "description": "At 2nd level, you gain proficiency in the Intimidation skill. If you are already proficient in Intimidation, you gain proficiency in another skill of your choice from the barbarian skill list. In addition, you can use Strength in place of Charisma when making an Intimidation check.",
+      "automation": {
+        "grantProficiencies": [
+          "Intimidation"
+        ],
+        "alreadyProficientFallback": {
+          "choose": 1,
+          "from": "classSkillList"
+        },
+        "skillAbilityOverride": {
+          "Intimidation": "Strength"
+        },
+        "defaultAbility": "Charisma"
+      }
+    },
+    {
+      "id": "danger-sense",
+      "name": "Danger Sense",
+      "level": 3,
+      "type": "passive",
+      "description": "At 3rd level, you gain an uncanny sense of when things nearby are not as they should be. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. You do not gain this benefit while you are blinded, deafened, or incapacitated.",
       "automation": {
         "savingThrowAdvantage": {
           "ability": "dexterity",
@@ -540,6 +557,25 @@
             "incapacitated"
           ]
         }
+      }
+    },
+    {
+      "id": "brutal-critical",
+      "name": "Brutal Critical",
+      "level": 3,
+      "type": "passive",
+      "description": "At 3rd level, when you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit. The number of additional weapon damage dice increases to two at 9th level and three at 17th level.",
+      "automation": {
+        "trigger": {
+          "event": "criticalHit",
+          "attackType": "meleeWeaponAttack"
+        },
+        "extraWeaponDamageDiceByLevel": {
+          "3": 1,
+          "9": 2,
+          "17": 3
+        },
+        "addTo": "criticalHitExtraDamage"
       }
     },
     {
@@ -575,9 +611,9 @@
     {
       "id": "fast-movement",
       "name": "Fast Movement",
-      "level": 6,
+      "level": 7,
       "type": "passive",
-      "description": "Your walking speed increases by 10 feet while you aren't wearing heavy armor.",
+      "description": "Starting at 7th level, your speed increases by 10 feet while you are not wearing heavy armor.",
       "automation": {
         "speedModifier": {
           "movementType": "walk",
@@ -654,13 +690,13 @@
       "name": "Persistent Rage",
       "level": 15,
       "type": "passive",
-      "description": "Once you enter a rage, it lasts for its full duration and doesn't end early unless you choose to end it as a bonus action.",
+      "description": "Beginning at 15th level, your rage is so fierce that it ends early only if you are incapacitated or if you choose to end it as a bonus action.",
       "automation": {
         "modifyFeature": "rage",
-        "removeAutomaticEndConditions": [
-          "incapacitated"
-        ],
-        "preserveManualEnd": true
+        "preserveEndConditions": [
+          "incapacitated",
+          "manualBonusAction"
+        ]
       }
     },
     {
