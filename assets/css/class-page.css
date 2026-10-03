@@ -96,7 +96,11 @@ a{color:inherit}
 .footer-legal a{color:#c8aa74}.footer-copy{white-space:nowrap;color:#8f7f72;font-size:9.5px}
 
 @media(max-width:900px){
-  .site-links{display:none}
+  .site-header-inner{flex-wrap:wrap;padding:8px 0 10px}
+  .site-links{display:flex;order:2;width:100%;overflow-x:auto;gap:8px;padding:0 0 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .site-links::-webkit-scrollbar{display:none}
+  .site-links a{flex:0 0 auto;padding:9px 11px;border:1px solid var(--line);border-radius:5px;background:#fff}
+  .site-links .builder-link{border-color:var(--red);background:var(--red);color:#fff!important}
   .layout{grid-template-columns:1fr;margin-top:10px}
   .side{position:static}
   .side h3,.side p{display:none}
