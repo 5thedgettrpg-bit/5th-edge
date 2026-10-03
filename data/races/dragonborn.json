@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "dragonborn",
   "name": "Dragonborn",
   "category": "Dragonkin",
@@ -28,7 +28,64 @@
       "features": [
         {
           "name": "Chromatic Ancestry",
-          "description": "You trace your ancestry to a chromatic dragon, granting you a special magical affinity. Choose one type of dragon from the Chromatic Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Black Acid Blue Lightning Green Poison Red Fire White Cold"
+          "description": "You trace your ancestry to a chromatic dragon, granting you a special magical affinity. Choose one type of dragon from the Chromatic Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Black Acid Blue Lightning Green Poison Red Fire White Cold",
+          "descriptionBlocks": [
+            "You trace your ancestry to a chromatic dragon, granting you a special magical affinity. Choose one type of dragon from the Chromatic Ancestry table. This determines the damage type for your other traits as shown in the table."
+          ],
+          "table": {
+            "columns": [
+              "Dragon",
+              "Damage Type"
+            ],
+            "rows": [
+              [
+                "Black",
+                "Acid"
+              ],
+              [
+                "Blue",
+                "Lightning"
+              ],
+              [
+                "Green",
+                "Poison"
+              ],
+              [
+                "Red",
+                "Fire"
+              ],
+              [
+                "White",
+                "Cold"
+              ]
+            ]
+          },
+          "choice": {
+            "id": "draconicAncestry",
+            "count": 1,
+            "options": [
+              {
+                "name": "Black",
+                "damageType": "Acid"
+              },
+              {
+                "name": "Blue",
+                "damageType": "Lightning"
+              },
+              {
+                "name": "Green",
+                "damageType": "Poison"
+              },
+              {
+                "name": "Red",
+                "damageType": "Fire"
+              },
+              {
+                "name": "White",
+                "damageType": "Cold"
+              }
+            ]
+          }
         },
         {
           "name": "Breath Weapon",
@@ -108,7 +165,64 @@
       "features": [
         {
           "name": "Gem Ancestry",
-          "description": "You trace your ancestry to a Gem dragon, granting you a special magical affinity. Choose one type of dragon from the Gem Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Amethyst Force Crystal Radiant Emerald Psychic Sapphire Thunder Topaz Necrotic"
+          "description": "You trace your ancestry to a Gem dragon, granting you a special magical affinity. Choose one type of dragon from the Gem Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Amethyst Force Crystal Radiant Emerald Psychic Sapphire Thunder Topaz Necrotic",
+          "descriptionBlocks": [
+            "You trace your ancestry to a Gem dragon, granting you a special magical affinity. Choose one type of dragon from the Gem Ancestry table. This determines the damage type for your other traits as shown in the table."
+          ],
+          "table": {
+            "columns": [
+              "Dragon",
+              "Damage Type"
+            ],
+            "rows": [
+              [
+                "Amethyst",
+                "Force"
+              ],
+              [
+                "Crystal",
+                "Radiant"
+              ],
+              [
+                "Emerald",
+                "Psychic"
+              ],
+              [
+                "Sapphire",
+                "Thunder"
+              ],
+              [
+                "Topaz",
+                "Necrotic"
+              ]
+            ]
+          },
+          "choice": {
+            "id": "draconicAncestry",
+            "count": 1,
+            "options": [
+              {
+                "name": "Amethyst",
+                "damageType": "Force"
+              },
+              {
+                "name": "Crystal",
+                "damageType": "Radiant"
+              },
+              {
+                "name": "Emerald",
+                "damageType": "Psychic"
+              },
+              {
+                "name": "Sapphire",
+                "damageType": "Thunder"
+              },
+              {
+                "name": "Topaz",
+                "damageType": "Necrotic"
+              }
+            ]
+          }
         },
         {
           "name": "Breath Weapon",
@@ -148,7 +262,64 @@
       "features": [
         {
           "name": "Metallic Ancestry",
-          "description": "You trace your ancestry to a metallic dragon, granting you a special magical affinity. Choose one type of dragon from the Metallic Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Brass Fire Bronze Lightning Copper Acid Gold Fire Silver Cold"
+          "description": "You trace your ancestry to a metallic dragon, granting you a special magical affinity. Choose one type of dragon from the Metallic Ancestry table. This determines the damage type for your other traits as shown in the table. Dragon Damage Type Brass Fire Bronze Lightning Copper Acid Gold Fire Silver Cold",
+          "descriptionBlocks": [
+            "You trace your ancestry to a metallic dragon, granting you a special magical affinity. Choose one type of dragon from the Metallic Ancestry table. This determines the damage type for your other traits as shown in the table."
+          ],
+          "table": {
+            "columns": [
+              "Dragon",
+              "Damage Type"
+            ],
+            "rows": [
+              [
+                "Brass",
+                "Fire"
+              ],
+              [
+                "Bronze",
+                "Lightning"
+              ],
+              [
+                "Copper",
+                "Acid"
+              ],
+              [
+                "Gold",
+                "Fire"
+              ],
+              [
+                "Silver",
+                "Cold"
+              ]
+            ]
+          },
+          "choice": {
+            "id": "draconicAncestry",
+            "count": 1,
+            "options": [
+              {
+                "name": "Brass",
+                "damageType": "Fire"
+              },
+              {
+                "name": "Bronze",
+                "damageType": "Lightning"
+              },
+              {
+                "name": "Copper",
+                "damageType": "Acid"
+              },
+              {
+                "name": "Gold",
+                "damageType": "Fire"
+              },
+              {
+                "name": "Silver",
+                "damageType": "Cold"
+              }
+            ]
+          }
         },
         {
           "name": "Breath Weapon",
@@ -228,7 +399,125 @@
       "features": [
         {
           "name": "Draconic Ancestry",
-          "description": "You are distantly related to a particular kind of dragon. Choose a type of dragon from the below list; this determines the damage and area of your breath weapon, and the type of resistance you gain. Dragon Color Damage Type Breath Weapon Black Acid 5 by 30 ft. line (DEX save) Blue Lightning 5 by 30 ft. line (DEX save) Brass Fire 5 by 30 ft. line (DEX save) Bronze Lightning 5 by 30 ft. line (DEX save) Copper Acid 5 by 30 ft. line (DEX save) Gold Fire 15 ft. cone (DEX save) Green Poison 15 ft. cone (CON save) Red Fire 15 ft. cone (DEX save) Silver Cold 15 ft. cone (CON save) White Cold 15 ft. cone (CON save)"
+          "description": "You are distantly related to a particular kind of dragon. Choose a type of dragon from the below list; this determines the damage and area of your breath weapon, and the type of resistance you gain. Dragon Color Damage Type Breath Weapon Black Acid 5 by 30 ft. line (DEX save) Blue Lightning 5 by 30 ft. line (DEX save) Brass Fire 5 by 30 ft. line (DEX save) Bronze Lightning 5 by 30 ft. line (DEX save) Copper Acid 5 by 30 ft. line (DEX save) Gold Fire 15 ft. cone (DEX save) Green Poison 15 ft. cone (CON save) Red Fire 15 ft. cone (DEX save) Silver Cold 15 ft. cone (CON save) White Cold 15 ft. cone (CON save)",
+          "descriptionBlocks": [
+            "You are distantly related to a particular kind of dragon. Choose a type of dragon from the below list; this determines the damage and area of your breath weapon, and the type of resistance you gain."
+          ],
+          "table": {
+            "columns": [
+              "Dragon Color",
+              "Damage Type",
+              "Breath Weapon"
+            ],
+            "rows": [
+              [
+                "Black",
+                "Acid",
+                "5 by 30 ft. line (DEX save)"
+              ],
+              [
+                "Blue",
+                "Lightning",
+                "5 by 30 ft. line (DEX save)"
+              ],
+              [
+                "Brass",
+                "Fire",
+                "5 by 30 ft. line (DEX save)"
+              ],
+              [
+                "Bronze",
+                "Lightning",
+                "5 by 30 ft. line (DEX save)"
+              ],
+              [
+                "Copper",
+                "Acid",
+                "5 by 30 ft. line (DEX save)"
+              ],
+              [
+                "Gold",
+                "Fire",
+                "15 ft. cone (DEX save)"
+              ],
+              [
+                "Green",
+                "Poison",
+                "15 ft. cone (CON save)"
+              ],
+              [
+                "Red",
+                "Fire",
+                "15 ft. cone (DEX save)"
+              ],
+              [
+                "Silver",
+                "Cold",
+                "15 ft. cone (CON save)"
+              ],
+              [
+                "White",
+                "Cold",
+                "15 ft. cone (CON save)"
+              ]
+            ]
+          },
+          "choice": {
+            "id": "draconicAncestry",
+            "count": 1,
+            "options": [
+              {
+                "name": "Black",
+                "damageType": "Acid",
+                "breathWeapon": "5 by 30 ft. line (DEX save)"
+              },
+              {
+                "name": "Blue",
+                "damageType": "Lightning",
+                "breathWeapon": "5 by 30 ft. line (DEX save)"
+              },
+              {
+                "name": "Brass",
+                "damageType": "Fire",
+                "breathWeapon": "5 by 30 ft. line (DEX save)"
+              },
+              {
+                "name": "Bronze",
+                "damageType": "Lightning",
+                "breathWeapon": "5 by 30 ft. line (DEX save)"
+              },
+              {
+                "name": "Copper",
+                "damageType": "Acid",
+                "breathWeapon": "5 by 30 ft. line (DEX save)"
+              },
+              {
+                "name": "Gold",
+                "damageType": "Fire",
+                "breathWeapon": "15 ft. cone (DEX save)"
+              },
+              {
+                "name": "Green",
+                "damageType": "Poison",
+                "breathWeapon": "15 ft. cone (CON save)"
+              },
+              {
+                "name": "Red",
+                "damageType": "Fire",
+                "breathWeapon": "15 ft. cone (DEX save)"
+              },
+              {
+                "name": "Silver",
+                "damageType": "Cold",
+                "breathWeapon": "15 ft. cone (CON save)"
+              },
+              {
+                "name": "White",
+                "damageType": "Cold",
+                "breathWeapon": "15 ft. cone (CON save)"
+              }
+            ]
+          }
         },
         {
           "name": "Breath Weapon",
