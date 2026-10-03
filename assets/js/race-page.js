@@ -29,15 +29,19 @@
 
   function currentFromUrl(){
     const p = new URLSearchParams(location.search);
-    const m = location.pathname.match(/^\/races\/([^/]+)\/?$/);
-    return {species:m ? decodeURIComponent(m[1]) : (p.get('race') || p.get('species') || 'human'), variant:p.get('variant') || null};
+    const m = location.pathname.match(/^\/(?:race|races)\/([^/]+)(?:\/([^/]+))?\/?$/);
+    return {
+      species:m ? decodeURIComponent(m[1]) : (p.get('race') || p.get('species') || 'human'),
+      variant:m?.[2] ? decodeURIComponent(m[2]) : (p.get('variant') || null)
+    };
+  }
+
+  function raceUrl(species,variant){
+    return '/race/'+encodeURIComponent(species)+(variant ? '/'+encodeURIComponent(variant) : '');
   }
 
   function pushUrl(species,variant){
-    const p = new URLSearchParams();
-    if(variant) p.set('variant',variant);
-    const qs=p.toString();
-    history.pushState({},'', '/races/'+encodeURIComponent(species)+'/' + (qs ? '?'+qs : ''));
+    history.pushState({},'',raceUrl(species,variant));
   }
 
   function renderSidebar(){
@@ -74,7 +78,7 @@
       const list=$('.species-group-list',details);
       for(const item of items){
         const a=document.createElement('a');
-        a.href='/races/'+encodeURIComponent(item.id)+'/';
+        a.href=raceUrl(item.id,null);
         a.textContent=item.name;
         a.dataset.species=item.id;
         if(item.id===state.current) a.classList.add('active');
@@ -253,6 +257,10 @@
       });
       const q=currentFromUrl();
       await selectSpecies(q.species,q.variant,false);
+      const desired=raceUrl(q.species,state.variantId || q.variant);
+      if(location.pathname.startsWith('/races/') || location.search.includes('variant=')){
+        history.replaceState({},'',desired);
+      }
     }catch(err){
       console.error(err);
       $('#speciesBody').innerHTML='<div class="species-empty">Species data could not be loaded.</div>';
