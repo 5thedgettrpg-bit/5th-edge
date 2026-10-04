@@ -3,32 +3,67 @@
 
   const $ = (sel,root=document)=>root.querySelector(sel);
 
-  const RACE_HERO_ART = {
+  const CDN_RACE_ART_BASE='https://assets.5thedgettrpg.com/race-images';
+
+  const RACE_HERO_ART_OVERRIDES = {
     'elf:eladrin': {
       src:'/assets/images/species/eladrin-character.png',
       alt:'Eladrin Elf'
     },
-    'dragonborn:chromatic': {
-      src:'https://assets.5thedgettrpg.com/race-images/dragonkin/dragonborn/chromatic/chromatic-dragonborn.png',
-      alt:'Chromatic Dragonborn'
-    },
-    'dwarf:standard': {
-      src:'https://assets.5thedgettrpg.com/race-images/common-folk/dwarf/dwarf.png',
-      alt:'Dwarf'
-    },
+    // Temporary filename exception in Drive/R2. Rename the source file later and this can be removed.
     'dwarf:mark-of-warding': {
-      src:'https://assets.5thedgettrpg.com/race-images/common-folk/dwarf/mark-of-warding/mark-of-finding-dwarf.png',
+      src:CDN_RACE_ART_BASE+'/common-folk/dwarf/mark-of-warding/mark-of-finding-dwarf.png',
       alt:'Mark of Warding Dwarf'
-    },
-    'kobold:base': {
-      src:'https://assets.5thedgettrpg.com/race-images/dragonkin/kobold/kobold.png',
-      alt:'Kobold'
-    },
-    'avian:aarakocra': {
-      src:'https://assets.5thedgettrpg.com/race-images/wildborn/avian/aarakocra/aarakocra.png',
-      alt:'Aarakocra'
     }
   };
+
+  function artSlug(value=''){
+    return String(value)
+      .trim()
+      .toLowerCase()
+      .replace(/['’]/g,'')
+      .replace(/[^a-z0-9]+/g,'-')
+      .replace(/^-+|-+$/g,'');
+  }
+
+  function raceHeroArtCandidates(data,variant){
+    if(!data?.id || !variant?.id) return [];
+
+    const key=data.id+':'+variant.id;
+    const override=RACE_HERO_ART_OVERRIDES[key];
+    const manifestEntry=state.manifest?.species?.find(item=>item.id===data.id);
+    const category=artSlug(manifestEntry?.category || '');
+    const race=artSlug(data.id);
+    const variantSlug=artSlug(variant.id);
+    const alt=variant?.name ? variant.name+' '+data.name : data.name;
+
+    const candidates=[];
+    if(override) candidates.push(override);
+    if(!category || !race) return candidates;
+
+    const base=CDN_RACE_ART_BASE+'/'+category+'/'+race;
+    if(variantSlug==='base' || variantSlug==='standard'){
+      candidates.push(
+        {src:base+'/'+race+'.png',alt},
+        {src:base+'/'+race+'.webp',alt},
+        {src:base+'/'+race+'.jpg',alt},
+        {src:base+'/'+race+'.jpeg',alt}
+      );
+    }else{
+      const folder=base+'/'+variantSlug;
+      candidates.push(
+        {src:folder+'/'+variantSlug+'-'+race+'.png',alt},
+        {src:folder+'/'+variantSlug+'.png',alt},
+        {src:folder+'/'+race+'.png',alt},
+        {src:folder+'/'+variantSlug+'-'+race+'.webp',alt},
+        {src:folder+'/'+variantSlug+'.webp',alt},
+        {src:folder+'/'+variantSlug+'-'+race+'.jpg',alt},
+        {src:folder+'/'+variantSlug+'.jpg',alt}
+      );
+    }
+
+    return [...new Map(candidates.map(item=>[item.src,item])).values()];
+  }
 
   const esc = (s='') => String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
@@ -247,20 +282,34 @@
     const hero=$('.species-hero-approved');
     if(!character || !hero) return;
 
-    const key=data?.id && variant?.id ? data.id+':'+variant.id : null;
-    const art=key ? RACE_HERO_ART[key] : null;
-
-    character.classList.toggle('is-hidden',!art);
-    hero.classList.toggle('has-race-art',!!art);
+    const key=data?.id && variant?.id ? data.id+':'+variant.id : '';
+    const candidates=raceHeroArtCandidates(data,variant);
+    character.dataset.artKey=key;
+    character.classList.add('is-hidden');
+    hero.classList.remove('has-race-art');
     hero.classList.toggle('is-eladrin',key==='elf:eladrin');
+    character.alt='';
 
-    if(art){
+    let index=0;
+    const tryNext=()=>{
+      if(character.dataset.artKey!==key) return;
+      if(index>=candidates.length){
+        character.removeAttribute('src');
+        character.onerror=null;
+        character.onload=null;
+        return;
+      }
+      const art=candidates[index++];
+      character.onload=()=>{
+        if(character.dataset.artKey!==key) return;
+        character.alt=art.alt || '';
+        character.classList.remove('is-hidden');
+        hero.classList.add('has-race-art');
+      };
+      character.onerror=tryNext;
       character.src=art.src;
-      character.alt=art.alt || '';
-    }else{
-      character.removeAttribute('src');
-      character.alt='';
-    }
+    };
+    tryNext();
   }
 
   function renderSpecies(data,variant){
