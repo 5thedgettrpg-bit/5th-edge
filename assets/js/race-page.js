@@ -60,6 +60,25 @@
         {src:folder+'/'+variantSlug+'-'+race+'.jpg',alt},
         {src:folder+'/'+variantSlug+'.jpg',alt}
       );
+
+      // Dragonborn variant folders may use a specific ancestry color/material as the representative hero art.
+      if(race==='dragonborn'){
+        const dragonbornRepresentatives={
+          metallic:['gold','silver','bronze','brass','copper'],
+          chromatic:['red','blue','green','black','white'],
+          gem:['amethyst','crystal','emerald','sapphire','topaz']
+        };
+        for(const subtype of (dragonbornRepresentatives[variantSlug] || [])){
+          candidates.push(
+            {src:folder+'/'+subtype+'-dragonborn.png',alt},
+            {src:folder+'/'+subtype+'-dragonborn.webp',alt},
+            {src:folder+'/'+subtype+'-dragonborn.jpg',alt},
+            {src:folder+'/'+subtype+'.png',alt},
+            {src:folder+'/'+subtype+'.webp',alt},
+            {src:folder+'/'+subtype+'.jpg',alt}
+          );
+        }
+      }
     }
 
     return [...new Map(candidates.map(item=>[item.src,item])).values()];
