@@ -34,5 +34,15 @@
   .edge-nav{display:none!important}
   .edge-nav-toggle{display:inline-flex}
   .site-header-inner,.header-inner{flex-wrap:wrap}
-  .edge-mobile-drawer{order:3}
+  .edge-mobile-drawer{
+    order:3;
+    width:100%;
+    max-height:calc(100dvh - 82px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    padding-right:4px;
+    scrollbar-gutter:stable;
+  }
+  .edge-mobile-drawer.open{display:block}
 }
