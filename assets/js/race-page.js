@@ -2,6 +2,34 @@
   const state = { manifest:null, current:null, variantId:null };
 
   const $ = (sel,root=document)=>root.querySelector(sel);
+
+  const RACE_HERO_ART = {
+    'elf:eladrin': {
+      src:'/assets/images/species/eladrin-character.png',
+      alt:'Eladrin Elf'
+    },
+    'dragonborn:chromatic': {
+      src:'https://assets.5thedgettrpg.com/race-images/dragonkin/dragonborn/chromatic/chromatic-dragonborn.png',
+      alt:'Chromatic Dragonborn'
+    },
+    'dwarf:standard': {
+      src:'https://assets.5thedgettrpg.com/race-images/common-folk/dwarf/dwarf.png',
+      alt:'Dwarf'
+    },
+    'dwarf:mark-of-warding': {
+      src:'https://assets.5thedgettrpg.com/race-images/common-folk/dwarf/mark-of-warding/mark-of-finding-dwarf.png',
+      alt:'Mark of Warding Dwarf'
+    },
+    'kobold:base': {
+      src:'https://assets.5thedgettrpg.com/race-images/dragonkin/kobold/kobold.png',
+      alt:'Kobold'
+    },
+    'avian:aarakocra': {
+      src:'https://assets.5thedgettrpg.com/race-images/wildborn/avian/aarakocra/aarakocra.png',
+      alt:'Aarakocra'
+    }
+  };
+
   const esc = (s='') => String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
   function categoryClass(name){
@@ -218,10 +246,21 @@
     const character=$('#speciesHeroCharacter');
     const hero=$('.species-hero-approved');
     if(!character || !hero) return;
-    const isEladrin=data?.id==='elf' && variant?.id==='eladrin';
-    character.classList.toggle('is-hidden',!isEladrin);
-    character.alt=isEladrin ? 'Eladrin Elf' : '';
-    hero.classList.toggle('is-eladrin',isEladrin);
+
+    const key=data?.id && variant?.id ? data.id+':'+variant.id : null;
+    const art=key ? RACE_HERO_ART[key] : null;
+
+    character.classList.toggle('is-hidden',!art);
+    hero.classList.toggle('has-race-art',!!art);
+    hero.classList.toggle('is-eladrin',key==='elf:eladrin');
+
+    if(art){
+      character.src=art.src;
+      character.alt=art.alt || '';
+    }else{
+      character.removeAttribute('src');
+      character.alt='';
+    }
   }
 
   function renderSpecies(data,variant){
