@@ -26,5 +26,25 @@
       "source": "/race/:race/:variant",
       "destination": "/races/:race"
     }
+  ],
+  "headers": [
+    {
+      "source": "/assets/js/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/data/races/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
   ]
 }

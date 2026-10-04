@@ -66,7 +66,7 @@
         const dragonbornRepresentatives={
           metallic:['gold','silver','bronze','brass','copper'],
           chromatic:['red','blue','green','black','white'],
-          gem:['amethyst','crystal','emerald','sapphire','topaz']
+          gem:['ruby','amethyst','crystal','emerald','sapphire','topaz']
         };
         for(const subtype of (dragonbornRepresentatives[variantSlug] || [])){
           candidates.push(
