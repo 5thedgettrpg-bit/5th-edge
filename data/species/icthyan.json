@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "icthyan",
+  "name": "Icthyan",
+  "category": "Deepfolk",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "LR"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Dexterity"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common and Aquan.",
+      "features": [
+        {
+          "name": "Natural Armor",
+          "description": "When you aren't wearing armor, your base AC equals 11 + your proficiency bonus + your Constitution modifier. The Constitution modifier added to this AC can't exceed +5. You can use this AC if armor you wear would give you a lower AC, and you can still gain the benefit of a shield."
+        },
+        {
+          "name": "Leviathan Will",
+          "description": "You have advantage on saving throws you make to avoid or end a condition."
+        },
+        {
+          "name": "Amphibious",
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+        }
+      ]
+    }
+  ]
+}
