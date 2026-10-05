@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/race/locathah",
+      "destination": "/race/icthyan",
+      "permanent": true
+    },
+    {
+      "source": "/races/locathah",
+      "destination": "/race/icthyan",
+      "permanent": true
+    },
+    {
       "source": "/race/bullywug",
       "destination": "/race/dendro",
       "permanent": true
