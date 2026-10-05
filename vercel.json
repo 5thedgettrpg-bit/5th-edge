@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/race/bullywug",
+      "destination": "/race/dendro",
+      "permanent": true
+    },
+    {
+      "source": "/races/bullywug",
+      "destination": "/race/dendro",
+      "permanent": true
+    },
+    {
       "source": "/species/:path*",
       "destination": "/race/:path*",
       "permanent": true
