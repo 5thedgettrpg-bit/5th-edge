@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "bullywug",
-  "name": "Bullywug",
+  "name": "Dendro",
   "category": "Deepfolk",
   "variants": [
     {
@@ -24,7 +24,7 @@
         "Medium"
       ],
       "darkvision": null,
-      "languages": "Common, and Bullywug.",
+      "languages": "Common, and Dendro.",
       "features": [
         {
           "name": "Amphibious",
