@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "merfolk",
   "name": "Merfolk",
   "category": "Deepfolk",
@@ -8,39 +8,78 @@
       "id": "base",
       "name": null,
       "basedOn": [
-        "DMG"
+        "VGM",
+        "MPMM"
       ],
       "source": "Familiar Arcana Revised",
       "abilityScores": {
-        "primary": "Charisma",
-        "secondary": "Wisdom"
+        "primary": "Strength",
+        "secondary": "Constitution"
       },
       "creatureType": "Humanoid",
       "speed": {
-        "walk": 25,
-        "raw": "25 ft"
+        "walk": 30,
+        "raw": "30 ft"
       },
       "size": [
         "Medium"
       ],
-      "darkvision": null,
-      "languages": "Common and Aquan.",
+      "darkvision": 60,
+      "languages": "Common, and Primordial.",
       "features": [
         {
-          "name": "Amphibious",
-          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
         },
         {
-          "name": "Siren Song",
-          "description": "As a bonus action, you can sing a song. Creatures of your choice within 30 feet of you that can hear you must succeed on a Wisdom saving throw or become charmed by you until the end of your next turn. The DC of the save equals 8 + your proficiency bonus + your Charisma modifier. You can use this trait a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest."
+          "name": "Guardians of the Depths",
+          "description": "You have proficiency with the spear, trident, light crossbow, and net."
         },
         {
-          "name": "Blessing of the Sea",
+          "name": "Emissary of the Sea",
           "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return."
         },
         {
-          "name": "Sea Legs",
-          "description": "While you aren't submerged in water, you can use a bonus action to transform your lower body into human legs. This transformation lasts until you use a bonus action while submerged in water to revert to your true form."
+          "name": "Control Air and Water",
+          "description": "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Fog Cloud with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait. Once you cast Fog Cloud or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "descriptionBlocks": [
+            "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Fog Cloud with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait.",
+            "Once you cast Fog Cloud or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
+            "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          ],
+          "racialSpellcasting": {
+            "abilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "grantedSpells": [
+              {
+                "name": "Druidcraft",
+                "type": "cantrip",
+                "unlockLevel": 1
+              },
+              {
+                "name": "Fog Cloud",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              },
+              {
+                "name": "Gust of Wind",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true
+              }
+            ],
+            "spellListAdditions": [],
+            "spellListAdditionRequirement": [
+              "Spellcasting",
+              "Pact Magic"
+            ]
+          }
         }
       ]
     }
