@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/race/tortle",
+      "destination": "/race/chelonian",
+      "permanent": true
+    },
+    {
+      "source": "/races/tortle",
+      "destination": "/race/chelonian",
+      "permanent": true
+    },
+    {
       "source": "/race/locathah",
       "destination": "/race/icthyan",
       "permanent": true
