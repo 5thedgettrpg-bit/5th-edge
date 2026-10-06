@@ -84,7 +84,6 @@
   addDirect('Home','/');
   addMega('Classes',[{title:'Classes',links:classLinks}],'edge-nav-panel-classes');
   addDirect('Races','/races/');
-  addDirect('Blog','/blog/');
   addMega('Character Options',[
     {title:'Character Options',links:[
       ['Backgrounds','/backgrounds/'],
@@ -94,8 +93,8 @@
       ['Spells','/spells/']
     ]}
   ],'edge-nav-panel-character-options');
-  addMega('Rules and Content',[
-    {title:'Rules Library',links:[['Rules','/rules/']]},
+  addMega('Rules and Library',[
+    {title:'Rules Library',links:[['Rules','/rules/'],['Blog','/blog/']]},
     {title:'Project',links:[['Legal & Licensing','/legal/']]}
   ]);
 
@@ -116,7 +115,7 @@
   drawer.setAttribute('aria-label','Mobile navigation');
 
   const mobileSections=[
-    {title:'Browse',links:[['Home','/'],['Races','/races/'],['Blog','/blog/']]},
+    {title:'Browse',links:[['Home','/'],['Races','/races/']]},
     {title:'Classes',links:classLinks},
     {title:'Character Options',links:[
       ['Backgrounds','/backgrounds/'],
@@ -126,7 +125,7 @@
       ['Spells','/spells/'],
       ['Character Builder','https://play.familiararcanattrpg.com']
     ]},
-    {title:'Rules and Content',links:[['Rules','/rules/'],['Legal & Licensing','/legal/']]}
+    {title:'Rules and Library',links:[['Rules','/rules/'],['Blog','/blog/'],['Legal & Licensing','/legal/']]}
   ];
 
   mobileSections.forEach(section=>{
