@@ -6,6 +6,20 @@
   headerInner.querySelector('.site-links, .primary-nav')?.remove();
   headerInner.querySelector('.mobile-menu')?.remove();
 
+  function normalizeFooterLegal(){
+    document.querySelectorAll('.footer-col').forEach(col=>{
+      const h=col.querySelector('h3');
+      if(!h || h.textContent.trim().toLowerCase()!=='legal') return;
+      col.innerHTML='<h3>Legal</h3>'+[
+        ['Legal & Licensing','/legal/'],
+        ['Sitemap','/sitemap.xml'],
+        ['System Reference Documents','https://www.dndbeyond.com/srd'],
+        ['CC BY 4.0','https://creativecommons.org/licenses/by/4.0/']
+      ].map(([label,href])=>'<a href="'+href+'">'+label+'</a>').join('');
+    });
+  }
+  normalizeFooterLegal();
+
   const classLinks = [
     ['Artificer','/classes/artificer/'],
     ['Barbarian','/classes/barbarian/'],
