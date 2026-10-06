@@ -337,7 +337,18 @@
     tryNext();
   }
 
+  function ensureSpeciesBodyShell(){
+    const body=$('#speciesBody');
+    if(!body) return;
+    if($('#speciesMeta') && $('#speciesVariantName') && $('#speciesSource') && $('#speciesFeatures')) return;
+    body.innerHTML=
+      '<div id="speciesMeta" class="species-overview"></div>'+
+      '<div class="species-section-title"><h2 id="speciesVariantName">Racial Features</h2><div id="speciesSource" class="species-source"></div></div>'+
+      '<div id="speciesFeatures"></div>';
+  }
+
   function renderSpecies(data,variant){
+    ensureSpeciesBodyShell();
     renderHeroArt(data,variant);
     const variants=data.variants || [];
     const hasRealVariants = variants.length > 1 || (variants.length === 1 && variants[0]?.id !== 'base' && variants[0]?.name);
