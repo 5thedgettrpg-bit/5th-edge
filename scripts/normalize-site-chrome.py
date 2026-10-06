@@ -2,7 +2,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(".")
-VERSION = "20261006d"
+VERSION = "20261006e"
 
 head_inserts = [
     '<link rel="manifest" href="/site.webmanifest">',
@@ -39,6 +39,15 @@ for path in sorted(ROOT.rglob("*.html")):
         missing.append(head_inserts[3])
     if missing and "</head>" in text:
         text = text.replace("</head>", "".join(missing) + "</head>", 1)
+
+    # Race pages must load the current race browser/finder code.
+    if re.search(r'<script[^>]+src="/assets/js/race-page\\.js[^"]*"[^>]*></script>', text):
+        text = re.sub(
+            r'<script([^>]+)src="/assets/js/race-page\\.js[^"]*"([^>]*)></script>',
+            rf'<script\\1src="/assets/js/race-page.js?v={VERSION}"\\2></script>',
+            text,
+            count=1,
+        )
 
     # Every page must execute the same shared navigation/footer normalizer.
     if re.search(r'<script[^>]+src="/assets/js/site-nav\.js[^"]*"[^>]*></script>', text):
