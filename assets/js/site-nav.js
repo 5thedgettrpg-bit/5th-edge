@@ -3,6 +3,22 @@
   if (!headerInner || headerInner.dataset.edgeNavReady === '1') return;
   headerInner.dataset.edgeNavReady = '1';
 
+  function ensureSiteHeadAssets(){
+    const head=document.head;
+    const ensureLink=(rel,href,attrs={})=>{
+      let el=[...head.querySelectorAll('link')].find(x=>x.rel===rel && x.getAttribute('href')===href);
+      if(!el){ el=document.createElement('link'); el.rel=rel; el.href=href; head.appendChild(el); }
+      Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));
+    };
+    ensureLink('manifest','/site.webmanifest');
+    if(!head.querySelector('link[rel="icon"]')) ensureLink('icon','/favicon.svg',{type:'image/svg+xml'});
+    if(!head.querySelector('link[rel="apple-touch-icon"]')) ensureLink('apple-touch-icon','/assets/brand/5th-edge-logo.png');
+    if(!head.querySelector('meta[name="theme-color"]')){
+      const meta=document.createElement('meta'); meta.name='theme-color'; meta.content='#8f241f'; head.appendChild(meta);
+    }
+  }
+  ensureSiteHeadAssets();
+
   headerInner.querySelector('.site-links, .primary-nav')?.remove();
   headerInner.querySelector('.mobile-menu')?.remove();
 
