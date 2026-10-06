@@ -2,7 +2,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(".")
-VERSION = "20261006e"
+VERSION = "20261006f"
 
 head_inserts = [
     '<link rel="manifest" href="/site.webmanifest">',
