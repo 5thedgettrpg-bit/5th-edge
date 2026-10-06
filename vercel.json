@@ -69,6 +69,15 @@
   ],
   "headers": [
     {
+      "source": "/assets/js/site-nav.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    },
+    {
       "source": "/assets/css/:path*",
       "headers": [
         {
