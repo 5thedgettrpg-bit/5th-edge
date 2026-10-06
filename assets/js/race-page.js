@@ -1,5 +1,5 @@
 (() => {
-  const state = { manifest:null, current:null, variantId:null };
+  const state = { manifest:null, current:null, variantId:null, finderEntries:null, finderOpen:false };
 
   const $ = (sel,root=document)=>root.querySelector(sel);
 
@@ -206,6 +206,7 @@
   }
 
   async function selectSpecies(id,variantId=null,updateUrl=false){
+    state.finderOpen=false;
     state.current=id;
     const res=await fetch('/data/races/'+encodeURIComponent(id)+'.json',{cache:'no-store'});
     if(!res.ok) throw new Error('Could not load species data');
@@ -391,6 +392,280 @@
     $('#speciesFeatures').innerHTML = (variant.features||[]).map(featureCard).join('');
   }
 
+
+  const RACE_ARCHETYPES = {
+    'strength-martial': {
+      label:'Strength Martial',
+      description:'Front-line weapon users who value Strength and durability.',
+      stats:{Strength:5,Constitution:2},
+      keywords:['powerful build','natural weapon','brutal','critical','athletics','carrying capacity']
+    },
+    'finesse-martial': {
+      label:'Finesse / Ranged Martial',
+      description:'Dexterity-focused attackers who value mobility and precision.',
+      stats:{Dexterity:5,Constitution:1,Wisdom:1},
+      keywords:['initiative','nimble','stealth','speed','mobile','movement']
+    },
+    'defender': {
+      label:'Defender / Tank',
+      description:'Durable characters looking for Constitution and defensive traits.',
+      stats:{Constitution:5,Strength:1},
+      keywords:['natural armor','armor class','resistance','immune','immunity','temporary hit points','toughness','relentless']
+    },
+    'int-caster': {
+      label:'Intelligence Caster',
+      description:'Arcane scholars and Intelligence-based spellcasters.',
+      stats:{Intelligence:5,Constitution:1},
+      keywords:['arcana','magic','spell','cantrip','identify']
+    },
+    'wis-caster': {
+      label:'Wisdom Caster',
+      description:'Divine, primal, perceptive, and Wisdom-based characters.',
+      stats:{Wisdom:5,Constitution:1},
+      keywords:['perception','insight','survival','nature','spell','cantrip']
+    },
+    'cha-caster': {
+      label:'Charisma Caster / Face',
+      description:'Charisma spellcasters and social specialists.',
+      stats:{Charisma:5,Constitution:1},
+      keywords:['persuasion','deception','performance','intimidation','spell','cantrip']
+    },
+    'scout': {
+      label:'Scout / Explorer',
+      description:'Mobile, perceptive characters who value Dexterity, Wisdom, senses, and movement.',
+      stats:{Dexterity:3,Wisdom:3},
+      keywords:['darkvision','perception','stealth','survival','climb','swim','fly','speed','movement']
+    },
+    'skill-expert': {
+      label:'Skill Expert / Versatile',
+      description:'Flexible characters looking for skills, expertise, tool choices, or open ability bonuses.',
+      stats:{},
+      keywords:['proficiency','expertise','skill','tool','choice','feat','any ability']
+    }
+  };
+
+  function initRaceTools(){
+    const head=$('.species-sidebar-head');
+    if(!head || head.querySelector('.species-tools')) return;
+    const tools=document.createElement('div');
+    tools.className='species-tools';
+    tools.innerHTML='<button type="button" class="species-tool-btn primary" id="raceFinderBtn">◆ Find a Race</button>'+
+      '<button type="button" class="species-tool-btn" id="randomRaceBtn">↻ Surprise Me</button>';
+    head.appendChild(tools);
+    $('#raceFinderBtn')?.addEventListener('click',()=>openRaceFinder());
+    $('#randomRaceBtn')?.addEventListener('click',()=>pickRandomRace());
+  }
+
+  async function loadFinderEntries(){
+    if(state.finderEntries) return state.finderEntries;
+    const entries=[];
+    const races=state.manifest?.species || [];
+    const dataList=await Promise.all(races.map(async item=>{
+      try{
+        const res=await fetch('/data/races/'+encodeURIComponent(item.id)+'.json',{cache:'no-store'});
+        if(!res.ok) return null;
+        return await res.json();
+      }catch(_){ return null; }
+    }));
+    dataList.filter(Boolean).forEach(data=>{
+      (data.variants || []).forEach(variant=>{
+        entries.push({
+          raceId:data.id,
+          raceName:data.name,
+          category:(state.manifest?.species || []).find(x=>x.id===data.id)?.category || data.category || '',
+          variantId:variant.id,
+          variantName:variant.name || 'Standard',
+          variant,
+          data
+        });
+      });
+    });
+    state.finderEntries=entries;
+    return entries;
+  }
+
+  function variantText(entry){
+    return (entry.variant.features || []).map(f=>(f.name || '')+' '+(f.description || '')).join(' ').toLowerCase();
+  }
+
+  function abilityMatches(entry,ability){
+    if(!ability) return true;
+    const a=entry.variant.abilityScores || {};
+    return a.primary===ability || a.secondary===ability || a.primary==='Any' || a.secondary==='Any' || a.secondary==='All';
+  }
+
+  function traitFlags(entry){
+    const v=entry.variant;
+    const text=variantText(entry);
+    const speed=v.speed || {};
+    return {
+      darkvision:Boolean(v.darkvision),
+      magic:(v.features || []).some(f=>f.racialSpellcasting) || /\b(cantrip|cast .* spell|spellcasting)\b/i.test(text),
+      defense:/\b(resistance|resistant|immune|immunity|natural armor|armor class|temporary hit points|toughness)\b/i.test(text),
+      flight:Boolean(speed.fly) || /\bflying speed\b/i.test(text),
+      swim:Boolean(speed.swim) || /\bswimming speed\b/i.test(text),
+      skills:/\b(proficiency|expertise)\b/i.test(text),
+      feat:/\bfeat\b/i.test(text)
+    };
+  }
+
+  function archetypeScore(entry,key){
+    if(!key || !RACE_ARCHETYPES[key]) return {score:0,reasons:[]};
+    const profile=RACE_ARCHETYPES[key];
+    const a=entry.variant.abilityScores || {};
+    const reasons=[];
+    let score=0;
+    for(const [stat,weight] of Object.entries(profile.stats)){
+      if(a.primary===stat){ score+=weight; reasons.push('+2 '+stat); }
+      else if(a.secondary===stat){ score+=Math.max(1,Math.round(weight*.6)); reasons.push('+1 '+stat); }
+      else if(a.primary==='Any' || a.secondary==='Any'){ score+=1; reasons.push('Flexible ability bonus'); }
+      else if(a.secondary==='All'){ score+=1; reasons.push('Broad ability bonuses'); }
+    }
+    const text=variantText(entry);
+    const keywordHits=profile.keywords.filter(k=>text.includes(k));
+    score+=Math.min(4,keywordHits.length);
+    if(keywordHits.length){
+      reasons.push(...keywordHits.slice(0,2).map(k=>k.replace(/\b\w/g,c=>c.toUpperCase())));
+    }
+    const flags=traitFlags(entry);
+    if(key==='defender' && flags.defense){ score+=2; reasons.push('Defensive trait'); }
+    if(key==='scout' && flags.darkvision){ score+=1; reasons.push('Darkvision'); }
+    if(key==='scout' && (flags.flight || flags.swim)){ score+=2; reasons.push(flags.flight?'Flight':'Swim speed'); }
+    if((key==='int-caster' || key==='wis-caster' || key==='cha-caster') && flags.magic){ score+=1; reasons.push('Racial magic'); }
+    if(key==='skill-expert' && flags.skills){ score+=2; reasons.push('Skill/tool training'); }
+    if(key==='skill-expert' && flags.feat){ score+=2; reasons.push('Feat access'); }
+    return {score,reasons:[...new Set(reasons)]};
+  }
+
+  function abilityLabel(entry){
+    const a=entry.variant.abilityScores || {};
+    if(!a.primary && !a.secondary) return '—';
+    const out=[];
+    if(a.primary==='Any') out.push('+2 Any');
+    else if(a.primary) out.push('+2 '+a.primary);
+    if(a.secondary==='All') out.push('+1 All Others');
+    else if(a.secondary==='Any') out.push('+1 Any');
+    else if(a.secondary) out.push('+1 '+a.secondary);
+    return out.join(' · ');
+  }
+
+  function finderCard(entry,archetypeKey){
+    const scoreInfo=archetypeScore(entry,archetypeKey);
+    const flags=traitFlags(entry);
+    const chips=[...scoreInfo.reasons.slice(0,3)];
+    if(!chips.length){
+      if(flags.darkvision) chips.push('Darkvision');
+      if(flags.magic) chips.push('Racial Magic');
+      if(flags.defense) chips.push('Defensive Trait');
+    }
+    const name=entry.variantId==='base' || !entry.variant.variantName
+      ? entry.raceName
+      : entry.variantName+' '+entry.raceName;
+    const displayName=(entry.variantName==='Standard') ? entry.raceName : entry.variantName+' '+entry.raceName;
+    return '<button type="button" class="race-finder-card" data-race="'+esc(entry.raceId)+'" data-variant="'+esc(entry.variantId)+'">'+
+      '<span class="race-finder-card-top"><small>'+esc(entry.category)+'</small>'+
+      (archetypeKey ? '<b>'+scoreInfo.score+' match</b>' : '')+'</span>'+
+      '<strong>'+esc(displayName)+'</strong>'+
+      '<span class="race-finder-asi">'+esc(abilityLabel(entry))+'</span>'+
+      '<span class="race-finder-traits">'+chips.map(c=>'<i>'+esc(c)+'</i>').join('')+'</span>'+
+      '</button>';
+  }
+
+  async function openRaceFinder(){
+    state.finderOpen=true;
+    state.current=null;
+    state.variantId=null;
+    renderSidebar();
+    $('#speciesKicker').textContent='5th Edge Race Tools';
+    $('#speciesTitle').textContent='Race Finder';
+    $('#speciesIntro').textContent='Find strong race and subrace options by archetype, ability bonuses, and racial traits. Recommendations are based on your 5th Edge race data, not a fixed tier list.';
+    $('#variantWrap').hidden=true;
+    $('#variantWrap').style.display='none';
+    $('#speciesHeroCharacter')?.classList.add('is-hidden');
+    $('.species-hero-approved')?.classList.remove('has-race-art','is-eladrin');
+
+    const body=$('#speciesBody');
+    body.innerHTML=
+      '<div class="race-finder">'+
+        '<div class="race-finder-controls">'+
+          '<label><span>Archetype</span><select id="finderArchetype"><option value="">Any archetype</option>'+
+            Object.entries(RACE_ARCHETYPES).map(([k,v])=>'<option value="'+k+'">'+esc(v.label)+'</option>').join('')+
+          '</select></label>'+
+          '<label><span>Ability Bonus</span><select id="finderAbility"><option value="">Any ability</option>'+
+            ['Strength','Dexterity','Constitution','Intelligence','Wisdom','Charisma'].map(x=>'<option>'+x+'</option>').join('')+
+          '</select></label>'+
+          '<label><span>Lineage Group</span><select id="finderCategory"><option value="">Any group</option>'+
+            (state.manifest?.categories || []).map(c=>'<option>'+esc(c.name)+'</option>').join('')+
+          '</select></label>'+
+          '<label><span>Sort</span><select id="finderSort"><option value="match">Best Match</option><option value="alpha">Alphabetical</option></select></label>'+
+        '</div>'+
+        '<div class="race-finder-trait-filter"><span>Traits</span>'+
+          [['darkvision','Darkvision'],['magic','Racial Magic'],['defense','Defense / Resistance'],['flight','Flight'],['swim','Swim Speed'],['skills','Skill / Tool Training'],['feat','Feat Access']].map(([k,l])=>'<label><input type="checkbox" value="'+k+'"> '+l+'</label>').join('')+
+        '</div>'+
+        '<div class="race-finder-actions"><button type="button" id="finderClear">Clear Filters</button><span id="finderCount">Loading races…</span></div>'+
+        '<div id="finderResults" class="race-finder-results"><div class="species-empty">Loading race data…</div></div>'+
+      '</div>';
+
+    const entries=await loadFinderEntries();
+    const rerender=()=>renderFinderResults(entries);
+    ['finderArchetype','finderAbility','finderCategory','finderSort'].forEach(id=>$('#'+id)?.addEventListener('change',rerender));
+    document.querySelectorAll('.race-finder-trait-filter input').forEach(input=>input.addEventListener('change',rerender));
+    $('#finderClear')?.addEventListener('click',()=>{
+      ['finderArchetype','finderAbility','finderCategory'].forEach(id=>{ const el=$('#'+id); if(el) el.value=''; });
+      const sort=$('#finderSort'); if(sort) sort.value='match';
+      document.querySelectorAll('.race-finder-trait-filter input').forEach(input=>input.checked=false);
+      rerender();
+    });
+    rerender();
+  }
+
+  function renderFinderResults(entries){
+    const host=$('#finderResults');
+    if(!host) return;
+    const archetype=$('#finderArchetype')?.value || '';
+    const ability=$('#finderAbility')?.value || '';
+    const category=$('#finderCategory')?.value || '';
+    const sort=$('#finderSort')?.value || 'match';
+    const requiredTraits=[...document.querySelectorAll('.race-finder-trait-filter input:checked')].map(x=>x.value);
+
+    let filtered=entries.filter(entry=>{
+      if(category && entry.category!==category) return false;
+      if(!abilityMatches(entry,ability)) return false;
+      const flags=traitFlags(entry);
+      if(requiredTraits.some(t=>!flags[t])) return false;
+      return true;
+    });
+
+    if(sort==='alpha' || !archetype){
+      filtered.sort((a,b)=>(a.raceName+' '+a.variantName).localeCompare(b.raceName+' '+b.variantName));
+    }else{
+      filtered.sort((a,b)=>{
+        const diff=archetypeScore(b,archetype).score-archetypeScore(a,archetype).score;
+        return diff || (a.raceName+' '+a.variantName).localeCompare(b.raceName+' '+b.variantName);
+      });
+    }
+
+    const count=$('#finderCount');
+    if(count) count.textContent=filtered.length+' option'+(filtered.length===1?'':'s');
+
+    host.innerHTML=filtered.length
+      ? filtered.map(e=>finderCard(e,archetype)).join('')
+      : '<div class="species-empty">No race options match those filters.</div>';
+
+    host.querySelectorAll('.race-finder-card').forEach(btn=>btn.addEventListener('click',()=>{
+      state.finderOpen=false;
+      selectSpecies(btn.dataset.race,btn.dataset.variant,true);
+    }));
+  }
+
+  async function pickRandomRace(){
+    const entries=await loadFinderEntries();
+    if(!entries.length) return;
+    const pick=entries[Math.floor(Math.random()*entries.length)];
+    state.finderOpen=false;
+    selectSpecies(pick.raceId,pick.variantId,true);
+  }
+
   function wireSearch(){
     const input=$('#speciesSearch');
     input.addEventListener('input',()=>{
@@ -420,6 +695,7 @@
   document.addEventListener('DOMContentLoaded',async()=>{
     try{
       await loadManifest();
+      initRaceTools();
       wireSearch();
       $('#variantSelect').addEventListener('change',e=>{
         state.variantId=e.target.value;
