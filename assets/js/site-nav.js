@@ -84,6 +84,7 @@
   addDirect('Home','/');
   addMega('Classes',[{title:'Classes',links:classLinks}],'edge-nav-panel-classes');
   addDirect('Races','/races/');
+  addDirect('Blog','/blog/');
   addMega('Character Options',[
     {title:'Character Options',links:[
       ['Backgrounds','/backgrounds/'],
@@ -115,7 +116,7 @@
   drawer.setAttribute('aria-label','Mobile navigation');
 
   const mobileSections=[
-    {title:'Browse',links:[['Home','/'],['Races','/races/']]},
+    {title:'Browse',links:[['Home','/'],['Races','/races/'],['Blog','/blog/']]},
     {title:'Classes',links:classLinks},
     {title:'Character Options',links:[
       ['Backgrounds','/backgrounds/'],
