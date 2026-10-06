@@ -93,7 +93,7 @@
       ['Spells','/spells/']
     ]}
   ],'edge-nav-panel-character-options');
-  addMega('Rules and Library',[
+  addMega('Rules and Content',[
     {title:'Rules Library',links:[['Rules','/rules/'],['Blog','/blog/']]},
     {title:'Project',links:[['Legal & Licensing','/legal/']]}
   ]);
@@ -125,7 +125,7 @@
       ['Spells','/spells/'],
       ['Character Builder','https://play.familiararcanattrpg.com']
     ]},
-    {title:'Rules and Library',links:[['Rules','/rules/'],['Blog','/blog/'],['Legal & Licensing','/legal/']]}
+    {title:'Rules and Content',links:[['Rules','/rules/'],['Blog','/blog/'],['Legal & Licensing','/legal/']]}
   ];
 
   mobileSections.forEach(section=>{
