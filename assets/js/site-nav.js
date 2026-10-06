@@ -170,4 +170,30 @@
   });
 
   headerInner.append(nav,toggle,drawer);
+
+  // Keep the footer identical across every page that loads the shared navigation.
+  if(!document.body.dataset.edgeFooterReady){
+    document.body.dataset.edgeFooterReady='1';
+    const oldFooter=document.querySelector('.site-footer');
+    const footer=document.createElement('footer');
+    footer.className='site-footer';
+    footer.innerHTML=`
+      <div class="site-footer-inner">
+        <div class="footer-brand">
+          <img src="/assets/brand/5th-edge-logo.png" alt="5th Edge">
+          <p>An independent fifth-edition compatible tabletop rules project with revised classes, character options, reference pages, and digital tools.</p>
+          <span class="compat-badge">5E Compatible</span>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-col"><h3>Explore</h3><a href="/classes/">Classes</a><a href="/races/">Races</a><a href="/backgrounds/">Backgrounds</a><a href="/feats/">Feats</a><a href="/spells/">Spells</a><a href="/rules/">Rules</a><a href="/blog/">Blog</a></div>
+          <div class="footer-col"><h3>Build</h3><a href="https://play.familiararcanattrpg.com">Character Builder</a><a href="/classes/wizard/">Wizard</a><a href="/classes/ranger/">Ranger</a><a href="/classes/rogue/">Rogue</a><a href="/classes/barbarian/">Barbarian</a></div>
+          <div class="footer-col"><h3>Legal</h3><a href="/legal/">Legal &amp; Licensing</a><a href="/sitemap.xml">Sitemap</a><a href="https://www.dndbeyond.com/srd">System Reference Documents</a><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div>
+        </div>
+      </div>
+      <div class="footer-legal"><div class="footer-legal-inner">
+        <p>Contains material from SRD 5.1 and, where used, SRD 5.2.1. Both are available under the Creative Commons Attribution 4.0 International license. See <a href="/legal/">Legal &amp; Licensing</a> for source and attribution details.</p>
+        <span class="footer-copy">© 2026 5th Edge</span>
+      </div></div>`;
+    if(oldFooter) oldFooter.replaceWith(footer); else document.body.appendChild(footer);
+  }
 })();
