@@ -2,6 +2,11 @@ name: Normalize site chrome
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/normalize-site-chrome.yml"
+      - "scripts/normalize-site-chrome.py"
 
 permissions:
   contents: write
