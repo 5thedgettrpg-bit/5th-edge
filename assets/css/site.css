@@ -1803,3 +1803,27 @@ a{color:inherit}.site-header{position:sticky;top:0;z-index:50;background:rgba(25
 .species-data-table td:last-child{border-right:0}
 .species-data-table tbody tr:nth-child(even) td{background:rgba(255,255,255,.24)}
 @media(max-width:620px){.species-data-table{min-width:460px;font-size:12px}}
+
+/* ===== Race Finder ===== */
+.species-tools{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.species-tool-btn{appearance:none;border:1px solid #6d5141;background:#2b211d;color:#e5d4c4;border-radius:4px;padding:9px 10px;font-size:10px;font-weight:900;cursor:pointer;text-align:center}
+.species-tool-btn:hover{border-color:#bd935d;color:#fff}
+.species-tool-btn.primary{background:linear-gradient(180deg,#a72a24,#7f1d18);border-color:#c85d4e;color:#fff}
+.race-finder{display:grid;gap:18px}
+.race-finder-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:16px;background:#f1e4d7;border:1px solid #d0bcaa}
+.race-finder-controls label{display:grid;gap:6px}.race-finder-controls label>span,.race-finder-trait-filter>span{font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#8f6e5b}
+.race-finder-controls select{width:100%;min-height:36px;border:1px solid #c9b8a8;background:#fffaf4;color:#3d302a;padding:0 10px;font-size:12px;font-weight:750}
+.race-finder-trait-filter{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;padding:13px 15px;border:1px solid #d8c8ba;background:rgba(255,255,255,.36)}
+.race-finder-trait-filter>span{margin-right:4px}.race-finder-trait-filter label{display:inline-flex;align-items:center;gap:5px;color:#5f5149;font-size:11px;font-weight:750}
+.race-finder-trait-filter input{accent-color:#a72a24}
+.race-finder-actions{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.race-finder-actions button{appearance:none;border:1px solid #cbb6a5;background:#fffaf4;color:#8d211d;padding:8px 12px;border-radius:4px;font-size:10px;font-weight:900;cursor:pointer}
+.race-finder-actions span{color:#8b776a;font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+.race-finder-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.race-finder-card{appearance:none;text-align:left;border:1px solid #d7c7b8;background:#fffaf4;border-radius:6px;padding:16px;cursor:pointer;min-height:155px;display:flex;flex-direction:column;gap:7px;transition:.14s ease}
+.race-finder-card:hover{transform:translateY(-2px);border-color:#b98d70;box-shadow:0 8px 20px rgba(70,43,31,.08)}
+.race-finder-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.race-finder-card-top small{font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#9a7662}.race-finder-card-top b{font-size:8px;color:#a72a24;text-transform:uppercase;letter-spacing:.08em}
+.race-finder-card>strong{font:700 20px/1.12 Georgia,serif;color:#3f3029}.race-finder-asi{font-size:10px;font-weight:850;color:#6b584d}
+.race-finder-traits{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}.race-finder-traits i{font-style:normal;padding:4px 6px;border-radius:999px;background:#efe2d5;color:#7d5f4e;font-size:8px;font-weight:850}
+@media(max-width:1050px){.race-finder-controls{grid-template-columns:1fr 1fr}.race-finder-results{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.species-tools{grid-template-columns:1fr}.race-finder-controls{grid-template-columns:1fr}.race-finder-results{grid-template-columns:1fr}.race-finder-actions{align-items:flex-start;flex-direction:column}}
