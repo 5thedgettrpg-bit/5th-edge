@@ -43,7 +43,12 @@
 
     const base=CDN_RACE_ART_BASE+'/'+category+'/'+race;
     if(variantSlug==='base' || variantSlug==='standard'){
+      const standardFolder=base+'/'+variantSlug;
       candidates.push(
+        {src:standardFolder+'/'+race+'.png',alt},
+        {src:standardFolder+'/'+race+'.webp',alt},
+        {src:standardFolder+'/'+race+'.jpg',alt},
+        {src:standardFolder+'/'+race+'.jpeg',alt},
         {src:base+'/'+race+'.png',alt},
         {src:base+'/'+race+'.webp',alt},
         {src:base+'/'+race+'.jpg',alt},
