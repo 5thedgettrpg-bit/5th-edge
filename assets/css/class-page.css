@@ -65,6 +65,23 @@ a{color:inherit}
 .hero p{max-width:43.75cqw;color:#d4c2b3;font-size:max(14px,1.25cqw);line-height:1.55;margin:0}
 .hero-fact{margin-top:1.40625cqw;color:#f3e5cf;font-size:max(11px,1.015625cqw);font-weight:900;letter-spacing:.02em}
 .hero-fact span{color:var(--gold);margin:0 6px}
+.class-hero-character{
+  position:absolute;
+  z-index:2;
+  right:1.5%;
+  bottom:0;
+  width:52%;
+  height:96%;
+  object-fit:contain;
+  object-position:right bottom;
+  pointer-events:none;
+}
+.class-hero-character[hidden]{display:none}
+.hero.has-class-art{
+  background:
+    linear-gradient(90deg,rgba(27,6,8,.98) 0%,rgba(33,7,9,.90) 31%,rgba(38,8,10,.40) 58%,rgba(20,8,8,.08) 100%),
+    url('/assets/images/species/eladrin-banner-background.jpg') center/cover no-repeat;
+}
 
 /* Parchment content */
 .section{padding:28px 40px;border-top:1px solid #e3d8cd;background:linear-gradient(180deg,#f8f1e7,#f4eadf)}
@@ -166,6 +183,16 @@ a{color:inherit}
   .hero h1{margin:10px 0 18px;font-size:56px}
   .hero p{max-width:none;font-size:16px}
   .hero-fact{margin-top:18px;font-size:13px}
+  .class-hero-character{
+    right:50%;
+    transform:translateX(50%);
+    bottom:0;
+    width:92%;
+    max-width:520px;
+    height:390px;
+    object-position:center bottom;
+    z-index:2;
+  }
   .subclass{grid-template-columns:1fr;gap:14px}
   .subclass select{width:100%;min-width:0}
 }
