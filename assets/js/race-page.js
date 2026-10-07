@@ -62,7 +62,9 @@
   "elf:shadar-kai": "shadow-elf",
   "elf:mark-of-shadow": "way-of-the-veil",
   "gith:githyanki": "kithrak",
+  "syncladi:githyanki": "kithrak",
   "gith:githzerai": "zerth",
+  "syncladi:githzerai": "zerth",
   "tiefling:fierna": "phlegethos",
   "tiefling:glasya": "malbolge",
   "tiefling:levistus": "stygia",
@@ -72,7 +74,9 @@
   "half-orc:mark-of-finding": "way-of-the-trail",
   "human:mark-of-finding": "way-of-the-trail",
   "human:mark-of-handling": "way-of-the-beast",
+  "human:way-of-beasts": "way-of-the-beast",
   "human:mark-of-making": "way-of-the-craft",
+  "human:way-of-craft": "way-of-the-craft",
   "human:mark-of-passage": "way-of-the-road",
   "human:mark-of-sentinel": "way-of-the-watch",
   "halfling:mark-of-healing": "way-of-mercy",
@@ -92,8 +96,8 @@
       alt:'Eladrin Elf'
     },
     // Temporary filename exception in Drive/R2. Rename the source file later and this can be removed.
-    'dwarf:mark-of-warding': {
-      src:CDN_RACE_ART_BASE+'/common-folk/dwarf/mark-of-warding/mark-of-finding-dwarf.png',
+    'dwarf:way-of-the-ward': {
+      src:CDN_RACE_ART_BASE+'/common-folk/dwarf/way-of-the-ward/way-of-the-ward-dwarf.png',
       alt:'Mark of Warding Dwarf'
     }
   };
@@ -209,8 +213,19 @@
     return '/race/'+encodeURIComponent(species)+(variant ? '/'+encodeURIComponent(variant) : '');
   }
 
+  function syncCanonicalUrl(species,variant){
+    const path=raceUrl(species,variant);
+    const href='https://www.5thedgettrpg.com'+path;
+    const canonical=document.querySelector('link[rel="canonical"]');
+    if(canonical) canonical.setAttribute('href',href);
+    const ogUrl=document.querySelector('meta[property="og:url"]');
+    if(ogUrl) ogUrl.setAttribute('content',href);
+  }
+
   function pushUrl(species,variant){
-    history.pushState({},'',raceUrl(species,variant));
+    const path=raceUrl(species,variant);
+    history.pushState({},'',path);
+    syncCanonicalUrl(species,variant);
   }
 
   function renderSidebar(){
@@ -298,6 +313,7 @@
     if(updateUrl) pushUrl(id, variants.length > 1 ? state.variantId : null);
     renderSidebar();
     renderSpecies(data,chosen);
+    syncCanonicalUrl(id, variants.length > 1 ? state.variantId : null);
   }
 
   function racialFeature(title,body,open=false){
