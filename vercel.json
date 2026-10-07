@@ -51,6 +51,96 @@
       "source": "/races/:path*",
       "destination": "/race/:path*",
       "permanent": true
+    },
+    {
+      "source": "/races/autognome/",
+      "destination": "/races/clockwork/",
+      "permanent": true
+    },
+    {
+      "source": "/races/giff/",
+      "destination": "/races/potamid/",
+      "permanent": true
+    },
+    {
+      "source": "/races/hadozee/",
+      "destination": "/races/vanara/",
+      "permanent": true
+    },
+    {
+      "source": "/races/harengon/",
+      "destination": "/races/pooka/",
+      "permanent": true
+    },
+    {
+      "source": "/races/kalashtar/",
+      "destination": "/races/syndran/",
+      "permanent": true
+    },
+    {
+      "source": "/races/kender/",
+      "destination": "/races/wanderhin/",
+      "permanent": true
+    },
+    {
+      "source": "/races/kor/",
+      "destination": "/races/ordan/",
+      "permanent": true
+    },
+    {
+      "source": "/races/leonin/",
+      "destination": "/races/kaji/",
+      "permanent": true
+    },
+    {
+      "source": "/races/loxodon/",
+      "destination": "/races/mastodon/",
+      "permanent": true
+    },
+    {
+      "source": "/races/plasmoid/",
+      "destination": "/races/slimefolk/",
+      "permanent": true
+    },
+    {
+      "source": "/races/simic-hybrid/",
+      "destination": "/races/amalgam/",
+      "permanent": true
+    },
+    {
+      "source": "/races/tabaxi/",
+      "destination": "/races/tabby/",
+      "permanent": true
+    },
+    {
+      "source": "/races/thri-kreen/",
+      "destination": "/races/mantis/",
+      "permanent": true
+    },
+    {
+      "source": "/races/vedalken/",
+      "destination": "/races/todarian/",
+      "permanent": true
+    },
+    {
+      "source": "/races/verdan/",
+      "destination": "/races/vandar/",
+      "permanent": true
+    },
+    {
+      "source": "/races/warforged/",
+      "destination": "/races/auto-remnant/",
+      "permanent": true
+    },
+    {
+      "source": "/races/yuan-ti/",
+      "destination": "/races/parsel/",
+      "permanent": true
+    },
+    {
+      "source": "/races/zombie/",
+      "destination": "/races/human-remnant/",
+      "permanent": true
     }
   ],
   "rewrites": [

@@ -53,8 +53,8 @@
       "category": "Otherworldly"
     },
     {
-      "id": "autognome",
-      "name": "Autognome",
+      "id": "clockwork",
+      "name": "Clockwork",
       "category": "Constructed"
     },
     {
@@ -123,8 +123,8 @@
       "category": "Otherworldly"
     },
     {
-      "id": "giff",
-      "name": "Giff",
+      "id": "potamid",
+      "name": "Potamid",
       "category": "Otherworldly"
     },
     {
@@ -153,8 +153,8 @@
       "category": "Common Folk"
     },
     {
-      "id": "hadozee",
-      "name": "Hadozee",
+      "id": "vanara",
+      "name": "Vanara",
       "category": "Wildborn"
     },
     {
@@ -173,8 +173,8 @@
       "category": "Common Folk"
     },
     {
-      "id": "harengon",
-      "name": "Harengon",
+      "id": "pooka",
+      "name": "Pooka",
       "category": "Wildborn"
     },
     {
@@ -193,13 +193,13 @@
       "category": "Common Folk"
     },
     {
-      "id": "kalashtar",
-      "name": "Kalashtar",
+      "id": "syndran",
+      "name": "Syndran",
       "category": "Otherworldly"
     },
     {
-      "id": "kender",
-      "name": "Kender",
+      "id": "wanderhin",
+      "name": "Wanderhin",
       "category": "Nomads"
     },
     {
@@ -208,13 +208,13 @@
       "category": "Dragonkin"
     },
     {
-      "id": "kor",
-      "name": "Kor",
+      "id": "ordan",
+      "name": "Ordan",
       "category": "Nomads"
     },
     {
-      "id": "leonin",
-      "name": "Leonin",
+      "id": "kaji",
+      "name": "Kaji",
       "category": "Wildborn"
     },
     {
@@ -228,8 +228,8 @@
       "category": "Deepfolk"
     },
     {
-      "id": "loxodon",
-      "name": "Loxodon",
+      "id": "mastodon",
+      "name": "Mastodon",
       "category": "Wildborn"
     },
     {
@@ -248,8 +248,8 @@
       "category": "Goblinoids"
     },
     {
-      "id": "plasmoid",
-      "name": "Plasmoid",
+      "id": "slimefolk",
+      "name": "Slimefolk",
       "category": "Otherworldly"
     },
     {
@@ -268,8 +268,8 @@
       "category": "Wildborn"
     },
     {
-      "id": "simic-hybrid",
-      "name": "Simic Hybrid",
+      "id": "amalgam",
+      "name": "Amalgam",
       "category": "Otherworldly"
     },
     {
@@ -278,13 +278,13 @@
       "category": "Undead"
     },
     {
-      "id": "tabaxi",
-      "name": "Tabaxi",
+      "id": "tabby",
+      "name": "Tabby",
       "category": "Wildborn"
     },
     {
-      "id": "thri-kreen",
-      "name": "Thri-kreen",
+      "id": "mantis",
+      "name": "Mantis",
       "category": "Otherworldly"
     },
     {
@@ -298,28 +298,28 @@
       "category": "Deepfolk"
     },
     {
-      "id": "vedalken",
-      "name": "Vedalken",
+      "id": "todarian",
+      "name": "Todarian",
       "category": "Otherworldly"
     },
     {
-      "id": "verdan",
-      "name": "Verdan",
+      "id": "vandar",
+      "name": "Vandar",
       "category": "Otherworldly"
     },
     {
-      "id": "warforged",
-      "name": "Warforged",
+      "id": "auto-remnant",
+      "name": "Auto Remnant",
       "category": "Constructed"
     },
     {
-      "id": "yuan-ti",
-      "name": "Yuan-Ti",
+      "id": "parsel",
+      "name": "Parsel",
       "category": "Wildborn"
     },
     {
-      "id": "zombie",
-      "name": "Zombie",
+      "id": "human-remnant",
+      "name": "Human Remnant",
       "category": "Undead"
     }
   ]

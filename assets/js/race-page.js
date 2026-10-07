@@ -4,9 +4,56 @@
   const $ = (sel,root=document)=>root.querySelector(sel);
 
   const CDN_RACE_ART_BASE='https://assets.5thedgettrpg.com/race-images';
+  const LEGACY_RACE_ALIASES = {
+  "autognome": "clockwork",
+  "giff": "potamid",
+  "hadozee": "vanara",
+  "harengon": "pooka",
+  "kalashtar": "syndran",
+  "kender": "wanderhin",
+  "kor": "ordan",
+  "leonin": "kaji",
+  "loxodon": "mastodon",
+  "plasmoid": "slimefolk",
+  "simic-hybrid": "amalgam",
+  "tabaxi": "tabby",
+  "thri-kreen": "mantis",
+  "vedalken": "todarian",
+  "verdan": "vandar",
+  "warforged": "auto-remnant",
+  "yuan-ti": "parsel",
+  "zombie": "human-remnant"
+};
+  const LEGACY_VARIANT_ALIASES = {
+  "avian:aarakocra": "tengu",
+  "elf:eladrin": "seelie-elf",
+  "elf:shadar-kai": "shadow-elf",
+  "elf:mark-of-shadow": "way-of-the-veil",
+  "gith:githyanki": "kithrak",
+  "gith:githzerai": "zerth",
+  "tiefling:fierna": "phlegethos",
+  "tiefling:glasya": "malbolge",
+  "tiefling:levistus": "stygia",
+  "tiefling:zariel": "bel",
+  "half-elf:mark-of-detection": "way-of-sight",
+  "half-elf:mark-of-storm": "way-of-the-tempest",
+  "half-orc:mark-of-finding": "way-of-the-trail",
+  "human:mark-of-finding": "way-of-the-trail",
+  "human:mark-of-handling": "way-of-beasts",
+  "human:mark-of-making": "way-of-craft",
+  "human:mark-of-passage": "way-of-the-road",
+  "human:mark-of-sentinel": "way-of-the-watch",
+  "halfling:mark-of-healing": "way-of-mercy",
+  "halfling:mark-of-hospitality": "way-of-the-hearth",
+  "gnome:mark-of-scribing": "way-of-the-quill",
+  "dwarf:mark-of-warding": "way-of-the-ward"
+};
+  function normalizeRaceId(id){ return id ? (LEGACY_RACE_ALIASES[id] || id) : id; }
+  function normalizeVariantId(raceId,variantId){ return variantId ? (LEGACY_VARIANT_ALIASES[(raceId||'')+':'+variantId] || variantId) : variantId; }
+
 
   const RACE_HERO_ART_OVERRIDES = {
-    'elf:eladrin': {
+    'elf:seelie-elf': {
       src:'/assets/images/species/eladrin-character.png',
       alt:'Eladrin Elf'
     },
@@ -117,11 +164,10 @@
   function currentFromUrl(){
     const p = new URLSearchParams(location.search);
     const m = location.pathname.match(/^\/(?:race|races)\/([^/]+)(?:\/([^/]+))?\/?$/);
-    const species = m ? decodeURIComponent(m[1]) : (p.get('race') || p.get('species') || null);
-    return {
-      species,
-      variant:m?.[2] ? decodeURIComponent(m[2]) : (p.get('variant') || null)
-    };
+    const rawSpecies = m ? decodeURIComponent(m[1]) : (p.get('race') || p.get('species') || null);
+    const species = normalizeRaceId(rawSpecies);
+    const rawVariant = m?.[2] ? decodeURIComponent(m[2]) : (p.get('variant') || null);
+    return { species, variant: normalizeVariantId(rawSpecies || species,rawVariant) };
   }
 
   function raceUrl(species,variant){
@@ -207,6 +253,9 @@
 
   async function selectSpecies(id,variantId=null,updateUrl=false){
     state.finderOpen=false;
+    const rawId=id;
+    id=normalizeRaceId(id);
+    variantId=normalizeVariantId(rawId || id,variantId);
     state.current=id;
     const res=await fetch('/data/races/'+encodeURIComponent(id)+'.json',{cache:'no-store'});
     if(!res.ok) throw new Error('Could not load species data');
@@ -312,7 +361,7 @@
     character.dataset.artKey=key;
     character.classList.add('is-hidden');
     hero.classList.remove('has-race-art');
-    hero.classList.toggle('is-eladrin',key==='elf:eladrin');
+    hero.classList.toggle('is-eladrin',key==='elf:seelie-elf');
     character.alt='';
 
     let index=0;
