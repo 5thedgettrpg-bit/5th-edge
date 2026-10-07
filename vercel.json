@@ -3,46 +3,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/race/triton",
-      "destination": "/race/merfolk",
-      "permanent": true
-    },
-    {
-      "source": "/races/triton",
-      "destination": "/race/merfolk",
-      "permanent": true
-    },
-    {
-      "source": "/race/tortle",
-      "destination": "/race/chelonian",
-      "permanent": true
-    },
-    {
-      "source": "/races/tortle",
-      "destination": "/race/chelonian",
-      "permanent": true
-    },
-    {
-      "source": "/race/locathah",
-      "destination": "/race/icthyan",
-      "permanent": true
-    },
-    {
-      "source": "/races/locathah",
-      "destination": "/race/icthyan",
-      "permanent": true
-    },
-    {
-      "source": "/race/bullywug",
-      "destination": "/race/dendro",
-      "permanent": true
-    },
-    {
-      "source": "/races/bullywug",
-      "destination": "/race/dendro",
-      "permanent": true
-    },
-    {
       "source": "/species/:path*",
       "destination": "/race/:path*",
       "permanent": true
@@ -53,93 +13,188 @@
       "permanent": true
     },
     {
-      "source": "/races/autognome/",
-      "destination": "/races/clockwork/",
+      "source": "/race/triton",
+      "destination": "/race/merfolk",
       "permanent": true
     },
     {
-      "source": "/races/giff/",
-      "destination": "/races/potamid/",
+      "source": "/race/tortle",
+      "destination": "/race/chelonian",
       "permanent": true
     },
     {
-      "source": "/races/hadozee/",
-      "destination": "/races/vanara/",
+      "source": "/race/locathah",
+      "destination": "/race/icthyan",
       "permanent": true
     },
     {
-      "source": "/races/harengon/",
-      "destination": "/races/pooka/",
+      "source": "/race/bullywug",
+      "destination": "/race/dendro",
       "permanent": true
     },
     {
-      "source": "/races/kalashtar/",
-      "destination": "/races/syndran/",
+      "source": "/race/aasimar",
+      "destination": "/race/celestari",
       "permanent": true
     },
     {
-      "source": "/races/kender/",
-      "destination": "/races/wanderhin/",
+      "source": "/race/aasimar/:path*",
+      "destination": "/race/celestari/:path*",
       "permanent": true
     },
     {
-      "source": "/races/kor/",
-      "destination": "/races/ordan/",
+      "source": "/race/halfling",
+      "destination": "/race/hin",
       "permanent": true
     },
     {
-      "source": "/races/leonin/",
-      "destination": "/races/kaji/",
+      "source": "/race/halfling/:path*",
+      "destination": "/race/hin/:path*",
       "permanent": true
     },
     {
-      "source": "/races/loxodon/",
-      "destination": "/races/mastodon/",
+      "source": "/race/gith",
+      "destination": "/race/syncladi/kithrak",
       "permanent": true
     },
     {
-      "source": "/races/plasmoid/",
-      "destination": "/races/slimefolk/",
+      "source": "/race/gith/:path*",
+      "destination": "/race/syncladi/:path*",
       "permanent": true
     },
     {
-      "source": "/races/simic-hybrid/",
-      "destination": "/races/amalgam/",
+      "source": "/race/amalgam",
+      "destination": "/race/syncladi/amalgam",
       "permanent": true
     },
     {
-      "source": "/races/tabaxi/",
-      "destination": "/races/tabby/",
+      "source": "/race/todarian",
+      "destination": "/race/syncladi/todarian",
       "permanent": true
     },
     {
-      "source": "/races/thri-kreen/",
-      "destination": "/races/mantis/",
+      "source": "/race/vandar",
+      "destination": "/race/syncladi/vandar",
       "permanent": true
     },
     {
-      "source": "/races/vedalken/",
-      "destination": "/races/todarian/",
+      "source": "/race/syndran",
+      "destination": "/race/elf/syndran",
       "permanent": true
     },
     {
-      "source": "/races/verdan/",
-      "destination": "/races/vandar/",
+      "source": "/race/ordan",
+      "destination": "/race/hin/ordan",
       "permanent": true
     },
     {
-      "source": "/races/warforged/",
-      "destination": "/races/auto-remnant/",
+      "source": "/race/wanderhin",
+      "destination": "/race/hin/wander",
       "permanent": true
     },
     {
-      "source": "/races/yuan-ti/",
-      "destination": "/races/parsel/",
+      "source": "/race/reborn",
+      "destination": "/race/remnant/ghostwise",
       "permanent": true
     },
     {
-      "source": "/races/zombie/",
-      "destination": "/races/human-remnant/",
+      "source": "/race/auto-remnant",
+      "destination": "/race/remnant/auto",
+      "permanent": true
+    },
+    {
+      "source": "/race/human-remnant",
+      "destination": "/race/remnant/human",
+      "permanent": true
+    },
+    {
+      "source": "/race/autognome",
+      "destination": "/race/clockwork",
+      "permanent": true
+    },
+    {
+      "source": "/race/giff",
+      "destination": "/race/potamid",
+      "permanent": true
+    },
+    {
+      "source": "/race/hadozee",
+      "destination": "/race/vanara",
+      "permanent": true
+    },
+    {
+      "source": "/race/harengon",
+      "destination": "/race/pooka",
+      "permanent": true
+    },
+    {
+      "source": "/race/kalashtar",
+      "destination": "/race/elf/syndran",
+      "permanent": true
+    },
+    {
+      "source": "/race/kender",
+      "destination": "/race/hin/wander",
+      "permanent": true
+    },
+    {
+      "source": "/race/kor",
+      "destination": "/race/hin/ordan",
+      "permanent": true
+    },
+    {
+      "source": "/race/leonin",
+      "destination": "/race/kaji",
+      "permanent": true
+    },
+    {
+      "source": "/race/loxodon",
+      "destination": "/race/mastodon",
+      "permanent": true
+    },
+    {
+      "source": "/race/plasmoid",
+      "destination": "/race/slimefolk",
+      "permanent": true
+    },
+    {
+      "source": "/race/simic-hybrid",
+      "destination": "/race/syncladi/amalgam",
+      "permanent": true
+    },
+    {
+      "source": "/race/tabaxi",
+      "destination": "/race/tabby",
+      "permanent": true
+    },
+    {
+      "source": "/race/thri-kreen",
+      "destination": "/race/mantis",
+      "permanent": true
+    },
+    {
+      "source": "/race/vedalken",
+      "destination": "/race/syncladi/todarian",
+      "permanent": true
+    },
+    {
+      "source": "/race/verdan",
+      "destination": "/race/syncladi/vandar",
+      "permanent": true
+    },
+    {
+      "source": "/race/warforged",
+      "destination": "/race/remnant/auto",
+      "permanent": true
+    },
+    {
+      "source": "/race/yuan-ti",
+      "destination": "/race/parsel",
+      "permanent": true
+    },
+    {
+      "source": "/race/zombie",
+      "destination": "/race/remnant/human",
       "permanent": true
     }
   ],
