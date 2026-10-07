@@ -48,16 +48,6 @@
   ],
   "species": [
     {
-      "id": "aasimar",
-      "name": "Aasimar",
-      "category": "Otherworldly"
-    },
-    {
-      "id": "clockwork",
-      "name": "Clockwork",
-      "category": "Constructed"
-    },
-    {
       "id": "avian",
       "name": "Avian",
       "category": "Wildborn"
@@ -68,9 +58,9 @@
       "category": "Goblinoids"
     },
     {
-      "id": "dendro",
-      "name": "Dendro",
-      "category": "Deepfolk"
+      "id": "celestari",
+      "name": "Celestari",
+      "category": "Otherworldly"
     },
     {
       "id": "centaur",
@@ -83,9 +73,24 @@
       "category": "Fey Folk"
     },
     {
+      "id": "chelonian",
+      "name": "Chelonian",
+      "category": "Deepfolk"
+    },
+    {
+      "id": "clockwork",
+      "name": "Clockwork",
+      "category": "Constructed"
+    },
+    {
       "id": "custom-lineage",
       "name": "Custom Lineage",
       "category": "Custom"
+    },
+    {
+      "id": "dendro",
+      "name": "Dendro",
+      "category": "Deepfolk"
     },
     {
       "id": "dhampir",
@@ -123,16 +128,6 @@
       "category": "Otherworldly"
     },
     {
-      "id": "potamid",
-      "name": "Potamid",
-      "category": "Otherworldly"
-    },
-    {
-      "id": "gith",
-      "name": "Gith",
-      "category": "Otherworldly"
-    },
-    {
       "id": "gnoll",
       "name": "Gnoll",
       "category": "Wildborn"
@@ -153,11 +148,6 @@
       "category": "Common Folk"
     },
     {
-      "id": "vanara",
-      "name": "Vanara",
-      "category": "Wildborn"
-    },
-    {
       "id": "half-elf",
       "name": "Half-Elf",
       "category": "Common Folk"
@@ -165,22 +155,17 @@
     {
       "id": "half-orc",
       "name": "Half-Orc",
-      "category": "Goblinoids"
-    },
-    {
-      "id": "halfling",
-      "name": "Halfling",
       "category": "Common Folk"
-    },
-    {
-      "id": "pooka",
-      "name": "Pooka",
-      "category": "Wildborn"
     },
     {
       "id": "hexblood",
       "name": "Hexblood",
       "category": "Fey Folk"
+    },
+    {
+      "id": "hin",
+      "name": "Hin",
+      "category": "Common Folk"
     },
     {
       "id": "hobgoblin",
@@ -193,24 +178,9 @@
       "category": "Common Folk"
     },
     {
-      "id": "syndran",
-      "name": "Syndran",
-      "category": "Otherworldly"
-    },
-    {
-      "id": "wanderhin",
-      "name": "Wanderhin",
-      "category": "Nomads"
-    },
-    {
-      "id": "kobold",
-      "name": "Kobold",
-      "category": "Dragonkin"
-    },
-    {
-      "id": "ordan",
-      "name": "Ordan",
-      "category": "Nomads"
+      "id": "icthyan",
+      "name": "Icthyan",
+      "category": "Deepfolk"
     },
     {
       "id": "kaji",
@@ -218,14 +188,19 @@
       "category": "Wildborn"
     },
     {
+      "id": "kobold",
+      "name": "Kobold",
+      "category": "Dragonkin"
+    },
+    {
       "id": "lizardfolk",
       "name": "Lizardfolk",
       "category": "Wildborn"
     },
     {
-      "id": "icthyan",
-      "name": "Icthyan",
-      "category": "Deepfolk"
+      "id": "mantis",
+      "name": "Mantis",
+      "category": "Otherworldly"
     },
     {
       "id": "mastodon",
@@ -248,13 +223,23 @@
       "category": "Goblinoids"
     },
     {
-      "id": "slimefolk",
-      "name": "Slimefolk",
+      "id": "parsel",
+      "name": "Parsel",
+      "category": "Wildborn"
+    },
+    {
+      "id": "pooka",
+      "name": "Pooka",
+      "category": "Wildborn"
+    },
+    {
+      "id": "potamid",
+      "name": "Potamid",
       "category": "Otherworldly"
     },
     {
-      "id": "reborn",
-      "name": "Reborn",
+      "id": "remnant",
+      "name": "Remnant",
       "category": "Undead"
     },
     {
@@ -268,14 +253,19 @@
       "category": "Wildborn"
     },
     {
-      "id": "amalgam",
-      "name": "Amalgam",
-      "category": "Otherworldly"
-    },
-    {
       "id": "skeleton",
       "name": "Skeleton",
       "category": "Undead"
+    },
+    {
+      "id": "slimefolk",
+      "name": "Slimefolk",
+      "category": "Otherworldly"
+    },
+    {
+      "id": "syncladi",
+      "name": "Syncladi",
+      "category": "Otherworldly"
     },
     {
       "id": "tabby",
@@ -283,44 +273,14 @@
       "category": "Wildborn"
     },
     {
-      "id": "mantis",
-      "name": "Mantis",
-      "category": "Otherworldly"
-    },
-    {
       "id": "tiefling",
       "name": "Tiefling",
       "category": "Otherworldly"
     },
     {
-      "id": "chelonian",
-      "name": "Chelonian",
-      "category": "Deepfolk"
-    },
-    {
-      "id": "todarian",
-      "name": "Todarian",
-      "category": "Otherworldly"
-    },
-    {
-      "id": "vandar",
-      "name": "Vandar",
-      "category": "Otherworldly"
-    },
-    {
-      "id": "auto-remnant",
-      "name": "Auto Remnant",
-      "category": "Constructed"
-    },
-    {
-      "id": "parsel",
-      "name": "Parsel",
+      "id": "vanara",
+      "name": "Vanara",
       "category": "Wildborn"
-    },
-    {
-      "id": "human-remnant",
-      "name": "Human Remnant",
-      "category": "Undead"
     }
   ]
 }
