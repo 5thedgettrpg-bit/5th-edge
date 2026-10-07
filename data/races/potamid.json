@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "potamid",
+  "name": "Potamid",
+  "category": "Otherworldly",
+  "variants": [
+    {
+      "id": "base",
+      "name": null,
+      "basedOn": [
+        "AAG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Strength",
+        "secondary": "Constitution"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Astral Spark",
+          "description": "Your psychic connection to the Astral Plane enables you to mystically access a spark of divine power, which you can channel through your weapons. When you hit a target with an attack roll, you can cause the target to take extra force damage equal to your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, but you can use it no more than once per turn. You regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Magical Firearm",
+          "description": "You learn the Fire Bolt cantrip. Strength is your spellcasting ability for this cantrip. When you cast Fire Bolt, you add your Strength modifier to one damage roll of the spell. When you take the Attack action, you may replace any number of attacks you make as part of that action with casts of Fire Bolt. The first Fire Bolt you cast as part of that Attack action deals its normal damage. Each additional Fire Bolt you cast as part of the same Attack action deals 1d10 fire damage + your Strength modifier instead. Casting Fire Bolt this way does not make it a weapon attack."
+        },
+        {
+          "name": "Hippo Build",
+          "description": "You have advantage on Strength-based ability checks and Strength saving throws. In addition, you count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift. Additionally, you have a swimming speed equal to your walking speed."
+        }
+      ]
+    }
+  ]
+}
