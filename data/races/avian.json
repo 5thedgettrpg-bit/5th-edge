@@ -5,8 +5,8 @@
   "category": "Wildborn",
   "variants": [
     {
-      "id": "aarakocra",
-      "name": "Aarakocra",
+      "id": "tengu",
+      "name": "Tengu",
       "basedOn": [
         "EEPC",
         "MPMM"

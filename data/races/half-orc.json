@@ -5,8 +5,8 @@
   "category": "Goblinoids",
   "variants": [
     {
-      "id": "mark-of-finding",
-      "name": "Mark of Finding",
+      "id": "way-of-the-trail",
+      "name": "Way of the Trail",
       "basedOn": [
         "ERLW"
       ],

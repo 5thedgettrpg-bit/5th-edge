@@ -191,8 +191,8 @@
       ]
     },
     {
-      "id": "mark-of-detection",
-      "name": "Mark of Detection",
+      "id": "way-of-sight",
+      "name": "Way of Sight",
       "basedOn": [
         "ERLW"
       ],
@@ -269,8 +269,8 @@
       ]
     },
     {
-      "id": "mark-of-storm",
-      "name": "Mark of Storm",
+      "id": "way-of-the-tempest",
+      "name": "Way of the Tempest",
       "basedOn": [
         "ERLW"
       ],

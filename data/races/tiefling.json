@@ -695,8 +695,8 @@
       ]
     },
     {
-      "id": "fierna",
-      "name": "Fierna",
+      "id": "phlegethos",
+      "name": "Phlegethos",
       "basedOn": [
         "MTF"
       ],
@@ -725,7 +725,7 @@
           "description": "You have resistance to psychic damage and fire damage."
         },
         {
-          "name": "Legacy of Fierna",
+          "name": "Legacy of Phlegethos",
           "description": "You know the Friends cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Suggestion with this trait. Once you cast Charm Person or Suggestion with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Command, Dissonant Whispers 2nd Calm Emotions, Enthrall 3rd Enemies Abound, Hypnotic Pattern 4th Charm Monster, Compulsion 5th Dominate Person",
           "table": {
             "columns": [
@@ -833,8 +833,8 @@
       ]
     },
     {
-      "id": "glasya",
-      "name": "Glasya",
+      "id": "malbolge",
+      "name": "Malbolge",
       "basedOn": [
         "MTF"
       ],
@@ -863,7 +863,7 @@
           "description": "You have resistance to psychic damage and poison damage."
         },
         {
-          "name": "Legacy of Glasya",
+          "name": "Legacy of Malbolge",
           "description": "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Disguise Self with this trait. Starting at 5th level, you can also cast Invisibility with this trait. Once you cast Disguise Self or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Silent Image, Unseen Servant 2nd Mirror Image, Pass Without A Trace 3rd Major Image, Nondetection 4th Greater Invisibility, Hallucinatory Terrain 5th Mislead",
           "table": {
             "columns": [
@@ -1247,8 +1247,8 @@
       ]
     },
     {
-      "id": "levistus",
-      "name": "Levistus",
+      "id": "stygia",
+      "name": "Stygia",
       "basedOn": [
         "MTF"
       ],
@@ -1277,7 +1277,7 @@
           "description": "You have resistance to necrotic damage and cold damage."
         },
         {
-          "name": "Legacy of Levistus",
+          "name": "Legacy of Stygia",
           "description": "You know the Ray of Frost cantrip. Starting at 3rd level, you can cast Armor of Agathys with this trait. Starting at 5th level, you can also cast Darkness with this trait. Once you cast Armor of Agathys or Darkness with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Ice Knife, Protection from Evil and Good 2nd Mirror Image, Rime’s Binding Ice 3rd Bestow Curse, Hunger of Hadar 4th Ice Storm, Shadow of Moil 5th Cone of Cold",
           "table": {
             "columns": [
@@ -1839,8 +1839,8 @@
       ]
     },
     {
-      "id": "zariel",
-      "name": "Zariel",
+      "id": "bel",
+      "name": "Bel",
       "basedOn": [
         "MTF"
       ],
@@ -1869,7 +1869,7 @@
           "description": "You have resistance to necrotic damage and fire damage."
         },
         {
-          "name": "Legacy of Zariel",
+          "name": "Legacy of Bel",
           "description": "You know the Sword Burst cantrip. Starting at 3rd level, you can cast Wrathful Smite with this trait. Starting at 5th level, you can also cast Aid with this trait. Once you cast Wrathful Smite or Aid with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st False Life, Hunter's Mark 2nd Magic Weapon, See Invisibility 3rd Bestow Curse, Haste 4th Staggering Smite, Locate Creature 5th Banishing Smite",
           "table": {
             "columns": [

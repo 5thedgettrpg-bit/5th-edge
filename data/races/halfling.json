@@ -164,8 +164,8 @@
       ]
     },
     {
-      "id": "mark-of-healing",
-      "name": "Mark of Healing",
+      "id": "way-of-mercy",
+      "name": "Way of Mercy",
       "basedOn": [
         "ERLW"
       ],
@@ -246,8 +246,8 @@
       ]
     },
     {
-      "id": "mark-of-hospitality",
-      "name": "Mark of Hospitality",
+      "id": "way-of-the-hearth",
+      "name": "Way of the Hearth",
       "basedOn": [
         "ERLW"
       ],

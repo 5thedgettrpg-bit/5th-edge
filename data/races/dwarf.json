@@ -5,8 +5,8 @@
   "category": "Common Folk",
   "variants": [
     {
-      "id": "mark-of-warding",
-      "name": "Mark of Warding",
+      "id": "way-of-the-ward",
+      "name": "Way of the Ward",
       "basedOn": [
         "ERLW"
       ],

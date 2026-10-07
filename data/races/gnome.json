@@ -154,8 +154,8 @@
       ]
     },
     {
-      "id": "mark-of-scribing",
-      "name": "Mark of Scribing",
+      "id": "way-of-the-quill",
+      "name": "Way of the Quill",
       "basedOn": [
         "ERLW"
       ],

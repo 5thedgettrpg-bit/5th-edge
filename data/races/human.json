@@ -5,8 +5,8 @@
   "category": "Common Folk",
   "variants": [
     {
-      "id": "mark-of-finding",
-      "name": "Mark of Finding",
+      "id": "way-of-the-trail",
+      "name": "Way of the Trail",
       "basedOn": [
         "ERLW"
       ],
@@ -143,8 +143,8 @@
       ]
     },
     {
-      "id": "mark-of-handling",
-      "name": "Mark of Handling",
+      "id": "way-of-beasts",
+      "name": "Way of Beasts",
       "basedOn": [
         "ERLW"
       ],
@@ -281,8 +281,8 @@
       ]
     },
     {
-      "id": "mark-of-making",
-      "name": "Mark of Making",
+      "id": "way-of-craft",
+      "name": "Way of Craft",
       "basedOn": [
         "ERLW"
       ],
@@ -423,8 +423,8 @@
       ]
     },
     {
-      "id": "mark-of-sentinel",
-      "name": "Mark of Sentinel",
+      "id": "way-of-the-watch",
+      "name": "Way of the Watch",
       "basedOn": [
         "ERLW"
       ],
@@ -629,8 +629,8 @@
       ]
     },
     {
-      "id": "mark-of-passage",
-      "name": "Mark of Passage",
+      "id": "way-of-the-road",
+      "name": "Way of the Road",
       "basedOn": [
         "ERLW"
       ],

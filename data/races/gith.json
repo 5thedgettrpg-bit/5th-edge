@@ -5,8 +5,8 @@
   "category": "Otherworldly",
   "variants": [
     {
-      "id": "githyanki",
-      "name": "Githyanki",
+      "id": "kithrak",
+      "name": "Kithrak",
       "basedOn": [
         "MTF",
         "MPMM"
@@ -84,8 +84,8 @@
       ]
     },
     {
-      "id": "githzerai",
-      "name": "Githzerai",
+      "id": "zerth",
+      "name": "Zerth",
       "basedOn": [
         "MTF",
         "MPMM"

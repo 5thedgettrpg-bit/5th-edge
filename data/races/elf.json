@@ -170,8 +170,8 @@
       ]
     },
     {
-      "id": "eladrin",
-      "name": "Eladrin",
+      "id": "seelie-elf",
+      "name": "Seelie Elf",
       "basedOn": [
         "MTF",
         "MPMM"
@@ -337,8 +337,8 @@
       ]
     },
     {
-      "id": "mark-of-shadow",
-      "name": "Mark of Shadow",
+      "id": "way-of-the-veil",
+      "name": "Way of the Veil",
       "basedOn": [
         "ERLW"
       ],
@@ -611,8 +611,8 @@
       ]
     },
     {
-      "id": "shadar-kai",
-      "name": "Shadar-Kai",
+      "id": "shadow-elf",
+      "name": "Shadow Elf",
       "basedOn": [
         "MTF",
         "MPMM"
