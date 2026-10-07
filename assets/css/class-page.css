@@ -232,3 +232,6 @@ a{color:inherit}
   .feature summary{font-size:17px}
   .feature-body{font-size:14px}
 }
+
+/* Planned subclasses remain visible but unavailable until their rules are finished. */
+.planned-subclass-select option:disabled{color:#9f8d82;background:#eee4da}
