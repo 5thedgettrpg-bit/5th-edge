@@ -113,7 +113,7 @@
 
   addDirect('Home','/');
   addMega('Classes',[{title:'Classes',links:classLinks}],'edge-nav-panel-classes');
-  addDirect('Races','/races/');
+  addDirect('Races','/race');
   addMega('Character Options',[
     {title:'Character Options',links:[
       ['Backgrounds','/backgrounds/'],
@@ -145,7 +145,7 @@
   drawer.setAttribute('aria-label','Mobile navigation');
 
   const mobileSections=[
-    {title:'Browse',links:[['Home','/'],['Races','/races/']]},
+    {title:'Browse',links:[['Home','/'],['Races','/race']]},
     {title:'Classes',links:classLinks},
     {title:'Character Options',links:[
       ['Backgrounds','/backgrounds/'],
@@ -215,7 +215,7 @@
           <span class="compat-badge">5E Compatible</span>
         </div>
         <div class="footer-columns">
-          <div class="footer-col"><h3>Explore</h3><a href="/classes/">Classes</a><a href="/races/">Races</a><a href="/backgrounds/">Backgrounds</a><a href="/feats/">Feats</a><a href="/spells/">Spells</a><a href="/rules/">Rules</a><a href="/blog/">Blog</a></div>
+          <div class="footer-col"><h3>Explore</h3><a href="/classes/">Classes</a><a href="/race">Races</a><a href="/backgrounds/">Backgrounds</a><a href="/feats/">Feats</a><a href="/spells/">Spells</a><a href="/rules/">Rules</a><a href="/blog/">Blog</a></div>
           <div class="footer-col"><h3>Build</h3><a href="https://play.familiararcanattrpg.com">Character Builder</a><a href="/classes/wizard/">Wizard</a><a href="/classes/ranger/">Ranger</a><a href="/classes/rogue/">Rogue</a><a href="/classes/barbarian/">Barbarian</a></div>
           <div class="footer-col"><h3>Legal</h3><a href="/legal/">Legal &amp; Licensing</a><a href="/sitemap.xml">Sitemap</a><a href="https://www.dndbeyond.com/srd">System Reference Documents</a><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div>
         </div>
