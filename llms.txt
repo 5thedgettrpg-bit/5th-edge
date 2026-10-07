@@ -9,7 +9,7 @@
 ## Primary sections
 
 - Classes: https://www.5thedgettrpg.com/classes/
-- Races: https://www.5thedgettrpg.com/races/
+- Races: https://www.5thedgettrpg.com/race
 - Backgrounds: https://www.5thedgettrpg.com/backgrounds/
 - Feats: https://www.5thedgettrpg.com/feats/
 - Fighting Styles: https://www.5thedgettrpg.com/fighting-styles/
