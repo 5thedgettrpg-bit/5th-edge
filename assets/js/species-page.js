@@ -125,14 +125,18 @@
   }
 
   function raceUrl(species,variant){
-    const p = new URLSearchParams();
-    if(variant) p.set('variant',variant);
-    const qs=p.toString();
-    return '/races/'+encodeURIComponent(species)+'/' + (qs ? '?'+qs : '');
+    return '/race/'+encodeURIComponent(species)+(variant ? '/'+encodeURIComponent(variant) : '');
   }
 
   function pushUrl(species,variant){
     history.pushState({},'',raceUrl(species,variant));
+  }
+
+  function canonicalizeLegacyVariantUrl(){
+    const q=currentFromUrl();
+    if(q.species && (q.variant || location.search)){
+      history.replaceState({},'',raceUrl(q.species,q.variant));
+    }
   }
 
   function renderSidebar(){
@@ -384,6 +388,7 @@
   });
 
   document.addEventListener('DOMContentLoaded',async()=>{
+    canonicalizeLegacyVariantUrl();
     try{
       await loadManifest();
       wireSearch();
