@@ -143,8 +143,8 @@
       ]
     },
     {
-      "id": "way-of-beasts",
-      "name": "Way of Beasts",
+      "id": "way-of-the-beast",
+      "name": "Way of the Beast",
       "basedOn": [
         "ERLW"
       ],
@@ -281,8 +281,8 @@
       ]
     },
     {
-      "id": "way-of-craft",
-      "name": "Way of Craft",
+      "id": "way-of-the-craft",
+      "name": "Way of the Craft",
       "basedOn": [
         "ERLW"
       ],
