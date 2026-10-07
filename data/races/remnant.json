@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "id": "remnant",
+  "name": "Remnant",
+  "category": "Undead",
+  "variants": [
+    {
+      "id": "auto",
+      "name": "Auto",
+      "basedOn": [
+        "ERLW"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Any"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Integrated Protection",
+          "description": "Your body has built-in defensive layers that can be enhanced with armor. You gain a bonus to Armor Class equal to half of your proficiency bonus rounded down. You can don only armor with which you have proficiency. To don armor, you must incorporate it into your body over the course of 1 hour, during which you must remain in contact with the armor. To doff armor, you must spend 1 hour removing it. You can rest while donning or doffing armor in this way. While you live, your armor can't be removed from your body against your will."
+        },
+        {
+          "name": "Iron Fists",
+          "description": "You can use your iron fists to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier force damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Specialized Design",
+          "description": "You gain one skill proficiency and one tool proficiency of your choice."
+        }
+      ]
+    },
+    {
+      "id": "ghostwise",
+      "name": "Ghostwise",
+      "basedOn": [
+        "VRGR"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Any"
+      },
+      "creatureType": "Humanoid",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Small",
+        "Medium"
+      ],
+      "darkvision": null,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+        },
+        {
+          "name": "Deathless Nature",
+          "description": "You have escaped death, a fact represented by the following benefits: You have advantage on saving throws against disease and being poisoned, and you have resistance to poison damage. You have advantage on death saving throws. You don’t need to eat, drink, or breathe. You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in an inactive, motionless state, during which you retain consciousness."
+        },
+        {
+          "name": "Knowledge from a Past Life",
+          "description": "You temporarily remember glimpses of the past, perhaps faded memories from ages ago or a previous life. When you make an ability check that uses a skill, you can roll a d6 immediately after seeing the number on the d20 and add the number on the d6 to the check. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Flight",
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+        }
+      ]
+    },
+    {
+      "id": "human",
+      "name": "Human",
+      "basedOn": [
+        "DMG"
+      ],
+      "source": "Familiar Arcana Revised",
+      "abilityScores": {
+        "primary": "Constitution",
+        "secondary": "Strength"
+      },
+      "creatureType": "Undead",
+      "speed": {
+        "walk": 30,
+        "raw": "30 ft"
+      },
+      "size": [
+        "Medium"
+      ],
+      "darkvision": 60,
+      "languages": "Common, and one.",
+      "features": [
+        {
+          "name": "Zombie Bite",
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Constitution modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Poison Immunity",
+          "description": "You are immune to poison damage and the poisoned condition."
+        },
+        {
+          "name": "Relentless Endurance",
+          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+        },
+        {
+          "name": "Infectious Bite",
+          "description": "When you hit a creature that isn’t a Construct or Undead with your Human Remnant Bite, you can force it to make a Constitution saving throw against a DC equal to 8 + your proficiency bonus + your Constitution modifier. On a failed save, the creature is poisoned for 1 minute. At the end of each of its turns, it can repeat the saving throw, ending the condition on a success. You can use this feature a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest."
+        }
+      ]
+    }
+  ]
+}
