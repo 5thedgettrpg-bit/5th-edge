@@ -5,25 +5,57 @@
 
   const CDN_RACE_ART_BASE='https://assets.5thedgettrpg.com/race-images';
   const LEGACY_RACE_ALIASES = {
-  "autognome": "clockwork",
-  "giff": "potamid",
-  "hadozee": "vanara",
-  "harengon": "pooka",
-  "kalashtar": "syndran",
-  "kender": "wanderhin",
-  "kor": "ordan",
-  "leonin": "kaji",
-  "loxodon": "mastodon",
-  "plasmoid": "slimefolk",
-  "simic-hybrid": "amalgam",
-  "tabaxi": "tabby",
-  "thri-kreen": "mantis",
-  "vedalken": "todarian",
-  "verdan": "vandar",
-  "warforged": "auto-remnant",
-  "yuan-ti": "parsel",
-  "zombie": "human-remnant"
+  "aasimar":"celestari",
+  "autognome":"clockwork",
+  "giff":"potamid",
+  "hadozee":"vanara",
+  "harengon":"pooka",
+  "halfling":"hin",
+  "gith":"syncladi",
+  "amalgam":"syncladi",
+  "todarian":"syncladi",
+  "vandar":"syncladi",
+  "syndran":"elf",
+  "ordan":"hin",
+  "wanderhin":"hin",
+  "reborn":"remnant",
+  "auto-remnant":"remnant",
+  "human-remnant":"remnant",
+  "kalashtar":"elf",
+  "kender":"hin",
+  "kor":"hin",
+  "leonin":"kaji",
+  "loxodon":"mastodon",
+  "plasmoid":"slimefolk",
+  "simic-hybrid":"syncladi",
+  "tabaxi":"tabby",
+  "thri-kreen":"mantis",
+  "vedalken":"syncladi",
+  "verdan":"syncladi",
+  "warforged":"remnant",
+  "yuan-ti":"parsel",
+  "zombie":"remnant"
 };
+  const LEGACY_RACE_DEFAULT_VARIANTS = {
+    "gith":"kithrak",
+    "amalgam":"amalgam",
+    "todarian":"todarian",
+    "vandar":"vandar",
+    "syndran":"syndran",
+    "ordan":"ordan",
+    "wanderhin":"wander",
+    "reborn":"ghostwise",
+    "auto-remnant":"auto",
+    "human-remnant":"human",
+    "kalashtar":"syndran",
+    "kender":"wander",
+    "kor":"ordan",
+    "simic-hybrid":"amalgam",
+    "vedalken":"todarian",
+    "verdan":"vandar",
+    "warforged":"auto",
+    "zombie":"human"
+  };
   const LEGACY_VARIANT_ALIASES = {
   "avian:aarakocra": "tengu",
   "elf:eladrin": "seelie-elf",
@@ -39,12 +71,14 @@
   "half-elf:mark-of-storm": "way-of-the-tempest",
   "half-orc:mark-of-finding": "way-of-the-trail",
   "human:mark-of-finding": "way-of-the-trail",
-  "human:mark-of-handling": "way-of-beasts",
-  "human:mark-of-making": "way-of-craft",
+  "human:mark-of-handling": "way-of-the-beast",
+  "human:mark-of-making": "way-of-the-craft",
   "human:mark-of-passage": "way-of-the-road",
   "human:mark-of-sentinel": "way-of-the-watch",
   "halfling:mark-of-healing": "way-of-mercy",
+  "hin:mark-of-healing": "way-of-mercy",
   "halfling:mark-of-hospitality": "way-of-the-hearth",
+  "hin:mark-of-hospitality": "way-of-the-hearth",
   "gnome:mark-of-scribing": "way-of-the-quill",
   "dwarf:mark-of-warding": "way-of-the-ward"
 };
@@ -167,14 +201,12 @@
     const rawSpecies = m ? decodeURIComponent(m[1]) : (p.get('race') || p.get('species') || null);
     const species = normalizeRaceId(rawSpecies);
     const rawVariant = m?.[2] ? decodeURIComponent(m[2]) : (p.get('variant') || null);
-    return { species, variant: normalizeVariantId(rawSpecies || species,rawVariant) };
+    const impliedVariant = !rawVariant && rawSpecies ? (LEGACY_RACE_DEFAULT_VARIANTS[rawSpecies] || null) : null;
+    return { species, variant: normalizeVariantId(rawSpecies || species,rawVariant || impliedVariant) };
   }
 
   function raceUrl(species,variant){
-    const p = new URLSearchParams();
-    if(variant) p.set('variant',variant);
-    const qs=p.toString();
-    return '/races/'+encodeURIComponent(species)+'/' + (qs ? '?'+qs : '');
+    return '/race/'+encodeURIComponent(species)+(variant ? '/'+encodeURIComponent(variant) : '');
   }
 
   function pushUrl(species,variant){
@@ -765,6 +797,8 @@
       const q=currentFromUrl();
       if(q.species){
         await selectSpecies(q.species,q.variant,false);
+        const canonical=raceUrl(state.current,document.querySelector('#variantWrap')?.hidden===false ? state.variantId : null);
+        if(location.pathname!==canonical || location.search) history.replaceState({},'',canonical);
       }else{
         renderRaceLanding();
       }
