@@ -203,3 +203,15 @@ test('allows the same feature id in different race variants while rejecting dupl
   const errors = validateAutomationDocument(doc, 'race.json');
   assert.equal(errors.some(e => e.includes('duplicate feature id')), false);
 });
+
+
+test('race conditional advantage never requires runtime prose parsing', () => {
+  const doc = enrichRaceDocument({ id: 'test-race', variants: [{ id: 'base', features: [{
+    name: 'Sharp Senses',
+    description: 'You have advantage on Wisdom (Perception) checks made to notice hidden creatures.'
+  }] }] });
+  const conditional = doc.variants[0].features[0].automation.conditionalAdvantage;
+  assert.equal(conditional.support, 'required');
+  assert.equal(conditional.predicateSource, undefined);
+  assert.match(conditional.hook, /sharp-senses:advantage$/);
+});
