@@ -71,15 +71,17 @@ function inferCommonAutomation(feature, raceId, variantId) {
   const numberWords = { one: 1, two: 2, three: 3, four: 4 };
   const toolChoice = description.match(/proficiency in (one|two|three|four|\d+) tools? of your choice/i);
   const skillChoice = description.match(/proficiency in (one|two|three|four|\d+) skills? of your choice/i);
-  if (toolChoice || skillChoice) {
+  const savingThrowProf = description.match(/proficiency in (Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma) saving throws?/i);
+  if (toolChoice || skillChoice || savingThrowProf) {
     const proficiencyChoices = {};
     if (toolChoice) proficiencyChoices.tools = { choose: Number(toolChoice[1]) || numberWords[toolChoice[1].toLowerCase()] };
     if (skillChoice) proficiencyChoices.skills = { choose: Number(skillChoice[1]) || numberWords[skillChoice[1].toLowerCase()] };
-    add(auto, 'proficiencyChoices', proficiencyChoices);
+    if (Object.keys(proficiencyChoices).length) add(auto, 'proficiencyChoices', proficiencyChoices);
+    if (savingThrowProf) add(auto, 'proficiencyGrants', { savingThrows: [savingThrowProf[1]] });
   } else {
     const skillMatches = [...description.matchAll(/proficiency in (?:the )?([A-Za-z ]+?)(?: skill)?(?:\.|,| and|$)/g)]
       .map(m => m[1].trim())
-      .filter(value => value && !/\b(?:tool|skills? of your choice)\b/i.test(value));
+      .filter(value => value && !/\b(?:tool|skills? of your choice|saving throws?)\b/i.test(value));
     if (skillMatches.length) add(auto, 'proficiencyGrants', { skills: [...new Set(skillMatches)] });
   }
 
