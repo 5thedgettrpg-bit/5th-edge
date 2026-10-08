@@ -29,23 +29,68 @@
       "features": [
         {
           "name": "Natural Armor",
-          "description": "When you aren't wearing armor, your base AC equals 11 + your proficiency bonus + your Constitution modifier. The Constitution modifier added to this AC can't exceed +5. You can use this AC if armor you wear would give you a lower AC, and you can still gain the benefit of a shield."
+          "description": "When you aren't wearing armor, your base AC equals 11 + your proficiency bonus + your Constitution modifier. The Constitution modifier added to this AC can't exceed +5. You can use this AC if armor you wear would give you a lower AC, and you can still gain the benefit of a shield.",
+          "id": "natural-armor",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:chelonian:base:natural-armor",
+            "parameters": {
+              "featureName": "Natural Armor",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Claws",
-          "description": "You can use your claws to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You can use your claws to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "claws",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:chelonian:base:claws",
+            "parameters": {
+              "featureName": "Claws",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Amphibious",
-          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed.",
+          "id": "amphibious",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:chelonian:base:amphibious",
+            "parameters": {
+              "featureName": "Amphibious",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Nature's Intuition",
-          "description": "You gain proficiency with one of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival."
+          "description": "You gain proficiency with one of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival.",
+          "id": "nature-s-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:chelonian:base:nature-s-intuition",
+            "parameters": {
+              "featureName": "Nature's Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Shell Defense",
-          "description": "You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to your AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can’t increase, you have disadvantage on Dexterity saving throws, you can’t take reactions, and the only action you can take is a bonus action to emerge from your shell."
+          "description": "You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to your AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can’t increase, you have disadvantage on Dexterity saving throws, you can’t take reactions, and the only action you can take is a bonus action to emerge from your shell.",
+          "id": "shell-defense",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:chelonian:base:shell-defense",
+            "parameters": {
+              "featureName": "Shell Defense",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
