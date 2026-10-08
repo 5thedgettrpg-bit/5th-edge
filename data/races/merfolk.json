@@ -29,15 +29,42 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Guardians of the Depths",
-          "description": "You have proficiency with the spear, trident, light crossbow, and net."
+          "description": "You have proficiency with the spear, trident, light crossbow, and net.",
+          "id": "guardians-of-the-depths",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:merfolk:base:guardians-of-the-depths",
+            "parameters": {
+              "featureName": "Guardians of the Depths",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Emissary of the Sea",
-          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return."
+          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return.",
+          "id": "emissary-of-the-sea",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "cold"
+              ]
+            }
+          }
         },
         {
           "name": "Control Air and Water",
@@ -78,6 +105,41 @@
             "spellListAdditionRequirement": [
               "Spellcasting",
               "Pact Magic"
+            ]
+          },
+          "id": "control-air-and-water",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Druidcraft",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Fog Cloud",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Gust of Wind",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
             ]
           }
         }
