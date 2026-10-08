@@ -29,11 +29,28 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:gnome:deep:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Gnome Cunning",
-          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws.",
+          "id": "gnome-cunning",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Gift of the Svirfneblin",
@@ -75,6 +92,41 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "gift-of-the-svirfneblin",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Mold Earth",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Disguise Self",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Nondetection",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         }
       ]
@@ -103,11 +155,28 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:gnome:forest:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Gnome Cunning",
-          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws.",
+          "id": "gnome-cunning",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Gift of the Forest",
@@ -149,6 +218,41 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "gift-of-the-forest",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Druidcraft",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Animal Friendship",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Summon Beast",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         }
       ]
@@ -177,11 +281,28 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:gnome:way-of-the-quill:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Gnome Cunning",
-          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws.",
+          "id": "gnome-cunning",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Scribe's Insight",
@@ -287,11 +408,138 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "scribe-s-insight",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Message",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Comprehend Languages",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Magic Mouth",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Comprehend Languages",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Illusory Script",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Animal Messenger",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Silence",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Sending",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Tongues",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Arcane Eye",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Divination",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Dream",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         },
         {
           "name": "Gifted Scribe",
-          "description": "Whenever you make an Intelligence (History) or an ability check involving Calligrapher's Supplies, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make an Intelligence (History) or an ability check involving Calligrapher's Supplies, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "gifted-scribe",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:gnome:way-of-the-quill:gifted-scribe",
+            "parameters": {
+              "featureName": "Gifted Scribe",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -319,11 +567,28 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:gnome:rock:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Gnome Cunning",
-          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws.",
+          "id": "gnome-cunning",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Gift of the Tinkerer",
@@ -364,6 +629,41 @@
             "spellListAdditionRequirement": [
               "Spellcasting",
               "Pact Magic"
+            ]
+          },
+          "id": "gift-of-the-tinkerer",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Magic Stone",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Catapult",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Borrowed Knowledge",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
             ]
           }
         }
