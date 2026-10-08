@@ -38,10 +38,10 @@
               "featureName": "Divergent Persona",
               "manualResolution": true
             },
-            "proficiencyGrants": {
-              "skills": [
-                "one tool of your choice"
-              ]
+            "proficiencyChoices": {
+              "tools": {
+                "choose": 1
+              }
             }
           }
         },
