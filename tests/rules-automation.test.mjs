@@ -191,3 +191,15 @@ test('rejects executable features that are left without automation', () => {
   const errors = validateAutomationDocument({ features: [{ id: 'prose-only', name: 'Prose Only', description: 'Does something.' }] }, 'rules.json');
   assert.ok(errors.some(e => e.includes('missing automation')));
 });
+
+
+test('allows the same feature id in different race variants while rejecting duplicates inside one variant', () => {
+  const doc = {
+    variants: [
+      { id: 'a', features: [{ id: 'darkvision', automation: { senses: { darkvision: { range: 60 } } } }] },
+      { id: 'b', features: [{ id: 'darkvision', automation: { senses: { darkvision: { range: 60 } } } }] }
+    ]
+  };
+  const errors = validateAutomationDocument(doc, 'race.json');
+  assert.equal(errors.some(e => e.includes('duplicate feature id')), false);
+});
