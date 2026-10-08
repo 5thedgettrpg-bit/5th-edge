@@ -29,15 +29,41 @@
       "features": [
         {
           "name": "Shifting",
-          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point), and you have a bonus to your Armor Class equal to half of your proficiency bonus rounded down. Once you shift, you can’t do so again until you finish a short or long rest."
+          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point), and you have a bonus to your Armor Class equal to half of your proficiency bonus rounded down. Once you shift, you can’t do so again until you finish a short or long rest.",
+          "id": "shifting",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:shifter:beasthide:shifting",
+            "parameters": {
+              "featureName": "Shifting",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Natural Athlete",
-          "description": "You have Expertise in the Athletics skill."
+          "description": "You have Expertise in the Athletics skill.",
+          "id": "natural-athlete",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:shifter:beasthide:natural-athlete",
+            "parameters": {
+              "featureName": "Natural Athlete",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         }
       ]
     },
@@ -66,7 +92,15 @@
       "features": [
         {
           "name": "Shifting",
-          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point). Additionally, your size becomes Small, you have advantage on Dexterity checks and Dexterity saving throws. Once you shift, you can’t do so again until you finish a short or long rest."
+          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point). Additionally, your size becomes Small, you have advantage on Dexterity checks and Dexterity saving throws. Once you shift, you can’t do so again until you finish a short or long rest.",
+          "id": "shifting",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Kitsune Magic",
@@ -103,11 +137,54 @@
             "You know the Minor Illusion cantrip. Starting at 3rd level, you can cast Charm Person with this trait. Starting at 5th level, you can also cast Mirror Image with this trait.",
             "Once you cast Charm Person or Mirror Image with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level.",
             "Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
-          ]
+          ],
+          "id": "kitsune-magic",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Minor Illusion",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Charm Person",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Mirror Image",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
+          }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         }
       ]
     },
@@ -136,15 +213,41 @@
       "features": [
         {
           "name": "Shifting",
-          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point). Additionally, your fangs lengthen into natural weapons. You can use your fangs to make unarmed strikes that deal 1d6 + your Strength modifier piercing damage instead of the bludgeoning damage normal for an unarmed strike. In addition, you can make one attack with your fangs as a bonus action on each of your turns. Once you shift, you can’t do so again until you finish a short or long rest."
+          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point). Additionally, your fangs lengthen into natural weapons. You can use your fangs to make unarmed strikes that deal 1d6 + your Strength modifier piercing damage instead of the bludgeoning damage normal for an unarmed strike. In addition, you can make one attack with your fangs as a bonus action on each of your turns. Once you shift, you can’t do so again until you finish a short or long rest.",
+          "id": "shifting",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:shifter:longtooth:shifting",
+            "parameters": {
+              "featureName": "Shifting",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Fierce",
-          "description": "You have Expertise in the Intimidation skill."
+          "description": "You have Expertise in the Intimidation skill.",
+          "id": "fierce",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:shifter:longtooth:fierce",
+            "parameters": {
+              "featureName": "Fierce",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         }
       ]
     },
@@ -173,15 +276,42 @@
       "features": [
         {
           "name": "Shifting",
-          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point). Additionally, your walking speed increases by 10 feet. In addition, when a creature ends its turn within 5 feet of you, you can use your reaction to move up to 10 feet without provoking opportunity attacks. Once you shift, you can’t do so again until you finish a short or long rest."
+          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point). Additionally, your walking speed increases by 10 feet. In addition, when a creature ends its turn within 5 feet of you, you can use your reaction to move up to 10 feet without provoking opportunity attacks. Once you shift, you can’t do so again until you finish a short or long rest.",
+          "id": "shifting",
+          "automation": {
+            "movement": {
+              "walk": {
+                "value": 10,
+                "unit": "ft",
+                "mode": "bonus"
+              }
+            }
+          }
         },
         {
           "name": "Graceful",
-          "description": "You have Expertise in the Acrobatics skill."
+          "description": "You have Expertise in the Acrobatics skill.",
+          "id": "graceful",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:shifter:swiftstride:graceful",
+            "parameters": {
+              "featureName": "Graceful",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         }
       ]
     },
@@ -210,15 +340,40 @@
       "features": [
         {
           "name": "Shifting",
-          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point). Additionally, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll against you with advantage unless you are incapacitated. Once you shift, you can’t do so again until you finish a short or long rest."
+          "description": "As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 1d6 + your level + your Constitution modifier (minimum of 1 temporary hit point). Additionally, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll against you with advantage unless you are incapacitated. Once you shift, you can’t do so again until you finish a short or long rest.",
+          "id": "shifting",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Natural Tracker",
-          "description": "You have Expertise in the Survival skill."
+          "description": "You have Expertise in the Survival skill.",
+          "id": "natural-tracker",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:shifter:wildhunt:natural-tracker",
+            "parameters": {
+              "featureName": "Natural Tracker",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         }
       ]
     }
