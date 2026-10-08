@@ -526,6 +526,11 @@
         "parameters": {
           "featureName": "Hit Points",
           "manualResolution": true
+        },
+        "hitPoints": {
+          "hitDie": "d10",
+          "firstLevel": "10 + CON",
+          "higherLevel": "1d10 or 6 + CON"
         }
       }
     },
@@ -572,6 +577,39 @@
         "parameters": {
           "featureName": "Proficiencies",
           "manualResolution": true
+        },
+        "proficiencyPackage": {
+          "armor": [
+            "Light armor",
+            "Medium armor",
+            "Shields"
+          ],
+          "weapons": [
+            "Simple weapons",
+            "Martial weapons"
+          ],
+          "tools": [],
+          "savingThrows": [
+            "Strength",
+            "Dexterity"
+          ],
+          "skillChoices": {
+            "count": 2,
+            "from": [
+              "Animal Handling",
+              "Athletics",
+              "Insight",
+              "Investigation",
+              "Nature",
+              "Perception",
+              "Stealth",
+              "Survival"
+            ]
+          },
+          "expertiseChoice": {
+            "count": 1,
+            "requirement": "Any skill you are already proficient in, including proficiencies from species, background, or another source."
+          }
         }
       }
     },
@@ -864,6 +902,28 @@
         "parameters": {
           "featureName": "Know Your Enemy",
           "manualResolution": true
+        },
+        "inspectCreature": {
+          "activation": {
+            "time": 1,
+            "unit": "minute",
+            "outsideCombat": true
+          },
+          "choose": 2,
+          "characteristics": [
+            "Strength score",
+            "Dexterity score",
+            "Constitution score",
+            "Armor Class",
+            "Current hit points",
+            "Total class levels, if any",
+            "Ranger class levels, if any"
+          ],
+          "comparisonResults": [
+            "equal",
+            "superior",
+            "inferior"
+          ]
         }
       }
     },
@@ -883,6 +943,49 @@
         "parameters": {
           "featureName": "Combat Instincts",
           "manualResolution": true
+        },
+        "combatInstincts": {
+          "trigger": {
+            "event": "attackActionOnTurn"
+          },
+          "movementBonus": {
+            "movementType": "walk",
+            "value": 10,
+            "unit": "ft",
+            "duration": "endOfTurn"
+          },
+          "spendOnHit": {
+            "resource": "hunters-instinct",
+            "amount": 1,
+            "requiresWeaponHitFromTriggeringAction": true,
+            "limitPerTurn": 1
+          },
+          "options": {
+            "guarded": {
+              "damageBonusFrom": "instinctDieRoll",
+              "acBonusFrom": "instinctDieRoll",
+              "acDuration": "untilStartOfNextTurn"
+            },
+            "sweeping": {
+              "damageBonusFrom": "instinctDieRoll",
+              "secondaryTarget": {
+                "visible": true,
+                "withinFeetOfSelf": 5
+              },
+              "secondaryDamageFrom": "instinctDieRoll"
+            },
+            "pursuing": {
+              "damageBonusFrom": "instinctDieRoll",
+              "push": {
+                "baseFeet": 5,
+                "additionalFeetFrom": "instinctDieRoll"
+              },
+              "reactionMove": {
+                "upTo": "walkingSpeed",
+                "destinationWithinFeetOfTarget": 5
+              }
+            }
+          }
         }
       }
     },
@@ -914,6 +1017,42 @@
         "parameters": {
           "featureName": "Deft Explorer",
           "manualResolution": true
+        },
+        "parts": {
+          "canny": {
+            "unlockLevel": 3,
+            "expertiseChoice": {
+              "choose": 1,
+              "requiresProficientSkill": true
+            },
+            "languageChoice": {
+              "choose": 2
+            }
+          },
+          "roving": {
+            "unlockLevel": 6,
+            "movementBonus": {
+              "movementType": "walk",
+              "value": 5,
+              "unit": "ft"
+            }
+          },
+          "tireless": {
+            "unlockLevel": 10,
+            "activation": {
+              "type": "action"
+            },
+            "temporaryHitPoints": {
+              "formula": "max(1, 1d8 + Wisdom modifier)"
+            },
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            },
+            "onShortRest": {
+              "reduceExhaustion": 1
+            }
+          }
         }
       }
     },
@@ -937,7 +1076,7 @@
       "level": 6,
       "description": "Beginning at 6th level, choose a type of favored enemy. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all. When you deal damage to a favored enemy, you can add your proficiency bonus to the damage dealt. You choose one additional favored enemy, as well as an associated language, at 10th, 14th, and 18th level.",
       "choiceLevels": [
-        7,
+        6,
         10,
         14,
         18
@@ -967,6 +1106,50 @@
         "parameters": {
           "featureName": "Favored Enemy",
           "manualResolution": true
+        },
+        "builderChoice": {
+          "type": "favoredEnemy",
+          "choiceLevels": [
+            6,
+            10,
+            14,
+            18
+          ],
+          "enemyTypes": [
+            "Aberrations",
+            "Beasts",
+            "Celestials",
+            "Constructs",
+            "Dragons",
+            "Elementals",
+            "Fey",
+            "Fiends",
+            "Giants",
+            "Monstrosities",
+            "Oozes",
+            "Plants",
+            "Undead",
+            "Two Humanoid Races"
+          ],
+          "languageChoice": {
+            "choose": 1,
+            "association": "favoredEnemy",
+            "ifAvailable": true
+          }
+        },
+        "conditionalAdvantage": [
+          {
+            "roll": "Wisdom (Survival)",
+            "condition": "trackFavoredEnemy"
+          },
+          {
+            "roll": "Intelligence check",
+            "condition": "recallInformationAboutFavoredEnemy"
+          }
+        ],
+        "damageBonus": {
+          "condition": "targetIsFavoredEnemy",
+          "value": "proficiencyBonus"
         }
       }
     },
@@ -987,6 +1170,13 @@
         "parameters": {
           "featureName": "Heightened Instinct",
           "manualResolution": true
+        },
+        "modifyResource": {
+          "target": "hunters-instinct",
+          "recovery": [
+            "shortRest",
+            "longRest"
+          ]
         }
       }
     },
@@ -1001,6 +1191,18 @@
         "parameters": {
           "featureName": "Land's Stride",
           "manualResolution": true
+        },
+        "movementRules": {
+          "ignoreNonmagicalDifficultTerrain": true,
+          "nonmagicalPlants": {
+            "ignoreSlow": true,
+            "ignorePlantHazardDamage": true
+          }
+        },
+        "proficiencyGrants": {
+          "savingThrows": [
+            "Wisdom"
+          ]
         }
       }
     },
