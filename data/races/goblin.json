@@ -29,15 +29,39 @@
       "features": [
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Fury of the Small",
-          "description": "When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest, and you can use it no more than once per turn."
+          "description": "When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest, and you can use it no more than once per turn.",
+          "id": "fury-of-the-small",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Nimble Escape",
-          "description": "You can take the Disengage or Hide action as a bonus action on each of your turns."
+          "description": "You can take the Disengage or Hide action as a bonus action on each of your turns.",
+          "id": "nimble-escape",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:goblin:base:nimble-escape",
+            "parameters": {
+              "featureName": "Nimble Escape",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
