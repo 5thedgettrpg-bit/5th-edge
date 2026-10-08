@@ -22,14 +22,25 @@ function namesOf(items = []) {
 export function validateAutomationDocument(document, filePath = '<memory>') {
   const errors = [];
   const features = collectFeatures(document);
-  const seen = new Set();
-
-  for (const feature of features) {
-    if (feature?.id) {
+  if (Array.isArray(document?.variants)) {
+    for (const variant of document.variants) {
+      const seenInVariant = new Set();
+      for (const feature of variant?.features || []) {
+        if (!feature?.id) continue;
+        if (seenInVariant.has(feature.id)) errors.push(`${filePath}: duplicate feature id ${feature.id} in variant ${variant.id || variant.name || '<unknown>'}`);
+        seenInVariant.add(feature.id);
+      }
+    }
+  } else {
+    const seen = new Set();
+    for (const feature of features) {
+      if (!feature?.id) continue;
       if (seen.has(feature.id)) errors.push(`${filePath}: duplicate feature id ${feature.id}`);
       seen.add(feature.id);
     }
+  }
 
+  for (const feature of features) {
     const automation = feature?.automation;
     if (!automation) {
       errors.push(`${filePath}: ${feature.id || feature.name || 'feature'} missing automation`);
