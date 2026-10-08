@@ -29,11 +29,29 @@
       "features": [
         {
           "name": "Divergent Persona",
-          "description": "You gain proficiency in two of the following skills of your choice: Deception, Insight, Intimidation, Performance, or Persuasion. Alternatively, you can replace one of those skill proficiencies with proficiency in one tool of your choice. Define a unique identity associated with one of those proficiencies, including its name, species, gender, age, and other details. While assuming that persona, your proficiency bonus is doubled for any ability check you make using the associated proficiency."
+          "description": "You gain proficiency in two of the following skills of your choice: Deception, Insight, Intimidation, Performance, or Persuasion. Alternatively, you can replace one of those skill proficiencies with proficiency in one tool of your choice. Define a unique identity associated with one of those proficiencies, including its name, species, gender, age, and other details. While assuming that persona, your proficiency bonus is doubled for any ability check you make using the associated proficiency.",
+          "id": "divergent-persona",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:changeling:base:divergent-persona",
+            "parameters": {
+              "featureName": "Divergent Persona",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Actor",
-          "description": "You gain the Actor feat."
+          "description": "You gain the Actor feat.",
+          "id": "actor",
+          "automation": {
+            "featureGrants": [
+              {
+                "type": "feat",
+                "name": "Actor"
+              }
+            ]
+          }
         },
         {
           "name": "Shifting Magic",
@@ -74,6 +92,41 @@
             "spellListAdditionRequirement": [
               "Spellcasting",
               "Pact Magic"
+            ]
+          },
+          "id": "shifting-magic",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Friends",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Disguise Self",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Alter Self",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
             ]
           }
         }
