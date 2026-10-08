@@ -812,10 +812,10 @@
           "description": "You gain proficiency in two skills of your choice.",
           "id": "skill-versatility",
           "automation": {
-            "proficiencyGrants": {
-              "skills": [
-                "two skills of your choice"
-              ]
+            "proficiencyChoices": {
+              "skills": {
+                "choose": 2
+              }
             }
           }
         }
