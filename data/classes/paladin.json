@@ -424,6 +424,11 @@
         "parameters": {
           "featureName": "Hit Points",
           "manualResolution": true
+        },
+        "hitPoints": {
+          "hitDie": "d10",
+          "firstLevel": "10 + CON",
+          "higherLevel": "1d10 or 6 + CON"
         }
       }
     },
@@ -463,6 +468,32 @@
         "parameters": {
           "featureName": "Proficiencies",
           "manualResolution": true
+        },
+        "proficiencyPackage": {
+          "armor": [
+            "All armor",
+            "Shields"
+          ],
+          "weapons": [
+            "Simple weapons",
+            "Martial weapons"
+          ],
+          "tools": [],
+          "savingThrows": [
+            "Wisdom",
+            "Charisma"
+          ],
+          "skillChoices": {
+            "count": 2,
+            "from": [
+              "Athletics",
+              "Insight",
+              "Intimidation",
+              "Medicine",
+              "Persuasion",
+              "Religion"
+            ]
+          }
         }
       }
     },
