@@ -84,6 +84,12 @@ export function enrichClassDocument(input){
    if(f.id==='arcane-tradition') a.subclassChoice={required:true,featureLevels:f.subclassFeatureLevels||d.subclass?.featureLevels||[]};
   }
 
+  const directKeys=Object.keys(a).filter(key=>!['support','hook','parameters'].includes(key));
+  if(directKeys.length && a.support==='required'){
+   delete a.support;
+   delete a.hook;
+   delete a.parameters;
+  }
   if(!Object.keys(a).length) Object.assign(a,hook(id,f));
   f.automation=a;
  }
