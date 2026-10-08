@@ -29,7 +29,16 @@
       "features": [
         {
           "name": "Earth Walk",
-          "description": "You can move across difficult terrain without expending extra movement if you are using your walking speed on the ground or a floor."
+          "description": "You can move across difficult terrain without expending extra movement if you are using your walking speed on the ground or a floor.",
+          "id": "earth-walk",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:genasi:earth:earth-walk",
+            "parameters": {
+              "featureName": "Earth Walk",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Merge with Stone",
@@ -135,11 +144,139 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "merge-with-stone",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Mold Earth",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Shield",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Dust Devil",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Absorb Elements",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Earth Tremor",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Earthbind",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Pass Without A Trace",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Erupting Earth",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Wall of Sand",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Stoneskin",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Summon Construct",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Passwall",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         },
         {
           "name": "Mountain Skin",
-          "description": "As an action, you can harden your skin. For one minute, you have resistance to bludgeoning, slashing, and piercing damage. You can use this trait once, and you regain all expended uses when you finish a long rest."
+          "description": "As an action, you can harden your skin. For one minute, you have resistance to bludgeoning, slashing, and piercing damage. You can use this trait once, and you regain all expended uses when you finish a long rest.",
+          "id": "mountain-skin",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "bludgeoning",
+                "slashing",
+                "piercing"
+              ]
+            }
+          }
         }
       ]
     },
@@ -168,7 +305,14 @@
       "features": [
         {
           "name": "Flame Blade",
-          "description": "As an action, you evoke a fiery blade in your free hand. This magical sword lasts for 1 minute and requires concentration. It counts as a simple melee weapon with which you are proficient. It deals 2d8 fire damage on a hit and has the finesse, light, and thrown properties (range 20/60). In addition, when you use the sword to attack a target that is in bright light, you make the attack roll with advantage. If you drop the weapon or throw it, it dissipates at the end of the turn. You can use a bonus action to cause the sword to reappear in your hand. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "As an action, you evoke a fiery blade in your free hand. This magical sword lasts for 1 minute and requires concentration. It counts as a simple melee weapon with which you are proficient. It deals 2d8 fire damage on a hit and has the finesse, light, and thrown properties (range 20/60). In addition, when you use the sword to attack a target that is in bright light, you make the attack roll with advantage. If you drop the weapon or throw it, it dissipates at the end of the turn. You can use a bonus action to cause the sword to reappear in your hand. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "flame-blade",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Reach to the Blaze",
@@ -274,11 +418,137 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "reach-to-the-blaze",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Produce Flame",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Burning Hands",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Scorching Ray",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Absorb Elements",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Searing Smite",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Flaming Sphere",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Heat Metal",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Elemental Weapon",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Flame Arrows",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fire Shield",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Wall of Fire",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Immolation",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         },
         {
           "name": "Fire Resistance",
-          "description": "You have resistance to fire damage."
+          "description": "You have resistance to fire damage.",
+          "id": "fire-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "fire"
+              ]
+            }
+          }
         }
       ]
     },
@@ -307,7 +577,16 @@
       "features": [
         {
           "name": "Amphibious",
-          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed.",
+          "id": "amphibious",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:genasi:water:amphibious",
+            "parameters": {
+              "featureName": "Amphibious",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Call to the Wave",
@@ -413,11 +692,137 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "call-to-the-wave",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Acid Splash",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Create or Destroy Water",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Water Walk",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Absorb Elements",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Frost Fingers",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Snilloc's Snowball Swarm",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Rime's Binding Ice",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Tidal Wave",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Wall of Water",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Control Water",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Watery Sphere",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Destructive Wave",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         },
         {
           "name": "Acid Resistance",
-          "description": "You have resistance to acid damage."
+          "description": "You have resistance to acid damage.",
+          "id": "acid-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "acid"
+              ]
+            }
+          }
         }
       ]
     },
@@ -446,7 +851,16 @@
       "features": [
         {
           "name": "Unending Breath",
-          "description": "You can hold your breath indefinitely while you’re not incapacitated."
+          "description": "You can hold your breath indefinitely while you’re not incapacitated.",
+          "id": "unending-breath",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:genasi:air:unending-breath",
+            "parameters": {
+              "featureName": "Unending Breath",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Mingle with the Wind",
@@ -552,11 +966,137 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "mingle-with-the-wind",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Shocking Grasp",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Feather Fall",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Blur",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Absorb Elements",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Zephyr Strike",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Gust of Wind",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Warding Wind",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Call Lightning",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fly",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Freedom of Movement",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Ice Storm",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Control Winds",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         },
         {
           "name": "Lightning Resistance",
-          "description": "You have resistance to lightning damage."
+          "description": "You have resistance to lightning damage.",
+          "id": "lightning-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "lightning"
+              ]
+            }
+          }
         }
       ]
     }
