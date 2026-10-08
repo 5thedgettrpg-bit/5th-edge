@@ -29,19 +29,53 @@
       "features": [
         {
           "name": "Horns",
-          "description": "Your horns are natural weapons. Your unarmed strikes with them deal 1d6 + your Strength modifier piercing damage instead of the normal bludgeoning damage."
+          "description": "Your horns are natural weapons. Your unarmed strikes with them deal 1d6 + your Strength modifier piercing damage instead of the normal bludgeoning damage.",
+          "id": "horns",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:satyr:base:horns",
+            "parameters": {
+              "featureName": "Horns",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Magic Resistance",
-          "description": "You have advantage on saving throws against spells."
+          "description": "You have advantage on saving throws against spells.",
+          "id": "magic-resistance",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Mirthful Leaps",
-          "description": "Whenever you make a long jump or high jump, roll a d8 and add the number rolled to the number of feet you can cover. This extra distance costs movement as normal."
+          "description": "Whenever you make a long jump or high jump, roll a d8 and add the number rolled to the number of feet you can cover. This extra distance costs movement as normal.",
+          "id": "mirthful-leaps",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:satyr:base:mirthful-leaps",
+            "parameters": {
+              "featureName": "Mirthful Leaps",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Reveler",
-          "description": "You have proficiency in the Performance and Persuasion skills, and proficiency with one musical instrument of your choice."
+          "description": "You have proficiency in the Performance and Persuasion skills, and proficiency with one musical instrument of your choice.",
+          "id": "reveler",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Performance"
+              ]
+            }
+          }
         }
       ]
     }
