@@ -28,11 +28,35 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:astral:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Misty Step",
-          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "misty-step",
+          "automation": {
+            "teleport": {
+              "distance": 30,
+              "unit": "ft",
+              "destination": "unoccupiedSpaceYouCanSee"
+            },
+            "activation": {
+              "type": "bonusAction"
+            },
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Blessing of the Stars",
@@ -75,15 +99,67 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "blessing-of-the-stars",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Cleric",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Color Spray",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Vortex Warp",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -111,11 +187,29 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:dark:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Drow Weapon Training",
-          "description": "You have proficiency with rapiers, shortswords, and hand crossbows."
+          "description": "You have proficiency with rapiers, shortswords, and hand crossbows.",
+          "id": "drow-weapon-training",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:dark:drow-weapon-training",
+            "parameters": {
+              "featureName": "Drow Weapon Training",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Blessing of the Spider Queen",
@@ -157,15 +251,66 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "blessing-of-the-spider-queen",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Dancing Lights",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Faerie Fire",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -194,11 +339,35 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:seelie-elf:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Misty Step",
-          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "misty-step",
+          "automation": {
+            "teleport": {
+              "distance": 30,
+              "unit": "ft",
+              "destination": "unoccupiedSpaceYouCanSee"
+            },
+            "activation": {
+              "type": "bonusAction"
+            },
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Blessing of the Fey",
@@ -241,15 +410,67 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "blessing-of-the-fey",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Bard",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Ceremony",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Spiritual Weapon",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -277,11 +498,29 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:high:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Elf Weapon Training",
-          "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+          "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+          "id": "elf-weapon-training",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:high:elf-weapon-training",
+            "parameters": {
+              "featureName": "Elf Weapon Training",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Blessing of the Arcane",
@@ -324,15 +563,67 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "blessing-of-the-arcane",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Wizard",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Mage Armor",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Misty Step",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -360,11 +651,29 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:way-of-the-veil:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Cunning Intuition",
-          "description": "Whenever you roll a Dexterity (Stealth) check or a Charisma (Performance) check, roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you roll a Dexterity (Stealth) check or a Charisma (Performance) check, roll a d4 and add the number rolled to the total ability check.",
+          "id": "cunning-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:way-of-the-veil:cunning-intuition",
+            "parameters": {
+              "featureName": "Cunning Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Blessing of the Shadows",
@@ -470,15 +779,149 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "blessing-of-the-shadows",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Minor Illusion",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Feather Fall",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Shadow Blade",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Disguise Self",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Silent Image",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Darkness",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Invisibility",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Clairvoyance",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Major Image",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Greater Invisibility",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hallucinatory Terrain",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Mislead",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -506,11 +949,28 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:pallid:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Incisive Sense",
-          "description": "You have advantage on Investigation and Insight checks."
+          "description": "You have advantage on Investigation and Insight checks.",
+          "id": "incisive-sense",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Blessing of the Moonweaver",
@@ -553,15 +1013,67 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "blessing-of-the-moonweaver",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Light",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Sleep",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Invisibility",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "targetRestriction": "self",
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -590,23 +1102,65 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:sea:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Sea Elf Training",
-          "description": "You have proficiency with the spear, trident, light crossbow, and net."
+          "description": "You have proficiency with the spear, trident, light crossbow, and net.",
+          "id": "sea-elf-training",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:sea:sea-elf-training",
+            "parameters": {
+              "featureName": "Sea Elf Training",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Blessing of the Sea",
-          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return."
+          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return.",
+          "id": "blessing-of-the-sea",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "cold"
+              ]
+            }
+          }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -635,23 +1189,76 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:shadow-elf:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Necrotic Resistance",
-          "description": "You have resistance to necrotic damage."
+          "description": "You have resistance to necrotic damage.",
+          "id": "necrotic-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Blessing of the Shadow Queen",
-          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent."
+          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent.",
+          "id": "blessing-of-the-shadow-queen",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "all"
+              ]
+            },
+            "teleport": {
+              "distance": 30,
+              "unit": "ft",
+              "destination": "unoccupiedSpaceYouCanSee"
+            },
+            "activation": {
+              "type": "bonusAction"
+            },
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -679,11 +1286,29 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:wood:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Elf Weapon Training",
-          "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+          "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+          "id": "elf-weapon-training",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:wood:elf-weapon-training",
+            "parameters": {
+              "featureName": "Elf Weapon Training",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Blessing of the Forest",
@@ -726,15 +1351,67 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "blessing-of-the-forest",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Druid",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Hunter's Mark",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Pass without Trace",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Elvish Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself. Additionally, You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. Whenever you finish this trance, you can gain two proficiencies that you don’t have, each one with a weapon or a tool of your choice selected from the Player’s Handbook. You mystically acquire these proficiencies by drawing them from shared Elvish memory, and you retain them until you finish your next long rest.",
+          "id": "elvish-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -762,19 +1439,56 @@
       "features": [
         {
           "name": "Dual Mind",
-          "description": "You have advantage on all Wisdom saving throws."
+          "description": "You have advantage on all Wisdom saving throws.",
+          "id": "dual-mind",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Mental Discipline",
-          "description": "You have resistance to psychic damage. If you would gain psychic resistance from another source, you instead gain advantage on saving throws against being charmed or frightened."
+          "description": "You have resistance to psychic damage. If you would gain psychic resistance from another source, you instead gain advantage on saving throws against being charmed or frightened.",
+          "id": "mental-discipline",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "psychic"
+              ]
+            },
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Mind Link",
-          "description": "As a bonus action, you can telepathically send a brief message (a single word or short phrase) to a creature you can see within 30 feet. The creature hears the message in your voice. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "As a bonus action, you can telepathically send a brief message (a single word or short phrase) to a creature you can see within 30 feet. The creature hears the message in your voice. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "mind-link",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Naptime Remedy",
-          "description": "Grant allies visions of peace to help revitalize your wounded allies during a short rest. If you or any friendly creatures regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points. These hit points increase to 1d8 at 5th level, 1d10 at 11th level, and 1d12 at 17th level."
+          "description": "Grant allies visions of peace to help revitalize your wounded allies during a short rest. If you or any friendly creatures regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points. These hit points increase to 1d8 at 5th level, 1d10 at 11th level, and 1d12 at 17th level.",
+          "id": "naptime-remedy",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:elf:syndran:naptime-remedy",
+            "parameters": {
+              "featureName": "Naptime Remedy",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
