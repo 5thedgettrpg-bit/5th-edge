@@ -29,15 +29,43 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Skill Versatility",
-          "description": "You gain proficiency in two skills of your choice."
+          "description": "You gain proficiency in two skills of your choice.",
+          "id": "skill-versatility",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:custom-lineage:base:skill-versatility",
+            "parameters": {
+              "featureName": "Skill Versatility",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Feat",
-          "description": "You gain one Feat of your choice."
+          "description": "You gain one Feat of your choice.",
+          "id": "feat",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:custom-lineage:base:feat",
+            "parameters": {
+              "featureName": "Feat",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
