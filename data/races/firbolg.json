@@ -29,11 +29,27 @@
       "features": [
         {
           "name": "Speech of Beast and Leaf",
-          "description": "You have the ability to communicate in a limited manner with Beasts, Plants, and vegetation. They can understand the meaning of your words, though you have no special ability to understand them in return. You have advantage on all Charisma checks you make to influence them."
+          "description": "You have the ability to communicate in a limited manner with Beasts, Plants, and vegetation. They can understand the meaning of your words, though you have no special ability to understand them in return. You have advantage on all Charisma checks you make to influence them.",
+          "id": "speech-of-beast-and-leaf",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Unsettling Presence",
-          "description": "When a creature you can see makes an attack roll against you, you can use your reaction to impose disadvantage on the roll. You must use this trait before you know whether the attack hits or misses. Once you use this trait, you can’t use it again until you finish a short or long rest."
+          "description": "When a creature you can see makes an attack roll against you, you can use your reaction to impose disadvantage on the roll. You must use this trait before you know whether the attack hits or misses. Once you use this trait, you can’t use it again until you finish a short or long rest.",
+          "id": "unsettling-presence",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Druidic Magic",
@@ -74,6 +90,41 @@
             "spellListAdditionRequirement": [
               "Spellcasting",
               "Pact Magic"
+            ]
+          },
+          "id": "druidic-magic",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Druidcraft",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Detect Magic",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Detect Thoughts",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
             ]
           }
         }
