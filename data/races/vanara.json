@@ -29,19 +29,53 @@
       "features": [
         {
           "name": "Dexterous Feet",
-          "description": "As a bonus action, you can use your feet to manipulate an object, open or close a door or container, or pick up or set down a Tiny object."
+          "description": "As a bonus action, you can use your feet to manipulate an object, open or close a door or container, or pick up or set down a Tiny object.",
+          "id": "dexterous-feet",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:vanara:base:dexterous-feet",
+            "parameters": {
+              "featureName": "Dexterous Feet",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Vanara Dodge",
-          "description": "When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled and reduce the damage by that total. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled and reduce the damage by that total. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "vanara-dodge",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Bite",
-          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "bite",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:vanara:base:bite",
+            "parameters": {
+              "featureName": "Bite",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Athlete",
-          "description": "You gain the Athlete feat."
+          "description": "You gain the Athlete feat.",
+          "id": "athlete",
+          "automation": {
+            "featureGrants": [
+              {
+                "type": "feat",
+                "name": "Athlete"
+              }
+            ]
+          }
         }
       ]
     }
