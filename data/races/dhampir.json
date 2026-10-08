@@ -29,19 +29,54 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Vampire Bite",
-          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Constitution modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Constitution modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "vampire-bite",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dhampir:base:vampire-bite",
+            "parameters": {
+              "featureName": "Vampire Bite",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Spider Climb",
-          "description": "You have a climbing speed equal to your walking speed. In addition, at 3rd level, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free."
+          "description": "You have a climbing speed equal to your walking speed. In addition, at 3rd level, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.",
+          "id": "spider-climb",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dhampir:base:spider-climb",
+            "parameters": {
+              "featureName": "Spider Climb",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Taste of Knowledge",
-          "description": "When you attack with this bite and hit a creature that isn’t a Construct or an Undead, you can empower yourself in one of the following ways of your choice: You regain hit points equal to the piercing damage dealt by the bite. You gain a bonus to the next ability check or attack roll you make; the bonus equals the piercing damage dealt by the bite. You can empower yourself with this bite a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "When you attack with this bite and hit a creature that isn’t a Construct or an Undead, you can empower yourself in one of the following ways of your choice: You regain hit points equal to the piercing damage dealt by the bite. You gain a bonus to the next ability check or attack roll you make; the bonus equals the piercing damage dealt by the bite. You can empower yourself with this bite a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "taste-of-knowledge",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         }
       ]
     }
