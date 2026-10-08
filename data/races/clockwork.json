@@ -72,6 +72,13 @@
               "damage": [
                 "poison"
               ]
+            },
+            "conditionalAdvantage": {
+              "support": "required",
+              "hook": "race-feature:clockwork:base:mechanical-nature:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
