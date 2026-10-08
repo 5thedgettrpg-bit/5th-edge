@@ -417,7 +417,15 @@
       "id": "hit-points",
       "name": "Hit Points",
       "level": 1,
-      "description": "Hit Dice: 1d10 per paladin level. Hit Points at 1st Level: 10 + your Constitution modifier. Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per paladin level after 1st."
+      "description": "Hit Dice: 1d10 per paladin level. Hit Points at 1st Level: 10 + your Constitution modifier. Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per paladin level after 1st.",
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:paladin:hit-points",
+        "parameters": {
+          "featureName": "Hit Points",
+          "manualResolution": true
+        }
+      }
     },
     {
       "id": "proficiencies",
@@ -448,6 +456,14 @@
             "Religion"
           ]
         }
+      },
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:paladin:proficiencies",
+        "parameters": {
+          "featureName": "Proficiencies",
+          "manualResolution": true
+        }
       }
     },
     {
@@ -459,6 +475,33 @@
       "resource": {
         "max": "5 * Paladin level",
         "recharge": "longRest"
+      },
+      "automation": {
+        "activation": {
+          "type": "bonusAction"
+        },
+        "resource": {
+          "max": "5 * Paladin level",
+          "recovery": "longRest"
+        },
+        "healing": {
+          "pointsPerHp": 1,
+          "touch": true,
+          "invalidCreatureTypes": [
+            "construct",
+            "undead"
+          ]
+        },
+        "alternateSpend": [
+          {
+            "cost": 5,
+            "effect": "cureDisease"
+          },
+          {
+            "cost": 5,
+            "effect": "neutralizePoison"
+          }
+        ]
       }
     },
     {
@@ -480,6 +523,32 @@
           "shortRest",
           "longRest"
         ]
+      },
+      "automation": {
+        "subclassChoice": {
+          "required": true,
+          "featureLevels": [
+            1,
+            3,
+            6,
+            11,
+            17,
+            20
+          ]
+        },
+        "resourceGrant": {
+          "id": "channel-divinity",
+          "uses": 1,
+          "recovery": [
+            "shortRest",
+            "longRest"
+          ]
+        },
+        "spellPolicy": {
+          "oathSpellsAlwaysPrepared": true,
+          "oathSpellsCountAgainstPrepared": false,
+          "treatNonPaladinOathSpellsAsPaladinSpells": true
+        }
       }
     },
     {
@@ -490,19 +559,49 @@
       "ability": "Charisma",
       "saveDC": "8 + proficiencyBonus + Charisma modifier",
       "attackModifier": "proficiencyBonus + Charisma modifier",
-      "focus": "Holy symbol"
+      "focus": "Holy symbol",
+      "automation": {
+        "spellcasting": {
+          "source": "class.spellcasting",
+          "ability": "Charisma",
+          "progression": "prepared",
+          "spellListId": "paladin"
+        }
+      }
     },
     {
       "id": "fighting-style",
       "name": "Fighting Style",
       "level": 2,
-      "description": "At 2nd level, you adopt a particular style of fighting as your specialty. You can't take the same Fighting Style more than once."
+      "description": "At 2nd level, you adopt a particular style of fighting as your specialty. You can't take the same Fighting Style more than once.",
+      "automation": {
+        "builderChoice": {
+          "type": "fightingStyle",
+          "choose": 1,
+          "source": "paladinFightingStyles",
+          "unique": true
+        }
+      }
     },
     {
       "id": "divine-smite",
       "name": "Divine Smite",
       "level": 2,
-      "description": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is a Fiend or Undead."
+      "description": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is a Fiend or Undead.",
+      "automation": {
+        "onHitSpendSpellSlot": {
+          "attackType": "meleeWeaponAttack",
+          "damageType": "radiant",
+          "baseDice": "2d8",
+          "extraDicePerSlotAbove1": 1,
+          "maxDice": "5d8",
+          "bonusVs": [
+            "fiend",
+            "undead"
+          ],
+          "bonusDice": "1d8"
+        }
+      }
     },
     {
       "id": "warrior-of-divinity",
@@ -511,7 +610,17 @@
       "description": "At 3rd level, you always have the Shield spell prepared, and it does not count against the number of Paladin spells you can prepare. You can cast Shield without expending a spell slot a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest. You can also cast Shield normally using your spell slots.",
       "grantedSpell": "Shield",
       "freeUses": "proficiencyBonus",
-      "recharge": "longRest"
+      "recharge": "longRest",
+      "automation": {
+        "spellGrant": {
+          "name": "Shield",
+          "alwaysPrepared": true,
+          "countsAgainstPrepared": false,
+          "freeUses": "proficiencyBonus",
+          "recovery": "longRest",
+          "canUseSpellSlots": true
+        }
+      }
     },
     {
       "id": "harness-divine-power",
@@ -520,62 +629,173 @@
       "description": "At 7th level, you can expend your use of Channel Divinity to fuel your spellcasting. As a bonus action, touch your holy symbol, utter a prayer, and regain one expended spell slot. The slot can be no higher than half your proficiency bonus, rounded up.",
       "activation": "bonus action",
       "cost": "1 Channel Divinity use",
-      "maxSlotLevel": "ceil(proficiencyBonus / 2)"
+      "maxSlotLevel": "ceil(proficiencyBonus / 2)",
+      "automation": {
+        "resourceConversion": {
+          "activation": "bonusAction",
+          "spend": {
+            "resource": "channel-divinity",
+            "amount": 1
+          },
+          "gain": "expendedSpellSlot",
+          "maxSlotLevel": "ceil(proficiencyBonus / 2)"
+        }
+      }
     },
     {
       "id": "extra-attack",
       "name": "Extra Attack",
       "level": 5,
-      "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+      "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.",
+      "automation": {
+        "attackCount": {
+          "mode": "replace",
+          "action": "attack",
+          "count": 2,
+          "nonStackingKey": "extraAttack"
+        }
+      }
     },
     {
       "id": "aura-of-protection",
       "name": "Aura of Protection",
       "level": 6,
-      "description": "Starting at 6th level, whenever you or a friendly creature within 10 feet of you makes a saving throw, the creature gains a bonus equal to your Charisma modifier, minimum +1. You must be conscious to grant this bonus. At 18th level, the range increases to 30 feet."
+      "description": "Starting at 6th level, whenever you or a friendly creature within 10 feet of you makes a saving throw, the creature gains a bonus equal to your Charisma modifier, minimum +1. You must be conscious to grant this bonus. At 18th level, the range increases to 30 feet.",
+      "automation": {
+        "aura": {
+          "radiusByLevel": {
+            "6": 10,
+            "18": 30
+          },
+          "unit": "ft",
+          "requiresConscious": true,
+          "effect": {
+            "type": "savingThrowBonus",
+            "value": "max(1, Charisma modifier)"
+          },
+          "targets": [
+            "self",
+            "friendlyCreature"
+          ]
+        }
+      }
     },
     {
       "id": "divine-health",
       "name": "Divine Health",
       "level": 9,
-      "description": "By 9th level, the divine magic flowing through you makes you immune to disease."
+      "description": "By 9th level, the divine magic flowing through you makes you immune to disease.",
+      "automation": {
+        "immunities": {
+          "disease": true
+        }
+      }
     },
     {
       "id": "aura-of-courage",
       "name": "Aura of Courage",
       "level": 10,
-      "description": "Starting at 10th level, you and friendly creatures within 10 feet of you can't be frightened while you are conscious. At 18th level, the range increases to 30 feet."
+      "description": "Starting at 10th level, you and friendly creatures within 10 feet of you can't be frightened while you are conscious. At 18th level, the range increases to 30 feet.",
+      "automation": {
+        "aura": {
+          "radiusByLevel": {
+            "10": 10,
+            "18": 30
+          },
+          "unit": "ft",
+          "requiresConscious": true,
+          "effect": {
+            "type": "conditionImmunity",
+            "condition": "frightened"
+          },
+          "targets": [
+            "self",
+            "friendlyCreature"
+          ]
+        }
+      }
     },
     {
       "id": "improved-divine-smite",
       "name": "Improved Divine Smite",
       "level": 11,
-      "description": "By 11th level, whenever you hit a creature with a melee weapon attack, the creature takes an extra 1d8 radiant damage. This damage is in addition to any Divine Smite damage."
+      "description": "By 11th level, whenever you hit a creature with a melee weapon attack, the creature takes an extra 1d8 radiant damage. This damage is in addition to any Divine Smite damage.",
+      "automation": {
+        "damageBonus": {
+          "trigger": "meleeWeaponHit",
+          "dice": "1d8",
+          "damageType": "radiant"
+        }
+      }
     },
     {
       "id": "blessed-restoration",
       "name": "Blessed Restoration",
       "level": 13,
-      "description": "Beginning at 13th level, when you restore hit points to a creature using Lay on Hands or a Paladin spell, that creature gains the effects of Bless until the start of your next turn. This effect requires no concentration and does not stack with the Bless spell or another use of this feature."
+      "description": "Beginning at 13th level, when you restore hit points to a creature using Lay on Hands or a Paladin spell, that creature gains the effects of Bless until the start of your next turn. This effect requires no concentration and does not stack with the Bless spell or another use of this feature.",
+      "automation": {
+        "onHealing": {
+          "sources": [
+            "lay-on-hands",
+            "paladinSpell"
+          ],
+          "grantEffect": "Bless",
+          "duration": "untilStartOfNextTurn",
+          "concentration": false,
+          "nonStackingKey": "bless"
+        }
+      }
     },
     {
       "id": "cleansing-touch",
       "name": "Cleansing Touch",
       "level": 14,
-      "description": "Beginning at 14th level, you can use your action to end one spell affecting yourself or one willing creature you touch. You can use this feature a number of times equal to your Charisma modifier, minimum once, and regain all expended uses when you finish a long rest."
+      "description": "Beginning at 14th level, you can use your action to end one spell affecting yourself or one willing creature you touch. You can use this feature a number of times equal to your Charisma modifier, minimum once, and regain all expended uses when you finish a long rest.",
+      "automation": {
+        "dispel": {
+          "activation": "action",
+          "target": [
+            "self",
+            "willingCreatureTouched"
+          ],
+          "endSpells": 1,
+          "resource": {
+            "max": "max(1, Charisma modifier)",
+            "recovery": "longRest"
+          }
+        }
+      }
     },
     {
       "id": "divine-mastery",
       "name": "Divine Mastery",
       "level": 15,
       "description": "Starting at 15th level, you can use your Channel Divinity twice between rests instead of once. You regain both uses whenever you normally regain Channel Divinity.",
-      "channelDivinityUses": 2
+      "channelDivinityUses": 2,
+      "automation": {
+        "modifyResource": {
+          "target": "channel-divinity",
+          "uses": 2,
+          "preserveRecovery": true
+        }
+      }
     },
     {
       "id": "aura-improvements",
       "name": "Aura Improvements",
       "level": 18,
-      "description": "At 18th level, the range of your Paladin auras increases from 10 feet to 30 feet. This includes Aura of Protection, Aura of Courage, and any Sacred Oath feature that specifically improves when your Paladin aura range increases."
+      "description": "At 18th level, the range of your Paladin auras increases from 10 feet to 30 feet. This includes Aura of Protection, Aura of Courage, and any Sacred Oath feature that specifically improves when your Paladin aura range increases.",
+      "automation": {
+        "modifyAuras": {
+          "radius": 30,
+          "unit": "ft",
+          "targets": [
+            "aura-of-protection",
+            "aura-of-courage",
+            "sacred-oath-aura"
+          ]
+        }
+      }
     }
   ],
   "notes": [
