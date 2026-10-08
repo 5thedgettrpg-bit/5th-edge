@@ -29,19 +29,56 @@
       "features": [
         {
           "name": "Amorphous",
-          "description": "You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple."
+          "description": "You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.",
+          "id": "amorphous",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Poison Immunity",
-          "description": "You are immune to poison damage and the poisoned condition."
+          "description": "You are immune to poison damage and the poisoned condition.",
+          "id": "poison-immunity",
+          "automation": {
+            "immunities": {
+              "damage": [
+                "poison"
+              ],
+              "conditions": [
+                "poisoned"
+              ]
+            }
+          }
         },
         {
           "name": "Shape Self",
-          "description": "As an action, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob. While you have a humanlike shape, you can wear clothing and armor made for a Humanoid of your size. As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. As part of the same bonus action, you can use this pseudopod to manipulate an object, open or close a door or container, or pick up or set down a Tiny object. The pseudopod contains no sensory organs and can’t attack, activate magic items, or lift more than 10 pounds."
+          "description": "As an action, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob. While you have a humanlike shape, you can wear clothing and armor made for a Humanoid of your size. As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. As part of the same bonus action, you can use this pseudopod to manipulate an object, open or close a door or container, or pick up or set down a Tiny object. The pseudopod contains no sensory organs and can’t attack, activate magic items, or lift more than 10 pounds.",
+          "id": "shape-self",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:slimefolk:base:shape-self",
+            "parameters": {
+              "featureName": "Shape Self",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Corrosive Strikes",
-          "description": "Your corrosive fists are natural weapons. Your unarmed strikes with them deal 1d6 + your Constitution modifier acid damage instead of the normal bludgeoning damage."
+          "description": "Your corrosive fists are natural weapons. Your unarmed strikes with them deal 1d6 + your Constitution modifier acid damage instead of the normal bludgeoning damage.",
+          "id": "corrosive-strikes",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:slimefolk:base:corrosive-strikes",
+            "parameters": {
+              "featureName": "Corrosive Strikes",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
