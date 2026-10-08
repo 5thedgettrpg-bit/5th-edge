@@ -68,9 +68,20 @@ function inferCommonAutomation(feature, raceId, variantId) {
     });
   }
 
-  const skillMatches = [...description.matchAll(/proficiency in (?:the )?([A-Za-z ]+?)(?: skill)?(?:\.|,| and|$)/g)]
-    .map(m => m[1].trim()).filter(Boolean);
-  if (skillMatches.length) add(auto, 'proficiencyGrants', { skills: [...new Set(skillMatches)] });
+  const numberWords = { one: 1, two: 2, three: 3, four: 4 };
+  const toolChoice = description.match(/proficiency in (one|two|three|four|\d+) tools? of your choice/i);
+  const skillChoice = description.match(/proficiency in (one|two|three|four|\d+) skills? of your choice/i);
+  if (toolChoice || skillChoice) {
+    const proficiencyChoices = {};
+    if (toolChoice) proficiencyChoices.tools = { choose: Number(toolChoice[1]) || numberWords[toolChoice[1].toLowerCase()] };
+    if (skillChoice) proficiencyChoices.skills = { choose: Number(skillChoice[1]) || numberWords[skillChoice[1].toLowerCase()] };
+    add(auto, 'proficiencyChoices', proficiencyChoices);
+  } else {
+    const skillMatches = [...description.matchAll(/proficiency in (?:the )?([A-Za-z ]+?)(?: skill)?(?:\.|,| and|$)/g)]
+      .map(m => m[1].trim())
+      .filter(value => value && !/\b(?:tool|skills? of your choice)\b/i.test(value));
+    if (skillMatches.length) add(auto, 'proficiencyGrants', { skills: [...new Set(skillMatches)] });
+  }
 
   const feat = description.match(/gain the ([A-Za-z' -]+) feat/i);
   if (feat) add(auto, 'featureGrants', [{ type: 'feat', name: feat[1].trim() }]);
