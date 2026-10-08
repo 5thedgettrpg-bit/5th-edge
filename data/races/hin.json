@@ -28,19 +28,52 @@
       "features": [
         {
           "name": "Lucky",
-          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1."
+          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1.",
+          "id": "lucky",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:ghostwise:lucky",
+            "parameters": {
+              "featureName": "Lucky",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Brave",
-          "description": "You have advantage on saving throws against being frightened."
+          "description": "You have advantage on saving throws against being frightened.",
+          "id": "brave",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Barely Noticeable",
-          "description": "While in dim light or darkness, you can use a bonus action to become invisible for 1 minute, until you make an attack roll, or force a creature to make a saving throw. You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest."
+          "description": "While in dim light or darkness, you can use a bonus action to become invisible for 1 minute, until you make an attack roll, or force a creature to make a saving throw. You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest.",
+          "id": "barely-noticeable",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Nimble",
-          "description": "You can move through the space of any creature that is of a size larger than yours."
+          "description": "You can move through the space of any creature that is of a size larger than yours.",
+          "id": "nimble",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:ghostwise:nimble",
+            "parameters": {
+              "featureName": "Nimble",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -68,19 +101,54 @@
       "features": [
         {
           "name": "Lucky",
-          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1."
+          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1.",
+          "id": "lucky",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:lightfoot:lucky",
+            "parameters": {
+              "featureName": "Lucky",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Brave",
-          "description": "You have advantage on saving throws against being frightened."
+          "description": "You have advantage on saving throws against being frightened.",
+          "id": "brave",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Quick on Your Feet",
-          "description": "You gain the Mobile feat."
+          "description": "You gain the Mobile feat.",
+          "id": "quick-on-your-feet",
+          "automation": {
+            "featureGrants": [
+              {
+                "type": "feat",
+                "name": "Mobile"
+              }
+            ]
+          }
         },
         {
           "name": "Nimble",
-          "description": "You can move through the space of any creature that is of a size larger than yours."
+          "description": "You can move through the space of any creature that is of a size larger than yours.",
+          "id": "nimble",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:lightfoot:nimble",
+            "parameters": {
+              "featureName": "Nimble",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -108,11 +176,28 @@
       "features": [
         {
           "name": "Lucky",
-          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1."
+          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1.",
+          "id": "lucky",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:lotusden:lucky",
+            "parameters": {
+              "featureName": "Lucky",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Brave",
-          "description": "You have advantage on saving throws against being frightened."
+          "description": "You have advantage on saving throws against being frightened.",
+          "id": "brave",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Children of the Woods",
@@ -155,11 +240,56 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "children-of-the-woods",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Druid",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Entangle",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Spike Growth",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Nimble",
-          "description": "You can move through the space of any creature that is of a size larger than yours."
+          "description": "You can move through the space of any creature that is of a size larger than yours.",
+          "id": "nimble",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:lotusden:nimble",
+            "parameters": {
+              "featureName": "Nimble",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -187,11 +317,28 @@
       "features": [
         {
           "name": "Lucky",
-          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1."
+          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1.",
+          "id": "lucky",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:way-of-mercy:lucky",
+            "parameters": {
+              "featureName": "Lucky",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Brave",
-          "description": "You have advantage on saving throws against being frightened."
+          "description": "You have advantage on saving throws against being frightened.",
+          "id": "brave",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Healing Magic",
@@ -233,15 +380,68 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "healing-magic",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Spare the Dying",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Cure Wounds",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Lesser Restoration",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Medical Intuition",
-          "description": "Whenever you roll a Wisdom (Medicine) check or an ability check involving an Herbalism Kit, roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you roll a Wisdom (Medicine) check or an ability check involving an Herbalism Kit, roll a d4 and add the number rolled to the total ability check.",
+          "id": "medical-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:way-of-mercy:medical-intuition",
+            "parameters": {
+              "featureName": "Medical Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Nimble",
-          "description": "You can move through the space of any creature that is of a size larger than yours."
+          "description": "You can move through the space of any creature that is of a size larger than yours.",
+          "id": "nimble",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:way-of-mercy:nimble",
+            "parameters": {
+              "featureName": "Nimble",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -269,11 +469,28 @@
       "features": [
         {
           "name": "Lucky",
-          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1."
+          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1.",
+          "id": "lucky",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:way-of-the-hearth:lucky",
+            "parameters": {
+              "featureName": "Lucky",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Brave",
-          "description": "You have advantage on saving throws against being frightened."
+          "description": "You have advantage on saving throws against being frightened.",
+          "id": "brave",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Innkeeper's Magic",
@@ -315,15 +532,68 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "innkeeper-s-magic",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Prestidigitation",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Goodberry",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Gift of Gab",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Ever Hospitable",
-          "description": "Whenever you roll a Charisma (Persuasion) check or an ability check involving Brewer's Tools or Cook's Utensils, roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you roll a Charisma (Persuasion) check or an ability check involving Brewer's Tools or Cook's Utensils, roll a d4 and add the number rolled to the total ability check.",
+          "id": "ever-hospitable",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:way-of-the-hearth:ever-hospitable",
+            "parameters": {
+              "featureName": "Ever Hospitable",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Nimble",
-          "description": "You can move through the space of any creature that is of a size larger than yours."
+          "description": "You can move through the space of any creature that is of a size larger than yours.",
+          "id": "nimble",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:way-of-the-hearth:nimble",
+            "parameters": {
+              "featureName": "Nimble",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -351,19 +621,56 @@
       "features": [
         {
           "name": "Lucky",
-          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1."
+          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1.",
+          "id": "lucky",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:stout:lucky",
+            "parameters": {
+              "featureName": "Lucky",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Brave",
-          "description": "You have advantage on saving throws against being frightened."
+          "description": "You have advantage on saving throws against being frightened.",
+          "id": "brave",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Stout Resilience",
-          "description": "You are immune to poison damage and the poisoned condition."
+          "description": "You are immune to poison damage and the poisoned condition.",
+          "id": "stout-resilience",
+          "automation": {
+            "immunities": {
+              "damage": [
+                "poison"
+              ],
+              "conditions": [
+                "poisoned"
+              ]
+            }
+          }
         },
         {
           "name": "Nimble",
-          "description": "You can move through the space of any creature that is of a size larger than yours."
+          "description": "You can move through the space of any creature that is of a size larger than yours.",
+          "id": "nimble",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:stout:nimble",
+            "parameters": {
+              "featureName": "Nimble",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -391,19 +698,53 @@
       "features": [
         {
           "name": "Lucky",
-          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1."
+          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1.",
+          "id": "lucky",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:ordan:lucky",
+            "parameters": {
+              "featureName": "Lucky",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Brave",
-          "description": "You have advantage on saving throws against being frightened."
+          "description": "You have advantage on saving throws against being frightened.",
+          "id": "brave",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Ordan Climbing",
-          "description": "You have a climbing speed equal to your walking speed."
+          "description": "You have a climbing speed equal to your walking speed.",
+          "id": "ordan-climbing",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:ordan:ordan-climbing",
+            "parameters": {
+              "featureName": "Ordan Climbing",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Sure-Footed",
-          "description": "You gain proficiency in Athletics and Acrobatics."
+          "description": "You gain proficiency in Athletics and Acrobatics.",
+          "id": "sure-footed",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Athletics"
+              ]
+            }
+          }
         }
       ]
     },
@@ -431,19 +772,57 @@
       "features": [
         {
           "name": "Lucky",
-          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1."
+          "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die. You must use the new result, even if it is a 1.",
+          "id": "lucky",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:wander:lucky",
+            "parameters": {
+              "featureName": "Lucky",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Brave",
-          "description": "You have advantage on saving throws against being frightened."
+          "description": "You have advantage on saving throws against being frightened.",
+          "id": "brave",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Wanderer Aptitude",
-          "description": "You gain proficiency with one of the following skills of your choice: Insight, Investigation, Sleight of Hand, Stealth, or Survival."
+          "description": "You gain proficiency with one of the following skills of your choice: Insight, Investigation, Sleight of Hand, Stealth, or Survival.",
+          "id": "wanderer-aptitude",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hin:wander:wanderer-aptitude",
+            "parameters": {
+              "featureName": "Wanderer Aptitude",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Taunt",
-          "description": "You have an extraordinary ability to fluster creatures. As a bonus action, you can unleash a string of provoking words at a creature within 60 feet of yourself that can hear and understand you. The target must succeed on a Wisdom saving throw or it has disadvantage on attack rolls against targets other than you until the start of your next turn. The DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race). You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "You have an extraordinary ability to fluster creatures. As a bonus action, you can unleash a string of provoking words at a creature within 60 feet of yourself that can hear and understand you. The target must succeed on a Wisdom saving throw or it has disadvantage on attack rolls against targets other than you until the start of your next turn. The DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race). You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "taunt",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            },
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     }
