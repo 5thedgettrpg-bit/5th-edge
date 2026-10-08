@@ -268,3 +268,16 @@ test('Wizard proficiency automation references real top-level proficiency fields
   assert.equal(pkg.skillChoices.count, 2);
   assert.equal(pkg.source, undefined);
 });
+
+
+test('race proficiency choices are structured choices, not literal skill names', () => {
+  const doc = enrichRaceDocument({ id:'test', variants:[{id:'base',features:[
+    {name:'Divergent Persona',description:'You gain proficiency in one tool of your choice.'},
+    {name:'Skill Versatility',description:'You gain proficiency in two skills of your choice.'}
+  ]}]});
+  const [tool,skills]=doc.variants[0].features;
+  assert.equal(tool.automation.proficiencyChoices.tools.choose,1);
+  assert.equal(tool.automation.proficiencyGrants?.skills,undefined);
+  assert.equal(skills.automation.proficiencyChoices.skills.choose,2);
+  assert.equal(skills.automation.proficiencyGrants?.skills,undefined);
+});
