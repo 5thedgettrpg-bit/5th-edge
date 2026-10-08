@@ -419,12 +419,6 @@
       "level": 1,
       "description": "Hit Dice: 1d10 per paladin level. Hit Points at 1st Level: 10 + your Constitution modifier. Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per paladin level after 1st.",
       "automation": {
-        "support": "required",
-        "hook": "class-feature:paladin:hit-points",
-        "parameters": {
-          "featureName": "Hit Points",
-          "manualResolution": true
-        },
         "hitPoints": {
           "hitDie": "d10",
           "firstLevel": "10 + CON",
@@ -463,12 +457,6 @@
         }
       },
       "automation": {
-        "support": "required",
-        "hook": "class-feature:paladin:proficiencies",
-        "parameters": {
-          "featureName": "Proficiencies",
-          "manualResolution": true
-        },
         "proficiencyPackage": {
           "armor": [
             "All armor",
