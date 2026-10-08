@@ -46,9 +46,11 @@
           "id": "fey-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:half-elf:aquatic-elf-descent:fey-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -108,9 +110,11 @@
           "id": "fey-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:half-elf:drow-descent:fey-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -237,9 +241,11 @@
           "id": "fey-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:half-elf:high-elf-descent:fey-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -366,9 +372,11 @@
           "id": "fey-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:half-elf:way-of-sight:fey-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -506,9 +514,11 @@
           "id": "fey-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:half-elf:way-of-the-tempest:fey-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -658,9 +668,11 @@
           "id": "fey-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:half-elf:wood-elf-descent:fey-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -787,9 +799,11 @@
           "id": "fey-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:half-elf:base:fey-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
