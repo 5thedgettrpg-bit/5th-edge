@@ -29,19 +29,55 @@
       "features": [
         {
           "name": "Charge",
-          "description": "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or shove a creature. If you moved at least 10 feet in a straight line immediately before taking this bonus action, the attack deals an extra 5 damage on a hit. If you shove the creature instead, it takes 5 bludgeoning damage and, on a successful shove, is pushed up to 10 feet away from you."
+          "description": "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or shove a creature. If you moved at least 10 feet in a straight line immediately before taking this bonus action, the attack deals an extra 5 damage on a hit. If you shove the creature instead, it takes 5 bludgeoning damage and, on a successful shove, is pushed up to 10 feet away from you.",
+          "id": "charge",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:centaur:base:charge",
+            "parameters": {
+              "featureName": "Charge",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Equine Build",
-          "description": "You count as one size larger when determining your carrying capacity and the weight you can push or drag. In addition, any climb that requires hands and feet is especially difficult for you because of your equine legs. When you make such a climb, each foot of movement costs you 4 extra feet instead of the normal 1 extra foot."
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push or drag. In addition, any climb that requires hands and feet is especially difficult for you because of your equine legs. When you make such a climb, each foot of movement costs you 4 extra feet instead of the normal 1 extra foot.",
+          "id": "equine-build",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:centaur:base:equine-build",
+            "parameters": {
+              "featureName": "Equine Build",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Natural Affinity",
-          "description": "Your fey connection to nature gives you an intuitive connection to the natural world and the animals within it. You therefore have proficiency in one of the following skills of your choice: Animal Handling, Medicine, Nature, or Survival."
+          "description": "Your fey connection to nature gives you an intuitive connection to the natural world and the animals within it. You therefore have proficiency in one of the following skills of your choice: Animal Handling, Medicine, Nature, or Survival.",
+          "id": "natural-affinity",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:centaur:base:natural-affinity",
+            "parameters": {
+              "featureName": "Natural Affinity",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Hooves",
-          "description": "You have hooves that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier bludgeoning damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You have hooves that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier bludgeoning damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "hooves",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:centaur:base:hooves",
+            "parameters": {
+              "featureName": "Hooves",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
