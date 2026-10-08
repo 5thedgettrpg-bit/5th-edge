@@ -634,7 +634,30 @@
       "description": "Armor: None. Weapons: Daggers, darts, slings, quarterstaffs, light crossbows. Tools: None. Saving Throws: Intelligence, Wisdom. Skills: Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion.",
       "automation": {
         "proficiencyPackage": {
-          "source": "class.proficiencies"
+          "armor": [],
+          "weapons": [
+            "Daggers",
+            "Darts",
+            "Slings",
+            "Quarterstaffs",
+            "Light crossbows"
+          ],
+          "tools": [],
+          "savingThrows": [
+            "Intelligence",
+            "Wisdom"
+          ],
+          "skillChoices": {
+            "count": 2,
+            "from": [
+              "Arcana",
+              "History",
+              "Insight",
+              "Investigation",
+              "Medicine",
+              "Religion"
+            ]
+          }
         }
       }
     },
