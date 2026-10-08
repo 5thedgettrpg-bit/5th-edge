@@ -29,15 +29,38 @@
       "features": [
         {
           "name": "Little Giant",
-          "description": "You have proficiency in the Athletics skill, and you count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+          "description": "You have proficiency in the Athletics skill, and you count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.",
+          "id": "little-giant",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Athletics"
+              ]
+            }
+          }
         },
         {
           "name": "Mountain Born",
-          "description": "You have resistance to cold damage. You also naturally acclimate to high altitudes, even if you’ve never been to one. This includes elevations above 20,000 feet."
+          "description": "You have resistance to cold damage. You also naturally acclimate to high altitudes, even if you’ve never been to one. This includes elevations above 20,000 feet.",
+          "id": "mountain-born",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "cold"
+              ]
+            }
+          }
         },
         {
           "name": "Stone's Endurance",
-          "description": "When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled and reduce the damage by that total. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled and reduce the damage by that total. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "stone-s-endurance",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         }
       ]
     }
