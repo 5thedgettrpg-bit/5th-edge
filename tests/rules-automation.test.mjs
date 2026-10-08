@@ -281,3 +281,13 @@ test('race proficiency choices are structured choices, not literal skill names',
   assert.equal(skills.automation.proficiencyChoices.skills.choose,2);
   assert.equal(skills.automation.proficiencyGrants?.skills,undefined);
 });
+
+
+test('race saving throw proficiencies are not misclassified as skill proficiencies', () => {
+  const doc = enrichRaceDocument({ id:'test', variants:[{id:'base',features:[
+    {name:'Courier Speed',description:'You gain proficiency in Dexterity saving throws.'}
+  ]}]});
+  const auto=doc.variants[0].features[0].automation;
+  assert.deepEqual(auto.proficiencyGrants?.savingThrows,['Dexterity']);
+  assert.equal(auto.proficiencyGrants?.skills,undefined);
+});
