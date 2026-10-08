@@ -28,15 +28,41 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Sea Elf Origin",
-          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return."
+          "description": "You can breathe air and water, and you have resistance to cold damage. You have a swimming speed equal to your walking speed. Aquatic animals have an extraordinary affinity with your people. You can communicate simple ideas to any Beast that has a swimming speed. It can understand your words, though you have no special ability to understand it in return.",
+          "id": "sea-elf-origin",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "cold"
+              ]
+            }
+          }
         }
       ]
     },
@@ -64,11 +90,29 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Drow Origin",
@@ -111,6 +155,42 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "drow-origin",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Cleric",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Color Spray",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Vortex Warp",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         }
       ]
@@ -139,11 +219,29 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "High Elf Origin",
@@ -186,6 +284,42 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "high-elf-origin",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Wizard",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Mage Armor",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Misty Step",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         }
       ]
@@ -214,15 +348,42 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Deductive Intuition",
-          "description": "Whenever you make an Intelligence (Investigation) check or Wisdom (Insight) check, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make an Intelligence (Investigation) check or Wisdom (Insight) check, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "deductive-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-elf:way-of-sight:deductive-intuition",
+            "parameters": {
+              "featureName": "Deductive Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Magical Detection",
@@ -264,6 +425,41 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "magical-detection",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Detect Magic",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "See Invisibility",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         }
       ]
@@ -292,15 +488,42 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Windwrights Intuition",
-          "description": "Whenever you make a Dexterity (Acrobatics) check or any ability check involving Navigator's Tools, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make a Dexterity (Acrobatics) check or any ability check involving Navigator's Tools, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "windwrights-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-elf:way-of-the-tempest:windwrights-intuition",
+            "parameters": {
+              "featureName": "Windwrights Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Headwinds",
@@ -342,11 +565,54 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "headwinds",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Gust",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Thunderwave",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Gust of Wind",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Storms Boon",
-          "description": "You have resistance to lightning damage."
+          "description": "You have resistance to lightning damage.",
+          "id": "storms-boon",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "lightning"
+              ]
+            }
+          }
         }
       ]
     },
@@ -374,11 +640,29 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Wood Elf Origin",
@@ -421,6 +705,42 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "wood-elf-origin",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "type": "cantripChoice",
+                "count": 1,
+                "fromSpellList": "Druid",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Hunter's Mark",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Pass without Trace",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         }
       ]
@@ -449,15 +769,41 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Skill Versatility",
-          "description": "You gain proficiency in two skills of your choice."
+          "description": "You gain proficiency in two skills of your choice.",
+          "id": "skill-versatility",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "two skills of your choice"
+              ]
+            }
+          }
         }
       ]
     }
