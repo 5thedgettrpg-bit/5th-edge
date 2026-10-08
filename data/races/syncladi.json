@@ -28,19 +28,55 @@
       "features": [
         {
           "name": "Carapace",
-          "description": "Your skin in places is covered by a thick shell. You gain a +1 to your AC when not wearing heavy armour."
+          "description": "Your skin in places is covered by a thick shell. You gain a +1 to your AC when not wearing heavy armour.",
+          "id": "carapace",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:amalgam:carapace",
+            "parameters": {
+              "featureName": "Carapace",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Acid Spit",
-          "description": "As an action, you can spray acid from glands in your mouth, targeting one creature or object you can see within 30 feet of you. The target must make a Dexterity saving throw against a DC of 8 + your proficiency bonus + your Constitution modifier. The target takes 1d10 acid damage if they fail. This feature's damage increases to 2d10 at 5th level, 3d10 at 11th level, and 4d10 at 17th level."
+          "description": "As an action, you can spray acid from glands in your mouth, targeting one creature or object you can see within 30 feet of you. The target must make a Dexterity saving throw against a DC of 8 + your proficiency bonus + your Constitution modifier. The target takes 1d10 acid damage if they fail. This feature's damage increases to 2d10 at 5th level, 3d10 at 11th level, and 4d10 at 17th level.",
+          "id": "acid-spit",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:amalgam:acid-spit",
+            "parameters": {
+              "featureName": "Acid Spit",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Alien Movement",
-          "description": "You can breathe air and water, and you gain a swim speed equal to your walking speed. You have a climb speed equal to your walk speed."
+          "description": "You can breathe air and water, and you gain a swim speed equal to your walking speed. You have a climb speed equal to your walk speed.",
+          "id": "alien-movement",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:amalgam:alien-movement",
+            "parameters": {
+              "featureName": "Alien Movement",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Glide",
-          "description": "When you fall at least 10 feet above the ground, you can use your reaction to extend your skin membranes to glide horizontally a number of feet equal to your walking speed, and you take 0 damage from the fall. You determine the direction of the glide."
+          "description": "When you fall at least 10 feet above the ground, you can use your reaction to extend your skin membranes to glide horizontally a number of feet equal to your walking speed, and you take 0 damage from the fall. You determine the direction of the glide.",
+          "id": "glide",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:amalgam:glide",
+            "parameters": {
+              "featureName": "Glide",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -69,11 +105,28 @@
       "features": [
         {
           "name": "Mental Discipline",
-          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws.",
+          "id": "mental-discipline",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Martial Prodigy",
-          "description": "Proficiency with light and medium armor plus shortsword, longsword, and greatsword."
+          "description": "Proficiency with light and medium armor plus shortsword, longsword, and greatsword.",
+          "id": "martial-prodigy",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:kithrak:martial-prodigy",
+            "parameters": {
+              "featureName": "Martial Prodigy",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Psionics",
@@ -115,11 +168,54 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "psionics",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Mage Hand",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Shield",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Misty Step",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Psychic Resistance",
-          "description": "You have resistance to psychic damage."
+          "description": "You have resistance to psychic damage.",
+          "id": "psychic-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "psychic"
+              ]
+            }
+          }
         }
       ]
     },
@@ -147,19 +243,53 @@
       "features": [
         {
           "name": "Dispassion",
-          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws.",
+          "id": "dispassion",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Tireless Precision",
-          "description": "You are proficient in one of the following skills of your choice: Arcana, History, Investigation, Medicine, Performance, or Sleight of Hand. You are also proficient with one tool of your choice. Whenever you make an ability check with the chosen skill or tool, roll a d4 and add the number rolled to the check's total."
+          "description": "You are proficient in one of the following skills of your choice: Arcana, History, Investigation, Medicine, Performance, or Sleight of Hand. You are also proficient with one tool of your choice. Whenever you make an ability check with the chosen skill or tool, roll a d4 and add the number rolled to the check's total.",
+          "id": "tireless-precision",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:todarian:tireless-precision",
+            "parameters": {
+              "featureName": "Tireless Precision",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Amphibious",
-          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed.",
+          "id": "amphibious",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:todarian:amphibious",
+            "parameters": {
+              "featureName": "Amphibious",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Magical Insight",
-          "description": "You have proficiency in the Arcana skill."
+          "description": "You have proficiency in the Arcana skill.",
+          "id": "magical-insight",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Arcana"
+              ]
+            }
+          }
         }
       ]
     },
@@ -188,19 +318,53 @@
       "features": [
         {
           "name": "Dispassion",
-          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws.",
+          "id": "dispassion",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Black Blood Healing",
-          "description": "When you roll either 1 or 2 on any Hit Die you spend at the end of a short rest, you can re-roll the die and must use the new roll."
+          "description": "When you roll either 1 or 2 on any Hit Die you spend at the end of a short rest, you can re-roll the die and must use the new roll.",
+          "id": "black-blood-healing",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:vandar:black-blood-healing",
+            "parameters": {
+              "featureName": "Black Blood Healing",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Limited Telepathy",
-          "description": "You can telepathically speak to any creature you can see within 30 feet. You don't need to share a language with the creature for it to understand your telepathy, but it must be able to understand at least one language. This process of communication is slow and limited, allowing you to transmit and receive only simple ideas and straightforward concepts."
+          "description": "You can telepathically speak to any creature you can see within 30 feet. You don't need to share a language with the creature for it to understand your telepathy, but it must be able to understand at least one language. This process of communication is slow and limited, allowing you to transmit and receive only simple ideas and straightforward concepts.",
+          "id": "limited-telepathy",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:vandar:limited-telepathy",
+            "parameters": {
+              "featureName": "Limited Telepathy",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Persuasive",
-          "description": "You have proficiency in the Persuasion skill."
+          "description": "You have proficiency in the Persuasion skill.",
+          "id": "persuasive",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Persuasion"
+              ]
+            }
+          }
         }
       ]
     },
@@ -229,11 +393,28 @@
       "features": [
         {
           "name": "Mental Discipline",
-          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws."
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws.",
+          "id": "mental-discipline",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Telekinesis",
-          "description": "You can make your mage hand invisible. Its range increases by 30 feet when you cast it. As a bonus action, you can try to telekinetically shove one creature you can see within 30 feet of you. When you do so, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + the ability modifier of the score chosen for Psionics) or be moved 5 feet toward or away from you. A creature can willingly fail this save."
+          "description": "You can make your mage hand invisible. Its range increases by 30 feet when you cast it. As a bonus action, you can try to telekinetically shove one creature you can see within 30 feet of you. When you do so, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + the ability modifier of the score chosen for Psionics) or be moved 5 feet toward or away from you. A creature can willingly fail this save.",
+          "id": "telekinesis",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:syncladi:zerth:telekinesis",
+            "parameters": {
+              "featureName": "Telekinesis",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Psionics",
@@ -275,11 +456,54 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "psionics",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Mage Hand",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Catapult",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Detect Thoughts",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Psychic Resistance",
-          "description": "You have resistance to psychic damage."
+          "description": "You have resistance to psychic damage.",
+          "id": "psychic-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "psychic"
+              ]
+            }
+          }
         }
       ]
     }
