@@ -519,7 +519,15 @@
       "id": "hit-points",
       "name": "Hit Points",
       "level": 1,
-      "description": "Hit Dice: 1d10 per ranger level. Hit Points at 1st Level: 10 + your Constitution modifier. Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per ranger level after 1st."
+      "description": "Hit Dice: 1d10 per ranger level. Hit Points at 1st Level: 10 + your Constitution modifier. Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per ranger level after 1st.",
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:ranger:hit-points",
+        "parameters": {
+          "featureName": "Hit Points",
+          "manualResolution": true
+        }
+      }
     },
     {
       "id": "proficiencies",
@@ -557,7 +565,15 @@
       "savingThrows": [
         "Strength",
         "Dexterity"
-      ]
+      ],
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:ranger:proficiencies",
+        "parameters": {
+          "featureName": "Proficiencies",
+          "manualResolution": true
+        }
+      }
     },
     {
       "id": "hunters-instinct",
@@ -578,6 +594,36 @@
         "weaponAttackAbilityOverride": "Wisdom",
         "weaponDamageAbilityOverride": "Wisdom",
         "requiresWeaponProficiency": true
+      },
+      "automation": {
+        "resource": {
+          "max": "proficiencyBonus",
+          "recovery": "longRest",
+          "dieByLevel": {
+            "1": "d4",
+            "5": "d6",
+            "11": "d8",
+            "17": "d10"
+          }
+        },
+        "abilitySubstitution": {
+          "ability": "wisdom",
+          "for": [
+            "weaponAttack",
+            "weaponDamage"
+          ],
+          "requiresWeaponProficiency": true
+        },
+        "rollBonus": {
+          "dieFrom": "hunters-instinct.resource",
+          "appliesTo": [
+            "attackRoll",
+            "abilityCheck",
+            "savingThrow"
+          ],
+          "timing": "afterD20BeforeOutcome",
+          "maxPerRoll": 1
+        }
       }
     },
     {
@@ -591,7 +637,19 @@
         7,
         11,
         17
-      ]
+      ],
+      "automation": {
+        "subclassChoice": {
+          "required": true,
+          "featureLevels": [
+            1,
+            3,
+            7,
+            11,
+            17
+          ]
+        }
+      }
     },
     {
       "id": "spellcasting",
@@ -603,7 +661,15 @@
       "attackModifier": "proficiencyBonus + Wisdom modifier",
       "focus": "Druidic focus",
       "nativeCantrips": false,
-      "spellList": "ranger"
+      "spellList": "ranger",
+      "automation": {
+        "spellcasting": {
+          "source": "class.spellcasting",
+          "ability": "Wisdom",
+          "progression": "known",
+          "spellListId": "ranger"
+        }
+      }
     },
     {
       "id": "fighting-style",
@@ -684,6 +750,87 @@
           },
           "defaultAbility": "Intelligence"
         }
+      },
+      "automation": {
+        "builderChoice": {
+          "type": "fightingStyle",
+          "choose": 1,
+          "options": [
+            "Archery",
+            "Blind Fighting",
+            "Defense",
+            "Druidic Warrior",
+            "Dueling",
+            "Thrown Weapon Fighting",
+            "Two-Weapon Fighting",
+            "Close Quarters Shooter",
+            "Interception",
+            "Mariner",
+            "Unarmed Fighting",
+            "Negotiator",
+            "Infiltrator",
+            "Cult Hunter",
+            "Witch Hunter"
+          ],
+          "special": {
+            "Druidic Warrior": {
+              "grant": {
+                "spellList": "druid",
+                "level": 0,
+                "count": 2,
+                "treatAs": "Ranger spells",
+                "spellcastingAbility": "Wisdom",
+                "countsAgainstSpellsKnown": false,
+                "displayInSpellcastingSection": true,
+                "sourceLabel": "Druidic Warrior"
+              }
+            },
+            "Negotiator": {
+              "grantProficiencies": [
+                "Persuasion",
+                "Intimidation"
+              ],
+              "skillAbilityOverride": {
+                "Persuasion": "Wisdom",
+                "Intimidation": "Wisdom"
+              },
+              "defaultAbility": "Charisma"
+            },
+            "Infiltrator": {
+              "grantProficiencies": [
+                "Stealth",
+                "Sleight of Hand"
+              ],
+              "skillAbilityOverride": {
+                "Stealth": "Wisdom",
+                "Sleight of Hand": "Wisdom"
+              },
+              "defaultAbility": "Dexterity"
+            },
+            "Cult Hunter": {
+              "grantProficiencies": [
+                "History",
+                "Religion"
+              ],
+              "skillAbilityOverride": {
+                "History": "Wisdom",
+                "Religion": "Wisdom"
+              },
+              "defaultAbility": "Intelligence"
+            },
+            "Witch Hunter": {
+              "grantProficiencies": [
+                "Arcana",
+                "Investigation"
+              ],
+              "skillAbilityOverride": {
+                "Arcana": "Wisdom",
+                "Investigation": "Wisdom"
+              },
+              "defaultAbility": "Intelligence"
+            }
+          }
+        }
       }
     },
     {
@@ -710,6 +857,14 @@
           "superior",
           "inferior"
         ]
+      },
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:ranger:know-your-enemy",
+        "parameters": {
+          "featureName": "Know Your Enemy",
+          "manualResolution": true
+        }
       }
     },
     {
@@ -721,6 +876,14 @@
         "Guarded Instinct": "Roll your Instinct Die and add the number rolled to the damage of the attack. You also gain a bonus to your AC equal to the number rolled until the start of your next turn.",
         "Sweeping Instinct": "Roll your Instinct Die and add the number rolled to the damage of the attack. Another creature of your choice that you can see within 5 feet of you also takes damage equal to the number rolled.",
         "Pursuing Instinct": "Roll your Instinct Die and add the number rolled to the damage of the attack. You can also push the target up to 5 feet away from you, plus a number of feet equal to the number rolled on the Instinct Die. You can then immediately use your reaction to move up to your walking speed to an unoccupied space within 5 feet of the target."
+      },
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:ranger:combat-instincts",
+        "parameters": {
+          "featureName": "Combat Instincts",
+          "manualResolution": true
+        }
       }
     },
     {
@@ -744,13 +907,29 @@
           "level": 10,
           "description": "As an action, you can give yourself temporary hit points equal to 1d8 + your Wisdom modifier, minimum 1. You can use this action a number of times equal to your proficiency bonus and regain all expended uses when you finish a long rest. In addition, whenever you finish a short rest, your exhaustion level, if any, is decreased by 1."
         }
-      ]
+      ],
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:ranger:deft-explorer",
+        "parameters": {
+          "featureName": "Deft Explorer",
+          "manualResolution": true
+        }
+      }
     },
     {
       "id": "extra-attack",
       "name": "Extra Attack",
       "level": 5,
-      "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn."
+      "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn.",
+      "automation": {
+        "attackCount": {
+          "mode": "replace",
+          "action": "attack",
+          "count": 2,
+          "nonStackingKey": "extraAttack"
+        }
+      }
     },
     {
       "id": "favored-enemy",
@@ -781,6 +960,14 @@
       ],
       "mechanics": {
         "damageBonusAgainstFavoredEnemy": "proficiencyBonus"
+      },
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:ranger:favored-enemy",
+        "parameters": {
+          "featureName": "Favored Enemy",
+          "manualResolution": true
+        }
       }
     },
     {
@@ -793,13 +980,29 @@
           "shortRest",
           "longRest"
         ]
+      },
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:ranger:heightened-instinct",
+        "parameters": {
+          "featureName": "Heightened Instinct",
+          "manualResolution": true
+        }
       }
     },
     {
       "id": "lands-stride",
       "name": "Land's Stride",
       "level": 9,
-      "description": "Starting at 9th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard. In addition, you gain proficiency in Wisdom saving throws."
+      "description": "Starting at 9th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard. In addition, you gain proficiency in Wisdom saving throws.",
+      "automation": {
+        "support": "required",
+        "hook": "class-feature:ranger:lands-stride",
+        "parameters": {
+          "featureName": "Land's Stride",
+          "manualResolution": true
+        }
+      }
     },
     {
       "id": "natures-veil",
@@ -809,6 +1012,20 @@
       "resource": {
         "max": "proficiencyBonus",
         "recharge": "longRest"
+      },
+      "automation": {
+        "activation": {
+          "type": "bonusAction"
+        },
+        "resource": {
+          "max": "proficiencyBonus",
+          "recovery": "longRest"
+        },
+        "conditionGrant": {
+          "condition": "invisible",
+          "duration": "untilStartOfNextTurn",
+          "includeEquipment": true
+        }
       }
     },
     {
@@ -827,25 +1044,74 @@
           "destination": "unoccupiedSpaceYouCanSee",
           "additionalMovement": true
         }
+      },
+      "automation": {
+        "movement": {
+          "climb": {
+            "equalTo": "walk"
+          },
+          "swim": {
+            "equalTo": "walk"
+          }
+        },
+        "bonusActionJump": {
+          "distance": 30,
+          "unit": "ft",
+          "additionalMovement": true
+        }
       }
     },
     {
       "id": "mastered-instincts",
       "name": "Mastered Instincts",
       "level": 14,
-      "description": "Starting at 14th level, whenever you use a Combat Instinct option, you can roll a d6 and use it instead of expending an Instinct Die."
+      "description": "Starting at 14th level, whenever you use a Combat Instinct option, you can roll a d6 and use it instead of expending an Instinct Die.",
+      "automation": {
+        "modifyFeature": {
+          "target": "combat-instincts",
+          "replacementDie": "d6",
+          "resourceSpendOptional": true
+        }
+      }
     },
     {
       "id": "vanish",
       "name": "Vanish",
       "level": 15,
-      "description": "Starting at 15th level, as a bonus action on your turn, you become invisible until the start of your next turn. Anything you are wearing or carrying is invisible as long as it is on you. Also, you can't be tracked by nonmagical means, unless you choose to leave a trail."
+      "description": "Starting at 15th level, as a bonus action on your turn, you become invisible until the start of your next turn. Anything you are wearing or carrying is invisible as long as it is on you. Also, you can't be tracked by nonmagical means, unless you choose to leave a trail.",
+      "automation": {
+        "activation": {
+          "type": "bonusAction"
+        },
+        "conditionGrant": {
+          "condition": "invisible",
+          "duration": "untilStartOfNextTurn",
+          "includeEquipment": true
+        },
+        "tracking": {
+          "nonmagical": false
+        }
+      }
     },
     {
       "id": "feral-senses",
       "name": "Feral Senses",
       "level": 18,
-      "description": "At 18th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it. You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened."
+      "description": "At 18th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it. You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened.",
+      "automation": {
+        "sensesCombat": {
+          "ignoreUnseenAttackDisadvantage": true,
+          "detectInvisible": {
+            "range": 30,
+            "unit": "ft",
+            "requiresNotHidden": true,
+            "disabledBy": [
+              "blinded",
+              "deafened"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "foe-slayer",
@@ -860,6 +1126,17 @@
           "Wisdom": 24
         },
         "instinctMinimumRoll": 3
+      },
+      "automation": {
+        "scaling": {
+          "abilityIncrease": {
+            "wisdom": 4
+          },
+          "abilityMaximum": {
+            "wisdom": 24
+          },
+          "minimumInstinctRoll": 3
+        }
       }
     }
   ],
