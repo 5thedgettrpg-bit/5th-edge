@@ -28,11 +28,28 @@
       "features": [
         {
           "name": "Hunter's Intuition",
-          "description": "Whenever you make a Wisdom (Perception) or a Wisdom (Survival) check, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make a Wisdom (Perception) or a Wisdom (Survival) check, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "hunter-s-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:way-of-the-trail:hunter-s-intuition",
+            "parameters": {
+              "featureName": "Hunter's Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Enhanced Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "enhanced-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         },
         {
           "name": "Finder's Magic",
@@ -138,6 +155,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "finder-s-magic",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "True Strike",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Hunter's Mark",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Locate Object",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Faerie Fire",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Longstrider",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Locate Animals or Plants",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Locate Object",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Clairvoyance",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Speak With Plants",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Divination",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Locate Creature",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Commune With Nature",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -166,11 +301,29 @@
       "features": [
         {
           "name": "Wild Intuition",
-          "description": "Whenever you make a Wisdom (Animal Handling) or an Intelligence (Nature) check, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make a Wisdom (Animal Handling) or an Intelligence (Nature) check, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "wild-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:way-of-the-beast:wild-intuition",
+            "parameters": {
+              "featureName": "Wild Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "The Bigger They Are",
-          "description": "You can target a Beast or a Monstrosity when you cast Animal Friendship or Speak With Animals, provided that the creature's intelligence is 3 or lower."
+          "description": "You can target a Beast or a Monstrosity when you cast Animal Friendship or Speak With Animals, provided that the creature's intelligence is 3 or lower.",
+          "id": "the-bigger-they-are",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:way-of-the-beast:the-bigger-they-are",
+            "parameters": {
+              "featureName": "The Bigger They Are",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Primal Connection",
@@ -276,6 +429,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "primal-connection",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Create Bonfire",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Beast Bond",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Summon Beast",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Animal Friendship",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Speak With Animals",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Beast Sense",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Calm Emotions",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Beacon of Hope",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Conjure Animals",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Aura of Life",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Dominate Beast",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Awaken",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -304,11 +575,29 @@
       "features": [
         {
           "name": "Artisan's Intuition",
-          "description": "Whenever you make an Intelligence (Arcana) or an ability check involving Artisan's Tools, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make an Intelligence (Arcana) or an ability check involving Artisan's Tools, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "artisan-s-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:way-of-the-craft:artisan-s-intuition",
+            "parameters": {
+              "featureName": "Artisan's Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Artisan's Gift",
-          "description": "You gain proficiency in one type of Artisan's Tools of your choice."
+          "description": "You gain proficiency in one type of Artisan's Tools of your choice.",
+          "id": "artisan-s-gift",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:way-of-the-craft:artisan-s-gift",
+            "parameters": {
+              "featureName": "Artisan's Gift",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Spellsmith",
@@ -418,6 +707,128 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "spellsmith",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Mending",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Magic Weapon",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "castingOverrides": {
+                  "duration": "1 hour",
+                  "concentration": false
+                },
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Heat Metal",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Identify",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Tenser's Floating Disk",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Continual Flame",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Magic Weapon",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Conjure Barrage",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Elemental Weapon",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fabricate",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Stone Shape",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Creation",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -446,11 +857,29 @@
       "features": [
         {
           "name": "Sentinel's Intuition",
-          "description": "Whenever you make a Wisdom (Insight) or a Wisdom (Perception) check, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make a Wisdom (Insight) or a Wisdom (Perception) check, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "sentinel-s-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:way-of-the-watch:sentinel-s-intuition",
+            "parameters": {
+              "featureName": "Sentinel's Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Vigilant Guardian",
-          "description": "You gain a base walking speed of 35 ft."
+          "description": "You gain a base walking speed of 35 ft.",
+          "id": "vigilant-guardian",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:way-of-the-watch:vigilant-guardian",
+            "parameters": {
+              "featureName": "Vigilant Guardian",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Guardian's Shield",
@@ -556,6 +985,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "guardian-s-shield",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Resistance",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Shield",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Warding Bond",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Compelled Duel",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Shield of Faith",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Warding Bond",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Zone of Truth",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Counterspell",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Protection From Energy",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Death Ward",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Guardian of Faith",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Bigby's Hand",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -584,15 +1131,41 @@
       "features": [
         {
           "name": "Balanced Physique",
-          "description": "You gain a swimming and climbing speed equal to your walking speed."
+          "description": "You gain a swimming and climbing speed equal to your walking speed.",
+          "id": "balanced-physique",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:variant:balanced-physique",
+            "parameters": {
+              "featureName": "Balanced Physique",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Skill Versatility",
-          "description": "You gain proficiency in two skills of your choice."
+          "description": "You gain proficiency in two skills of your choice.",
+          "id": "skill-versatility",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "two skills of your choice"
+              ]
+            }
+          }
         },
         {
           "name": "Feat",
-          "description": "You gain one Feat of your choice."
+          "description": "You gain one Feat of your choice.",
+          "id": "feat",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:variant:feat",
+            "parameters": {
+              "featureName": "Feat",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -620,11 +1193,28 @@
       "features": [
         {
           "name": "Balanced Physique",
-          "description": "You gain a swimming and climbing speed equal to your walking speed."
+          "description": "You gain a swimming and climbing speed equal to your walking speed.",
+          "id": "balanced-physique",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:base:balanced-physique",
+            "parameters": {
+              "featureName": "Balanced Physique",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Enduring Spirit",
-          "description": "You have advantage on death saving throws."
+          "description": "You have advantage on death saving throws.",
+          "id": "enduring-spirit",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     },
@@ -652,11 +1242,28 @@
       "features": [
         {
           "name": "Intuitive Motion",
-          "description": "Whenever you make a Dexterity (Acrobatics) or an ability check involving operating or maintaining a Land Vehicle, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make a Dexterity (Acrobatics) or an ability check involving operating or maintaining a Land Vehicle, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "intuitive-motion",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:human:way-of-the-road:intuitive-motion",
+            "parameters": {
+              "featureName": "Intuitive Motion",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Courier's Speed",
-          "description": "You have proficiency in Dexterity saving throws."
+          "description": "You have proficiency in Dexterity saving throws.",
+          "id": "courier-s-speed",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Dexterity saving throws"
+              ]
+            }
+          }
         },
         {
           "name": "Magical Passage",
@@ -761,6 +1368,124 @@
             "spellListAdditionRequirement": [
               "Spellcasting",
               "Pact Magic"
+            ]
+          },
+          "id": "magical-passage",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Guidance",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Longstrider",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Misty Step",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Expeditious Retreat",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Jump",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Misty Step",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Pass Without Trace",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Blink",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Phantom Steed",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Dimension Door",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Freedom of Movement",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Teleportation Circle",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
             ]
           }
         }
