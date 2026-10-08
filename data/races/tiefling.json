@@ -28,11 +28,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:asmodeus:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Sovereign Resistance",
-          "description": "You have resistance to necrotic damage and fire damage."
+          "description": "You have resistance to necrotic damage and fire damage.",
+          "id": "sovereign-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Infernal Legacy",
@@ -138,6 +155,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "infernal-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Hellish Rebuke",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Command",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Cause Fear",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Scorching Ray",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Suggestion",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fear",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Bestow Curse",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Shadow of Moil",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Wall of Fire",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Flame Strike",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -166,11 +301,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:baalzebul:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Blight Resistance",
-          "description": "You have resistance to necrotic damage and poison damage."
+          "description": "You have resistance to necrotic damage and poison damage.",
+          "id": "blight-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Blighted Legacy",
@@ -276,6 +428,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "blighted-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Ray of Sickness",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Crown of Madness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Inflict Wounds",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Tasha's Hideous Laughter",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Blindness/Deafness",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Ray of Enfeeblement",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Bestow Curse",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Stinking Cloud",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Blight",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Confusion",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Cloudkill",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -304,11 +574,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:devils-tongue:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Infernal Resistance",
-          "description": "You have resistance to psychic damage and fire damage."
+          "description": "You have resistance to psychic damage and fire damage.",
+          "id": "infernal-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "psychic"
+              ]
+            }
+          }
         },
         {
           "name": "Devil’s Tongue",
@@ -414,6 +701,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "devil-s-tongue",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Vicious Mockery",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Charm Person",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Enthrall",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Command",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Dissonant Whispers",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Detect Thoughts",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Suggestion",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Enemies Abound",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hypnotic Pattern",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Charm Monster",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Compulsion",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Dominate Person",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -442,11 +847,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:dispater:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Iron Resistance",
-          "description": "You have resistance to psychic damage and fire damage."
+          "description": "You have resistance to psychic damage and fire damage.",
+          "id": "iron-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "psychic"
+              ]
+            }
+          }
         },
         {
           "name": "Iron Legacy",
@@ -552,6 +974,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "iron-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Disguise Self",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Detect Thoughts",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Dissonant Whispers",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Silent Image",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Enthrall",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Pass without Trace",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Clairvoyance",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Nondetection",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Arcane Eye",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Greater Invisibility",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Modify Memory",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -580,11 +1120,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:feral:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Hellish Resistance",
-          "description": "You have resistance to necrotic damage and fire damage."
+          "description": "You have resistance to necrotic damage and fire damage.",
+          "id": "hellish-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Infernal Legacy",
@@ -690,6 +1247,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "infernal-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Hellish Rebuke",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Cause Fear",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Zephyr Strike",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Blur",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Spider Climb",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Haste",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Vampiric Touch",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Freedom of Movement",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Greater Invisibility",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Steel Wind Strike",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -718,11 +1393,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:phlegethos:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Beguiling Resistance",
-          "description": "You have resistance to psychic damage and fire damage."
+          "description": "You have resistance to psychic damage and fire damage.",
+          "id": "beguiling-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "psychic"
+              ]
+            }
+          }
         },
         {
           "name": "Beguiling Legacy",
@@ -828,6 +1520,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "beguiling-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Friends",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Charm Person",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Suggestion",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Command",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Dissonant Whispers",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Calm Emotions",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Enthrall",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Enemies Abound",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hypnotic Pattern",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Charm Monster",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Compulsion",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Dominate Person",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -856,11 +1666,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:malbolge:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Veiled Resistance",
-          "description": "You have resistance to psychic damage and poison damage."
+          "description": "You have resistance to psychic damage and poison damage.",
+          "id": "veiled-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "psychic"
+              ]
+            }
+          }
         },
         {
           "name": "Veiled Legacy",
@@ -966,6 +1793,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "veiled-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Minor Illusion",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Disguise Self",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Invisibility",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Silent Image",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Unseen Servant",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Mirror Image",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Pass Without A Trace",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Major Image",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Nondetection",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Greater Invisibility",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hallucinatory Terrain",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Mislead",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -994,11 +1939,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:hellfire:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Hellish Resistance",
-          "description": "You have resistance to necrotic damage and fire damage."
+          "description": "You have resistance to necrotic damage and fire damage.",
+          "id": "hellish-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Hellfire",
@@ -1104,6 +2066,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "hellfire",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Burning Hands",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Searing Smite",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hellish Rebuke",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Flaming Sphere",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Scorching Ray",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fireball",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Melf’s Minute Meteors",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fire Shield",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Wall of Fire",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Immolation",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -1132,11 +2212,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:infernal-legacy:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Hellish Resistance",
-          "description": "You have resistance to necrotic damage and fire damage."
+          "description": "You have resistance to necrotic damage and fire damage.",
+          "id": "hellish-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Infernal Legacy",
@@ -1242,6 +2339,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "infernal-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Hellish Rebuke",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Cause Fear",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hex",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Scorching Ray",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Nathair's Mischief",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Bestow Curse",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fear",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fire Shield",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Shadow of Moil",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Contact Other Plane",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -1270,11 +2485,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:stygia:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Frostbound Resistance",
-          "description": "You have resistance to necrotic damage and cold damage."
+          "description": "You have resistance to necrotic damage and cold damage.",
+          "id": "frostbound-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Frozen Legacy",
@@ -1380,6 +2612,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "frozen-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Ray of Frost",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Armor of Agathys",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Ice Knife",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Protection from Evil and Good",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Mirror Image",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Rime’s Binding Ice",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Bestow Curse",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hunger of Hadar",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Ice Storm",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Shadow of Moil",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Cone of Cold",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -1408,11 +2758,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:mammon:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Avarice Resistance",
-          "description": "You have resistance to acid damage and poison damage."
+          "description": "You have resistance to acid damage and poison damage.",
+          "id": "avarice-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "acid"
+              ]
+            }
+          }
         },
         {
           "name": "Gilded Legacy",
@@ -1518,6 +2885,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "gilded-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Mage Hand",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Distort Value",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Arcane Lock",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Identify",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Unseen Servant",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Knock",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Locate Object",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Clairvoyance",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Incite Greed",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fabricate",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Leomund’s Secret Chest",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Creation",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -1546,11 +3031,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:mephistopheles:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Frostfire Resistance",
-          "description": "You have resistance to necrotic damage and cold damage."
+          "description": "You have resistance to necrotic damage and cold damage.",
+          "id": "frostfire-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Arcane Frost Legacy",
@@ -1656,6 +3158,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "arcane-frost-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Mage Hand",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Fog Cloud",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Rime’s Binding Ice",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Armor of Agathys",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Ice Knife",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Darkness",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Snilloc’s Snowball Swarm",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Sleet Storm",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Slow",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Elemental Bane",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Ice Storm",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Cone of Cold",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -1684,11 +3304,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:standard:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Hellish Resistance",
-          "description": "You have resistance to necrotic damage and fire damage."
+          "description": "You have resistance to necrotic damage and fire damage.",
+          "id": "hellish-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Infernal Legacy",
@@ -1794,6 +3431,124 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "infernal-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Thaumaturgy",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Hellish Rebuke",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Darkness",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "Cause Fear",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hex",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Flame Blade",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Nathair's Mischief",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Antagonize",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Fear",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Death Ward",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Shadow of Moil",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Contact Other Plane",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
+            ]
           }
         }
       ]
@@ -1822,19 +3577,52 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:winged:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Hellish Resistance",
-          "description": "You have resistance to necrotic damage and fire damage."
+          "description": "You have resistance to necrotic damage and fire damage.",
+          "id": "hellish-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Infernal Fortitude",
-          "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+          "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+          "id": "infernal-fortitude",
+          "automation": {
+            "hitPoints": {
+              "initial": 1,
+              "perLevel": 1
+            }
+          }
         },
         {
           "name": "Flight",
-          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed.",
+          "id": "flight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:winged:flight",
+            "parameters": {
+              "featureName": "Flight",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -1862,11 +3650,28 @@
       "features": [
         {
           "name": "Infernal Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "infernal-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:tiefling:bel:infernal-sight",
+            "parameters": {
+              "featureName": "Infernal Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Warlord Resistance",
-          "description": "You have resistance to necrotic damage and fire damage."
+          "description": "You have resistance to necrotic damage and fire damage.",
+          "id": "warlord-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Warlord Legacy",
@@ -1971,6 +3776,124 @@
             "spellListAdditionRequirement": [
               "Spellcasting",
               "Pact Magic"
+            ]
+          },
+          "id": "warlord-legacy",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Sword Burst",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Wrathful Smite",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Aid",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ],
+            "spellListAdditions": [
+              {
+                "name": "False Life",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Hunter's Mark",
+                "spellLevel": 1,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Magic Weapon",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "See Invisibility",
+                "spellLevel": 2,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Bestow Curse",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Haste",
+                "spellLevel": 3,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Staggering Smite",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Locate Creature",
+                "spellLevel": 4,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              },
+              {
+                "name": "Banishing Smite",
+                "spellLevel": 5,
+                "grantMode": "addToClassSpellList",
+                "requirements": [
+                  "Spellcasting",
+                  "Pact Magic"
+                ]
+              }
             ]
           }
         }
