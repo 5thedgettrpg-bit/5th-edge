@@ -121,3 +121,41 @@ test('race enrichment gives unsupported executable prose an explicit VTT hook', 
   assert.equal(auto.support, 'required');
   assert.equal(auto.hook, 'race-feature:oddity:base:strange-gift');
 });
+
+
+import { enrichClassDocument } from '../scripts/enrich-class-automation.mjs';
+
+test('class enrichment normalizes Extra Attack to a non-stacking attack-count replacement', () => {
+  const doc = enrichClassDocument({ id: 'barbarian', features: [{ id: 'extra-attack', name: 'Extra Attack', automation: { attackActionCount: 2 } }] });
+  const auto = doc.features[0].automation;
+  assert.deepEqual(auto.attackCount, { mode: 'replace', action: 'attack', count: 2, nonStackingKey: 'extraAttack' });
+  assert.equal(auto.attackActionCount, undefined);
+});
+
+test('Ranger enrichment encodes Hunters Instinct and Natures Veil', () => {
+  const doc = enrichClassDocument({ id: 'ranger', features: [
+    { id: 'hunters-instinct', name: "Hunter's Instinct", resource: { max: 'proficiencyBonus', recharge: 'longRest', dieByLevel: { 1: 'd4', 5: 'd6' } } },
+    { id: 'natures-veil', name: "Nature's Veil", resource: { max: 'proficiencyBonus', recharge: 'longRest' } },
+  ] });
+  assert.equal(doc.features[0].automation.abilitySubstitution.ability, 'wisdom');
+  assert.equal(doc.features[0].automation.resource.recovery, 'longRest');
+  assert.equal(doc.features[1].automation.conditionGrant.condition, 'invisible');
+  assert.equal(doc.features[1].automation.activation.type, 'bonusAction');
+});
+
+test('Paladin enrichment encodes Lay on Hands and Aura of Protection', () => {
+  const doc = enrichClassDocument({ id: 'paladin', features: [
+    { id: 'lay-on-hands', name: 'Lay on Hands', resource: { max: '5 * Paladin level', recharge: 'longRest' } },
+    { id: 'aura-of-protection', name: 'Aura of Protection' },
+  ] });
+  assert.equal(doc.features[0].automation.resource.max, '5 * Paladin level');
+  assert.equal(doc.features[0].automation.activation.type, 'bonusAction');
+  assert.equal(doc.features[1].automation.aura.radiusByLevel['6'], 10);
+  assert.equal(doc.features[1].automation.aura.radiusByLevel['18'], 30);
+});
+
+test('Wizard foundational spellcasting gets a structured VTT hook instead of prose-only rules', () => {
+  const doc = enrichClassDocument({ id: 'wizard', spellcasting: { ability: 'Intelligence' }, features: [{ id: 'spellcasting', name: 'Spellcasting' }] });
+  assert.equal(doc.features[0].automation.spellcasting.ability, 'Intelligence');
+  assert.equal(doc.features[0].automation.spellcasting.source, 'class.spellcasting');
+});
