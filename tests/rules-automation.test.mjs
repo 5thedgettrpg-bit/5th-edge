@@ -159,3 +159,29 @@ test('Wizard foundational spellcasting gets a structured VTT hook instead of pro
   assert.equal(doc.features[0].automation.spellcasting.ability, 'Intelligence');
   assert.equal(doc.features[0].automation.spellcasting.source, 'class.spellcasting');
 });
+
+
+test('College of Valor subclass encodes VTT-executable progression', async () => {
+  const j = JSON.parse(await fs.readFile(new URL('../data/subclasses/bard/college-of-valor.json', import.meta.url), 'utf8'));
+  assert.equal(j.classId, 'bard');
+  assert.deepEqual(j.featureLevels, [1,3,7,11,17]);
+  const extra = j.features.find(f => f.id === 'extra-attack');
+  assert.equal(extra.automation.attackCount.count, 2);
+  const combat = j.features.find(f => f.id === 'combat-inspiration');
+  assert.equal(combat.automation.acBonus.value, 5);
+  assert.equal(combat.automation.acBonus.duration, 'untilStartOfTargetNextTurn');
+  const enchanted = j.features.find(f => f.id === 'enchanted-blade');
+  assert.equal(enchanted.automation.weaponSelection.abilitySubstitution.ability, 'charisma');
+});
+
+test('Hexblade subclass encodes invocation grant, replacement, and Armor of Hexes', async () => {
+  const j = JSON.parse(await fs.readFile(new URL('../data/subclasses/warlock/hexblade.json', import.meta.url), 'utf8'));
+  assert.equal(j.classId, 'warlock');
+  assert.deepEqual(j.featureLevels, [1,3,7,11,17]);
+  const thirsting = j.features.find(f => f.id === 'thirsting-blade');
+  assert.equal(thirsting.automation.featureGrant.ignorePrerequisites, true);
+  assert.equal(thirsting.automation.alreadyKnownReplacement.type, 'eldritchInvocation');
+  const armor = j.features.find(f => f.id === 'armor-of-hexes');
+  assert.equal(armor.automation.resolution.die, 'd6');
+  assert.equal(armor.automation.resolution.successOn, '4+');
+});
