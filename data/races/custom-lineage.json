@@ -51,6 +51,11 @@
             "parameters": {
               "featureName": "Skill Versatility",
               "manualResolution": true
+            },
+            "proficiencyGrants": {
+              "skills": [
+                "two skills of your choice"
+              ]
             }
           }
         },
