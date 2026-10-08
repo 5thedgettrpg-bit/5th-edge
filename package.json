@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "ai:example": "tsx --env-file=.env.local index.ts"
+    "ai:example": "tsx --env-file=.env.local index.ts",
+    "rules:test": "node --test tests/rules-automation.test.mjs",
+    "rules:validate": "node scripts/validate-rules-json.mjs"
   },
   "dependencies": {
     "ai": "latest"
