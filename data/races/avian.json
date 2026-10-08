@@ -29,19 +29,55 @@
       "features": [
         {
           "name": "Talons",
-          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "talons",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:tengu:talons",
+            "parameters": {
+              "featureName": "Talons",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Wind Caller",
-          "description": "You know the Gust cantrip. Starting at 3rd level, you can cast Heroism with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait. Once you cast Heroism or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Gust cantrip. Starting at 3rd level, you can cast Heroism with this trait. Starting at 5th level, you can also cast Gust of Wind with this trait. Once you cast Heroism or Gust of Wind with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "id": "wind-caller",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:tengu:wind-caller",
+            "parameters": {
+              "featureName": "Wind Caller",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Mighty Pinions",
-          "description": "You have proficiency in the Athletics skill."
+          "description": "You have proficiency in the Athletics skill.",
+          "id": "mighty-pinions",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:tengu:mighty-pinions",
+            "parameters": {
+              "featureName": "Mighty Pinions",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Flight",
-          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed.",
+          "id": "flight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:tengu:flight",
+            "parameters": {
+              "featureName": "Flight",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -70,19 +106,55 @@
       "features": [
         {
           "name": "Talons",
-          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "talons",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:kenku:talons",
+            "parameters": {
+              "featureName": "Talons",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Mimicry",
-          "description": "You can accurately mimic voices and sounds you have heard. A creature that hears the mimicry can determine that it is false with a successful Wisdom (Insight) check contested by your Charisma (Deception) check."
+          "description": "You can accurately mimic voices and sounds you have heard. A creature that hears the mimicry can determine that it is false with a successful Wisdom (Insight) check contested by your Charisma (Deception) check.",
+          "id": "mimicry",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:kenku:mimicry",
+            "parameters": {
+              "featureName": "Mimicry",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Silent Feathers",
-          "description": "You have proficiency in the Stealth skill."
+          "description": "You have proficiency in the Stealth skill.",
+          "id": "silent-feathers",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:kenku:silent-feathers",
+            "parameters": {
+              "featureName": "Silent Feathers",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Flight",
-          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed.",
+          "id": "flight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:kenku:flight",
+            "parameters": {
+              "featureName": "Flight",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -110,19 +182,56 @@
       "features": [
         {
           "name": "Talons",
-          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "talons",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:owlin:talons",
+            "parameters": {
+              "featureName": "Talons",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 120 feet of yourself as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 120 feet of yourself as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 120,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Silent Feathers",
-          "description": "You have proficiency in the Stealth skill."
+          "description": "You have proficiency in the Stealth skill.",
+          "id": "silent-feathers",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:owlin:silent-feathers",
+            "parameters": {
+              "featureName": "Silent Feathers",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Flight",
-          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed.",
+          "id": "flight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:owlin:flight",
+            "parameters": {
+              "featureName": "Flight",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -150,15 +259,42 @@
       "features": [
         {
           "name": "Swan Shape",
-          "description": "As a bonus action, you can transform into a swan or return to your normal form. While in swan form, you have a flying speed and swimming speed equal to your walking speed. You can’t wield weapons or shields in this form. Your other game statistics remain the same, and anything you are wearing or carrying transforms with you."
+          "description": "As a bonus action, you can transform into a swan or return to your normal form. While in swan form, you have a flying speed and swimming speed equal to your walking speed. You can’t wield weapons or shields in this form. Your other game statistics remain the same, and anything you are wearing or carrying transforms with you.",
+          "id": "swan-shape",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:swanmay:swan-shape",
+            "parameters": {
+              "featureName": "Swan Shape",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Graceful Escape",
-          "description": "When a creature you can see makes an attack roll against you, you can use your reaction to move up to half your speed without provoking opportunity attacks. If this movement causes you to leave the attack’s reach or range, the attack misses. Once you use this trait, you can’t use it again until you finish a short or long rest."
+          "description": "When a creature you can see makes an attack roll against you, you can use your reaction to move up to half your speed without provoking opportunity attacks. If this movement causes you to leave the attack’s reach or range, the attack misses. Once you use this trait, you can’t use it again until you finish a short or long rest.",
+          "id": "graceful-escape",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:swanmay:graceful-escape",
+            "parameters": {
+              "featureName": "Graceful Escape",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Guardian of the Wilds",
-          "description": "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Animal Friendship with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Animal Friendship or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Druidcraft cantrip. Starting at 3rd level, you can cast Animal Friendship with this trait. Starting at 5th level, you can also cast Pass without Trace with this trait. Once you cast Animal Friendship or Pass without Trace with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "id": "guardian-of-the-wilds",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:avian:swanmay:guardian-of-the-wilds",
+            "parameters": {
+              "featureName": "Guardian of the Wilds",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
