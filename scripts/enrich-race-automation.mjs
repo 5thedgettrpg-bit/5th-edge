@@ -103,9 +103,9 @@ function inferCommonAutomation(feature, raceId, variantId) {
 
   if (/advantage on/i.test(description)) {
     add(auto, 'conditionalAdvantage', {
-      support: 'structuredTextPredicate',
-      predicateSource: 'featureDescription',
-      note: 'VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable.',
+      support: 'required',
+      hook: `race-feature:${raceId}:${variantId}:${feature.id || slugify(feature.name)}:advantage`,
+      parameters: { manualResolution: true },
     });
   }
 
