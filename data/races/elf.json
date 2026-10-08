@@ -155,9 +155,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:astral:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -306,9 +308,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:dark:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -466,9 +470,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:seelie-elf:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -619,9 +625,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:high:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -917,9 +925,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:way-of-the-veil:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -966,9 +976,11 @@
           "id": "incisive-sense",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:pallid:incisive-sense:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -1069,9 +1081,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:pallid:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -1156,9 +1170,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:sea:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -1254,9 +1270,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:shadow-elf:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -1407,9 +1425,11 @@
           "id": "elvish-ancestry",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:wood:elvish-ancestry:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
@@ -1443,9 +1463,11 @@
           "id": "dual-mind",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:syndran:dual-mind:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -1460,9 +1482,11 @@
               ]
             },
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:elf:syndran:mental-discipline:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
