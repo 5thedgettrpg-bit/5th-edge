@@ -215,3 +215,56 @@ test('race conditional advantage never requires runtime prose parsing', () => {
   assert.equal(conditional.predicateSource, undefined);
   assert.match(conditional.hook, /sharp-senses:advantage$/);
 });
+
+
+test('Ranger core features are executable automation rather than generic manual hooks', () => {
+  const doc = enrichClassDocument({
+    id: 'ranger',
+    hitDie: 10,
+    savingThrows: ['Strength','Dexterity'],
+    armorProficiencies: ['Light armor','Medium armor','Shields'],
+    weaponProficiencies: ['Simple weapons','Martial weapons'],
+    skillChoices: { count: 2, from: ['Perception','Survival'] },
+    features: [
+      { id:'hit-points', name:'Hit Points' },
+      { id:'proficiencies', name:'Proficiencies', choices:{skills:{count:2,from:['Perception','Survival']},expertise:{count:1,requirement:'proficient skill'}}, armor:['Light armor','Medium armor','Shields'], weapons:['Simple weapons','Martial weapons'], tools:[], savingThrows:['Strength','Dexterity'] },
+      { id:'know-your-enemy', name:'Know Your Enemy', mechanics:{requiresOutsideCombat:true,observationOrInteractionMinutes:1,choose:2,characteristics:['Armor Class'],comparisonResult:['equal','superior','inferior']} },
+      { id:'combat-instincts', name:'Combat Instincts', options:{'Guarded Instinct':'x','Sweeping Instinct':'y','Pursuing Instinct':'z'} },
+      { id:'deft-explorer', name:'Deft Explorer', parts:[
+        {name:'Canny',level:3,description:'x'},{name:'Roving',level:6,description:'y'},{name:'Tireless',level:10,description:'z'}
+      ]},
+      { id:'favored-enemy', name:'Favored Enemy', choiceLevels:[7,10,14,18], enemyTypes:['Beasts'], mechanics:{damageBonusAgainstFavoredEnemy:'proficiencyBonus'} },
+      { id:'heightened-instinct', name:'Heightened Instinct', mechanics:{hunterInstinctRecharge:['shortRest','longRest']} },
+      { id:'lands-stride', name:"Land's Stride" }
+    ]
+  });
+  const byId = Object.fromEntries(doc.features.map(f => [f.id, f]));
+  assert.equal(byId['hit-points'].automation.hitPoints.hitDie, 'd10');
+  assert.equal(byId['proficiencies'].automation.proficiencyPackage.skillChoices.count, 2);
+  assert.equal(byId['know-your-enemy'].automation.inspectCreature.choose, 2);
+  assert.equal(byId['combat-instincts'].automation.options.guarded.acBonusFrom, 'instinctDieRoll');
+  assert.equal(byId['deft-explorer'].automation.parts.roving.movementBonus.value, 5);
+  assert.deepEqual(byId['favored-enemy'].automation.builderChoice.choiceLevels, [6,10,14,18]);
+  assert.equal(byId['heightened-instinct'].automation.modifyResource.target, 'hunters-instinct');
+  assert.equal(byId['lands-stride'].automation.proficiencyGrants.savingThrows[0], 'Wisdom');
+  for (const id of ['hit-points','proficiencies','know-your-enemy','combat-instincts','deft-explorer','favored-enemy','heightened-instinct','lands-stride']) {
+    assert.notEqual(byId[id].automation.support, 'required');
+  }
+});
+
+test('Wizard proficiency automation references real top-level proficiency fields', () => {
+  const doc = enrichClassDocument({
+    id:'wizard',
+    armorProficiencies:[],
+    weaponProficiencies:['Daggers'],
+    toolProficiencies:[],
+    savingThrows:['Intelligence','Wisdom'],
+    skillChoices:{count:2,from:['Arcana','History']},
+    features:[{id:'proficiencies',name:'Proficiencies'}]
+  });
+  const pkg = doc.features[0].automation.proficiencyPackage;
+  assert.deepEqual(pkg.weapons, ['Daggers']);
+  assert.deepEqual(pkg.savingThrows, ['Intelligence','Wisdom']);
+  assert.equal(pkg.skillChoices.count, 2);
+  assert.equal(pkg.source, undefined);
+});
