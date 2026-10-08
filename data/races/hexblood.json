@@ -29,11 +29,28 @@
       "features": [
         {
           "name": "Fey Sight",
-          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+          "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 60 feet.",
+          "id": "fey-sight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hexblood:base:fey-sight",
+            "parameters": {
+              "featureName": "Fey Sight",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Hex Magic",
@@ -75,11 +92,54 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "hex-magic",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Minor Illusion",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Hex",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Arcanist's Magic Aura",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Bag of Souls",
-          "description": "You carry a morbid, magically attuned pouch crafted from planar materials to capture the essence of the recently deceased. When a creature dies within 30 feet of you, provided it was hostile to you and not a summoned minion or harmless ambient wildlife, you can use your reaction to capture its soul in your bag. Your bag can hold only a number of souls equal to your proficiency bonus at a time, and a captured soul remains inside until it is expended or until you finish a long rest. As a bonus action, you can expend the trapped soul to fuel your dark magic, choosing to either gain temporary hit points equal to your level plus your Charisma modifier, force a creature within 30 feet to have disadvantage on its next saving throw against a spell you cast this turn, or recover one first level spell slot instantly. You can recover a spell slot with this trait once per short or long rest."
+          "description": "You carry a morbid, magically attuned pouch crafted from planar materials to capture the essence of the recently deceased. When a creature dies within 30 feet of you, provided it was hostile to you and not a summoned minion or harmless ambient wildlife, you can use your reaction to capture its soul in your bag. Your bag can hold only a number of souls equal to your proficiency bonus at a time, and a captured soul remains inside until it is expended or until you finish a long rest. As a bonus action, you can expend the trapped soul to fuel your dark magic, choosing to either gain temporary hit points equal to your level plus your Charisma modifier, force a creature within 30 feet to have disadvantage on its next saving throw against a spell you cast this turn, or recover one first level spell slot instantly. You can recover a spell slot with this trait once per short or long rest.",
+          "id": "bag-of-souls",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         }
       ]
     }
