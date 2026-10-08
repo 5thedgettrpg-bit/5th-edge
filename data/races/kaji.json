@@ -28,15 +28,40 @@
       "features": [
         {
           "name": "Bite",
-          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "bite",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:kaji:base:bite",
+            "parameters": {
+              "featureName": "Bite",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Hunters Instincts",
-          "description": "You have proficiency in one of the following skills of your choice: Athletics, Intimidation, Perception, or Survival."
+          "description": "You have proficiency in one of the following skills of your choice: Athletics, Intimidation, Perception, or Survival.",
+          "id": "hunters-instincts",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:kaji:base:hunters-instincts",
+            "parameters": {
+              "featureName": "Hunters Instincts",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Daunting Roar",
-          "description": "As a bonus action, you can let out an especially menacing roar. Creatures of your choice within 30 feet of you that can hear you must succeed on a Wisdom saving throw or become frightened of you until the end of your next turn. The DC of the save equals 8 + your proficiency bonus + your Constitution modifier. You can use this trait a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest."
+          "description": "As a bonus action, you can let out an especially menacing roar. Creatures of your choice within 30 feet of you that can hear you must succeed on a Wisdom saving throw or become frightened of you until the end of your next turn. The DC of the save equals 8 + your proficiency bonus + your Constitution modifier. You can use this trait a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.",
+          "id": "daunting-roar",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         }
       ]
     }
