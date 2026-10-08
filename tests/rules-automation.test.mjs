@@ -80,3 +80,44 @@ test('repository validation parses json and returns file-scoped errors', async (
   assert.deepEqual(result.errors, []);
   assert.equal(result.files, 1);
 });
+
+
+import { enrichRaceDocument } from '../scripts/enrich-race-automation.mjs';
+
+test('race enrichment makes common racial mechanics machine-readable', () => {
+  const doc = enrichRaceDocument({ id: 'dwarf', variants: [{ id: 'standard', features: [
+    { name: 'Darkvision', description: 'You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light.' },
+    { name: 'Poison Immunity', description: 'You are immune to poison damage and the poisoned condition.' },
+    { name: 'Dwarven Toughness', description: 'Your hit point maximum increases by 2, and it increases by 2 every time you gain a level.' },
+  ] }] });
+  const [vision, poison, hp] = doc.variants[0].features;
+  assert.equal(vision.automation.senses.darkvision.range, 60);
+  assert.deepEqual(poison.automation.immunities.damage, ['poison']);
+  assert.deepEqual(poison.automation.immunities.conditions, ['poisoned']);
+  assert.equal(hp.automation.hitPoints.perLevel, 2);
+});
+
+test('race enrichment normalizes racial spellcasting without turning list additions into grants', () => {
+  const doc = enrichRaceDocument({ id: 'human', variants: [{ id: 'trail', features: [{
+    name: "Finder's Magic",
+    description: 'racial magic',
+    racialSpellcasting: {
+      abilityChoice: ['Intelligence', 'Wisdom', 'Charisma'],
+      grantedSpells: [{ name: 'True Strike', type: 'cantrip', unlockLevel: 1 }],
+      spellListAdditions: [{ spellLevel: 1, spells: ['Faerie Fire', 'Longstrider'] }],
+      spellListAdditionRequirement: ['Spellcasting', 'Pact Magic']
+    }
+  }] }] });
+  const auto = doc.variants[0].features[0].automation;
+  assert.equal(auto.spellGrants[0].name, 'True Strike');
+  assert.equal(auto.spellGrants[0].levelGateType, 'characterLevel');
+  assert.equal(auto.spellListAdditions[0].name, 'Faerie Fire');
+  assert.equal(auto.spellListAdditions[0].grantMode, 'addToClassSpellList');
+});
+
+test('race enrichment gives unsupported executable prose an explicit VTT hook', () => {
+  const doc = enrichRaceDocument({ id: 'oddity', variants: [{ id: 'base', features: [{ name: 'Strange Gift', description: 'Do a highly unusual thing.' }] }] });
+  const auto = doc.variants[0].features[0].automation;
+  assert.equal(auto.support, 'required');
+  assert.equal(auto.hook, 'race-feature:oddity:base:strange-gift');
+});
