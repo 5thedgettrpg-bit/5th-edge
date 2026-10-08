@@ -52,10 +52,10 @@
               "featureName": "Skill Versatility",
               "manualResolution": true
             },
-            "proficiencyGrants": {
-              "skills": [
-                "two skills of your choice"
-              ]
+            "proficiencyChoices": {
+              "skills": {
+                "choose": 2
+              }
             }
           }
         },
