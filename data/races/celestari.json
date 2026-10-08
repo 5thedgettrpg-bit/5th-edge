@@ -29,11 +29,29 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Celestial Resistance",
-          "description": "You have resistance to necrotic damage and radiant damage."
+          "description": "You have resistance to necrotic damage and radiant damage.",
+          "id": "celestial-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Grave Bearer",
@@ -75,11 +93,55 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "grave-bearer",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Toll the Dead",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Bane",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Ray of Enfeeblement",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Necrotic Shroud",
-          "description": "Starting at 5th level, you can use your action to transform for 1 minute or until you end the transformation as a bonus action. When you transform, creatures of your choice within 10 feet of you that can see you must succeed on a Charisma saving throw or become frightened of you until the end of your next turn. The DC equals 8 + your proficiency bonus + the modifier of the ability you chose for your Grave Bearer trait. While transformed, once on each of your turns when you deal damage to a target with an attack or a spell, you can deal extra necrotic damage to that target equal to your proficiency bonus. Once you use this trait, you can’t use it again until you finish a long rest."
+          "description": "Starting at 5th level, you can use your action to transform for 1 minute or until you end the transformation as a bonus action. When you transform, creatures of your choice within 10 feet of you that can see you must succeed on a Charisma saving throw or become frightened of you until the end of your next turn. The DC equals 8 + your proficiency bonus + the modifier of the ability you chose for your Grave Bearer trait. While transformed, once on each of your turns when you deal damage to a target with an attack or a spell, you can deal extra necrotic damage to that target equal to your proficiency bonus. Once you use this trait, you can’t use it again until you finish a long rest.",
+          "id": "necrotic-shroud",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:celestari:fallen:necrotic-shroud",
+            "parameters": {
+              "featureName": "Necrotic Shroud",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -108,11 +170,29 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Celestial Resistance",
-          "description": "You have resistance to necrotic damage and radiant damage."
+          "description": "You have resistance to necrotic damage and radiant damage.",
+          "id": "celestial-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Light Bearer",
@@ -154,11 +234,55 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "light-bearer",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Light",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Cure Wounds",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Lesser Restoration",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Flight",
-          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed.",
+          "id": "flight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:celestari:protector:flight",
+            "parameters": {
+              "featureName": "Flight",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -187,11 +311,29 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Celestial Resistance",
-          "description": "You have resistance to necrotic damage and radiant damage."
+          "description": "You have resistance to necrotic damage and radiant damage.",
+          "id": "celestial-resistance",
+          "automation": {
+            "resistances": {
+              "damage": [
+                "necrotic"
+              ]
+            }
+          }
         },
         {
           "name": "Scorched Bearer",
@@ -233,11 +375,56 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "scorched-bearer",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Word of Radiance",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Burning Hands",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Scorching Ray",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Radiant Consumption",
-          "description": "Starting at 5th level, you can use your action to transform for 1 minute or until you end the transformation as a bonus action. While transformed, you shed bright light in a 10-foot radius and dim light for an additional 10 feet. At the end of each of your turns, each creature of your choice within 10 feet of you takes radiant damage equal to your proficiency bonus. In addition, once on each of your turns when you deal damage to a target with an attack or a spell, you can deal extra radiant damage to that target equal to your proficiency bonus. Once you use this trait, you can’t use it again until you finish a long rest."
+          "description": "Starting at 5th level, you can use your action to transform for 1 minute or until you end the transformation as a bonus action. While transformed, you shed bright light in a 10-foot radius and dim light for an additional 10 feet. At the end of each of your turns, each creature of your choice within 10 feet of you takes radiant damage equal to your proficiency bonus. In addition, once on each of your turns when you deal damage to a target with an attack or a spell, you can deal extra radiant damage to that target equal to your proficiency bonus. Once you use this trait, you can’t use it again until you finish a long rest.",
+          "id": "radiant-consumption",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 10,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         }
       ]
     }
