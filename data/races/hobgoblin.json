@@ -29,19 +29,53 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Fortune from the Many",
-          "description": "If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +3). You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +3). You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "fortune-from-the-many",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            }
+          }
         },
         {
           "name": "Fey Ancestry",
-          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself."
+          "description": "You have advantage on saving throws you make to avoid or end the charmed condition on yourself.",
+          "id": "fey-ancestry",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Martial Training",
-          "description": "You are proficient with two martial weapons of your choice and with light and medium armor."
+          "description": "You are proficient with two martial weapons of your choice and with light and medium armor.",
+          "id": "martial-training",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:hobgoblin:base:martial-training",
+            "parameters": {
+              "featureName": "Martial Training",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
