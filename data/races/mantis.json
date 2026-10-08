@@ -33,9 +33,11 @@
           "id": "compound-awareness",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:mantis:base:compound-awareness:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -58,9 +60,11 @@
           "id": "chameleon-carapace",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:mantis:base:chameleon-carapace:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
