@@ -29,19 +29,55 @@
       "features": [
         {
           "name": "Charge",
-          "description": "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or shove a creature. If you moved at least 10 feet in a straight line immediately before taking this bonus action, the attack deals an extra 5 damage on a hit. If you shove the creature instead, it takes 5 bludgeoning damage and, on a successful shove, is pushed up to 10 feet away from you."
+          "description": "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or shove a creature. If you moved at least 10 feet in a straight line immediately before taking this bonus action, the attack deals an extra 5 damage on a hit. If you shove the creature instead, it takes 5 bludgeoning damage and, on a successful shove, is pushed up to 10 feet away from you.",
+          "id": "charge",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:orc:base:charge",
+            "parameters": {
+              "featureName": "Charge",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Powerful Build",
-          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.",
+          "id": "powerful-build",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:orc:base:powerful-build",
+            "parameters": {
+              "featureName": "Powerful Build",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Relentless Endurance",
-          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.",
+          "id": "relentless-endurance",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:orc:base:relentless-endurance",
+            "parameters": {
+              "featureName": "Relentless Endurance",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Athlete",
-          "description": "You gain the Athlete feat."
+          "description": "You gain the Athlete feat.",
+          "id": "athlete",
+          "automation": {
+            "featureGrants": [
+              {
+                "type": "feat",
+                "name": "Athlete"
+              }
+            ]
+          }
         }
       ]
     }
