@@ -28,23 +28,71 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Poison Immunity",
-          "description": "You are immune to poison damage and the poisoned condition."
+          "description": "You are immune to poison damage and the poisoned condition.",
+          "id": "poison-immunity",
+          "automation": {
+            "immunities": {
+              "damage": [
+                "poison"
+              ],
+              "conditions": [
+                "poisoned"
+              ]
+            }
+          }
         },
         {
           "name": "Tough",
-          "description": "You gain the Tough feat."
+          "description": "You gain the Tough feat.",
+          "id": "tough",
+          "automation": {
+            "featureGrants": [
+              {
+                "type": "feat",
+                "name": "Tough"
+              }
+            ]
+          }
         },
         {
           "name": "Wards and Seals",
-          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Mage Armor spell with this trait. Starting at 5th level, you can also cast Arcane Lock with this trait. Once you cast Mage Armor or Arcane Lock with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Alarm, Armor of Agathys 2nd Arcane Lock, Knock 3rd Glyph of Warding, Magic Circle 4th Leomund's Secret Chest, Mordenkainen's Faithful Hound 5th Antilife Shell"
+          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Mage Armor spell with this trait. Starting at 5th level, you can also cast Arcane Lock with this trait. Once you cast Mage Armor or Arcane Lock with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). Additionally, if you have the Spellcasting or Pact Magic feature, the following spells are added to the spell list of that class. Spell Level Spell 1st Alarm, Armor of Agathys 2nd Arcane Lock, Knock 3rd Glyph of Warding, Magic Circle 4th Leomund's Secret Chest, Mordenkainen's Faithful Hound 5th Antilife Shell",
+          "id": "wards-and-seals",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dwarf:way-of-the-ward:wards-and-seals",
+            "parameters": {
+              "featureName": "Wards and Seals",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Warder's Intuition",
-          "description": "Whenever you make an Intelligence (Investigation) check or an ability check involving Thieves' Tools, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make an Intelligence (Investigation) check or an ability check involving Thieves' Tools, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "warder-s-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dwarf:way-of-the-ward:warder-s-intuition",
+            "parameters": {
+              "featureName": "Warder's Intuition",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -72,23 +120,69 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Poison Immunity",
-          "description": "You are immune to poison damage and the poisoned condition."
+          "description": "You are immune to poison damage and the poisoned condition.",
+          "id": "poison-immunity",
+          "automation": {
+            "immunities": {
+              "damage": [
+                "poison"
+              ],
+              "conditions": [
+                "poisoned"
+              ]
+            }
+          }
         },
         {
           "name": "Dwarven Toughness",
-          "description": "Your hit point maximum increases by 2, and it increases by 2 every time you gain a level."
+          "description": "Your hit point maximum increases by 2, and it increases by 2 every time you gain a level.",
+          "id": "dwarven-toughness",
+          "automation": {
+            "hitPoints": {
+              "initial": 2,
+              "perLevel": 2
+            }
+          }
         },
         {
           "name": "Dwarven Combat Training",
-          "description": "Proficiency with light and medium armor plus battleaxe, handaxe, light hammer, and warhammer."
+          "description": "Proficiency with light and medium armor plus battleaxe, handaxe, light hammer, and warhammer.",
+          "id": "dwarven-combat-training",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dwarf:standard:dwarven-combat-training",
+            "parameters": {
+              "featureName": "Dwarven Combat Training",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Tool Proficiency",
-          "description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+          "description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.",
+          "id": "tool-proficiency",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dwarf:standard:tool-proficiency",
+            "parameters": {
+              "featureName": "Tool Proficiency",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -118,19 +212,53 @@
       "features": [
         {
           "name": "Superior Darkvision",
-          "description": "Darkvision extends to 120 feet."
+          "description": "Darkvision extends to 120 feet.",
+          "id": "superior-darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 120,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Duergar Resilience",
-          "description": "You have advantage on saving throws against illusions and against being poisoned, charmed or paralyzed."
+          "description": "You have advantage on saving throws against illusions and against being poisoned, charmed or paralyzed.",
+          "id": "duergar-resilience",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Duergar Toughness",
-          "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+          "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+          "id": "duergar-toughness",
+          "automation": {
+            "hitPoints": {
+              "initial": 1,
+              "perLevel": 1
+            }
+          }
         },
         {
           "name": "Duergar Magic",
-          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Enlarge/Reduce spell with this trait. When you cast Enlarge/Reduce without expending a spell slot using this trait, it lasts for 1 hour and doesn't require concentration. Starting at 5th level, you can also cast Invisibility with this trait. Once you cast Enlarge/Reduce or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Mending cantrip. Starting at 3rd level, you can also cast the Enlarge/Reduce spell with this trait. When you cast Enlarge/Reduce without expending a spell slot using this trait, it lasts for 1 hour and doesn't require concentration. Starting at 5th level, you can also cast Invisibility with this trait. Once you cast Enlarge/Reduce or Invisibility with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "id": "duergar-magic",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dwarf:duergar:duergar-magic",
+            "parameters": {
+              "featureName": "Duergar Magic",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
