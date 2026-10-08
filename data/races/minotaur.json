@@ -29,23 +29,67 @@
       "features": [
         {
           "name": "Horns",
-          "description": "Your horns are natural weapons. Your unarmed strikes with them deal 1d6 + your Strength modifier piercing damage instead of the normal bludgeoning damage."
+          "description": "Your horns are natural weapons. Your unarmed strikes with them deal 1d6 + your Strength modifier piercing damage instead of the normal bludgeoning damage.",
+          "id": "horns",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:minotaur:base:horns",
+            "parameters": {
+              "featureName": "Horns",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Charge",
-          "description": "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or shove a creature. If you moved at least 10 feet in a straight line immediately before taking this bonus action, the attack deals an extra 5 damage on a hit. If you shove the creature instead, it takes 5 bludgeoning damage and, on a successful shove, is pushed up to 10 feet away from you."
+          "description": "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or shove a creature. If you moved at least 10 feet in a straight line immediately before taking this bonus action, the attack deals an extra 5 damage on a hit. If you shove the creature instead, it takes 5 bludgeoning damage and, on a successful shove, is pushed up to 10 feet away from you.",
+          "id": "charge",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:minotaur:base:charge",
+            "parameters": {
+              "featureName": "Charge",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Hammering Horns",
-          "description": "Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can use a bonus action to attempt to push it with your horns. The target must be within 5 feet and no more than one size larger than you. It must succeed on a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Strength modifier or be pushed up to 10 feet away."
+          "description": "Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can use a bonus action to attempt to push it with your horns. The target must be within 5 feet and no more than one size larger than you. It must succeed on a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Strength modifier or be pushed up to 10 feet away.",
+          "id": "hammering-horns",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:minotaur:base:hammering-horns",
+            "parameters": {
+              "featureName": "Hammering Horns",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Labyrinthine Recall",
-          "description": "You always know which direction is north, and you have advantage on Wisdom (Survival) checks you make to navigate or track."
+          "description": "You always know which direction is north, and you have advantage on Wisdom (Survival) checks you make to navigate or track.",
+          "id": "labyrinthine-recall",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Savage Attacks",
-          "description": "When you score a critical hit with a melee weapon, roll one additional weapon damage die."
+          "description": "When you score a critical hit with a melee weapon, roll one additional weapon damage die.",
+          "id": "savage-attacks",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:minotaur:base:savage-attacks",
+            "parameters": {
+              "featureName": "Savage Attacks",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
