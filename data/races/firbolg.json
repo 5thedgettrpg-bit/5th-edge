@@ -33,9 +33,11 @@
           "id": "speech-of-beast-and-leaf",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:firbolg:base:speech-of-beast-and-leaf:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -45,9 +47,11 @@
           "id": "unsettling-presence",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:firbolg:base:unsettling-presence:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
