@@ -89,6 +89,13 @@
             "parameters": {
               "featureName": "Shell Defense",
               "manualResolution": true
+            },
+            "conditionalAdvantage": {
+              "support": "required",
+              "hook": "race-feature:chelonian:base:shell-defense:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
