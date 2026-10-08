@@ -185,3 +185,9 @@ test('Hexblade subclass encodes invocation grant, replacement, and Armor of Hexe
   assert.equal(armor.automation.resolution.die, 'd6');
   assert.equal(armor.automation.resolution.successOn, '4+');
 });
+
+
+test('rejects executable features that are left without automation', () => {
+  const errors = validateAutomationDocument({ features: [{ id: 'prose-only', name: 'Prose Only', description: 'Does something.' }] }, 'rules.json');
+  assert.ok(errors.some(e => e.includes('missing automation')));
+});
