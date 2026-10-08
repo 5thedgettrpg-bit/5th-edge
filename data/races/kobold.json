@@ -47,9 +47,11 @@
           "id": "pack-tactics",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:kobold:base:pack-tactics:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -63,9 +65,11 @@
               "recovery": "longRest"
             },
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:kobold:base:grovel-cower-and-beg:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
