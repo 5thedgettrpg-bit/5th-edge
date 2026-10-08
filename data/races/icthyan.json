@@ -28,15 +28,41 @@
       "features": [
         {
           "name": "Natural Armor",
-          "description": "When you aren't wearing armor, your base AC equals 11 + your proficiency bonus + your Constitution modifier. The Constitution modifier added to this AC can't exceed +5. You can use this AC if armor you wear would give you a lower AC, and you can still gain the benefit of a shield."
+          "description": "When you aren't wearing armor, your base AC equals 11 + your proficiency bonus + your Constitution modifier. The Constitution modifier added to this AC can't exceed +5. You can use this AC if armor you wear would give you a lower AC, and you can still gain the benefit of a shield.",
+          "id": "natural-armor",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:icthyan:base:natural-armor",
+            "parameters": {
+              "featureName": "Natural Armor",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Leviathan Will",
-          "description": "You have advantage on saving throws you make to avoid or end a condition."
+          "description": "You have advantage on saving throws you make to avoid or end a condition.",
+          "id": "leviathan-will",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Amphibious",
-          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed.",
+          "id": "amphibious",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:icthyan:base:amphibious",
+            "parameters": {
+              "featureName": "Amphibious",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
