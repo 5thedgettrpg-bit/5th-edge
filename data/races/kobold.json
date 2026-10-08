@@ -29,19 +29,58 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Pack Tactics",
-          "description": "You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated."
+          "description": "You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated.",
+          "id": "pack-tactics",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Grovel, Cower, and Beg",
-          "description": "As an action on your turn, you can cower pathetically to distract nearby foes. Until the end of your next turn, your allies gain advantage on attack rolls against enemies within 10 feet of you that can see you. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+          "description": "As an action on your turn, you can cower pathetically to distract nearby foes. Until the end of your next turn, your allies gain advantage on attack rolls against enemies within 10 feet of you that can see you. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+          "id": "grovel-cower-and-beg",
+          "automation": {
+            "resource": {
+              "max": "proficiencyBonus",
+              "recovery": "longRest"
+            },
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Claws",
-          "description": "You can use your claws to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You can use your claws to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "claws",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:kobold:base:claws",
+            "parameters": {
+              "featureName": "Claws",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
