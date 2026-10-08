@@ -521,12 +521,6 @@
       "level": 1,
       "description": "Hit Dice: 1d10 per ranger level. Hit Points at 1st Level: 10 + your Constitution modifier. Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per ranger level after 1st.",
       "automation": {
-        "support": "required",
-        "hook": "class-feature:ranger:hit-points",
-        "parameters": {
-          "featureName": "Hit Points",
-          "manualResolution": true
-        },
         "hitPoints": {
           "hitDie": "d10",
           "firstLevel": "10 + CON",
@@ -572,12 +566,6 @@
         "Dexterity"
       ],
       "automation": {
-        "support": "required",
-        "hook": "class-feature:ranger:proficiencies",
-        "parameters": {
-          "featureName": "Proficiencies",
-          "manualResolution": true
-        },
         "proficiencyPackage": {
           "armor": [
             "Light armor",
@@ -897,12 +885,6 @@
         ]
       },
       "automation": {
-        "support": "required",
-        "hook": "class-feature:ranger:know-your-enemy",
-        "parameters": {
-          "featureName": "Know Your Enemy",
-          "manualResolution": true
-        },
         "inspectCreature": {
           "activation": {
             "time": 1,
@@ -938,12 +920,6 @@
         "Pursuing Instinct": "Roll your Instinct Die and add the number rolled to the damage of the attack. You can also push the target up to 5 feet away from you, plus a number of feet equal to the number rolled on the Instinct Die. You can then immediately use your reaction to move up to your walking speed to an unoccupied space within 5 feet of the target."
       },
       "automation": {
-        "support": "required",
-        "hook": "class-feature:ranger:combat-instincts",
-        "parameters": {
-          "featureName": "Combat Instincts",
-          "manualResolution": true
-        },
         "combatInstincts": {
           "trigger": {
             "event": "attackActionOnTurn"
@@ -1012,12 +988,6 @@
         }
       ],
       "automation": {
-        "support": "required",
-        "hook": "class-feature:ranger:deft-explorer",
-        "parameters": {
-          "featureName": "Deft Explorer",
-          "manualResolution": true
-        },
         "parts": {
           "canny": {
             "unlockLevel": 3,
@@ -1101,12 +1071,6 @@
         "damageBonusAgainstFavoredEnemy": "proficiencyBonus"
       },
       "automation": {
-        "support": "required",
-        "hook": "class-feature:ranger:favored-enemy",
-        "parameters": {
-          "featureName": "Favored Enemy",
-          "manualResolution": true
-        },
         "builderChoice": {
           "type": "favoredEnemy",
           "choiceLevels": [
@@ -1165,12 +1129,6 @@
         ]
       },
       "automation": {
-        "support": "required",
-        "hook": "class-feature:ranger:heightened-instinct",
-        "parameters": {
-          "featureName": "Heightened Instinct",
-          "manualResolution": true
-        },
         "modifyResource": {
           "target": "hunters-instinct",
           "recovery": [
@@ -1186,12 +1144,6 @@
       "level": 9,
       "description": "Starting at 9th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard. In addition, you gain proficiency in Wisdom saving throws.",
       "automation": {
-        "support": "required",
-        "hook": "class-feature:ranger:lands-stride",
-        "parameters": {
-          "featureName": "Land's Stride",
-          "manualResolution": true
-        },
         "movementRules": {
           "ignoreNonmagicalDifficultTerrain": true,
           "nonmagicalPlants": {
