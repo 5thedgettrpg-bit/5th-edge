@@ -29,7 +29,15 @@
       "features": [
         {
           "name": "Magic Resistance",
-          "description": "You have advantage on saving throws against spells."
+          "description": "You have advantage on saving throws against spells.",
+          "id": "magic-resistance",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Serpentine Spellcasting",
@@ -71,11 +79,57 @@
               "Spellcasting",
               "Pact Magic"
             ]
+          },
+          "id": "serpentine-spellcasting",
+          "automation": {
+            "spellcastingAbilityChoice": [
+              "Intelligence",
+              "Wisdom",
+              "Charisma"
+            ],
+            "spellGrants": [
+              {
+                "name": "Poison Spray",
+                "type": "cantrip",
+                "unlockLevel": 1,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Animal Friendship",
+                "unlockLevel": 3,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              },
+              {
+                "name": "Enthrall",
+                "unlockLevel": 5,
+                "freeUses": 1,
+                "recharge": "longRest",
+                "canUseSpellSlots": true,
+                "levelGateType": "characterLevel",
+                "grantMode": "racialSpellGrant"
+              }
+            ]
           }
         },
         {
           "name": "Poison Immunity",
-          "description": "You are immune to poison damage and the poisoned condition."
+          "description": "You are immune to poison damage and the poisoned condition.",
+          "id": "poison-immunity",
+          "automation": {
+            "immunities": {
+              "damage": [
+                "poison"
+              ],
+              "conditions": [
+                "poisoned"
+              ]
+            }
+          }
         }
       ]
     }
