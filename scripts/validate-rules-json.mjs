@@ -31,6 +31,10 @@ export function validateAutomationDocument(document, filePath = '<memory>') {
     }
 
     const automation = feature?.automation;
+    if (!automation) {
+      errors.push(`${filePath}: ${feature.id || feature.name || 'feature'} missing automation`);
+      continue;
+    }
     if (automation?.support === 'required' && (!automation.hook || automation.parameters == null)) {
       errors.push(`${filePath}: required hook on ${feature.id || feature.name || 'feature'} needs hook and parameters`);
     }
