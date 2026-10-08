@@ -29,19 +29,53 @@
       "features": [
         {
           "name": "Compound Awareness",
-          "description": "Your multifaceted senses make you extraordinarily difficult to catch unaware. While conscious, you can’t be surprised, and creatures don’t gain advantage on attack rolls against you solely because they are unseen by you."
+          "description": "Your multifaceted senses make you extraordinarily difficult to catch unaware. While conscious, you can’t be surprised, and creatures don’t gain advantage on attack rolls against you solely because they are unseen by you.",
+          "id": "compound-awareness",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Sleepless",
-          "description": "You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest."
+          "description": "You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest.",
+          "id": "sleepless",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:mantis:base:sleepless",
+            "parameters": {
+              "featureName": "Sleepless",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Chameleon Carapace",
-          "description": "When you aren't wearing armor, your base AC equals 11 + your proficiency bonus + your Constitution modifier. The Constitution modifier added to this AC can't exceed +5. You can use this AC if armor you wear would give you a lower AC, and you can still gain the benefit of a shield. As an action, you can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings."
+          "description": "When you aren't wearing armor, your base AC equals 11 + your proficiency bonus + your Constitution modifier. The Constitution modifier added to this AC can't exceed +5. You can use this AC if armor you wear would give you a lower AC, and you can still gain the benefit of a shield. As an action, you can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings.",
+          "id": "chameleon-carapace",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Flight",
-          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed."
+          "description": "Starting at 5th level, you can use a bonus action to manifest wings on your body. You have a flying speed equal to your walking speed.",
+          "id": "flight",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:mantis:base:flight",
+            "parameters": {
+              "featureName": "Flight",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
