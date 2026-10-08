@@ -45,9 +45,11 @@
           "id": "brave",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:ghostwise:brave:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -118,9 +120,11 @@
           "id": "brave",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:lightfoot:brave:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -193,9 +197,11 @@
           "id": "brave",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:lotusden:brave:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -334,9 +340,11 @@
           "id": "brave",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:way-of-mercy:brave:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -486,9 +494,11 @@
           "id": "brave",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:way-of-the-hearth:brave:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -638,9 +648,11 @@
           "id": "brave",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:stout:brave:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -715,9 +727,11 @@
           "id": "brave",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:ordan:brave:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -789,9 +803,11 @@
           "id": "brave",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:wander:brave:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -818,9 +834,11 @@
               "recovery": "longRest"
             },
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:hin:wander:taunt:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         }
