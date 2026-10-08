@@ -46,9 +46,11 @@
           "id": "gnome-cunning",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:gnome:deep:gnome-cunning:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -172,9 +174,11 @@
           "id": "gnome-cunning",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:gnome:forest:gnome-cunning:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -298,9 +302,11 @@
           "id": "gnome-cunning",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:gnome:way-of-the-quill:gnome-cunning:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -584,9 +590,11 @@
           "id": "gnome-cunning",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:gnome:rock:gnome-cunning:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
