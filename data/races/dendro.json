@@ -28,19 +28,54 @@
       "features": [
         {
           "name": "Amphibious",
-          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed."
+          "description": "You can breathe air and water, and have a swimming speed equal to your walking speed.",
+          "id": "amphibious",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dendro:base:amphibious",
+            "parameters": {
+              "featureName": "Amphibious",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Tongue",
-          "description": "You have a tongue that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier bludgeoning damage, instead of the normal for an unarmed strike. In addition, when you make a melee attack using your tongue on your turn, your reach for it is 5 feet greater than normal."
+          "description": "You have a tongue that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier bludgeoning damage, instead of the normal for an unarmed strike. In addition, when you make a melee attack using your tongue on your turn, your reach for it is 5 feet greater than normal.",
+          "id": "tongue",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dendro:base:tongue",
+            "parameters": {
+              "featureName": "Tongue",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Swamp Camouflage",
-          "description": "You have advantage on a Dexterity (Stealth) checks made to hide in swamp-like terrain. Additionally, you ignore nonmagical difficult terrain caused by mud, shallow water, and swamp terrain."
+          "description": "You have advantage on a Dexterity (Stealth) checks made to hide in swamp-like terrain. Additionally, you ignore nonmagical difficult terrain caused by mud, shallow water, and swamp terrain.",
+          "id": "swamp-camouflage",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Standing Leap",
-          "description": "Your base long jump and high jump is equal to your speed, with or without a running start."
+          "description": "Your base long jump and high jump is equal to your speed, with or without a running start.",
+          "id": "standing-leap",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:dendro:base:standing-leap",
+            "parameters": {
+              "featureName": "Standing Leap",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
