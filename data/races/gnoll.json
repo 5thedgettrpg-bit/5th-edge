@@ -28,19 +28,53 @@
       "features": [
         {
           "name": "Bite",
-          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
+          "description": "You can use your bite to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike.",
+          "id": "bite",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:gnoll:base:bite",
+            "parameters": {
+              "featureName": "Bite",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Rampage",
-          "description": "When you reduce a creature to 0 hit points with a melee attack on your turn, use a bonus action to move up to half speed and make a bite attack."
+          "description": "When you reduce a creature to 0 hit points with a melee attack on your turn, use a bonus action to move up to half speed and make a bite attack.",
+          "id": "rampage",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:gnoll:base:rampage",
+            "parameters": {
+              "featureName": "Rampage",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Blood Scent",
-          "description": "You have advantage on Wisdom (Perception) and Wisdom (Survival) checks made to find or track a creature that is missing any of its hit points."
+          "description": "You have advantage on Wisdom (Perception) and Wisdom (Survival) checks made to find or track a creature that is missing any of its hit points.",
+          "id": "blood-scent",
+          "automation": {
+            "conditionalAdvantage": {
+              "support": "structuredTextPredicate",
+              "predicateSource": "featureDescription",
+              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+            }
+          }
         },
         {
           "name": "Keen Senses",
-          "description": "You have proficiency in the Perception skill."
+          "description": "You have proficiency in the Perception skill.",
+          "id": "keen-senses",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Perception"
+              ]
+            }
+          }
         }
       ]
     }
