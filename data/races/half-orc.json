@@ -28,23 +28,69 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Hunter’s Intuition",
-          "description": "Whenever you make a Wisdom (Perception) or a Wisdom (Survival) check, you can roll a d4 and add the number rolled to the total ability check."
+          "description": "Whenever you make a Wisdom (Perception) or a Wisdom (Survival) check, you can roll a d4 and add the number rolled to the total ability check.",
+          "id": "hunter-s-intuition",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-orc:way-of-the-trail:hunter-s-intuition",
+            "parameters": {
+              "featureName": "Hunter’s Intuition",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Finder’s Magic",
-          "description": "You know the Guidance cantrip. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Locate Object with this trait. Once you cast Hunter's Mark or Locate Object with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+          "description": "You know the Guidance cantrip. Starting at 3rd level, you can cast Hunter's Mark with this trait. Starting at 5th level, you can also cast Locate Object with this trait. Once you cast Hunter's Mark or Locate Object with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast either spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).",
+          "id": "finder-s-magic",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-orc:way-of-the-trail:finder-s-magic",
+            "parameters": {
+              "featureName": "Finder’s Magic",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Relentless Endurance",
-          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.",
+          "id": "relentless-endurance",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-orc:way-of-the-trail:relentless-endurance",
+            "parameters": {
+              "featureName": "Relentless Endurance",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Improved Critical",
-          "description": "Your weapon attacks score a critical hit on a roll of 19 or 20."
+          "description": "Your weapon attacks score a critical hit on a roll of 19 or 20.",
+          "id": "improved-critical",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-orc:way-of-the-trail:improved-critical",
+            "parameters": {
+              "featureName": "Improved Critical",
+              "manualResolution": true
+            }
+          }
         }
       ]
     },
@@ -72,23 +118,68 @@
       "features": [
         {
           "name": "Darkvision",
-          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+          "description": "You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.",
+          "id": "darkvision",
+          "automation": {
+            "senses": {
+              "darkvision": {
+                "range": 60,
+                "unit": "ft",
+                "magicalDarkness": false
+              }
+            }
+          }
         },
         {
           "name": "Menacing",
-          "description": "You gain proficiency in the Intimidation skill."
+          "description": "You gain proficiency in the Intimidation skill.",
+          "id": "menacing",
+          "automation": {
+            "proficiencyGrants": {
+              "skills": [
+                "Intimidation"
+              ]
+            }
+          }
         },
         {
           "name": "Savage Attacks",
-          "description": "When you score a critical hit with a melee weapon, roll one additional weapon damage die."
+          "description": "When you score a critical hit with a melee weapon, roll one additional weapon damage die.",
+          "id": "savage-attacks",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-orc:base:savage-attacks",
+            "parameters": {
+              "featureName": "Savage Attacks",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Relentless Endurance",
-          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.",
+          "id": "relentless-endurance",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-orc:base:relentless-endurance",
+            "parameters": {
+              "featureName": "Relentless Endurance",
+              "manualResolution": true
+            }
+          }
         },
         {
           "name": "Improved Critical",
-          "description": "Your weapon attacks score a critical hit on a roll of 19 or 20."
+          "description": "Your weapon attacks score a critical hit on a roll of 19 or 20.",
+          "id": "improved-critical",
+          "automation": {
+            "support": "required",
+            "hook": "race-feature:half-orc:base:improved-critical",
+            "parameters": {
+              "featureName": "Improved Critical",
+              "manualResolution": true
+            }
+          }
         }
       ]
     }
