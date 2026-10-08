@@ -109,9 +109,11 @@
           "id": "mental-discipline",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:syncladi:kithrak:mental-discipline:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -247,9 +249,11 @@
           "id": "dispassion",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:syncladi:todarian:dispassion:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -322,9 +326,11 @@
           "id": "dispassion",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:syncladi:vandar:dispassion:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
@@ -397,9 +403,11 @@
           "id": "mental-discipline",
           "automation": {
             "conditionalAdvantage": {
-              "support": "structuredTextPredicate",
-              "predicateSource": "featureDescription",
-              "note": "VTT should resolve the feature-specific predicate using the named rule hook if direct support is unavailable."
+              "support": "required",
+              "hook": "race-feature:syncladi:zerth:mental-discipline:advantage",
+              "parameters": {
+                "manualResolution": true
+              }
             }
           }
         },
