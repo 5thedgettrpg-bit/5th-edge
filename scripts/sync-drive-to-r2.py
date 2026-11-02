@@ -228,7 +228,7 @@ def main():
             drive,
             s3,
             FAMILIAR_ARCANA_ROOT_FOLDER_ID,
-            ["familiar-arcana"],
+            ["familiar-arcana", "species"],
             desired,
             manifest,
         )
