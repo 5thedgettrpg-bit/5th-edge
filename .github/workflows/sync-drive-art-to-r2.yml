@@ -2,6 +2,11 @@ name: Sync Drive art to R2
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sync-drive-to-r2.py"
+      - ".github/workflows/sync-drive-art-to-r2.yml"
   schedule:
     - cron: "17 * * * *"
 
