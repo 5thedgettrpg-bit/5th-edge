@@ -41,6 +41,7 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           GDRIVE_ROOT_FOLDER_ID: "1hAkXLwRktZ-bUWhboiGbg8KIlQqmKVEu"
+          FAMILIAR_ARCANA_ROOT_FOLDER_ID: "1asf4pTc2xedDdGPMcbDRCuqbCuA8VCYc"
           R2_BUCKET: "5th-edge-assets"
           ASSET_BASE_URL: "https://assets.5thedgettrpg.com"
           DELETE_STALE: "false"
