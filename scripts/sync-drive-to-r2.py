@@ -14,6 +14,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 
 ROOT_FOLDER_ID = os.getenv("GDRIVE_ROOT_FOLDER_ID", "1hAkXLwRktZ-bUWhboiGbg8KIlQqmKVEu")
+FAMILIAR_ARCANA_ROOT_FOLDER_ID = os.getenv("FAMILIAR_ARCANA_ROOT_FOLDER_ID", "").strip()
 R2_BUCKET = os.getenv("R2_BUCKET", "5th-edge-assets")
 ASSET_BASE_URL = os.getenv("ASSET_BASE_URL", "https://assets.5thedgettrpg.com").rstrip("/")
 CACHE_CONTROL = os.getenv("R2_CACHE_CONTROL", "public, max-age=3600")
@@ -222,6 +223,15 @@ def main():
     manifest = []
 
     walk(drive, s3, ROOT_FOLDER_ID, [], desired, manifest)
+    if FAMILIAR_ARCANA_ROOT_FOLDER_ID:
+        walk(
+            drive,
+            s3,
+            FAMILIAR_ARCANA_ROOT_FOLDER_ID,
+            ["familiar-arcana"],
+            desired,
+            manifest,
+        )
 
     if DELETE_STALE:
         for key in list(list_managed_objects(s3)):
@@ -232,6 +242,10 @@ def main():
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "sourceDriveFolderId": ROOT_FOLDER_ID,
+        "sourceDriveFolderIds": {
+            "5th-edge": ROOT_FOLDER_ID,
+            "familiar-arcana": FAMILIAR_ARCANA_ROOT_FOLDER_ID or None,
+        },
         "bucket": R2_BUCKET,
         "assetBaseUrl": ASSET_BASE_URL,
         "assets": sorted(manifest, key=lambda x: x["key"]),
